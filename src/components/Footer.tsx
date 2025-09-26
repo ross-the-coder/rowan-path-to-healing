@@ -1,9 +1,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
-  return (
-    <footer className="bg-secondary text-secondary-foreground">
+  return <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Organization Info */}
@@ -54,11 +52,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-secondary-light/20 mt-8 pt-8 text-center text-sm text-secondary-foreground/70">
-          <p>&copy; 2024 The Rowan Center. All rights reserved.</p>
+          <p>© 2025 The Rowan Center. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

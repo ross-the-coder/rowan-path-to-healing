@@ -3,37 +3,29 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, FileText, Briefcase, Eye, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const About = () => {
-  const teamMembers = [
-    {
-      name: "Sarah Johnson",
-      title: "Executive Director",
-      image: "/placeholder.svg",
-      bio: "Sarah has over 15 years of experience in crisis intervention and trauma recovery services."
-    },
-    {
-      name: "Dr. Michael Chen",
-      title: "Clinical Director",
-      image: "/placeholder.svg",
-      bio: "Dr. Chen specializes in trauma-informed therapy and leads our clinical team."
-    },
-    {
-      name: "Maria Rodriguez",
-      title: "Prevention Education Manager",
-      image: "/placeholder.svg",
-      bio: "Maria develops and implements prevention education programs across South Fairfield County."
-    },
-    {
-      name: "James Thompson",
-      title: "Crisis Response Coordinator",
-      image: "/placeholder.svg",
-      bio: "James oversees our 24/7 helpline and crisis intervention services."
-    }
-  ];
-
-  return (
-    <Layout>
+  const teamMembers = [{
+    name: "Sarah Johnson",
+    title: "Executive Director",
+    image: "/placeholder.svg",
+    bio: "Sarah has over 15 years of experience in crisis intervention and trauma recovery services."
+  }, {
+    name: "Dr. Michael Chen",
+    title: "Clinical Director",
+    image: "/placeholder.svg",
+    bio: "Dr. Chen specializes in trauma-informed therapy and leads our clinical team."
+  }, {
+    name: "Maria Rodriguez",
+    title: "Prevention Education Manager",
+    image: "/placeholder.svg",
+    bio: "Maria develops and implements prevention education programs across South Fairfield County."
+  }, {
+    name: "James Thompson",
+    title: "Crisis Response Coordinator",
+    image: "/placeholder.svg",
+    bio: "James oversees our 24/7 helpline and crisis intervention services."
+  }];
+  return <Layout>
       {/* Hero Section */}
       <section className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4">
@@ -59,7 +51,7 @@ const About = () => {
               </div>
               <CardTitle className="text-3xl mb-4">Our Mission</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="">
               <p className="text-lg text-center leading-relaxed">
                 The Rowan Center exists to prevent sexual violence and other trauma, respond to crisis when harm occurs, 
                 and support adult and youth survivors on their path to healing. We carry out this mission through prevention 
@@ -97,8 +89,7 @@ const About = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="text-center">
+            {teamMembers.map((member, index) => <Card key={index} className="text-center">
                 <CardHeader>
                   <div className="w-24 h-24 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center">
                     <Users className="h-12 w-12 text-muted-foreground" />
@@ -111,8 +102,7 @@ const About = () => {
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{member.bio}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </section>
 
@@ -179,8 +169,6 @@ const About = () => {
           </div>
         </section>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default About;
