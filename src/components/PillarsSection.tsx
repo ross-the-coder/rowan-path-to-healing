@@ -1,106 +1,160 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield, Phone, Heart, GraduationCap, Users, Stethoscope } from "lucide-react";
+import { Shield, Phone, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import counselingImage from "@/assets/counseling-session.jpg";
+import outreachImage from "@/assets/community-outreach.jpg";
+import healingImage from "@/assets/healing-garden.jpg";
 
 const PillarsSection = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Our Three Pillars of Support
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We carry out our mission through prevention education, 24/7 counseling and support, 
-            and accessible, trauma-informed mental health care.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Prevent Pillar */}
-          <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
-            <CardHeader className="text-center pb-4">
-              <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
-                <Shield className="h-8 w-8 text-primary" />
+    <section className="py-0">
+      {/* Prevent Section */}
+      <div className="bg-color-block-secondary text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src={outreachImage} 
+                  alt="Community outreach volunteers working together at an educational event"
+                  className="w-full h-[400px] object-cover"
+                />
               </div>
-              <CardTitle className="text-2xl text-primary">Prevent</CardTitle>
-              <CardDescription className="text-base">
-                Education and prevention programs to stop trauma before it happens
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
+            </div>
+            <div className="order-1 lg:order-2 space-y-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
+                <h2 className="text-4xl font-seasons font-normal">Prevent</h2>
+              </div>
+              <p className="text-xl font-roboto font-light text-white/90 leading-relaxed">
+                Education and awareness programs to prevent sexual violence and trauma before it happens.
+              </p>
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <GraduationCap className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Prevention Education Programs</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Users className="h-5 w-5 text-primary" />
-                  <span className="text-sm">KidSafeHQ Community Training</span>
-                </div>
+                <div className="font-roboto font-medium text-white">Our prevention services include:</div>
+                <ul className="space-y-2 text-white/80">
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Community education workshops and presentations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>School-based prevention programs for all ages</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Bystander intervention training</span>
+                  </li>
+                </ul>
               </div>
-              <Button variant="outline" className="w-full mt-6" asChild>
-                <Link to="/prevent">Learn More</Link>
+              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-color-block-secondary">
+                <Link to="/prevent">Learn More About Prevention</Link>
               </Button>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          {/* Respond Pillar */}
-          <Card className="border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:shadow-lg">
-            <CardHeader className="text-center pb-4">
-              <div className="mx-auto mb-4 p-3 bg-secondary/10 rounded-full w-fit">
-                <Phone className="h-8 w-8 text-secondary" />
+      {/* Respond Section */}
+      <div className="bg-color-block-warm text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                  <Phone className="h-8 w-8 text-white" />
+                </div>
+                <h2 className="text-4xl font-seasons font-normal">Respond</h2>
               </div>
-              <CardTitle className="text-2xl text-secondary">Respond</CardTitle>
-              <CardDescription className="text-base">
-                Immediate crisis support and advocacy when trauma occurs
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              <p className="text-xl font-roboto font-light text-white/90 leading-relaxed">
+                24/7 crisis support and immediate assistance when harm occurs. We're here when you need us most.
+              </p>
+              <div className="bg-white/10 p-6 rounded-lg">
+                <div className="text-2xl font-seasons font-bold mb-2">Crisis Helpline</div>
+                <div className="text-3xl font-roboto font-bold">(203) 329-2929</div>
+                <div className="text-sm text-white/80 mt-2">Available 24/7, completely confidential</div>
+              </div>
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-secondary" />
-                  <span className="text-sm">24/7 Crisis Helpline</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Heart className="h-5 w-5 text-secondary" />
-                  <span className="text-sm">Crisis Counseling & Advocacy</span>
-                </div>
+                <div className="font-roboto font-medium text-white">Crisis response services:</div>
+                <ul className="space-y-2 text-white/80">
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>24/7 crisis helpline and text support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Hospital and court accompaniment</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Legal advocacy and support</span>
+                  </li>
+                </ul>
               </div>
-              <Button variant="outline" className="w-full mt-6" asChild>
+              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-color-block-warm">
                 <Link to="/respond">Get Help Now</Link>
               </Button>
-            </CardContent>
-          </Card>
+            </div>
+            <div>
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src={counselingImage} 
+                  alt="One-on-one counseling session with caring professional"
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          {/* Trauma Recovery Pillar */}
-          <Card className="border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
-            <CardHeader className="text-center pb-4">
-              <div className="mx-auto mb-4 p-3 bg-accent/10 rounded-full w-fit">
-                <Stethoscope className="h-8 w-8 text-accent" />
+      {/* Trauma Recovery Section */}
+      <div className="bg-color-block-accent text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src={healingImage} 
+                  alt="Peaceful healing garden with people having therapeutic conversations"
+                  className="w-full h-[400px] object-cover"
+                />
               </div>
-              <CardTitle className="text-2xl text-accent">Trauma Recovery</CardTitle>
-              <CardDescription className="text-base">
-                Professional mental health care on the path to healing
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
+            </div>
+            <div className="order-1 lg:order-2 space-y-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                  <Heart className="h-8 w-8 text-white" />
+                </div>
+                <h2 className="text-4xl font-seasons font-normal">Trauma Recovery</h2>
+              </div>
+              <p className="text-xl font-roboto font-light text-white/90 leading-relaxed">
+                Long-term healing support and specialized therapeutic services designed for survivors on their journey to recovery.
+              </p>
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Stethoscope className="h-5 w-5 text-accent" />
-                  <span className="text-sm">Trauma-Informed Therapy</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Heart className="h-5 w-5 text-accent" />
-                  <span className="text-sm">Accessible Mental Health Care</span>
-                </div>
+                <div className="font-roboto font-medium text-white">Recovery services include:</div>
+                <ul className="space-y-2 text-white/80">
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Individual trauma-informed counseling</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Support groups and peer connections</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Specialized therapy programs</span>
+                  </li>
+                </ul>
               </div>
-              <Button variant="outline" className="w-full mt-6" asChild>
-                <Link to="/trauma-recovery">Start Healing</Link>
+              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-color-block-accent">
+                <Link to="/trauma-recovery">Explore Recovery Services</Link>
               </Button>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </section>

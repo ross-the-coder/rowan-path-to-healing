@@ -64,6 +64,14 @@ export default {
           DEFAULT: "hsl(var(--emergency))",
           foreground: "hsl(var(--emergency-foreground))",
         },
+        "color-block": {
+          primary: "hsl(var(--color-block-primary))",
+          secondary: "hsl(var(--color-block-secondary))",
+          accent: "hsl(var(--color-block-accent))",
+          blue: "hsl(var(--color-block-blue))",
+          light: "hsl(var(--color-block-light))",
+          warm: "hsl(var(--color-block-warm))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
