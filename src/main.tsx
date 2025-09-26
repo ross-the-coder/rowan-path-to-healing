@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
-import TestApp from "./TestApp.tsx";
+import App from "./App.tsx";
 import "./index.css";
 
 console.log("main.tsx is executing");
-createRoot(document.getElementById("root")!).render(<TestApp />);
+createRoot(document.getElementById("root")!).render(<App />);

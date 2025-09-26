@@ -4,23 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import CrisisSupport from "./pages/CrisisSupport";
-import PreventionEducation from "./pages/PreventionEducation";
-import CrisisServices from "./pages/CrisisServices";
-import VictimAdvocacy from "./pages/VictimAdvocacy";
-import TraumaRecovery from "./pages/TraumaRecovery";
-import Resources from "./pages/Resources";
-import Impact from "./pages/Impact";
-import Donate from "./pages/Donate";
-import Events from "./pages/Events";
-import Volunteer from "./pages/Volunteer";
-import Blog from "./pages/Blog";
-import Media from "./pages/Media";
-import BoardOfDirectors from "./pages/BoardOfDirectors";
-import Financials from "./pages/Financials";
-import Careers from "./pages/Careers";
-import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -35,23 +18,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/crisis-support" element={<CrisisSupport />} />
-            <Route path="/prevention-education" element={<PreventionEducation />} />
-            <Route path="/crisis-services" element={<CrisisServices />} />
-            <Route path="/victim-advocacy" element={<VictimAdvocacy />} />
-            <Route path="/trauma-recovery" element={<TraumaRecovery />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/impact" element={<Impact />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/volunteer" element={<Volunteer />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/media" element={<Media />} />
-            <Route path="/board-of-directors" element={<BoardOfDirectors />} />
-            <Route path="/financials" element={<Financials />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<div>Page not found</div>} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
