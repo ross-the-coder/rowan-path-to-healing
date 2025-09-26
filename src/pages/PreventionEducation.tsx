@@ -7,7 +7,7 @@ const PreventionEducation = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-secondary to-secondary-dark text-white">
+      <section className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Shield className="h-16 w-16 mx-auto mb-6" />

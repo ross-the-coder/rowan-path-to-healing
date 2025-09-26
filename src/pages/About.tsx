@@ -34,17 +34,22 @@ const About = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            About The Rowan Center
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Preventing trauma. Responding to crisis. Supporting healing.
-          </p>
+      {/* Hero Section */}
+      <section className="py-20 bg-secondary text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <Heart className="h-16 w-16 mx-auto mb-6" />
+            <h1 className="text-5xl font-seasons font-normal mb-6">
+              Who We Are
+            </h1>
+            <p className="text-xl font-roboto font-light text-white/90 mb-8">
+              The Rowan Center exists to prevent sexual violence and other trauma, respond to crisis when harm occurs, and support adult and youth survivors on their path to healing.
+            </p>
+          </div>
         </div>
+      </section>
 
+      <div className="container mx-auto px-4 py-12">
         {/* Mission Section */}
         <section className="mb-16">
           <Card className="border-primary/20">

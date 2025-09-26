@@ -6,7 +6,7 @@ import { Phone, Clock, Shield, Heart } from "lucide-react";
 const CrisisSupport = () => {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-primary to-primary-dark">
+      <div className="min-h-screen bg-primary">
         {/* Hero Section */}
         <section className="py-20 text-white">
           <div className="container mx-auto px-4 text-center">
