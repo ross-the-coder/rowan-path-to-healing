@@ -18,11 +18,11 @@ const CrisisSupport = () => {
               Free, confidential support available 24/7 for survivors of sexual violence and their loved ones.
             </p>
             
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 max-w-md mx-auto mb-8">
+            <Card className="bg-emergency backdrop-blur-sm border-emergency-foreground/20 max-w-md mx-auto mb-8">
               <CardContent className="p-8 text-center">
                 <div className="text-3xl font-seasons font-bold mb-2 text-white">Crisis Helpline</div>
                 <div className="text-4xl font-roboto font-bold mb-2 text-white">(203) 329-2929</div>
-                <div className="text-white/80 font-roboto">Available 24/7, completely confidential</div>
+                <div className="text-white/90 font-roboto">Available 24/7, completely confidential</div>
               </CardContent>
             </Card>
           </div>
