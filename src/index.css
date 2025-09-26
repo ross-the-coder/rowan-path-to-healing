@@ -10,56 +10,58 @@ All colors MUST be HSL for proper theming.
   :root {
     /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
+    --foreground: 208 43% 25%;
 
     /* Card and Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card-foreground: 208 43% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover-foreground: 208 43% 25%;
 
-    /* Primary - Teal (Calming, Trustworthy) */
-    --primary: 180 84% 32%;
+    /* Primary - Deep Blue (Professional, Trustworthy) */
+    --primary: 208 43% 39%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 180 65% 45%;
-    --primary-lighter: 180 45% 85%;
+    --primary-light: 195 47% 54%;
+    --primary-lighter: 195 47% 85%;
 
-    /* Secondary - Navy (Professional, Stable) */
-    --secondary: 220 45% 25%;
+    /* Secondary - Light Blue (Calming, Supportive) */
+    --secondary: 195 47% 54%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 220 35% 40%;
+    --secondary-light: 195 47% 70%;
 
     /* Accent - Purple (Healing, Supportive) */
-    --accent: 270 35% 45%;
+    --accent: 251 34% 52%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 270 25% 65%;
+    --accent-light: 251 34% 75%;
+
+    /* Blue Accent - KidSafeHQ */
+    --blue-accent: 227 42% 42%;
+    --blue-accent-foreground: 0 0% 100%;
+    --blue-accent-light: 227 42% 70%;
 
     /* Supporting Colors */
-    --muted: 180 15% 95%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 208 25% 55%;
 
-    --destructive: 0 75% 55%;
+    --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Crisis/Emergency - Warm, Urgent but not Alarming */
+    /* Crisis/Emergency - Warm Orange */
     --emergency: 15 85% 55%;
     --emergency-foreground: 0 0% 100%;
 
     /* Borders and Inputs */
-    --border: 180 15% 90%;
-    --input: 180 15% 96%;
-    --ring: 180 84% 32%;
+    --border: 210 20% 90%;
+    --input: 210 20% 97%;
+    --ring: 208 43% 39%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Design System Extensions */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-healing: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-lighter)), hsl(var(--background)), hsl(var(--accent-light) / 0.2));
-
-    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);
-    --shadow-card: 0 2px 12px -4px hsl(var(--foreground) / 0.1);
+    /* Clean shadows without gradients */
+    --shadow-soft: 0 2px 16px -4px hsl(var(--primary) / 0.08);
+    --shadow-card: 0 1px 8px -2px hsl(var(--foreground) / 0.06);
+    --shadow-button: 0 1px 4px -1px hsl(var(--primary) / 0.1);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -74,40 +76,44 @@ All colors MUST be HSL for proper theming.
   }
 
   .dark {
-    --background: 220 15% 8%;
+    --background: 208 25% 8%;
     --foreground: 0 0% 95%;
 
-    --card: 220 15% 10%;
+    --card: 208 25% 10%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 220 15% 10%;
+    --popover: 208 25% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 180 65% 45%;
-    --primary-foreground: 220 15% 8%;
-    --primary-light: 180 55% 55%;
-    --primary-lighter: 180 45% 25%;
+    --primary: 195 47% 54%;
+    --primary-foreground: 208 25% 8%;
+    --primary-light: 195 47% 65%;
+    --primary-lighter: 195 47% 25%;
 
-    --secondary: 220 35% 40%;
-    --secondary-foreground: 0 0% 95%;
-    --secondary-light: 220 25% 50%;
+    --secondary: 195 47% 54%;
+    --secondary-foreground: 208 25% 8%;
+    --secondary-light: 195 47% 70%;
 
-    --accent: 270 25% 55%;
-    --accent-foreground: 220 15% 8%;
-    --accent-light: 270 20% 65%;
+    --accent: 251 34% 65%;
+    --accent-foreground: 208 25% 8%;
+    --accent-light: 251 34% 75%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 65%;
+    --blue-accent: 227 42% 55%;
+    --blue-accent-foreground: 208 25% 8%;
+    --blue-accent-light: 227 42% 70%;
 
-    --destructive: 0 65% 45%;
+    --muted: 208 25% 15%;
+    --muted-foreground: 210 15% 65%;
+
+    --destructive: 0 55% 45%;
     --destructive-foreground: 0 0% 95%;
 
     --emergency: 15 75% 50%;
     --emergency-foreground: 0 0% 95%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 18%;
-    --ring: 180 65% 45%;
+    --border: 208 25% 20%;
+    --input: 208 25% 18%;
+    --ring: 195 47% 54%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -126,6 +132,10 @@ All colors MUST be HSL for proper theming.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-roboto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-seasons;
   }
 }

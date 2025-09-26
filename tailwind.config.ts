@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'seasons': ['the-seasons', 'serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -42,6 +46,11 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
           light: "hsl(var(--accent-light))",
+        },
+        "blue-accent": {
+          DEFAULT: "hsl(var(--blue-accent))",
+          foreground: "hsl(var(--blue-accent-foreground))",
+          light: "hsl(var(--blue-accent-light))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

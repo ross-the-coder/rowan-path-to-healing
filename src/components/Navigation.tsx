@@ -25,23 +25,27 @@ const Navigation = () => {
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-primary">
-            The Rowan Center
+          <Link to="/" className="flex items-center gap-3">
+            <img 
+              src="/src/assets/rowan-center-logo.png" 
+              alt="The Rowan Center" 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/prevent" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/prevent" className="text-foreground hover:text-primary transition-colors font-roboto font-medium">
               Prevent
             </Link>
-            <Link to="/respond" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/respond" className="text-foreground hover:text-secondary transition-colors font-roboto font-medium">
               Respond
             </Link>
-            <Link to="/trauma-recovery" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/trauma-recovery" className="text-foreground hover:text-accent transition-colors font-roboto font-medium">
               Trauma Recovery
             </Link>
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-roboto font-medium">
                 About
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
@@ -66,13 +70,13 @@ const Navigation = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link to="/resources" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/resources" className="text-foreground hover:text-primary transition-colors font-roboto font-medium">
               Resources
             </Link>
-            <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-roboto font-medium">
               Contact
             </Link>
-            <Button asChild>
+            <Button asChild className="bg-primary hover:bg-primary/90 shadow-button font-roboto font-medium">
               <Link to="/donate">Donate</Link>
             </Button>
           </div>
