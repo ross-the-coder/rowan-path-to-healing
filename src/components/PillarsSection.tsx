@@ -58,7 +58,7 @@ const PillarsSection = () => {
       </div>
 
       {/* Respond Section */}
-      <div className="bg-color-block-warm text-white py-20">
+      <div className="bg-secondary text-white py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -71,9 +71,9 @@ const PillarsSection = () => {
               <p className="text-xl font-roboto font-light text-white/90 leading-relaxed">
                 24/7 crisis support and immediate assistance when harm occurs. We're here when you need us most.
               </p>
-              <div className="bg-white/10 p-6 rounded-lg">
-                <div className="text-2xl font-seasons font-bold mb-2">Crisis Helpline</div>
-                <div className="text-3xl font-roboto font-bold">(203) 329-2929</div>
+              <div className="bg-white/10 p-6 rounded-lg border border-white/20">
+                <div className="text-2xl font-seasons font-bold mb-2 text-white">Crisis Helpline</div>
+                <div className="text-3xl font-roboto font-bold text-emergency">(203) 329-2929</div>
                 <div className="text-sm text-white/80 mt-2">Available 24/7, completely confidential</div>
               </div>
               <div className="space-y-3">
@@ -93,7 +93,7 @@ const PillarsSection = () => {
                   </li>
                 </ul>
               </div>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-color-block-warm">
+              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-secondary">
                 <Link to="/respond">Get Help Now</Link>
               </Button>
             </div>
