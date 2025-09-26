@@ -49,7 +49,7 @@ const PillarsSection = () => {
                   </li>
                 </ul>
               </div>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild variant="outline" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-primary backdrop-blur-sm">
                 <Link to="/prevent">Learn More About Prevention</Link>
               </Button>
             </div>
@@ -93,7 +93,7 @@ const PillarsSection = () => {
                   </li>
                 </ul>
               </div>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-secondary">
+              <Button asChild variant="outline" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-secondary backdrop-blur-sm">
                 <Link to="/respond">Get Help Now</Link>
               </Button>
             </div>
@@ -150,7 +150,7 @@ const PillarsSection = () => {
                   </li>
                 </ul>
               </div>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-color-block-accent">
+              <Button asChild variant="outline" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-accent backdrop-blur-sm">
                 <Link to="/trauma-recovery">Explore Recovery Services</Link>
               </Button>
             </div>
