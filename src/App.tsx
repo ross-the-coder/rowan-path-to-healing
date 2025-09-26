@@ -24,35 +24,39 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/crisis-support" element={<CrisisSupport />} />
-          <Route path="/prevention-education" element={<PreventionEducation />} />
-          <Route path="/crisis-services" element={<CrisisServices />} />
-          <Route path="/victim-advocacy" element={<VictimAdvocacy />} />
-          <Route path="/trauma-recovery" element={<TraumaRecovery />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/impact" element={<Impact />} />
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/media" element={<Media />} />
-          <Route path="/board-of-directors" element={<BoardOfDirectors />} />
-          <Route path="/financials" element={<Financials />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  console.log("App component is rendering");
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/crisis-support" element={<CrisisSupport />} />
+            <Route path="/prevention-education" element={<PreventionEducation />} />
+            <Route path="/crisis-services" element={<CrisisServices />} />
+            <Route path="/victim-advocacy" element={<VictimAdvocacy />} />
+            <Route path="/trauma-recovery" element={<TraumaRecovery />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/impact" element={<Impact />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/volunteer" element={<Volunteer />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/media" element={<Media />} />
+            <Route path="/board-of-directors" element={<BoardOfDirectors />} />
+            <Route path="/financials" element={<Financials />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

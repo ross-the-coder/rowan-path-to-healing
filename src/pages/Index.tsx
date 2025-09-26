@@ -4,6 +4,8 @@ import INeedSection from "@/components/INeedSection";
 import PillarsSection from "@/components/PillarsSection";
 
 const Index = () => {
+  console.log("Index component rendering");
+  
   return (
     <Layout>
       <HeroSection />

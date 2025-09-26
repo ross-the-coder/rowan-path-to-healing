@@ -47,6 +47,10 @@ export default {
           foreground: "hsl(var(--accent-foreground))",
           light: "hsl(var(--accent-light))",
         },
+        purple: {
+          DEFAULT: "hsl(var(--accent))", // Use accent color as purple fallback
+          light: "hsl(var(--accent-light))",
+        },
         "blue-accent": {
           DEFAULT: "hsl(var(--blue-accent))",
           foreground: "hsl(var(--blue-accent-foreground))",
