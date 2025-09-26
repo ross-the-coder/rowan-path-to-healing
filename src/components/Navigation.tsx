@@ -40,7 +40,7 @@ const Navigation = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-primary text-white shadow-lg">
+      <nav className="bg-secondary text-white shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center">

@@ -17,10 +17,10 @@ const INeedSection = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
+          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-secondary/20">
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
-                <Phone className="h-8 w-8 text-primary" />
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary/20 transition-colors">
+                <Phone className="h-8 w-8 text-secondary" />
               </div>
               <h3 className="text-xl font-seasons font-normal mb-4 text-foreground">
                 To talk to someone right now
@@ -29,7 +29,7 @@ const INeedSection = () => {
                 24/7 crisis helpline for immediate, confidential support
               </p>
               <div className="space-y-4">
-                <div className="text-2xl font-roboto font-bold text-primary">
+                <div className="text-2xl font-roboto font-bold text-secondary">
                   (203) 329-2929
                 </div>
                 <Button asChild size="sm" className="w-full">
@@ -39,10 +39,10 @@ const INeedSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-secondary/20">
+          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary/20 transition-colors">
-                <BookOpen className="h-8 w-8 text-secondary" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+                <BookOpen className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-seasons font-normal mb-4 text-foreground">
                 To learn about options & resources

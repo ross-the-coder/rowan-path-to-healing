@@ -7,14 +7,14 @@ const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Main Hero Content */}
-      <div className="bg-color-block-light text-foreground py-20">
+      <div className="bg-secondary/10 text-foreground py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl md:text-6xl font-seasons font-normal leading-tight">
                 Preventing trauma.{" "}
-                <span className="text-color-block-primary">Responding to crisis.</span>{" "}
-                <span className="text-color-block-accent">Supporting healing.</span>
+                <span className="text-secondary">Responding to crisis.</span>{" "}
+                <span className="text-accent">Supporting healing.</span>
               </h1>
               
               <p className="text-xl text-foreground/80 font-roboto font-light leading-relaxed">
@@ -28,7 +28,7 @@ const HeroSection = () => {
                   <Phone className="mr-2 h-5 w-5" />
                   24/7 Crisis Helpline: (203) 329-2929
                 </Button>
-                <Button variant="outline" size="lg" asChild className="font-roboto font-medium border-color-block-primary text-color-block-primary hover:bg-color-block-primary hover:text-white">
+                <Button variant="outline" size="lg" asChild className="font-roboto font-medium border-secondary text-secondary hover:bg-secondary hover:text-white">
                   <Link to="/contact">
                     <Heart className="mr-2 h-5 w-5" />
                     Get Support
@@ -55,7 +55,7 @@ const HeroSection = () => {
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-color-block-primary text-white py-12">
+      <div className="bg-secondary text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
