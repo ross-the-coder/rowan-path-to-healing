@@ -10,7 +10,7 @@ const PillarsSection = () => {
   return (
     <section className="py-0">
       {/* Prevent Section */}
-      <div className="bg-color-block-secondary text-white py-20">
+      <div className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -49,7 +49,7 @@ const PillarsSection = () => {
                   </li>
                 </ul>
               </div>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-color-block-secondary">
+              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
                 <Link to="/prevent">Learn More About Prevention</Link>
               </Button>
             </div>
