@@ -71,10 +71,10 @@ const PillarsSection = () => {
               <p className="text-xl font-roboto font-light text-white/90 leading-relaxed">
                 24/7 crisis support and immediate assistance when harm occurs. We're here when you need us most.
               </p>
-              <div className="bg-white/10 p-6 rounded-lg border border-white/20">
+              <div className="bg-emergency p-6 rounded-lg border border-emergency-foreground/20">
                 <div className="text-2xl font-seasons font-bold mb-2 text-white">Crisis Helpline</div>
-                <div className="text-3xl font-roboto font-bold text-emergency">(203) 329-2929</div>
-                <div className="text-sm text-white/80 mt-2">Available 24/7, completely confidential</div>
+                <div className="text-3xl font-roboto font-bold text-white">(203) 329-2929</div>
+                <div className="text-sm text-white/90 mt-2">Available 24/7, completely confidential</div>
               </div>
               <div className="space-y-3">
                 <div className="font-roboto font-medium text-white">Crisis response services:</div>
