@@ -24,7 +24,7 @@ const HeroSection = () => {
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-seasons font-normal leading-tight text-white mb-8">
               Preventing trauma.{" "}
-              <span className="text-secondary-light">Responding to crisis.</span>{" "}
+              <span className="text-blue-accent">Responding to crisis.</span>{" "}
               <span className="text-accent-light">Supporting healing.</span>
             </h1>
             
@@ -55,7 +55,7 @@ const HeroSection = () => {
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-secondary text-white py-12">
+      <div className="bg-blue-accent text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
