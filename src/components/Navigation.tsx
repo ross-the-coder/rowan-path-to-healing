@@ -32,10 +32,12 @@ const Navigation = () => {
               <span>Trauma Recovery Clinic</span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <Languages className="h-4 w-4" />
-            <span>Translate</span>
-          </div>
+            <div className="flex items-center gap-2">
+              <a href="/kidsafehq" className="hover:underline">KidSafeHQ</a>
+              <span className="hidden sm:inline">|</span>
+              <Languages className="h-4 w-4" />
+              <span>Translate</span>
+            </div>
         </div>
       </div>
 

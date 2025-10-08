@@ -20,6 +20,7 @@ import Media from "./pages/Media";
 import BoardOfDirectors from "./pages/BoardOfDirectors";
 import Financials from "./pages/Financials";
 import Careers from "./pages/Careers";
+import KidSafeHQ from "./pages/KidSafeHQ";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/board-of-directors" element={<BoardOfDirectors />} />
             <Route path="/financials" element={<Financials />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/kidsafehq" element={<KidSafeHQ />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

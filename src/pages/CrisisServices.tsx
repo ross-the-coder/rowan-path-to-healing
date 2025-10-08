@@ -1,19 +1,196 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Phone, Heart, Users, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CrisisServices = () => {
   return (
     <Layout>
+      {/* Hero Section */}
+      <section className="py-20 bg-secondary text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <Heart className="h-16 w-16 mx-auto mb-6" />
+            <h1 className="text-5xl font-seasons font-normal mb-6">
+              Crisis Counseling
+            </h1>
+            <p className="text-xl font-roboto font-light text-white/90 mb-8">
+              Your healing is your choice. The Rowan Center's crisis services provide free, confidential support for survivors of sexual violence—and for their loved ones.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-seasons font-normal text-center mb-8">Crisis Services & Victim Advocacy</h1>
-        <Card>
-          <CardHeader>
-            <CardTitle>Coming Soon</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>This page is under development.</p>
-          </CardContent>
-        </Card>
+        {/* What We Offer */}
+        <section className="mb-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-seasons font-normal text-center mb-12">What We Offer</h2>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-3">
+                    <Phone className="h-6 w-6 text-secondary mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-seasons text-lg mb-2">24/7 Helpline</h3>
+                      <p className="font-roboto text-muted-foreground">
+                        Immediate, confidential support whenever you need it
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-3">
+                    <Heart className="h-6 w-6 text-secondary mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-seasons text-lg mb-2">Individual Crisis Counseling</h3>
+                      <p className="font-roboto text-muted-foreground">
+                        One-on-one support for ages 10+
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-3">
+                    <Users className="h-6 w-6 text-secondary mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-seasons text-lg mb-2">Support Groups</h3>
+                      <p className="font-roboto text-muted-foreground">
+                        Connect with others on their healing journey
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-3">
+                    <Shield className="h-6 w-6 text-secondary mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-seasons text-lg mb-2">Accompaniment & Advocacy</h3>
+                      <p className="font-roboto text-muted-foreground">
+                        Support for medical-forensic exams, police reports, investigations, and court
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-accent/10 border-accent/20">
+              <CardContent className="p-6">
+                <p className="font-roboto text-center">
+                  <span className="font-medium">Services available in:</span> English, Spanish, and Haitian Creole
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* How to Get Started */}
+        <section className="mb-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-seasons font-normal text-center mb-8">How to Get Started</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-seasons text-xl">Contact Form</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-roboto mb-4">
+                    Share a working email address so we can schedule your first conversation. You may use a first name only if you prefer.
+                  </p>
+                  <div className="bg-muted/50 p-4 rounded-lg text-center">
+                    <p className="font-roboto text-sm text-muted-foreground">
+                      Contact form coming soon
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-seasons text-xl">Prefer Not to Use Email?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-roboto mb-4">
+                    Call our Bilingual/Bicultural Intake Coordinator
+                  </p>
+                  <Button variant="outline" size="lg" className="w-full">
+                    <Phone className="mr-2 h-5 w-5" />
+                    (203) 348-9346
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Crisis Helpline */}
+        <section className="mb-16">
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-emergency text-white border-0">
+              <CardContent className="p-8 text-center">
+                <Phone className="h-12 w-12 mx-auto mb-4" />
+                <h3 className="text-2xl font-seasons font-medium mb-4">Need Help Now?</h3>
+                <p className="text-lg font-roboto mb-6">Call our 24/7 crisis helpline</p>
+                <Button size="lg" variant="outline" className="bg-white text-emergency hover:bg-white/90 border-0">
+                  <Phone className="mr-2 h-5 w-5" />
+                  (203) 329-2929
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Additional Services */}
+        <section>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-seasons font-normal text-center mb-8">
+              Interested in Other Services?
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="font-seasons">Support Groups</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-roboto mb-4">
+                    Connect with others in a safe, supportive environment
+                  </p>
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link to="/crisis-support">Learn More</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="font-seasons">Long-term Therapy at the Trauma Recovery Clinic</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-roboto mb-4">
+                    Specialized trauma-informed care for adults on HUSKY insurance
+                  </p>
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link to="/trauma-recovery">Learn More</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
       </div>
     </Layout>
   );
