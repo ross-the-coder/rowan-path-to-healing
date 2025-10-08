@@ -152,7 +152,7 @@ export const CrisisCounselingIntakeForm = ({ language = "en" }: CrisisCounseling
   };
 
   return (
-    <Card className="max-w-3xl mx-auto">
+    <Card className="max-w-3xl mx-auto bg-secondary/5 border-secondary/20">
       <CardHeader>
         <div className="flex justify-end mb-4">
           <Select value={currentLang} onValueChange={(value: "en" | "es") => setCurrentLang(value)}>
@@ -173,14 +173,14 @@ export const CrisisCounselingIntakeForm = ({ language = "en" }: CrisisCounseling
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">{t.firstName} *</Label>
-              <Input id="firstName" {...form.register("firstName")} />
+              <Input id="firstName" {...form.register("firstName")} className="bg-white border-input" />
               {form.formState.errors.firstName && (
                 <p className="text-sm text-destructive">{form.formState.errors.firstName.message}</p>
               )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName">{t.lastName} *</Label>
-              <Input id="lastName" {...form.register("lastName")} />
+              <Input id="lastName" {...form.register("lastName")} className="bg-white border-input" />
               {form.formState.errors.lastName && (
                 <p className="text-sm text-destructive">{form.formState.errors.lastName.message}</p>
               )}
@@ -190,14 +190,14 @@ export const CrisisCounselingIntakeForm = ({ language = "en" }: CrisisCounseling
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="email">{t.email} *</Label>
-              <Input id="email" type="email" {...form.register("email")} />
+              <Input id="email" type="email" {...form.register("email")} className="bg-white border-input" />
               {form.formState.errors.email && (
                 <p className="text-sm text-destructive">{form.formState.errors.email.message}</p>
               )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="phone">{t.phone} *</Label>
-              <Input id="phone" type="tel" {...form.register("phone")} />
+              <Input id="phone" type="tel" {...form.register("phone")} className="bg-white border-input" />
               {form.formState.errors.phone && (
                 <p className="text-sm text-destructive">{form.formState.errors.phone.message}</p>
               )}
@@ -207,7 +207,7 @@ export const CrisisCounselingIntakeForm = ({ language = "en" }: CrisisCounseling
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="town">{t.town} *</Label>
-              <Input id="town" {...form.register("town")} />
+              <Input id="town" {...form.register("town")} className="bg-white border-input" />
               {form.formState.errors.town && (
                 <p className="text-sm text-destructive">{form.formState.errors.town.message}</p>
               )}
@@ -257,6 +257,7 @@ export const CrisisCounselingIntakeForm = ({ language = "en" }: CrisisCounseling
               id="requestDescription"
               rows={4}
               {...form.register("requestDescription")}
+              className="bg-white border-input"
             />
             {form.formState.errors.requestDescription && (
               <p className="text-sm text-destructive">{form.formState.errors.requestDescription.message}</p>
@@ -289,20 +290,20 @@ export const CrisisCounselingIntakeForm = ({ language = "en" }: CrisisCounseling
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="referrerName">{t.referrerName}</Label>
-                  <Input id="referrerName" {...form.register("referrerName")} />
+                  <Input id="referrerName" {...form.register("referrerName")} className="bg-white border-input" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="referrerPhone">{t.referrerPhone}</Label>
-                  <Input id="referrerPhone" type="tel" {...form.register("referrerPhone")} />
+                  <Input id="referrerPhone" type="tel" {...form.register("referrerPhone")} className="bg-white border-input" />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="referrerEmail">{t.referrerEmail}</Label>
-                <Input id="referrerEmail" type="email" {...form.register("referrerEmail")} />
+                <Input id="referrerEmail" type="email" {...form.register("referrerEmail")} className="bg-white border-input" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="referrerOrg">{t.referrerOrg}</Label>
-                <Input id="referrerOrg" {...form.register("referrerOrg")} />
+                <Input id="referrerOrg" {...form.register("referrerOrg")} className="bg-white border-input" />
               </div>
             </div>
           )}
