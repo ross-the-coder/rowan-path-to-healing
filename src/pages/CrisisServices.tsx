@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Heart, Users, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroCrisisImage from "@/assets/hero-crisis-services.jpg";
+import { CrisisCounselingIntakeForm } from "@/components/CrisisCounselingIntakeForm";
 
 const CrisisServices = () => {
   return (
@@ -111,32 +112,16 @@ const CrisisServices = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-seasons font-normal text-center mb-8">How to Get Started</h2>
             
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="font-seasons text-xl">Contact Form</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-roboto mb-4">
-                    Share a working email address so we can schedule your first conversation. You may use a first name only if you prefer.
-                  </p>
-                  <div className="bg-muted/50 p-4 rounded-lg text-center">
-                    <p className="font-roboto text-sm text-muted-foreground">
-                      Contact form coming soon
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+            <CrisisCounselingIntakeForm />
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="font-seasons text-xl">Prefer Not to Use Email?</CardTitle>
-                </CardHeader>
-                <CardContent>
+            <div className="mt-8 text-center">
+              <Card className="bg-muted/30">
+                <CardContent className="p-6">
+                  <CardTitle className="font-seasons text-xl mb-3">Prefer Not to Use Email?</CardTitle>
                   <p className="font-roboto mb-4">
                     Call our Bilingual/Bicultural Intake Coordinator
                   </p>
-                  <Button variant="outline" size="lg" className="w-full">
+                  <Button variant="outline" size="lg">
                     <Phone className="mr-2 h-5 w-5" />
                     (203) 348-9346
                   </Button>

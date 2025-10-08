@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Stethoscope, Heart, Users, Clock, Shield, CheckCircle } from "lucide-react";
+import { TraumaRecoveryIntakeForm } from "@/components/TraumaRecoveryIntakeForm";
 
 const TraumaRecovery = () => {
   return (
@@ -122,7 +123,7 @@ const TraumaRecovery = () => {
           </div>
 
           {/* Intake Process */}
-          <div className="bg-accent-light/10 rounded-lg p-8 mb-12">
+          <div className="mb-12">
             <h2 className="text-2xl font-bold text-center text-foreground mb-6">Getting Started</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="text-center">
@@ -147,11 +148,8 @@ const TraumaRecovery = () => {
                 <p className="text-sm text-muted-foreground">Start your healing journey with a therapist matched to your needs</p>
               </div>
             </div>
-            <div className="text-center">
-              <Button size="lg" className="bg-accent hover:bg-accent/90">
-                Complete Trauma Recovery Intake Form
-              </Button>
-            </div>
+            
+            <TraumaRecoveryIntakeForm />
           </div>
 
           {/* Support Information */}
