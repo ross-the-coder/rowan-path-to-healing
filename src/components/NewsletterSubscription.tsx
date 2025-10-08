@@ -78,7 +78,7 @@ export const NewsletterSubscription = () => {
         </div>
         
         <div className="flex-1 text-center md:text-left">
-          <h3 className="text-2xl font-seasons font-normal mb-1">
+          <h3 className="text-2xl font-seasons font-normal mb-1 text-foreground">
             Subscribe for Updates & News Alerts
           </h3>
           <p className="text-sm font-roboto text-muted-foreground">
