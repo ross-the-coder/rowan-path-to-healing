@@ -24,7 +24,7 @@ const HeroSection = () => {
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-seasons font-normal leading-tight text-white mb-8">
               Preventing trauma.{" "}
-              <span className="text-secondary-light">Responding to crisis.</span>{" "}
+              <span className="text-blue-accent-light">Responding to crisis.</span>{" "}
               <span className="text-accent-light">Supporting healing.</span>
             </h1>
             
