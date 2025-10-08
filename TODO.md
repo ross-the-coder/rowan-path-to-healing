@@ -9,11 +9,14 @@ Based on The_Rowan_Center_Website_1-3.pdf
 - [x] Photography throughout the site
 - [x] Design system with brand colors
 - [x] Form styling with colored backgrounds
-
-## 🚧 In Progress
-- [ ] **1. Victim Advocacy Page - Intake Form**
+- [x] **1. Victim Advocacy Page - Intake Form** ✅
   - Same contact form format as Crisis Counseling (pages 7-8 of PDF)
   - Fields: First name, Last name, Email, Phone, Town, Preferred Language, Voicemail permission, Request description, Client/Referrer selection
+  - Bilingual support (English/Spanish)
+  - Database storage in victim_advocacy_intake table
+
+## 🚧 In Progress
+- [ ] **2. Volunteer Application Form** (pages 9-10)
 
 ## ⏳ To Do
 

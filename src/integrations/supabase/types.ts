@@ -134,6 +134,63 @@ export type Database = {
         }
         Relationships: []
       }
+      victim_advocacy_intake: {
+        Row: {
+          created_at: string
+          email: string
+          first_name: string
+          form_language: string
+          id: string
+          is_client: boolean
+          last_name: string
+          phone: string
+          preferred_language: string
+          referrer_email: string | null
+          referrer_name: string | null
+          referrer_organization: string | null
+          referrer_phone: string | null
+          request_description: string
+          town_of_residence: string
+          voicemail_permission: boolean
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          first_name: string
+          form_language?: string
+          id?: string
+          is_client?: boolean
+          last_name: string
+          phone: string
+          preferred_language: string
+          referrer_email?: string | null
+          referrer_name?: string | null
+          referrer_organization?: string | null
+          referrer_phone?: string | null
+          request_description: string
+          town_of_residence: string
+          voicemail_permission?: boolean
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          first_name?: string
+          form_language?: string
+          id?: string
+          is_client?: boolean
+          last_name?: string
+          phone?: string
+          preferred_language?: string
+          referrer_email?: string | null
+          referrer_name?: string | null
+          referrer_organization?: string | null
+          referrer_phone?: string | null
+          request_description?: string
+          town_of_residence?: string
+          voicemail_permission?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

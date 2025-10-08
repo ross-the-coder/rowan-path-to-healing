@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Shield, Heart } from "lucide-react";
+import { VictimAdvocacyIntakeForm } from "@/components/VictimAdvocacyIntakeForm";
 
 const VictimAdvocacy = () => {
   return (
@@ -95,24 +96,17 @@ const VictimAdvocacy = () => {
         {/* Contact Form Section */}
         <section>
           <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl font-seasons text-center">Request Advocacy Services</CardTitle>
-                <p className="text-center font-roboto text-muted-foreground">
-                  Share a working email address so we can schedule your first conversation. You may use a first name only if you prefer.
-                </p>
-                <p className="text-center font-roboto text-sm text-muted-foreground mt-2">
-                  Prefer not to use email? Call our Bilingual/Bicultural Intake Coordinator at (203) 348-9346
-                </p>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-muted/50 p-6 rounded-lg text-center">
+            <VictimAdvocacyIntakeForm />
+            
+            <div className="mt-8 text-center">
+              <Card className="bg-muted/30">
+                <CardContent className="p-6">
                   <p className="font-roboto text-muted-foreground">
-                    Contact form coming soon. Please call the numbers above to connect with our advocacy team.
+                    Prefer not to use email? Call our Bilingual/Bicultural Intake Coordinator at <span className="font-medium">(203) 348-9346</span>
                   </p>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
       </div>
