@@ -14,24 +14,21 @@ Based on The_Rowan_Center_Website_1-3.pdf
   - Fields: First name, Last name, Email, Phone, Town, Preferred Language, Voicemail permission, Request description, Client/Referrer selection
   - Bilingual support (English/Spanish)
   - Database storage in victim_advocacy_intake table
+- [x] **2. Volunteer Application Form** ✅
+  - Comprehensive form with resume upload to Supabase Storage (volunteer-resumes bucket)
+  - Personal info fields: First name, Last name, Email, Phone, Address, Age
+  - Background fields: Educational background, Current occupation, Previous volunteer experience, Hobbies
+  - Essay questions: How heard, Why interested, Perception shaped, Best skills, Difficulties, Additional comments
+  - Bilingual support (English/Spanish)
+  - Database storage in volunteer_applications table
+  - Volunteer FAQ section already on page
 
 ## 🚧 In Progress
-- [ ] **2. Volunteer Application Form** (pages 9-10)
+- [ ] **3. Student Advisory Board Application** (page 11)
+  - Simple application form for high school students
+  - Requirements section (already on page, needs application form)
 
 ## ⏳ To Do
-
-### **2. Volunteer Application Form** (pages 9-10)
-- [ ] Comprehensive volunteer application with:
-  - Resume upload field
-  - Educational background
-  - Current occupation
-  - Previous volunteer experience
-  - Essay questions about motivations and skills
-- [ ] Volunteer FAQ section
-
-### **3. Student Advisory Board Application** (page 11)
-- [ ] Simple application form for high school students
-- [ ] Requirements section (already on page, needs application form)
 
 ### **4. Prevention Education - Contact Form** (page 2)
 - [ ] "Questions or scheduling? Use the contact form at the bottom of this page"

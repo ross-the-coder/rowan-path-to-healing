@@ -191,6 +191,75 @@ export type Database = {
         }
         Relationships: []
       }
+      volunteer_applications: {
+        Row: {
+          additional_comments: string | null
+          address: string
+          age: number
+          best_skills: string
+          created_at: string
+          current_occupation: string
+          difficulties: string
+          educational_background: string
+          email: string
+          first_name: string
+          form_language: string
+          hobbies_and_interests: string
+          how_did_you_hear: string
+          id: string
+          last_name: string
+          perception_shaped: string
+          phone: string
+          previous_volunteer_experience: string
+          resume_url: string | null
+          why_interested: string
+        }
+        Insert: {
+          additional_comments?: string | null
+          address: string
+          age: number
+          best_skills: string
+          created_at?: string
+          current_occupation: string
+          difficulties: string
+          educational_background: string
+          email: string
+          first_name: string
+          form_language?: string
+          hobbies_and_interests: string
+          how_did_you_hear: string
+          id?: string
+          last_name: string
+          perception_shaped: string
+          phone: string
+          previous_volunteer_experience: string
+          resume_url?: string | null
+          why_interested: string
+        }
+        Update: {
+          additional_comments?: string | null
+          address?: string
+          age?: number
+          best_skills?: string
+          created_at?: string
+          current_occupation?: string
+          difficulties?: string
+          educational_background?: string
+          email?: string
+          first_name?: string
+          form_language?: string
+          hobbies_and_interests?: string
+          how_did_you_hear?: string
+          id?: string
+          last_name?: string
+          perception_shaped?: string
+          phone?: string
+          previous_volunteer_experience?: string
+          resume_url?: string | null
+          why_interested?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

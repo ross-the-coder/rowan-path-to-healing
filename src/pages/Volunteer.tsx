@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Users, Clock, BookOpen, Heart } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { VolunteerApplicationForm } from "@/components/VolunteerApplicationForm";
 
 const Volunteer = () => {
   return (
@@ -185,38 +186,23 @@ const Volunteer = () => {
         </section>
 
         {/* Apply Section */}
-        <section>
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl font-seasons text-center">Apply to Volunteer</CardTitle>
-                <CardDescription className="text-center">
-                  For information regarding training sessions and to apply, please contact:
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-secondary/10 p-8 rounded-lg text-center mb-6">
-                  <p className="font-roboto text-lg mb-2">
-                    <span className="font-medium">Raquel Lopez</span>
-                  </p>
-                  <p className="font-roboto text-muted-foreground mb-2">
-                    Crisis Advocate Programs Administrator
-                  </p>
-                  <Button variant="outline" size="lg" asChild className="mt-4">
-                    <a href="mailto:rlopez@therowancenter.org">
-                      Contact Raquel Lopez
-                    </a>
-                  </Button>
-                </div>
-                
-                <div className="bg-muted/50 p-6 rounded-lg text-center">
-                  <p className="font-roboto text-sm text-muted-foreground">
-                    Application form will be available soon
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+        <section className="mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl font-seasons font-normal mb-4">Apply to Volunteer</h2>
+            <p className="font-roboto text-muted-foreground mb-2">
+              For information regarding training sessions, please contact:
+            </p>
+            <p className="font-roboto text-lg">
+              <span className="font-medium">Raquel Lopez</span>, Crisis Advocate Programs Administrator
+            </p>
+            <p className="font-roboto">
+              <a href="mailto:rlopez@therowancenter.org" className="text-secondary hover:underline">
+                rlopez@therowancenter.org
+              </a>
+            </p>
           </div>
+          
+          <VolunteerApplicationForm />
         </section>
       </div>
     </Layout>
