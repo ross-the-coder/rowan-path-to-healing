@@ -19,26 +19,26 @@ All colors MUST be HSL for proper theming.
     --popover: 0 0% 100%;
     --popover-foreground: 208 43% 25%;
 
-    /* Primary - Deep Blue (Professional, Trustworthy) */
-    --primary: 208 43% 39%;
+    /* Primary - Deep Blue (Professional, Trustworthy) #386A8E */
+    --primary: 203 43% 39%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 195 47% 54%;
-    --primary-lighter: 195 47% 85%;
+    --primary-light: 203 43% 54%;
+    --primary-lighter: 203 43% 85%;
 
-    /* Secondary - Light Blue (Calming, Supportive) */
-    --secondary: 195 47% 54%;
+    /* Secondary - Light Blue (Calming, Supportive) #4CA9C4 */
+    --secondary: 194 48% 53%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 195 47% 70%;
+    --secondary-light: 194 48% 70%;
 
     /* Accent - Purple (Healing, Supportive) - Trauma Recovery Clinic #7464A2 */
-    --accent: 256 24% 51%;
+    --accent: 255 24% 51%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 256 24% 75%;
+    --accent-light: 255 24% 75%;
 
     /* Blue Accent - KidSafeHQ #3E5A97 */
-    --blue-accent: 222 42% 42%;
+    --blue-accent: 221 42% 42%;
     --blue-accent-foreground: 0 0% 100%;
-    --blue-accent-light: 222 42% 70%;
+    --blue-accent-light: 221 42% 70%;
 
     /* Supporting Colors */
     --muted: 210 20% 96%;
@@ -52,11 +52,11 @@ All colors MUST be HSL for proper theming.
     --emergency-foreground: 0 0% 100%;
 
     /* Color Block Backgrounds */
-    --color-block-primary: 208 43% 39%;
-    --color-block-secondary: 195 47% 54%;
-    --color-block-accent: 256 24% 51%;
-    --color-block-blue: 222 42% 42%;
-    --color-block-light: 195 47% 85%;
+    --color-block-primary: 203 43% 39%;
+    --color-block-secondary: 194 48% 53%;
+    --color-block-accent: 255 24% 51%;
+    --color-block-blue: 221 42% 42%;
+    --color-block-light: 194 48% 85%;
     --color-block-warm: 15 85% 55%;
 
     /* Borders and Inputs */
@@ -93,22 +93,22 @@ All colors MUST be HSL for proper theming.
     --popover: 208 25% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 195 47% 54%;
-    --primary-foreground: 208 25% 8%;
-    --primary-light: 195 47% 65%;
-    --primary-lighter: 195 47% 25%;
+    --primary: 194 48% 53%;
+    --primary-foreground: 203 43% 8%;
+    --primary-light: 194 48% 65%;
+    --primary-lighter: 194 48% 25%;
 
-    --secondary: 195 47% 54%;
-    --secondary-foreground: 208 25% 8%;
-    --secondary-light: 195 47% 70%;
+    --secondary: 194 48% 53%;
+    --secondary-foreground: 203 43% 8%;
+    --secondary-light: 194 48% 70%;
 
-    --accent: 256 24% 65%;
-    --accent-foreground: 208 25% 8%;
-    --accent-light: 256 24% 75%;
+    --accent: 255 24% 65%;
+    --accent-foreground: 203 43% 8%;
+    --accent-light: 255 24% 75%;
 
-    --blue-accent: 222 42% 55%;
-    --blue-accent-foreground: 208 25% 8%;
-    --blue-accent-light: 222 42% 70%;
+    --blue-accent: 221 42% 55%;
+    --blue-accent-foreground: 203 43% 8%;
+    --blue-accent-light: 221 42% 70%;
 
     --muted: 208 25% 15%;
     --muted-foreground: 210 15% 65%;
@@ -124,11 +124,11 @@ All colors MUST be HSL for proper theming.
     --ring: 195 47% 54%;
 
     /* Dark Mode Color Blocks */
-    --color-block-primary: 195 47% 54%;
-    --color-block-secondary: 195 47% 70%;
-    --color-block-accent: 256 24% 65%;
-    --color-block-blue: 222 42% 55%;
-    --color-block-light: 195 47% 25%;
+    --color-block-primary: 194 48% 53%;
+    --color-block-secondary: 194 48% 70%;
+    --color-block-accent: 255 24% 65%;
+    --color-block-blue: 221 42% 55%;
+    --color-block-light: 194 48% 25%;
     --color-block-warm: 15 75% 50%;
 
     --sidebar-background: 240 5.9% 10%;
