@@ -1,11 +1,97 @@
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield, BookOpen, AlertCircle, ExternalLink } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Shield, AlertCircle, ExternalLink, Search } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
 
 const KidSafeHQ = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const resources = {
+    elementary: [
+      {
+        title: "Body Safety & Boundaries",
+        description: "Teaching children about body autonomy, appropriate touch, and how to speak up when something doesn't feel right.",
+        topics: ["boundaries", "body safety", "consent", "prevention"]
+      },
+      {
+        title: "Online Safety Basics",
+        description: "Introduction to internet safety, protecting personal information, and recognizing unsafe online interactions.",
+        topics: ["online safety", "internet", "privacy", "cyberbullying"]
+      },
+      {
+        title: "Trusted Adults",
+        description: "Helping children identify safe adults they can talk to when they need help or feel uncomfortable.",
+        topics: ["support", "communication", "trust", "reporting"]
+      }
+    ],
+    middle: [
+      {
+        title: "Digital Citizenship",
+        description: "Understanding social media risks, cyberbullying, and responsible online behavior.",
+        topics: ["social media", "cyberbullying", "digital literacy", "online safety"]
+      },
+      {
+        title: "Consent & Boundaries",
+        description: "Age-appropriate discussions about consent, personal boundaries, and healthy relationships.",
+        topics: ["consent", "boundaries", "relationships", "communication"]
+      },
+      {
+        title: "Recognizing Manipulation",
+        description: "Teaching youth to identify grooming behaviors and coercive tactics used by predators.",
+        topics: ["grooming", "manipulation", "warning signs", "prevention"]
+      }
+    ],
+    high: [
+      {
+        title: "Healthy Relationships",
+        description: "Understanding consent, recognizing warning signs of unhealthy relationships, and knowing where to get help.",
+        topics: ["relationships", "consent", "dating violence", "red flags"]
+      },
+      {
+        title: "College Preparation",
+        description: "Resources about Title IX, campus safety, and bystander intervention.",
+        topics: ["Title IX", "college", "bystander intervention", "campus safety"]
+      },
+      {
+        title: "Digital Safety & Sexting",
+        description: "Understanding the legal and personal consequences of sharing intimate images, and how to protect yourself online.",
+        topics: ["sexting", "privacy", "legal consequences", "online safety"]
+      }
+    ],
+    college: [
+      {
+        title: "Campus Safety",
+        description: "Know your rights under Title IX, reporting options, and campus resources.",
+        topics: ["Title IX", "reporting", "campus resources", "rights"]
+      },
+      {
+        title: "Support Services",
+        description: "Connecting with counseling, advocacy, and recovery resources on and off campus.",
+        topics: ["counseling", "advocacy", "support", "recovery"]
+      },
+      {
+        title: "Bystander Intervention",
+        description: "Learn how to safely intervene when you witness concerning situations and support survivors.",
+        topics: ["bystander", "intervention", "prevention", "community"]
+      }
+    ]
+  };
+
+  const filterResources = (resourceList: typeof resources.elementary) => {
+    if (!searchQuery) return resourceList;
+    
+    const query = searchQuery.toLowerCase();
+    return resourceList.filter(resource => 
+      resource.title.toLowerCase().includes(query) ||
+      resource.description.toLowerCase().includes(query) ||
+      resource.topics.some(topic => topic.toLowerCase().includes(query))
+    );
+  };
   const monitoringTools = [
     {
       name: "Aura Kids",
@@ -42,6 +128,27 @@ const KidSafeHQ = () => {
       </section>
 
       <div className="container mx-auto px-4 py-16">
+        {/* Search Section */}
+        <section className="mb-12">
+          <div className="max-w-2xl mx-auto">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search resources by topic (e.g., consent, cyberbullying, boundaries)..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 h-12 text-base"
+              />
+            </div>
+            {searchQuery && (
+              <p className="text-sm text-muted-foreground mt-2 text-center">
+                Searching for: <span className="font-medium">"{searchQuery}"</span>
+              </p>
+            )}
+          </div>
+        </section>
+
         {/* Resources by Age */}
         <section className="mb-16">
           <div className="max-w-5xl mx-auto">
@@ -56,103 +163,131 @@ const KidSafeHQ = () => {
               </TabsList>
               
               <TabsContent value="elementary" className="space-y-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="font-seasons">Elementary School Resources</CardTitle>
-                    <CardDescription>Age-appropriate safety resources for grades K-5</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <h3 className="font-seasons text-lg mb-2">Body Safety & Boundaries</h3>
+                {filterResources(resources.elementary).length > 0 ? (
+                  filterResources(resources.elementary).map((resource, index) => (
+                    <Card key={index}>
+                      <CardHeader>
+                        <CardTitle className="font-seasons text-lg">{resource.title}</CardTitle>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {resource.topics.map((topic, i) => (
+                            <Badge key={i} variant="secondary" className="text-xs">
+                              {topic}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardHeader>
+                      <CardContent>
                         <p className="font-roboto text-muted-foreground">
-                          Teaching children about body autonomy, appropriate touch, and how to speak up when something doesn't feel right.
+                          {resource.description}
                         </p>
-                      </div>
-                      <div>
-                        <h3 className="font-seasons text-lg mb-2">Online Safety Basics</h3>
-                        <p className="font-roboto text-muted-foreground">
-                          Introduction to internet safety, protecting personal information, and recognizing unsafe online interactions.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      </CardContent>
+                    </Card>
+                  ))
+                ) : (
+                  <Card>
+                    <CardContent className="py-8 text-center">
+                      <p className="font-roboto text-muted-foreground">
+                        No resources found matching "{searchQuery}". Try different keywords.
+                      </p>
+                    </CardContent>
+                  </Card>
+                )}
               </TabsContent>
               
               <TabsContent value="middle" className="space-y-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="font-seasons">Middle School Resources</CardTitle>
-                    <CardDescription>Safety resources for grades 6-8</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <h3 className="font-seasons text-lg mb-2">Digital Citizenship</h3>
+                {filterResources(resources.middle).length > 0 ? (
+                  filterResources(resources.middle).map((resource, index) => (
+                    <Card key={index}>
+                      <CardHeader>
+                        <CardTitle className="font-seasons text-lg">{resource.title}</CardTitle>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {resource.topics.map((topic, i) => (
+                            <Badge key={i} variant="secondary" className="text-xs">
+                              {topic}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardHeader>
+                      <CardContent>
                         <p className="font-roboto text-muted-foreground">
-                          Understanding social media risks, cyberbullying, and responsible online behavior.
+                          {resource.description}
                         </p>
-                      </div>
-                      <div>
-                        <h3 className="font-seasons text-lg mb-2">Consent & Boundaries</h3>
-                        <p className="font-roboto text-muted-foreground">
-                          Age-appropriate discussions about consent, personal boundaries, and healthy relationships.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      </CardContent>
+                    </Card>
+                  ))
+                ) : (
+                  <Card>
+                    <CardContent className="py-8 text-center">
+                      <p className="font-roboto text-muted-foreground">
+                        No resources found matching "{searchQuery}". Try different keywords.
+                      </p>
+                    </CardContent>
+                  </Card>
+                )}
               </TabsContent>
               
               <TabsContent value="high" className="space-y-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="font-seasons">High School Resources</CardTitle>
-                    <CardDescription>Safety resources for grades 9-12</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <h3 className="font-seasons text-lg mb-2">Healthy Relationships</h3>
+                {filterResources(resources.high).length > 0 ? (
+                  filterResources(resources.high).map((resource, index) => (
+                    <Card key={index}>
+                      <CardHeader>
+                        <CardTitle className="font-seasons text-lg">{resource.title}</CardTitle>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {resource.topics.map((topic, i) => (
+                            <Badge key={i} variant="secondary" className="text-xs">
+                              {topic}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardHeader>
+                      <CardContent>
                         <p className="font-roboto text-muted-foreground">
-                          Understanding consent, recognizing warning signs of unhealthy relationships, and knowing where to get help.
+                          {resource.description}
                         </p>
-                      </div>
-                      <div>
-                        <h3 className="font-seasons text-lg mb-2">College Preparation</h3>
-                        <p className="font-roboto text-muted-foreground">
-                          Resources about Title IX, campus safety, and bystander intervention.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      </CardContent>
+                    </Card>
+                  ))
+                ) : (
+                  <Card>
+                    <CardContent className="py-8 text-center">
+                      <p className="font-roboto text-muted-foreground">
+                        No resources found matching "{searchQuery}". Try different keywords.
+                      </p>
+                    </CardContent>
+                  </Card>
+                )}
               </TabsContent>
               
               <TabsContent value="college" className="space-y-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="font-seasons">College Resources</CardTitle>
-                    <CardDescription>Resources for college students and young adults</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <h3 className="font-seasons text-lg mb-2">Campus Safety</h3>
+                {filterResources(resources.college).length > 0 ? (
+                  filterResources(resources.college).map((resource, index) => (
+                    <Card key={index}>
+                      <CardHeader>
+                        <CardTitle className="font-seasons text-lg">{resource.title}</CardTitle>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {resource.topics.map((topic, i) => (
+                            <Badge key={i} variant="secondary" className="text-xs">
+                              {topic}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardHeader>
+                      <CardContent>
                         <p className="font-roboto text-muted-foreground">
-                          Know your rights under Title IX, reporting options, and campus resources.
+                          {resource.description}
                         </p>
-                      </div>
-                      <div>
-                        <h3 className="font-seasons text-lg mb-2">Support Services</h3>
-                        <p className="font-roboto text-muted-foreground">
-                          Connecting with counseling, advocacy, and recovery resources on and off campus.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      </CardContent>
+                    </Card>
+                  ))
+                ) : (
+                  <Card>
+                    <CardContent className="py-8 text-center">
+                      <p className="font-roboto text-muted-foreground">
+                        No resources found matching "{searchQuery}". Try different keywords.
+                      </p>
+                    </CardContent>
+                  </Card>
+                )}
               </TabsContent>
             </Tabs>
           </div>
@@ -217,6 +352,33 @@ const KidSafeHQ = () => {
                 </AccordionTrigger>
                 <AccordionContent className="font-roboto text-base">
                   Screen time recommendations vary by age. Focus on balancing screen time with other activities, ensuring online content is age-appropriate, and having regular conversations about what they're doing online. Quality matters as much as quantity.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="font-seasons text-lg">
+                  What should I do if my child tells me about abuse?
+                </AccordionTrigger>
+                <AccordionContent className="font-roboto text-base">
+                  Stay calm and listen without judgment. Believe your child and thank them for sharing. Don't ask leading questions or interrogate them. Reassure them it's not their fault and that you're there to help. Contact The Rowan Center or law enforcement for guidance on next steps. We're here 24/7 at (203) 348-9346.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5">
+                <AccordionTrigger className="font-seasons text-lg">
+                  How can I tell if an app or game is safe for my child?
+                </AccordionTrigger>
+                <AccordionContent className="font-roboto text-base">
+                  Check the app's age rating, read reviews from other parents, review privacy settings, and test the app yourself. Look for features like in-app purchases, chat capabilities, and content sharing. Use parental controls and monitoring tools to stay informed about your child's online activities.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6">
+                <AccordionTrigger className="font-seasons text-lg">
+                  What is grooming and how can I protect my child?
+                </AccordionTrigger>
+                <AccordionContent className="font-roboto text-base">
+                  Grooming is when someone builds a relationship with a child to gain their trust for the purpose of abuse. Red flags include adults seeking alone time with your child, giving excessive gifts or special attention, or asking them to keep secrets. Teach your child about appropriate boundaries, encourage open communication, and monitor their online and offline relationships.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

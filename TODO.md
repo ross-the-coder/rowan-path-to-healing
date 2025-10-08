@@ -38,16 +38,16 @@ Based on The_Rowan_Center_Website_1-3.pdf
   - Bilingual support (English/Spanish)
   - Database storage in prevention_education_contact table
 
+- [x] **5. KidSafeHQ Page Enhancements** ✅
+  - Resources organized by age (Elementary, Middle, High, College)
+  - Monitoring Tools section (Aura Kids, Qustodio, Bark)
+  - Searchable by topics with topic tags/badges
+  - Tips & Help section
+  - FAQs (6 questions)
+
 ## 🚧 In Progress
 
 ## ⏳ To Do
-
-### **5. KidSafeHQ Page Enhancements** (pages 5-6)
-- [ ] Resources organized by age (Elementary, Middle, High, College)
-- [ ] Monitoring Tools section (Aura Kids, Qustodio, Bark)
-- [ ] Searchable by topics
-- [ ] Tips & Help section
-- [ ] FAQs
 
 ### **6. Newsletter Subscription** (page 11)
 - [ ] "Subscribe for Updates & News Alerts" form
