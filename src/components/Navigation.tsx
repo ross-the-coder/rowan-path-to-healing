@@ -2,21 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Phone, Menu, X, Languages } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import logoImage from "@/assets/rowan-center-logo.png";
-
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  return (
-    <header className="sticky top-0 z-50">
+  return <header className="sticky top-0 z-50">
       {/* Crisis Banner */}
       <div className="bg-emergency text-white py-2 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-sm font-roboto">
@@ -27,9 +17,9 @@ const Navigation = () => {
             </div>
             <span className="hidden sm:inline">|</span>
             <div className="flex items-center gap-2">
-              <span>KidSafeHQ</span>
+              
               <span className="hidden sm:inline">|</span>
-              <span>Trauma Recovery Clinic</span>
+              
             </div>
           </div>
             <div className="flex items-center gap-2">
@@ -46,11 +36,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center">
-              <img 
-                src={logoImage} 
-                alt="The Rowan Center" 
-                className="h-10 w-auto filter brightness-0 invert"
-              />
+              <img src={logoImage} alt="The Rowan Center" className="h-10 w-auto filter brightness-0 invert" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -64,10 +50,7 @@ const Navigation = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[450px]">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/crisis-support"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/crisis-support" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Talk to Someone Right Now</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               24/7 crisis helpline and immediate support
@@ -75,10 +58,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/resources"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/resources" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Options & Resources</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Browse our resource library and support options
@@ -86,10 +66,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/trauma-recovery"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/trauma-recovery" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Long-term Therapy</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Trauma Recovery Clinic services
@@ -107,10 +84,7 @@ const Navigation = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px]">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/about"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/about" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Mission & Vision</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Our story, mission, and values
@@ -118,10 +92,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/impact"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/impact" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Our Impact</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               See how we're making a difference
@@ -129,10 +100,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/financials"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/financials" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Financials</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Annual reports and transparency
@@ -140,10 +108,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/board-of-directors"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/board-of-directors" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Our Team</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Staff, board, and advisory council
@@ -151,10 +116,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/careers"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/careers" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Careers & Internships</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Join our team
@@ -172,10 +134,7 @@ const Navigation = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px]">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/prevention-education"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/prevention-education" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Prevention Education</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               School and community programs
@@ -183,10 +142,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/crisis-services"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/crisis-services" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Crisis Services</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               24/7 support and crisis counseling
@@ -194,10 +150,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/victim-advocacy"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/victim-advocacy" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Victim Advocacy</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Accompaniment and advocacy services
@@ -205,10 +158,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/trauma-recovery"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/trauma-recovery" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Trauma Recovery Clinic</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Long-term specialized therapy
@@ -226,10 +176,7 @@ const Navigation = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px]">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/donate"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/donate" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Donate</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Support our mission
@@ -237,10 +184,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/events"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/events" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Events</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Upcoming fundraisers and programs
@@ -248,10 +192,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/volunteer"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/volunteer" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Volunteer</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Crisis advocate opportunities
@@ -274,23 +215,13 @@ const Navigation = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden text-white hover:text-white/80"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+            <Button variant="ghost" size="sm" className="lg:hidden text-white hover:text-white/80" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
 
           {/* Mobile Navigation */}
-          {isMobileMenuOpen && (
-            <div className="lg:hidden border-t border-white/20">
+          {isMobileMenuOpen && <div className="lg:hidden border-t border-white/20">
               <div className="py-4 space-y-2">
                 <Link to="/crisis-support" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Get Help Now
@@ -317,12 +248,9 @@ const Navigation = () => {
                   Blog
                 </Link>
               </div>
-            </div>
-          )}
+            </div>}
         </div>
       </nav>
-    </header>
-  );
+    </header>;
 };
-
 export default Navigation;
