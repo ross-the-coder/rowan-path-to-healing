@@ -4,9 +4,9 @@ import { NewsletterSubscription } from "./NewsletterSubscription";
 import rowanLogo from "@/assets/rowan-center-logo.png";
 
 const Footer = () => {
-  return <footer className="bg-[#1a2332] text-white">
+  return <footer className="bg-[hsl(var(--blue-accent))] text-white">
       {/* Newsletter Section */}
-      <div className="bg-background border-b border-[#1a2332]/20">
+      <div className="bg-background border-b border-[hsl(var(--blue-accent))]/20">
         <div className="container mx-auto px-4 py-8">
           <NewsletterSubscription />
         </div>
