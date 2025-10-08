@@ -32,13 +32,15 @@ Based on The_Rowan_Center_Website_1-3.pdf
   - Bilingual support (English/Spanish)
   - Database storage in student_advisory_applications table
 
+- [x] **4. Prevention Education - Contact Form** ✅
+  - Contact form at the bottom of the Prevention Education page
+  - Fields: First name, Last name, Email, Phone, Organization (optional), Message
+  - Bilingual support (English/Spanish)
+  - Database storage in prevention_education_contact table
+
 ## 🚧 In Progress
-- [ ] **4. Prevention Education - Contact Form** (page 2)
 
 ## ⏳ To Do
-
-### **4. Prevention Education - Contact Form** (page 2)
-- [ ] "Questions or scheduling? Use the contact form at the bottom of this page"
 
 ### **5. KidSafeHQ Page Enhancements** (pages 5-6)
 - [ ] Resources organized by age (Elementary, Middle, High, College)

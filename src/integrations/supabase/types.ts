@@ -71,6 +71,42 @@ export type Database = {
         }
         Relationships: []
       }
+      prevention_education_contact: {
+        Row: {
+          created_at: string
+          email: string
+          first_name: string
+          form_language: string
+          id: string
+          last_name: string
+          message: string
+          organization: string | null
+          phone: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          first_name: string
+          form_language?: string
+          id?: string
+          last_name: string
+          message: string
+          organization?: string | null
+          phone: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          first_name?: string
+          form_language?: string
+          id?: string
+          last_name?: string
+          message?: string
+          organization?: string | null
+          phone?: string
+        }
+        Relationships: []
+      }
       student_advisory_applications: {
         Row: {
           additional_comments: string | null

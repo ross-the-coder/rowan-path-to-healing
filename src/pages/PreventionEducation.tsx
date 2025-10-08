@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, Users, School, Globe } from "lucide-react";
+import { PreventionEducationContactForm } from "@/components/PreventionEducationContactForm";
 
 const PreventionEducation = () => {
   return (
@@ -297,6 +298,13 @@ const PreventionEducation = () => {
               Schedule a Rowan Roundtable
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <PreventionEducationContactForm />
         </div>
       </section>
     </Layout>
