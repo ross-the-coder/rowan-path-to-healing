@@ -36,9 +36,9 @@ const Navigation = () => {
       {/* Main Navigation */}
       <nav className="bg-secondary text-white shadow-lg">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center">
-              <img src={logoImage} alt="The Rowan Center" className="h-10 w-auto filter brightness-0 invert" />
+          <div className="flex items-center justify-between h-20">
+            <Link to="/" className="flex items-center py-2">
+              <img src={logoImage} alt="The Rowan Center" className="h-16 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
