@@ -175,15 +175,18 @@ const CrisisServices = () => {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-lg transition-shadow border-[hsl(var(--accent))]/20">
                 <CardHeader>
-                  <CardTitle className="font-seasons">Long-term Therapy at the Trauma Recovery Clinic</CardTitle>
+                  <CardTitle className="font-seasons flex items-center gap-2">
+                    <Heart className="h-5 w-5 text-[hsl(var(--accent))]" />
+                    Long-term Therapy at the Trauma Recovery Clinic
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="font-roboto mb-4">
                     Specialized trauma-informed care for adults on HUSKY insurance
                   </p>
-                  <Button variant="outline" className="w-full" asChild>
+                  <Button variant="outline" className="w-full border-[hsl(var(--accent))] text-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/10" asChild>
                     <Link to="/trauma-recovery">Learn More</Link>
                   </Button>
                 </CardContent>

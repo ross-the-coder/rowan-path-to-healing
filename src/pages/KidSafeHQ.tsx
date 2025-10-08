@@ -27,7 +27,7 @@ const KidSafeHQ = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-secondary text-white">
+      <section className="py-20 bg-[hsl(var(--blue-accent))] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Shield className="h-16 w-16 mx-auto mb-6" />
@@ -226,9 +226,9 @@ const KidSafeHQ = () => {
         {/* Tips & Help */}
         <section>
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-accent/10 border-accent/20">
+            <Card className="bg-[hsl(var(--blue-accent))]/10 border-[hsl(var(--blue-accent))]/20">
               <CardHeader>
-                <AlertCircle className="h-10 w-10 text-accent mx-auto mb-4" />
+                <AlertCircle className="h-10 w-10 text-[hsl(var(--blue-accent))] mx-auto mb-4" />
                 <CardTitle className="text-2xl font-seasons text-center">Need More Help?</CardTitle>
                 <CardDescription className="text-center text-base">
                   Our team is here to provide guidance and support
@@ -239,10 +239,10 @@ const KidSafeHQ = () => {
                   If you have concerns about your child's safety or need additional resources, please don't hesitate to reach out.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg">
+                  <Button size="lg" className="bg-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/90">
                     Contact Us
                   </Button>
-                  <Button size="lg" variant="outline">
+                  <Button size="lg" variant="outline" className="border-[hsl(var(--blue-accent))] text-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/10">
                     Browse All Resources
                   </Button>
                 </div>

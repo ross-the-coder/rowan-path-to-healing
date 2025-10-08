@@ -48,10 +48,10 @@ const Prevent = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-[hsl(var(--blue-accent))]/20">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <Users className="h-8 w-8 text-primary" />
+                  <Users className="h-8 w-8 text-[hsl(var(--blue-accent))]" />
                   <CardTitle className="text-2xl">KidSafeHQ</CardTitle>
                 </div>
                 <CardDescription className="text-base">
@@ -61,19 +61,19 @@ const Prevent = () => {
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
-                    <Shield className="h-5 w-5 text-primary mt-0.5" />
+                    <Shield className="h-5 w-5 text-[hsl(var(--blue-accent))] mt-0.5" />
                     <span>Parent education workshops</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <BookOpen className="h-5 w-5 text-primary mt-0.5" />
+                    <BookOpen className="h-5 w-5 text-[hsl(var(--blue-accent))] mt-0.5" />
                     <span>Online safety resources and guides</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <GraduationCap className="h-5 w-5 text-primary mt-0.5" />
+                    <GraduationCap className="h-5 w-5 text-[hsl(var(--blue-accent))] mt-0.5" />
                     <span>Professional certification programs</span>
                   </li>
                 </ul>
-                <Button variant="outline">Learn About KidSafeHQ</Button>
+                <Button variant="outline" className="border-[hsl(var(--blue-accent))] text-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/10">Learn About KidSafeHQ</Button>
               </CardContent>
             </Card>
           </div>
