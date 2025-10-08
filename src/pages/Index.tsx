@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import HeroSection from "@/components/HeroSection";
 import INeedSection from "@/components/INeedSection";
 import PillarsSection from "@/components/PillarsSection";
+import PhotoFeatureSection from "@/components/PhotoFeatureSection";
 
 const Index = () => {
   console.log("Index component rendering");
@@ -10,6 +11,7 @@ const Index = () => {
     <Layout>
       <HeroSection />
       <INeedSection />
+      <PhotoFeatureSection />
       <PillarsSection />
     </Layout>
   );

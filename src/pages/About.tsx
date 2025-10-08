@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, FileText, Briefcase, Eye, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroAboutImage from "@/assets/hero-about.jpg";
+import teamCollaborationImage from "@/assets/team-collaboration.jpg";
 const About = () => {
   const teamMembers = [{
     name: "Sarah Johnson",
@@ -26,11 +28,20 @@ const About = () => {
     bio: "James oversees our 24/7 helpline and crisis intervention services."
   }];
   return <Layout>
-      {/* Hero Section */}
-      <section className="py-20 bg-secondary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Heart className="h-16 w-16 mx-auto mb-6" />
+      {/* Full Bleed Hero with Photo Overlay */}
+      <section className="relative min-h-[500px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroAboutImage} 
+            alt="Team members collaborating at The Rowan Center"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-20 relative z-10">
+          <div className="max-w-3xl text-white">
+            <Heart className="h-16 w-16 mb-6 text-white" />
             <h1 className="text-5xl font-seasons font-normal mb-6">
               Who We Are
             </h1>
@@ -80,16 +91,28 @@ const About = () => {
           </Card>
         </section>
 
-        {/* Team Members Section */}
-        <section className="mb-16">
+        {/* Team Members Section with Photo */}
+        <section className="mb-16 relative">
+          {/* Floating Image */}
+          <div className="absolute right-0 top-0 w-1/3 h-full hidden lg:block">
+            <div className="sticky top-8 rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src={teamCollaborationImage} 
+                alt="Team collaboration at The Rowan Center"
+                className="w-full h-[400px] object-cover"
+              />
+            </div>
+          </div>
+          
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">Our Team</h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Meet the dedicated professionals working to support our community
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, index) => <Card key={index} className="text-center">
+          
+          <div className="grid md:grid-cols-2 gap-6 lg:mr-[35%]">
+            {teamMembers.map((member, index) => <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="w-24 h-24 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center">
                     <Users className="h-12 w-12 text-muted-foreground" />

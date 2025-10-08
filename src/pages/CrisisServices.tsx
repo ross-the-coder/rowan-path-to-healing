@@ -3,15 +3,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Heart, Users, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroCrisisImage from "@/assets/hero-crisis-services.jpg";
 
 const CrisisServices = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="py-20 bg-secondary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Heart className="h-16 w-16 mx-auto mb-6" />
+      {/* Full Bleed Hero with Photo Overlay */}
+      <section className="relative min-h-[500px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroCrisisImage} 
+            alt="Diverse group in supportive counseling circle"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary/90 via-secondary/85 to-secondary/95"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-20 relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <Heart className="h-16 w-16 mx-auto mb-6 text-white" />
             <h1 className="text-5xl font-seasons font-normal mb-6">
               Crisis Counseling
             </h1>
