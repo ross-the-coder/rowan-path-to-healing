@@ -71,53 +71,42 @@ export const NewsletterSubscription = () => {
   };
 
   return (
-    <Card className="max-w-2xl mx-auto bg-secondary/5">
-      <CardHeader className="text-center">
-        <Mail className="h-12 w-12 mx-auto mb-4 text-secondary" />
-        <CardTitle className="text-3xl font-seasons font-normal">
-          Subscribe for Updates & News Alerts
-        </CardTitle>
-        <CardDescription className="font-roboto text-base">
-          Stay informed about our programs, events, and important community updates
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="first_name">First Name (Optional)</Label>
-              <Input id="first_name" {...register("first_name")} />
-              {errors.first_name && (
-                <p className="text-sm text-destructive mt-1">{errors.first_name.message}</p>
-              )}
-            </div>
+    <div className="max-w-5xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center gap-6 bg-secondary/5 rounded-lg p-6">
+        <div className="flex-shrink-0">
+          <Mail className="h-10 w-10 text-secondary" />
+        </div>
+        
+        <div className="flex-1 text-center md:text-left">
+          <h3 className="text-2xl font-seasons font-normal mb-1">
+            Subscribe for Updates & News Alerts
+          </h3>
+          <p className="text-sm font-roboto text-muted-foreground">
+            Stay informed about our programs, events, and important community updates
+          </p>
+        </div>
 
-            <div>
-              <Label htmlFor="last_name">Last Name (Optional)</Label>
-              <Input id="last_name" {...register("last_name")} />
-              {errors.last_name && (
-                <p className="text-sm text-destructive mt-1">{errors.last_name.message}</p>
-              )}
-            </div>
+        <form onSubmit={handleSubmit(onSubmit)} className="flex-shrink-0 w-full md:w-auto">
+          <div className="flex flex-col sm:flex-row gap-2">
+            <Input 
+              id="email" 
+              type="email" 
+              placeholder="Enter your email" 
+              {...register("email")}
+              className="min-w-[280px]"
+            />
+            <Button type="submit" disabled={isSubmitting} className="whitespace-nowrap">
+              {isSubmitting ? "Subscribing..." : "Subscribe"}
+            </Button>
           </div>
-
-          <div>
-            <Label htmlFor="email">Email Address *</Label>
-            <Input id="email" type="email" {...register("email")} />
-            {errors.email && (
-              <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
-            )}
-          </div>
-
-          <Button type="submit" disabled={isSubmitting} className="w-full" size="lg">
-            {isSubmitting ? "Subscribing..." : "Subscribe"}
-          </Button>
-
-          <p className="text-xs text-muted-foreground text-center">
+          {errors.email && (
+            <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
+          )}
+          <p className="text-xs text-muted-foreground mt-2">
             We respect your privacy. Unsubscribe at any time.
           </p>
         </form>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
