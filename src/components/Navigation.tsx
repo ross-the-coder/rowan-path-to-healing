@@ -8,7 +8,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return <header className="sticky top-0 z-50">
       {/* Crisis Banner */}
-      <div className="bg-[hsl(var(--secondary))]/10 py-3 px-4 pb-5 border-b-4 border-[hsl(var(--accent))]">
+      <div className="bg-[hsl(var(--accent))]/10 py-3 px-4 pb-5 border-b-4 border-[hsl(var(--accent))]">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-sm font-roboto">
           <Button asChild size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
             <a href="tel:2033292929" className="flex items-center gap-2">
