@@ -23,10 +23,17 @@ Based on The_Rowan_Center_Website_1-3.pdf
   - Database storage in volunteer_applications table
   - Volunteer FAQ section already on page
 
-## 🚧 In Progress
-- [ ] **3. Student Advisory Board Application** (page 11)
+- [x] **3. Student Advisory Board Application** ✅
   - Simple application form for high school students
-  - Requirements section (already on page, needs application form)
+  - Student info: Name, email, phone, school, grade, town
+  - Parent/Guardian info: Name, email, phone
+  - Why interested essay question
+  - Four requirement confirmation checkboxes
+  - Bilingual support (English/Spanish)
+  - Database storage in student_advisory_applications table
+
+## 🚧 In Progress
+- [ ] **4. Prevention Education - Contact Form** (page 2)
 
 ## ⏳ To Do
 

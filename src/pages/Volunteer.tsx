@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Users, Clock, BookOpen, Heart } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { VolunteerApplicationForm } from "@/components/VolunteerApplicationForm";
+import { StudentAdvisoryApplicationForm } from "@/components/StudentAdvisoryApplicationForm";
 
 const Volunteer = () => {
   return (
@@ -148,41 +149,17 @@ const Volunteer = () => {
 
         {/* Student Advisory Board */}
         <section className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-accent/10 border-accent/20">
-              <CardHeader>
-                <CardTitle className="text-2xl font-seasons text-center">Join the Student Advisory Board</CardTitle>
-                <CardDescription className="text-center text-base">
-                  Assist The Rowan Center in its mission to eliminate sexual violence
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="font-roboto mb-6">
-                  The purpose of this advisory board is to provide insight, information, and perspective about sexual violence at high schools and on college campuses. You will meet once a month with students from high schools and, together, create ways to raise awareness about The Rowan Center and sexual assault prevention at your school.
-                </p>
-                
-                <h3 className="font-seasons text-lg mb-4">Requirements</h3>
-                <ul className="space-y-2 font-roboto mb-6">
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">•</span>
-                    <span>Must be a sophomore, junior, or senior in high school</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">•</span>
-                    <span>Must attend high school within the eight towns we serve (Darien, Greenwich, New Canaan, Norwalk, Stamford, Weston, Westport, Wilton)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">•</span>
-                    <span>Must be able to attend monthly meetings (approximately 1 hour on one Sunday each month)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">•</span>
-                    <span>To ensure the confidentiality and safety of all participants, we kindly request that you keep all discussions and personal details shared during our meetings private</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h2 className="text-3xl font-seasons font-normal mb-4">Join the Student Advisory Board</h2>
+            <p className="font-roboto text-lg text-muted-foreground mb-4">
+              Assist The Rowan Center in its mission to eliminate sexual violence
+            </p>
+            <p className="font-roboto">
+              The purpose of this advisory board is to provide insight, information, and perspective about sexual violence at high schools and on college campuses. You will meet once a month with students from high schools and, together, create ways to raise awareness about The Rowan Center and sexual assault prevention at your school.
+            </p>
           </div>
+          
+          <StudentAdvisoryApplicationForm />
         </section>
 
         {/* Apply Section */}

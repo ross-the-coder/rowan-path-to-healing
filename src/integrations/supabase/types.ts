@@ -71,6 +71,72 @@ export type Database = {
         }
         Relationships: []
       }
+      student_advisory_applications: {
+        Row: {
+          additional_comments: string | null
+          confirmed_confidentiality: boolean
+          confirmed_grade_requirement: boolean
+          confirmed_monthly_meetings: boolean
+          confirmed_school_location: boolean
+          created_at: string
+          email: string
+          first_name: string
+          form_language: string
+          grade_level: string
+          id: string
+          last_name: string
+          parent_guardian_email: string
+          parent_guardian_name: string
+          parent_guardian_phone: string
+          phone: string
+          school_name: string
+          town: string
+          why_interested: string
+        }
+        Insert: {
+          additional_comments?: string | null
+          confirmed_confidentiality?: boolean
+          confirmed_grade_requirement?: boolean
+          confirmed_monthly_meetings?: boolean
+          confirmed_school_location?: boolean
+          created_at?: string
+          email: string
+          first_name: string
+          form_language?: string
+          grade_level: string
+          id?: string
+          last_name: string
+          parent_guardian_email: string
+          parent_guardian_name: string
+          parent_guardian_phone: string
+          phone: string
+          school_name: string
+          town: string
+          why_interested: string
+        }
+        Update: {
+          additional_comments?: string | null
+          confirmed_confidentiality?: boolean
+          confirmed_grade_requirement?: boolean
+          confirmed_monthly_meetings?: boolean
+          confirmed_school_location?: boolean
+          created_at?: string
+          email?: string
+          first_name?: string
+          form_language?: string
+          grade_level?: string
+          id?: string
+          last_name?: string
+          parent_guardian_email?: string
+          parent_guardian_name?: string
+          parent_guardian_phone?: string
+          phone?: string
+          school_name?: string
+          town?: string
+          why_interested?: string
+        }
+        Relationships: []
+      }
       trauma_recovery_intake: {
         Row: {
           created_at: string
