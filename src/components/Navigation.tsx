@@ -8,26 +8,28 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return <header className="sticky top-0 z-50">
       {/* Crisis Banner */}
-      <div className="bg-emergency text-white py-2 px-4">
-        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-sm font-roboto">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
+      <div className="bg-white py-3 px-4 border-b">
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-sm font-roboto">
+          <Button asChild size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
+            <a href="tel:2033292929" className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span className="font-medium">Crisis Helpline 24/7: (203) 329-2929</span>
-            </div>
-            <span className="hidden sm:inline">|</span>
-            <div className="flex items-center gap-2">
-              
-              <span className="hidden sm:inline">|</span>
-              
-            </div>
-          </div>
-            <div className="flex items-center gap-2">
-              <a href="/kidsafehq" className="hover:underline">KidSafeHQ</a>
-              <span className="hidden sm:inline">|</span>
-              <Languages className="h-4 w-4" />
-              <span>Translate</span>
-            </div>
+              Crisis Helpline 24/7: (203) 329-2929
+            </a>
+          </Button>
+          <Button asChild size="sm" className="bg-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/90 text-white">
+            <Link to="/kidsafehq">
+              KidSafeHQ
+            </Link>
+          </Button>
+          <Button asChild size="sm" className="bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-white">
+            <Link to="/trauma-recovery">
+              Trauma Recovery Clinic
+            </Link>
+          </Button>
+          <a href="#translate" className="text-foreground hover:underline flex items-center gap-1">
+            <Languages className="h-4 w-4" />
+            Translate
+          </a>
         </div>
       </div>
 
