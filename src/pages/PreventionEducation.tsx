@@ -199,17 +199,6 @@ const PreventionEducation = () => {
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="font-seasons text-xl">Know Before You Go</CardTitle>
-                  <p className="font-roboto text-muted-foreground">Grades 11–12 • 60–75 minutes or two 40-minute sessions</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-roboto">
-                    Preparing for college/workforce: prevalence and resources, reporting options, bystander intervention, and key protections (e.g., Title IX and the Clery Act).
-                  </p>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
@@ -270,6 +259,18 @@ const PreventionEducation = () => {
                 <CardContent>
                   <p className="font-roboto">
                     Trauma, trauma-informed interviewing, and best practices. Facilitated by instructors certified under Connecticut standards; counts toward state-mandated continuing education hours.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-seasons text-xl">Preventing & Identifying Child Sexual Abuse</CardTitle>
+                  <p className="font-roboto text-muted-foreground">Youth-serving professionals • 60–75 minutes</p>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-roboto">
+                    Myths vs. facts, indicators of abuse, and how to respond and report using best practices.
                   </p>
                 </CardContent>
               </Card>
