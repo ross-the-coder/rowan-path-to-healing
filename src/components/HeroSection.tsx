@@ -5,7 +5,7 @@ import supportGroupImage from "@/assets/support-group.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden pt-32">
       {/* Full Bleed Hero with Photo Overlay */}
       <div className="relative min-h-[600px] flex items-center">
         {/* Background Image */}
