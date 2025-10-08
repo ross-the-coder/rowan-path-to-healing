@@ -30,15 +30,15 @@ All colors MUST be HSL for proper theming.
     --secondary-foreground: 0 0% 100%;
     --secondary-light: 195 47% 70%;
 
-    /* Accent - Purple (Healing, Supportive) */
-    --accent: 251 34% 52%;
+    /* Accent - Purple (Healing, Supportive) - Trauma Recovery Clinic #7464A2 */
+    --accent: 256 24% 51%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 251 34% 75%;
+    --accent-light: 256 24% 75%;
 
-    /* Blue Accent - KidSafeHQ */
-    --blue-accent: 227 42% 42%;
+    /* Blue Accent - KidSafeHQ #3E5A97 */
+    --blue-accent: 222 42% 42%;
     --blue-accent-foreground: 0 0% 100%;
-    --blue-accent-light: 227 42% 70%;
+    --blue-accent-light: 222 42% 70%;
 
     /* Supporting Colors */
     --muted: 210 20% 96%;
@@ -54,8 +54,8 @@ All colors MUST be HSL for proper theming.
     /* Color Block Backgrounds */
     --color-block-primary: 208 43% 39%;
     --color-block-secondary: 195 47% 54%;
-    --color-block-accent: 251 34% 52%;
-    --color-block-blue: 227 42% 42%;
+    --color-block-accent: 256 24% 51%;
+    --color-block-blue: 222 42% 42%;
     --color-block-light: 195 47% 85%;
     --color-block-warm: 15 85% 55%;
 
@@ -102,13 +102,13 @@ All colors MUST be HSL for proper theming.
     --secondary-foreground: 208 25% 8%;
     --secondary-light: 195 47% 70%;
 
-    --accent: 251 34% 65%;
+    --accent: 256 24% 65%;
     --accent-foreground: 208 25% 8%;
-    --accent-light: 251 34% 75%;
+    --accent-light: 256 24% 75%;
 
-    --blue-accent: 227 42% 55%;
+    --blue-accent: 222 42% 55%;
     --blue-accent-foreground: 208 25% 8%;
-    --blue-accent-light: 227 42% 70%;
+    --blue-accent-light: 222 42% 70%;
 
     --muted: 208 25% 15%;
     --muted-foreground: 210 15% 65%;
@@ -126,8 +126,8 @@ All colors MUST be HSL for proper theming.
     /* Dark Mode Color Blocks */
     --color-block-primary: 195 47% 54%;
     --color-block-secondary: 195 47% 70%;
-    --color-block-accent: 251 34% 65%;
-    --color-block-blue: 227 42% 55%;
+    --color-block-accent: 256 24% 65%;
+    --color-block-blue: 222 42% 55%;
     --color-block-light: 195 47% 25%;
     --color-block-warm: 15 75% 50%;
 
