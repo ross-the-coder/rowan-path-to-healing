@@ -45,26 +45,31 @@ Based on The_Rowan_Center_Website_1-3.pdf
   - Tips & Help section
   - FAQs (6 questions)
 
+- [x] **6. Newsletter Subscription** ✅
+  - "Subscribe for Updates & News Alerts" form in footer
+  - Fields: Email (required), First name, Last name (optional)
+  - Database storage in newsletter_subscriptions table
+
+- [x] **7. CT Laws & Reporting Section** ✅
+  - New page with Mandated Reporting information
+  - Consent laws and age of consent details
+  - CT Definitions (Sexual Assault, Statutory Rape, Sexual Harassment, Stalking, Revenge Porn, Child Sexual Abuse)
+  - Added to footer navigation
+
+- [x] **8. Rowan Roundtables** ✅
+  - Already implemented on Prevention Education page with description and scheduling
+
+- [x] **9. Support Groups Detail** ✅
+  - Expanded content on Crisis Services page with age groups and formats
+
+- [x] **10. Ways to Give Enhancements** ✅
+  - Enhanced Donate page with Matching Gifts, Stock Donations, and Tribute Gifts options
+
 ## 🚧 In Progress
 
 ## ⏳ To Do
 
-### **6. Newsletter Subscription** (page 11)
-- [ ] "Subscribe for Updates & News Alerts" form
-
-### **7. CT Laws & Reporting Section** (page 6)
-- [ ] Mandated Reporting information
-- [ ] Consent laws
-- [ ] CT Definitions
-
-### **8. Rowan Roundtables** (pages 4-5)
-- [ ] Description and scheduling information
-
-### **9. Support Groups Detail**
-- [ ] Expand content (mentioned but needs more detail)
-
-### **10. Ways to Give Enhancements** (mentioned in inspiration)
-- [ ] Enhance existing Donate page with more giving options
+**All tasks completed!** 🎉
 
 ---
 

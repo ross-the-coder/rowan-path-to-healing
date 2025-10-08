@@ -71,6 +71,33 @@ export type Database = {
         }
         Relationships: []
       }
+      newsletter_subscriptions: {
+        Row: {
+          email: string
+          first_name: string | null
+          id: string
+          is_active: boolean
+          last_name: string | null
+          subscribed_at: string
+        }
+        Insert: {
+          email: string
+          first_name?: string | null
+          id?: string
+          is_active?: boolean
+          last_name?: string | null
+          subscribed_at?: string
+        }
+        Update: {
+          email?: string
+          first_name?: string | null
+          id?: string
+          is_active?: boolean
+          last_name?: string | null
+          subscribed_at?: string
+        }
+        Relationships: []
+      }
       prevention_education_contact: {
         Row: {
           created_at: string

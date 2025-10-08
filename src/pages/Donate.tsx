@@ -127,6 +127,36 @@ const Donate = () => {
                 </CardContent>
               </Card>
             </div>
+
+            {/* Additional Giving Options */}
+            <div className="mt-8 grid md:grid-cols-3 gap-6">
+              <Card className="text-center">
+                <CardContent className="p-6">
+                  <h3 className="font-seasons text-lg mb-2">Matching Gifts</h3>
+                  <p className="font-roboto text-sm text-muted-foreground mb-4">
+                    Many employers match charitable contributions. Check if your company participates.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center">
+                <CardContent className="p-6">
+                  <h3 className="font-seasons text-lg mb-2">Stock Donations</h3>
+                  <p className="font-roboto text-sm text-muted-foreground mb-4">
+                    Donate appreciated securities and receive maximum tax benefits.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center">
+                <CardContent className="p-6">
+                  <h3 className="font-seasons text-lg mb-2">Tribute Gifts</h3>
+                  <p className="font-roboto text-sm text-muted-foreground mb-4">
+                    Honor or remember someone special with a meaningful donation.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
 

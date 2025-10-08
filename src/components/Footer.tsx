@@ -1,7 +1,16 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { NewsletterSubscription } from "./NewsletterSubscription";
+
 const Footer = () => {
   return <footer className="bg-secondary text-secondary-foreground">
+      {/* Newsletter Section */}
+      <div className="bg-background border-b border-secondary/20">
+        <div className="container mx-auto px-4 py-12">
+          <NewsletterSubscription />
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Organization Info */}
@@ -21,10 +30,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/prevent" className="hover:text-primary-light transition-colors">Prevention Education</Link></li>
-              <li><Link to="/respond" className="hover:text-primary-light transition-colors">Crisis Support</Link></li>
+              <li><Link to="/prevention-education" className="hover:text-primary-light transition-colors">Prevention Education</Link></li>
+              <li><Link to="/crisis-services" className="hover:text-primary-light transition-colors">Crisis Support</Link></li>
               <li><Link to="/trauma-recovery" className="hover:text-primary-light transition-colors">Trauma Recovery</Link></li>
               <li><Link to="/resources" className="hover:text-primary-light transition-colors">Resources</Link></li>
+              <li><Link to="/ct-laws-reporting" className="hover:text-primary-light transition-colors">CT Laws & Reporting</Link></li>
             </ul>
           </div>
 

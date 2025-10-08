@@ -162,7 +162,28 @@ const CrisisServices = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="font-roboto mb-4">
-                    Connect with others in a safe, supportive environment
+                    Connect with others who understand your experience through peer-facilitated support groups for survivors ages 10+.
+                  </p>
+                  <div className="space-y-3 mb-4">
+                    <div className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="font-roboto text-sm">Teen survivor groups (ages 10-17)</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="font-roboto text-sm">Adult survivor groups (18+)</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="font-roboto text-sm">Groups for family members and loved ones</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="font-roboto text-sm">Virtual and in-person options available</span>
+                    </div>
+                  </div>
+                  <p className="font-roboto text-xs text-muted-foreground mb-4">
+                    Support groups provide a safe, confidential space to share experiences, learn coping strategies, and connect with others on the healing journey. Facilitated by trained professionals.
                   </p>
                   <Button variant="outline" className="w-full" asChild>
                     <Link to="/crisis-support">Learn More</Link>
