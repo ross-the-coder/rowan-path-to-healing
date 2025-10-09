@@ -1,4 +1,4 @@
-import counselingHopeImage from "@/assets/group-therapy-women.jpg";
+import counselingHopeImage from "@/assets/group-therapy-diverse.jpg";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
