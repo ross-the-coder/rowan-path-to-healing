@@ -1,4 +1,4 @@
-import counselingHopeImage from "@/assets/counseling-peaceful-space.jpg";
+import counselingHopeImage from "@/assets/group-therapy-women.jpg";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ const PhotoFeatureSection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
               <img 
                 src={counselingHopeImage} 
-                alt="Welcoming counseling office with comfortable seating and natural sunlight"
+                alt="Diverse group of women in supportive group therapy session empowering each other"
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-accent/40 to-transparent"></div>
