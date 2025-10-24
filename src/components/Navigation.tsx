@@ -61,7 +61,7 @@ const Navigation = () => {
       <nav className="bg-secondary text-white shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <Link to="/" className="flex items-center mt-2 -mb-6 relative z-10">
+            <Link to="/" className="flex items-center -mt-2 -mb-2 relative z-10">
               <div className="bg-white rounded-lg shadow-lg px-6 py-4">
                 <img src={logoImage} alt="The Rowan Center" className="h-20 w-auto" />
               </div>
