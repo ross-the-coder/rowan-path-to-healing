@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Menu, X, Languages } from "lucide-react";
+import { Phone, Menu, X, Languages, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import logoImage from "@/assets/rowan-center-logo.png";
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,19 +11,35 @@ const Navigation = () => {
       {/* Crisis Banner */}
       <div className="bg-white py-3 px-4 border-b">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-sm font-roboto">
-          <Button asChild size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
-            <a href="tel:2033292929" className="flex flex-col items-center gap-1 py-3">
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                <span>Crisis Helpline 24/7</span>
-              </div>
-              <div className="text-xs flex gap-3">
-                <span>(203) 329-2929</span>
-                <span>•</span>
-                <span>Español: (888) 568-8332</span>
-              </div>
-            </a>
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
+                <Phone className="h-4 w-4 mr-2" />
+                Crisis Helpline 24/7
+                <ChevronDown className="h-4 w-4 ml-2" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-background z-50">
+              <DropdownMenuItem asChild>
+                <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
+                  <Phone className="h-4 w-4" />
+                  <div>
+                    <div className="font-medium">English</div>
+                    <div className="text-sm text-muted-foreground">(203) 329-2929</div>
+                  </div>
+                </a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
+                  <Phone className="h-4 w-4" />
+                  <div>
+                    <div className="font-medium">Español</div>
+                    <div className="text-sm text-muted-foreground">(888) 568-8332</div>
+                  </div>
+                </a>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Button asChild size="sm" className="bg-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/90 text-white">
             <Link to="/kidsafehq">
               KidSafeHQ
