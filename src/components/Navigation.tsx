@@ -11,9 +11,16 @@ const Navigation = () => {
       <div className="bg-white py-3 px-4 border-b">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-sm font-roboto">
           <Button asChild size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
-            <a href="tel:2033292929" className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              Crisis Helpline 24/7: (203) 329-2929
+            <a href="tel:2033292929" className="flex flex-col items-center gap-1 py-3">
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4" />
+                <span>Crisis Helpline 24/7</span>
+              </div>
+              <div className="text-xs flex gap-3">
+                <span>(203) 329-2929</span>
+                <span>•</span>
+                <span>Español: (888) 568-8332</span>
+              </div>
             </a>
           </Button>
           <Button asChild size="sm" className="bg-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/90 text-white">
