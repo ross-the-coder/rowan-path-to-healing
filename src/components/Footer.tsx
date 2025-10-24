@@ -1,7 +1,9 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NewsletterSubscription } from "./NewsletterSubscription";
 import rowanLogo from "@/assets/rowan-center-logo.png";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return <footer className="bg-[hsl(var(--blue-accent))] text-white">
@@ -51,7 +53,34 @@ const Footer = () => {
                 <Phone className="h-4 w-4 text-emergency" />
                 <div className="text-white/80">
                   <div className="font-medium text-white">24/7 Crisis Helpline</div>
-                  <div>(203) 329-2929</div>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" size="sm" className="h-auto p-0 text-white/80 hover:text-white hover:bg-transparent">
+                        <span className="underline">(203) 329-2929</span>
+                        <ChevronDown className="h-3 w-3 ml-1" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="bg-background z-50">
+                      <DropdownMenuItem asChild>
+                        <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
+                          <Phone className="h-4 w-4" />
+                          <div>
+                            <div className="font-medium">English</div>
+                            <div className="text-sm text-muted-foreground">(203) 329-2929</div>
+                          </div>
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
+                          <Phone className="h-4 w-4" />
+                          <div>
+                            <div className="font-medium">Español</div>
+                            <div className="text-sm text-muted-foreground">(888) 568-8332</div>
+                          </div>
+                        </a>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </div>
               </div>
               <div className="flex items-center gap-2 text-white/80">

@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Heart } from "lucide-react";
+import { Phone, Heart, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import supportGroupImage from "@/assets/support-group.jpg";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const HeroSection = () => {
   return (
@@ -35,10 +36,35 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <Button size="lg" className="bg-emergency hover:bg-emergency/90 shadow-button font-roboto font-medium">
-                <Phone className="mr-2 h-5 w-5" />
-                24/7 Crisis Helpline: (203) 329-2929
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button size="lg" className="bg-emergency hover:bg-emergency/90 shadow-button font-roboto font-medium">
+                    <Phone className="mr-2 h-5 w-5" />
+                    24/7 Crisis Helpline
+                    <ChevronDown className="ml-2 h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-background z-50">
+                  <DropdownMenuItem asChild>
+                    <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
+                      <Phone className="h-4 w-4" />
+                      <div>
+                        <div className="font-medium">English</div>
+                        <div className="text-sm text-muted-foreground">(203) 329-2929</div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
+                      <Phone className="h-4 w-4" />
+                      <div>
+                        <div className="font-medium">Español</div>
+                        <div className="text-sm text-muted-foreground">(888) 568-8332</div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button variant="outline" size="lg" asChild className="font-roboto font-medium border-white/80 text-white bg-white/10 hover:bg-white hover:text-secondary backdrop-blur-sm">
                 <Link to="/contact">
                   <Heart className="mr-2 h-5 w-5" />

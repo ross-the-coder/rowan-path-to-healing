@@ -1,9 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, BookOpen, Heart, Info } from "lucide-react";
+import { Phone, BookOpen, Heart, Info, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import supportHandsImage from "@/assets/support-hands.jpg";
 import resourcesImage from "@/assets/resources-learning.jpg";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const INeedSection = () => {
   return (
@@ -42,9 +43,35 @@ const INeedSection = () => {
                 24/7 crisis helpline for immediate, confidential support
               </p>
               <div className="space-y-4">
-                <div className="text-2xl font-roboto font-bold text-secondary">
-                  (203) 329-2929
-                </div>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" className="w-full">
+                      <Phone className="mr-2 h-4 w-4" />
+                      Call Crisis Helpline
+                      <ChevronDown className="ml-2 h-4 w-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-background z-50 w-full">
+                    <DropdownMenuItem asChild>
+                      <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
+                        <Phone className="h-4 w-4" />
+                        <div>
+                          <div className="font-medium">English</div>
+                          <div className="text-sm text-muted-foreground">(203) 329-2929</div>
+                        </div>
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
+                        <Phone className="h-4 w-4" />
+                        <div>
+                          <div className="font-medium">Español</div>
+                          <div className="text-sm text-muted-foreground">(888) 568-8332</div>
+                        </div>
+                      </a>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
                 <Button asChild size="sm" className="w-full">
                   <Link to="/crisis-support">Get Help Now</Link>
                 </Button>
