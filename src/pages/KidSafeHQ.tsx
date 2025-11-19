@@ -66,7 +66,7 @@ const KidSafeHQ = () => {
               <BookOpen className="h-6 w-6 text-primary" />
               Select Your Child's Grade Level
             </h2>
-            <TabsList className="grid w-full max-w-md grid-cols-2 h-auto gap-2 bg-muted p-2">
+            <TabsList className="grid w-full max-w-3xl grid-cols-3 md:grid-cols-6 h-auto gap-2 bg-muted p-2">
               {elementarySchoolData.map((grade) => (
                 <TabsTrigger 
                   key={grade.grade} 

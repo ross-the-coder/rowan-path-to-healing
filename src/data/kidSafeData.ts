@@ -235,8 +235,92 @@ export const elementarySchoolData: GradeContent[] = [
     ]
   },
   {
-    grade: "3-5",
-    gradeLevel: "3rd-5th Grade",
+    grade: "1",
+    gradeLevel: "1st Grade",
+    intro: "First grade is an exciting time of growth and independence. Children are developing stronger social connections and beginning to understand more complex concepts about personal safety, boundaries, and healthy relationships.",
+    highlightMessage: "Content for 1st grade is being developed. Check back soon for age-appropriate activities and conversation starters.",
+    topics: [
+      {
+        id: "permission-1st",
+        title: "Permission & Consent",
+        icon: "HandHeart",
+        color: "bg-blue-100 text-blue-700",
+        summary: "Building on kindergarten concepts with more independence",
+        keyPoints: [
+          "Reinforcing permission before borrowing or touching",
+          "Understanding different types of touch (safe, unsafe, unwanted)",
+          "Respecting others' space and belongings",
+          "Speaking up when feeling uncomfortable"
+        ]
+      },
+      {
+        id: "emotions-1st",
+        title: "Understanding Emotions",
+        icon: "Smile",
+        color: "bg-yellow-100 text-yellow-700",
+        summary: "Expanding emotional vocabulary and regulation",
+        keyPoints: [
+          "Identifying a wider range of emotions",
+          "Learning healthy ways to express feelings",
+          "Understanding that emotions change and that's okay",
+          "Practicing empathy with peers"
+        ]
+      }
+    ],
+    resources: [
+      {
+        category: "Coming Soon",
+        links: [
+          { title: "Resources for 1st grade will be added soon" }
+        ]
+      }
+    ]
+  },
+  {
+    grade: "2",
+    gradeLevel: "2nd Grade",
+    intro: "Second graders are becoming more aware of social dynamics and relationships. This is an important year to reinforce concepts of consent, boundaries, and personal safety in age-appropriate ways.",
+    highlightMessage: "Content for 2nd grade is being developed. Check back soon for age-appropriate activities and conversation starters.",
+    topics: [
+      {
+        id: "boundaries-2nd",
+        title: "Personal Boundaries",
+        icon: "Shield",
+        color: "bg-purple-100 text-purple-700",
+        summary: "Strengthening understanding of personal space and limits",
+        keyPoints: [
+          "Everyone has different comfort levels with touch",
+          "It's okay to say no to physical contact",
+          "Recognizing when boundaries are crossed",
+          "Telling a trusted adult about boundary violations"
+        ]
+      },
+      {
+        id: "friendship-2nd",
+        title: "Healthy Friendships",
+        icon: "Users",
+        color: "bg-green-100 text-green-700",
+        summary: "Understanding what makes friendships healthy and safe",
+        keyPoints: [
+          "Friends respect each other's feelings and boundaries",
+          "How to handle peer pressure",
+          "Recognizing when friendships don't feel right",
+          "Building strong communication skills"
+        ]
+      }
+    ],
+    resources: [
+      {
+        category: "Coming Soon",
+        links: [
+          { title: "Resources for 2nd grade will be added soon" }
+        ]
+      }
+    ]
+  },
+  {
+    grade: "3",
+    gradeLevel: "3rd Grade",
     intro: "Now that your child understands the basis of empathy and emotions, they can begin learning more specifically about why these are foundational topics. With the advent of the internet, it's important to introduce topics related to internet safety.",
     highlightMessage: "Starting in 3rd grade, we introduce online safety and the clean and healthy rule as children gain more autonomy.",
     topics: [
@@ -368,6 +452,103 @@ export const elementarySchoolData: GradeContent[] = [
       {
         question: "What, specifically, do I report about?",
         answer: "Remind your child that the same rules stand: anything that is out of the ordinary, makes them uncomfortable, or is unsafe, needs to be reported to a trusted adult. At this age, focus on internet topics like social media or video games, peer relationships, and the clean and healthy rule."
+      }
+    ]
+  },
+  {
+    grade: "4",
+    gradeLevel: "4th Grade",
+    intro: "Fourth graders are developing more independence online and offline. This grade focuses on deeper understanding of internet safety, body autonomy, and recognizing uncomfortable situations.",
+    highlightMessage: "Building on 3rd grade concepts with increased focus on digital citizenship and personal safety.",
+    topics: [
+      {
+        id: "online-safety-4th",
+        title: "Digital Citizenship",
+        icon: "Globe",
+        color: "bg-indigo-100 text-indigo-700",
+        summary: "Advanced internet safety and digital footprint awareness",
+        keyPoints: [
+          "Understanding digital footprints and permanence of online actions",
+          "Recognizing cyberbullying and how to respond",
+          "Safe gaming and social media practices",
+          "Protecting personal information and passwords"
+        ]
+      },
+      {
+        id: "body-autonomy-4th",
+        title: "Body Autonomy",
+        icon: "Heart",
+        color: "bg-pink-100 text-pink-700",
+        summary: "Deeper understanding of bodily autonomy and consent",
+        keyPoints: [
+          "Your body belongs to you and you make decisions about it",
+          "Understanding puberty basics in age-appropriate ways",
+          "Reinforcing the clean and healthy rule",
+          "When and how to report uncomfortable situations"
+        ]
+      }
+    ],
+    resources: [
+      {
+        category: "Coming Soon",
+        links: [
+          { title: "Resources for 4th grade will be added soon" }
+        ]
+      }
+    ]
+  },
+  {
+    grade: "5",
+    gradeLevel: "5th Grade",
+    intro: "Fifth grade marks a transition toward middle school. Students are navigating more complex social situations and need tools to handle peer pressure, healthy relationships, and online safety.",
+    highlightMessage: "Preparing for middle school with comprehensive safety education and relationship skills.",
+    topics: [
+      {
+        id: "peer-pressure-5th",
+        title: "Handling Peer Pressure",
+        icon: "Users",
+        color: "bg-cyan-100 text-cyan-700",
+        summary: "Strategies for making safe choices with peer influence",
+        keyPoints: [
+          "Recognizing different forms of peer pressure",
+          "Practicing assertive communication and saying no",
+          "Understanding the difference between positive and negative peer influence",
+          "Building confidence in personal decision-making"
+        ]
+      },
+      {
+        id: "healthy-relationships-5th",
+        title: "Healthy Relationships",
+        icon: "HeartHandshake",
+        color: "bg-rose-100 text-rose-700",
+        summary: "Understanding respect, boundaries, and communication in relationships",
+        keyPoints: [
+          "What healthy relationships look like (friends, family, future relationships)",
+          "Red flags in relationships and friendships",
+          "Communication skills and conflict resolution",
+          "Understanding consent in all types of relationships"
+        ]
+      },
+      {
+        id: "online-safety-5th",
+        title: "Advanced Online Safety",
+        icon: "Globe",
+        color: "bg-indigo-100 text-indigo-700",
+        summary: "Navigating social media and online relationships safely",
+        keyPoints: [
+          "Understanding online predators and grooming tactics",
+          "Safe social media use and privacy settings",
+          "Recognizing and reporting inappropriate content",
+          "Digital wellness and healthy screen time habits"
+        ]
+      }
+    ],
+    resources: [
+      {
+        category: "Coming Soon",
+        links: [
+          { title: "Resources for 5th grade will be added soon" }
+        ]
       }
     ]
   }
