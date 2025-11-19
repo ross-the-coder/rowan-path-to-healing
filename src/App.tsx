@@ -22,6 +22,7 @@ import Financials from "./pages/Financials";
 import Careers from "./pages/Careers";
 import KidSafeHQ from "./pages/KidSafeHQ";
 import CTLawsReporting from "./pages/CTLawsReporting";
+import Reminders from "./pages/Reminders";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -55,6 +56,7 @@ const App = () => {
             <Route path="/careers" element={<Careers />} />
             <Route path="/kidsafehq" element={<KidSafeHQ />} />
             <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
+            <Route path="/reminders" element={<Reminders />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
