@@ -4,11 +4,12 @@ import Footer from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, GraduationCap, Sparkles } from "lucide-react";
+import { BookOpen, Sparkles } from "lucide-react";
 import { elementarySchoolData } from "@/data/kidSafeData";
 import { TopicCard } from "@/components/kidsafe/TopicCard";
 import { ResourceLinks } from "@/components/kidsafe/ResourceLinks";
 import { FAQSection } from "@/components/kidsafe/FAQSection";
+import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
 
 const KidSafeHQ = () => {
   const [completedTopics, setCompletedTopics] = useState<Set<string>>(new Set());
@@ -33,12 +34,12 @@ const KidSafeHQ = () => {
       <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/5 pt-24 pb-12">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto space-y-4">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <GraduationCap className="h-10 w-10 text-primary" />
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                KidSafeHQ
-              </h1>
-              <Sparkles className="h-10 w-10 text-secondary" />
+            <div className="flex items-center justify-center mb-6">
+              <img 
+                src={kidSafeHQLogo} 
+                alt="KidSafeHQ by The Rowan Center" 
+                className="h-48 w-auto"
+              />
             </div>
             <p className="text-xl text-muted-foreground">
               Interactive guides to help you have important conversations with your children about safety, boundaries, and healthy relationships
