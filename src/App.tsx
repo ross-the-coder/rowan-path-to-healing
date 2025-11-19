@@ -21,6 +21,10 @@ import BoardOfDirectors from "./pages/BoardOfDirectors";
 import Financials from "./pages/Financials";
 import Careers from "./pages/Careers";
 import KidSafeHQ from "./pages/KidSafeHQ";
+import KidSafeElementary from "./pages/KidSafeElementary";
+import KidSafeMiddle from "./pages/KidSafeMiddle";
+import KidSafeHigh from "./pages/KidSafeHigh";
+import KidSafeResources from "./pages/KidSafeResources";
 import CTLawsReporting from "./pages/CTLawsReporting";
 import Reminders from "./pages/Reminders";
 import NotFound from "./pages/NotFound";
@@ -54,7 +58,11 @@ const App = () => {
             <Route path="/board-of-directors" element={<BoardOfDirectors />} />
             <Route path="/financials" element={<Financials />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/kidsafehq" element={<KidSafeHQ />} />
+          <Route path="/kidsafehq" element={<KidSafeHQ />} />
+          <Route path="/kidsafehq/elementary" element={<KidSafeElementary />} />
+          <Route path="/kidsafehq/middle" element={<KidSafeMiddle />} />
+          <Route path="/kidsafehq/high" element={<KidSafeHigh />} />
+          <Route path="/kidsafehq/resources" element={<KidSafeResources />} />
             <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
             <Route path="/reminders" element={<Reminders />} />
             <Route path="*" element={<NotFound />} />
