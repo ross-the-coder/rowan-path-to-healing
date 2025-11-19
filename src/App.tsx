@@ -21,6 +21,10 @@ import BoardOfDirectors from "./pages/BoardOfDirectors";
 import Financials from "./pages/Financials";
 import Careers from "./pages/Careers";
 import KidSafeHQ from "./pages/KidSafeHQ";
+import ElementarySchool from "./pages/kidsafehq/ElementarySchool";
+import MiddleSchool from "./pages/kidsafehq/MiddleSchool";
+import HighSchool from "./pages/kidsafehq/HighSchool";
+import CollegeYoungAdults from "./pages/kidsafehq/CollegeYoungAdults";
 import CTLawsReporting from "./pages/CTLawsReporting";
 import Reminders from "./pages/Reminders";
 import NotFound from "./pages/NotFound";
@@ -55,6 +59,10 @@ const App = () => {
             <Route path="/financials" element={<Financials />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/kidsafehq" element={<KidSafeHQ />} />
+            <Route path="/kidsafehq/elementary" element={<ElementarySchool />} />
+            <Route path="/kidsafehq/middle-school" element={<MiddleSchool />} />
+            <Route path="/kidsafehq/high-school" element={<HighSchool />} />
+            <Route path="/kidsafehq/college-young-adults" element={<CollegeYoungAdults />} />
             <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
             <Route path="/reminders" element={<Reminders />} />
             <Route path="*" element={<NotFound />} />
