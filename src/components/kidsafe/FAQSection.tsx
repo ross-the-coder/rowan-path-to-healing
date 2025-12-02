@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
+import { GlossaryHighlighter } from "./GlossaryHighlighter";
 
 interface FAQSectionProps {
   faqs: { question: string; answer: string }[];
@@ -22,10 +23,10 @@ export const FAQSection = ({ faqs }: FAQSectionProps) => {
           {faqs.map((faq, idx) => (
             <AccordionItem key={idx} value={`faq-${idx}`}>
               <AccordionTrigger className="text-left">
-                {faq.question}
+                <GlossaryHighlighter text={faq.question} />
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                {faq.answer}
+                <GlossaryHighlighter text={faq.answer} />
               </AccordionContent>
             </AccordionItem>
           ))}

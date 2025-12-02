@@ -7,6 +7,7 @@ import * as LucideIcons from "lucide-react";
 import { Topic } from "@/data/kidSafeData";
 import { ConversationStarter } from "./ConversationStarter";
 import { ActivityCard } from "./ActivityCard";
+import { GlossaryHighlighter } from "./GlossaryHighlighter";
 
 interface TopicCardProps {
   topic: Topic;
@@ -33,9 +34,11 @@ export const TopicCard = ({ topic, onComplete, isCompleted }: TopicCardProps) =>
           <div className="flex items-center gap-3">
             {IconComponent && <IconComponent className="h-8 w-8" />}
             <div>
-              <CardTitle className="text-xl">{topic.title}</CardTitle>
+              <CardTitle className="text-xl">
+                <GlossaryHighlighter text={topic.title} />
+              </CardTitle>
               <CardDescription className="text-sm mt-1 text-inherit opacity-80">
-                {topic.summary}
+                <GlossaryHighlighter text={topic.summary} />
               </CardDescription>
             </div>
           </div>
@@ -61,7 +64,7 @@ export const TopicCard = ({ topic, onComplete, isCompleted }: TopicCardProps) =>
             {topic.keyPoints.map((point, idx) => (
               <li key={idx} className="flex items-start gap-2 text-sm">
                 <span className="text-primary mt-0.5">•</span>
-                <span>{point}</span>
+                <GlossaryHighlighter text={point} />
               </li>
             ))}
           </ul>

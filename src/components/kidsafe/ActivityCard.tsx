@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import * as LucideIcons from "lucide-react";
 import { Activity } from "@/data/kidSafeData";
+import { GlossaryHighlighter } from "./GlossaryHighlighter";
 
 interface ActivityCardProps {
   activity: Activity;
@@ -14,8 +15,12 @@ export const ActivityCard = ({ activity }: ActivityCardProps) => {
       <div className="flex items-start gap-3">
         {IconComponent && <IconComponent className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />}
         <div>
-          <h5 className="font-semibold text-sm mb-1">{activity.title}</h5>
-          <p className="text-sm text-muted-foreground">{activity.description}</p>
+          <h5 className="font-semibold text-sm mb-1">
+            <GlossaryHighlighter text={activity.title} />
+          </h5>
+          <p className="text-sm text-muted-foreground">
+            <GlossaryHighlighter text={activity.description} />
+          </p>
         </div>
       </div>
     </Card>
