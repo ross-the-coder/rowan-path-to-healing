@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { MessageCircle } from "lucide-react";
 import { ConversationExample } from "@/data/kidSafeData";
+import { GlossaryHighlighter } from "./GlossaryHighlighter";
 
 interface ConversationStarterProps {
   conversation: ConversationExample;
@@ -12,7 +13,9 @@ export const ConversationStarter = ({ conversation }: ConversationStarterProps) 
       <div className="flex items-start gap-3">
         <MessageCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
         <div className="flex-1 space-y-3">
-          <p className="font-medium text-sm">{conversation.scenario}</p>
+          <p className="font-medium text-sm">
+            <GlossaryHighlighter text={conversation.scenario} />
+          </p>
           <div className="space-y-2">
             {conversation.dialogues.map((dialogue, idx) => (
               <div 
@@ -24,7 +27,7 @@ export const ConversationStarter = ({ conversation }: ConversationStarterProps) 
                 }`}
               >
                 <span className="font-semibold">{dialogue.speaker}:</span>{" "}
-                <span className="italic">&ldquo;{dialogue.text}&rdquo;</span>
+                <span className="italic">&ldquo;<GlossaryHighlighter text={dialogue.text} />&rdquo;</span>
               </div>
             ))}
           </div>
