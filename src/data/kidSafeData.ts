@@ -238,40 +238,200 @@ export const elementarySchoolData: GradeContent[] = [
     grade: "1",
     gradeLevel: "1st Grade",
     intro: "First grade is an exciting time of growth and independence. Children are developing stronger social connections and beginning to understand more complex concepts about personal safety, boundaries, and healthy relationships.",
-    highlightMessage: "Content for 1st grade is being developed. Check back soon for age-appropriate activities and conversation starters.",
     topics: [
       {
         id: "permission-1st",
-        title: "Permission & Consent",
+        title: "Permission",
         icon: "HandHeart",
         color: "bg-blue-100 text-blue-700",
-        summary: "Building on kindergarten concepts with more independence",
+        summary: "Continuing to reinforce asking before taking or touching",
         keyPoints: [
-          "Reinforcing permission before borrowing or touching",
-          "Understanding different types of touch (safe, unsafe, unwanted)",
-          "Respecting others' space and belongings",
-          "Speaking up when feeling uncomfortable"
+          "Ask to use something belonging to someone else before taking it",
+          "Ask before touching someone else",
+          "Practice what to say when someone says 'no'",
+          "Understand that feelings after hearing 'no' are normal"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Practicing with objects",
+            dialogues: [
+              { speaker: "Parent", text: "Can I borrow the item you're holding?" },
+              { speaker: "Child", text: "Yes. (hands parent item)" },
+              { speaker: "Child", text: "Can I borrow the item you're holding?" },
+              { speaker: "Parent", text: "Yes. (hands child item)" }
+            ]
+          },
+          {
+            scenario: "Practicing with touch",
+            dialogues: [
+              { speaker: "Parent", text: "Can I give you a hug?" },
+              { speaker: "Child", text: "Yes. (hugs parent)" },
+              { speaker: "Child", text: "Can I give you a hug?" },
+              { speaker: "Parent", text: "Yes. (hugs child)" }
+            ]
+          },
+          {
+            scenario: "When someone says no",
+            dialogues: [
+              { speaker: "Parent", text: "Can I borrow your toy?" },
+              { speaker: "Child", text: "No." },
+              { speaker: "Parent", text: "That's okay! / That's fine! / No problem!" }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Pass the Object",
+            description: "Take turns passing a toy or object back and forth while practicing permission language",
+            icon: "Repeat"
+          },
+          {
+            title: "Feelings Check-In",
+            description: "Talk about how it feels when someone says 'no' and validate those emotions",
+            icon: "Heart"
+          }
+        ]
+      },
+      {
+        id: "boundaries-1st",
+        title: "Boundaries",
+        icon: "Shield",
+        color: "bg-purple-100 text-purple-700",
+        summary: "Helping children understand and set their own boundaries",
+        keyPoints: [
+          "Children have their own boundaries, even if hard to verbalize",
+          "It's okay to not want to hug or touch someone, even family",
+          "They can use 'no', 'no thanks', 'I'm okay', or 'I'm not sure'",
+          "If someone disrespects their 'no', tell a trusted adult",
+          "Model boundaries by narrating safe touches"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Narrating safe medical care",
+            dialogues: [
+              { speaker: "Parent", text: "I am touching your leg now to take a look at your knee." },
+              { speaker: "Parent", text: "I am going to use this cleaner to make sure I get all of the dirt out. It may sting a little bit–just let me know if it hurts too much." },
+              { speaker: "Parent", text: "I am going to touch the injury to put this ointment on. It will help your scrape feel better." }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Practice Saying No",
+            description: "Role-play scenarios where it's okay to say no to hugs or touches",
+            icon: "MessageCircle"
+          },
+          {
+            title: "Trusted Adult List",
+            description: "Create a list together of trusted adults they can talk to",
+            icon: "Users"
+          }
         ]
       },
       {
         id: "emotions-1st",
-        title: "Understanding Emotions",
+        title: "Emotions",
         icon: "Smile",
         color: "bg-yellow-100 text-yellow-700",
-        summary: "Expanding emotional vocabulary and regulation",
+        summary: "Identifying and handling feelings in healthy ways",
         keyPoints: [
-          "Identifying a wider range of emotions",
-          "Learning healthy ways to express feelings",
-          "Understanding that emotions change and that's okay",
-          "Practicing empathy with peers"
+          "All emotions are neutral - not negative or positive",
+          "Teach children to identify their emotions",
+          "Understand how emotions feel in their body",
+          "Create a plan for returning to calm baseline"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Identifying emotions in the body",
+            dialogues: [
+              { speaker: "Parent", text: "How do you know when you're happy?" },
+              { speaker: "Child", text: "I'm smiling and bouncy!" },
+              { speaker: "Parent", text: "How do you know when you're sad?" },
+              { speaker: "Child", text: "I feel a ball in my throat and want to cry." }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Emotion Faces",
+            description: "Draw or make faces showing different emotions together",
+            icon: "Smile"
+          },
+          {
+            title: "Calming Strategies",
+            description: "Practice deep breathing, coloring, or running around to release energy",
+            icon: "Wind"
+          }
+        ]
+      },
+      {
+        id: "empathy-1st",
+        title: "Empathy",
+        icon: "HeartHandshake",
+        color: "bg-green-100 text-green-700",
+        summary: "Recognizing and caring about others' feelings",
+        keyPoints: [
+          "Recognize feelings in others",
+          "Practice questioning how others might feel",
+          "Connect actions to emotions in others"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Perspective taking",
+            dialogues: [
+              { speaker: "Parent", text: "If someone took something that belongs to you without your permission, how might you feel?" },
+              { speaker: "Child", text: "Sad or angry!" },
+              { speaker: "Parent", text: "How do we think somebody might feel if we took something that belonged to them?" },
+              { speaker: "Child", text: "Probably sad or angry too." }
+            ]
+          }
+        ]
+      },
+      {
+        id: "trusted-adults-1st",
+        title: "Trusted Adults",
+        icon: "Users",
+        color: "bg-rose-100 text-rose-700",
+        summary: "Knowing who to talk to when something is wrong",
+        keyPoints: [
+          "Talk to trusted adults when feeling uncomfortable",
+          "Share if they feel unsafe for any reason",
+          "Tell an adult if someone asks them to keep a secret",
+          "Report if someone hurts their emotions or body",
+          "Let adults know if someone else got hurt"
+        ],
+        activities: [
+          {
+            title: "Telling Tree",
+            description: "Create a visual 'tree' with branches showing all their trusted adults",
+            icon: "TreePine"
+          },
+          {
+            title: "Practice Reporting",
+            description: "Role-play scenarios of when to tell a trusted adult",
+            icon: "MessageSquare"
+          }
         ]
       }
     ],
     resources: [
       {
-        category: "Coming Soon",
+        category: "Boundaries",
         links: [
-          { title: "Resources for 1st grade will be added soon" }
+          { title: "8 Ways to Teach Kids about Consent and Healthy Boundaries" },
+          { title: "Growing Kids and Boundaries: Teaching Consent By Age and Stage" },
+          { title: "Teaching Kids About Boundaries - Child Mind Institute" },
+          { title: "Teaching your child to set boundaries with friends" },
+          { title: "Why Children Need Boundaries: A Guide For Parents" }
+        ]
+      },
+      {
+        category: "Empathy",
+        links: [
+          { title: "Key Strategies to Teach Children Empathy" },
+          { title: "The caring child: How to teach empathy (age 5)" },
+          { title: "Empathy Activities for Kind and Not-Bored Kids" },
+          { title: "Social Skills: Empathy at Age 5 | PBS KIDS for Parents" }
         ]
       }
     ]
@@ -280,40 +440,200 @@ export const elementarySchoolData: GradeContent[] = [
     grade: "2",
     gradeLevel: "2nd Grade",
     intro: "Second graders are becoming more aware of social dynamics and relationships. This is an important year to reinforce concepts of consent, boundaries, and personal safety in age-appropriate ways.",
-    highlightMessage: "Content for 2nd grade is being developed. Check back soon for age-appropriate activities and conversation starters.",
     topics: [
       {
-        id: "boundaries-2nd",
-        title: "Personal Boundaries",
-        icon: "Shield",
-        color: "bg-purple-100 text-purple-700",
-        summary: "Strengthening understanding of personal space and limits",
+        id: "permission-2nd",
+        title: "Permission",
+        icon: "HandHeart",
+        color: "bg-blue-100 text-blue-700",
+        summary: "Continuing to reinforce asking before taking or touching",
         keyPoints: [
-          "Everyone has different comfort levels with touch",
-          "It's okay to say no to physical contact",
-          "Recognizing when boundaries are crossed",
-          "Telling a trusted adult about boundary violations"
+          "Ask to use something belonging to someone else before taking it",
+          "Ask before touching someone else",
+          "Practice what to say when someone says 'no'",
+          "Understand that feelings after hearing 'no' are normal"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Practicing with objects",
+            dialogues: [
+              { speaker: "Parent", text: "Can I borrow the item you're holding?" },
+              { speaker: "Child", text: "Yes. (hands parent item)" },
+              { speaker: "Child", text: "Can I borrow the item you're holding?" },
+              { speaker: "Parent", text: "Yes. (hands child item)" }
+            ]
+          },
+          {
+            scenario: "Practicing with touch",
+            dialogues: [
+              { speaker: "Parent", text: "Can I give you a hug?" },
+              { speaker: "Child", text: "Yes. (hugs parent)" },
+              { speaker: "Child", text: "Can I give you a hug?" },
+              { speaker: "Parent", text: "Yes. (hugs child)" }
+            ]
+          },
+          {
+            scenario: "When someone says no",
+            dialogues: [
+              { speaker: "Parent", text: "Can I borrow your toy?" },
+              { speaker: "Child", text: "No." },
+              { speaker: "Parent", text: "That's okay! / That's fine! / No problem!" }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Pass the Object",
+            description: "Take turns passing a toy or object back and forth while practicing permission language",
+            icon: "Repeat"
+          },
+          {
+            title: "Feelings Check-In",
+            description: "Talk about how it feels when someone says 'no' and validate those emotions",
+            icon: "Heart"
+          }
         ]
       },
       {
-        id: "friendship-2nd",
-        title: "Healthy Friendships",
-        icon: "Users",
-        color: "bg-green-100 text-green-700",
-        summary: "Understanding what makes friendships healthy and safe",
+        id: "boundaries-2nd",
+        title: "Boundaries",
+        icon: "Shield",
+        color: "bg-purple-100 text-purple-700",
+        summary: "Helping children understand and set their own boundaries",
         keyPoints: [
-          "Friends respect each other's feelings and boundaries",
-          "How to handle peer pressure",
-          "Recognizing when friendships don't feel right",
-          "Building strong communication skills"
+          "Children have their own boundaries, even if hard to verbalize",
+          "It's okay to not want to hug or touch someone, even family",
+          "They can use 'no', 'no thanks', 'I'm okay', or 'I'm not sure'",
+          "If someone disrespects their 'no', tell a trusted adult",
+          "Model boundaries by narrating safe touches"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Narrating safe medical care",
+            dialogues: [
+              { speaker: "Parent", text: "I am touching your leg now to take a look at your knee." },
+              { speaker: "Parent", text: "I am going to use this cleaner to make sure I get all of the dirt out. It may sting a little bit–just let me know if it hurts too much." },
+              { speaker: "Parent", text: "I am going to touch the injury to put this ointment on. It will help your scrape feel better." }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Practice Saying No",
+            description: "Role-play scenarios where it's okay to say no to hugs or touches",
+            icon: "MessageCircle"
+          },
+          {
+            title: "Trusted Adult List",
+            description: "Create a list together of trusted adults they can talk to",
+            icon: "Users"
+          }
+        ]
+      },
+      {
+        id: "emotions-2nd",
+        title: "Emotions",
+        icon: "Smile",
+        color: "bg-yellow-100 text-yellow-700",
+        summary: "Identifying and handling feelings in healthy ways",
+        keyPoints: [
+          "All emotions are neutral - not negative or positive",
+          "Teach children to identify their emotions",
+          "Understand how emotions feel in their body",
+          "Create a plan for returning to calm baseline"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Identifying emotions in the body",
+            dialogues: [
+              { speaker: "Parent", text: "How do you know when you're happy?" },
+              { speaker: "Child", text: "I'm smiling and bouncy!" },
+              { speaker: "Parent", text: "How do you know when you're sad?" },
+              { speaker: "Child", text: "I feel a ball in my throat and want to cry." }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Emotion Faces",
+            description: "Draw or make faces showing different emotions together",
+            icon: "Smile"
+          },
+          {
+            title: "Calming Strategies",
+            description: "Practice deep breathing, coloring, or running around to release energy",
+            icon: "Wind"
+          }
+        ]
+      },
+      {
+        id: "empathy-2nd",
+        title: "Empathy",
+        icon: "HeartHandshake",
+        color: "bg-green-100 text-green-700",
+        summary: "Recognizing and caring about others' feelings",
+        keyPoints: [
+          "Recognize feelings in others",
+          "Practice questioning how others might feel",
+          "Connect actions to emotions in others"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Perspective taking",
+            dialogues: [
+              { speaker: "Parent", text: "If someone took something that belongs to you without your permission, how might you feel?" },
+              { speaker: "Child", text: "Sad or angry!" },
+              { speaker: "Parent", text: "How do we think somebody might feel if we took something that belonged to them?" },
+              { speaker: "Child", text: "Probably sad or angry too." }
+            ]
+          }
+        ]
+      },
+      {
+        id: "trusted-adults-2nd",
+        title: "Trusted Adults",
+        icon: "Users",
+        color: "bg-rose-100 text-rose-700",
+        summary: "Knowing who to talk to when something is wrong",
+        keyPoints: [
+          "Talk to trusted adults when feeling uncomfortable",
+          "Share if they feel unsafe for any reason",
+          "Tell an adult if someone asks them to keep a secret",
+          "Report if someone hurts their emotions or body",
+          "Let adults know if someone else got hurt"
+        ],
+        activities: [
+          {
+            title: "Telling Tree",
+            description: "Create a visual 'tree' with branches showing all their trusted adults",
+            icon: "TreePine"
+          },
+          {
+            title: "Practice Reporting",
+            description: "Role-play scenarios of when to tell a trusted adult",
+            icon: "MessageSquare"
+          }
         ]
       }
     ],
     resources: [
       {
-        category: "Coming Soon",
+        category: "Boundaries",
         links: [
-          { title: "Resources for 2nd grade will be added soon" }
+          { title: "8 Ways to Teach Kids about Consent and Healthy Boundaries" },
+          { title: "Growing Kids and Boundaries: Teaching Consent By Age and Stage" },
+          { title: "Teaching Kids About Boundaries - Child Mind Institute" },
+          { title: "Teaching your child to set boundaries with friends" },
+          { title: "Why Children Need Boundaries: A Guide For Parents" }
+        ]
+      },
+      {
+        category: "Empathy",
+        links: [
+          { title: "Key Strategies to Teach Children Empathy" },
+          { title: "The caring child: How to teach empathy (age 5)" },
+          { title: "Empathy Activities for Kind and Not-Bored Kids" },
+          { title: "Social Skills: Empathy at Age 5 | PBS KIDS for Parents" }
         ]
       }
     ]
@@ -463,37 +783,132 @@ export const elementarySchoolData: GradeContent[] = [
     topics: [
       {
         id: "online-safety-4th",
-        title: "Digital Citizenship",
+        title: "Online Safety",
         icon: "Globe",
         color: "bg-indigo-100 text-indigo-700",
-        summary: "Advanced internet safety and digital footprint awareness",
+        summary: "Navigating the internet safely and protecting private information",
         keyPoints: [
-          "Understanding digital footprints and permanence of online actions",
-          "Recognizing cyberbullying and how to respond",
-          "Safe gaming and social media practices",
-          "Protecting personal information and passwords"
+          "Private information tells someone more about who you are",
+          "Only interact with people you know in real life",
+          "Don't share photos, full name, or location online",
+          "Tell a trusted adult about uncomfortable online interactions",
+          "Strangers exist on social media AND gaming platforms"
+        ],
+        conversationStarters: [
+          {
+            scenario: "What is private information?",
+            dialogues: [
+              { speaker: "Parent", text: "What are some things about you that are private?" },
+              { speaker: "Child", text: "My full name, where I live, my phone number?" },
+              { speaker: "Parent", text: "Exactly! Even pictures of your face can tell strangers about you. That's why we keep them private." }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Public vs Private Game",
+            description: "Sort information cards into 'okay to share' and 'keep private' categories",
+            icon: "Lock"
+          },
+          {
+            title: "Social Media Agreement",
+            description: "Create a family agreement about safe social media use together",
+            icon: "FileCheck"
+          }
         ]
       },
       {
-        id: "body-autonomy-4th",
-        title: "Body Autonomy",
+        id: "body-language-4th",
+        title: "Reading Body Language",
+        icon: "User",
+        color: "bg-cyan-100 text-cyan-700",
+        summary: "Understanding how emotions show up in faces and bodies",
+        keyPoints: [
+          "Emotions show up on people's faces (smiling = happy, frowning = sad)",
+          "Emotions show up in body language (crossed arms, clenched fists)",
+          "We can respond to what bodies tell us, even without words",
+          "Check body language before asking for hugs or touch"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Reading emotions",
+            dialogues: [
+              { speaker: "Parent", text: "If someone's face is red and their fists are clenched, what might they be feeling?" },
+              { speaker: "Child", text: "Angry or frustrated?" },
+              { speaker: "Parent", text: "Right! So would that be a good time to ask them for a hug?" },
+              { speaker: "Child", text: "Probably not - maybe they need space first." }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Emotion Charades",
+            description: "Act out emotions using only face and body - others guess the feeling",
+            icon: "Drama"
+          },
+          {
+            title: "Feelings Journal",
+            description: "Draw or describe how different emotions look and feel",
+            icon: "BookOpen"
+          }
+        ]
+      },
+      {
+        id: "clean-healthy-4th",
+        title: "Clean & Healthy Rule",
         icon: "Heart",
         color: "bg-pink-100 text-pink-700",
-        summary: "Deeper understanding of bodily autonomy and consent",
+        summary: "Understanding who should help with private body parts",
         keyPoints: [
-          "Your body belongs to you and you make decisions about it",
-          "Understanding puberty basics in age-appropriate ways",
-          "Reinforcing the clean and healthy rule",
-          "When and how to report uncomfortable situations"
+          "Only trusted adults keeping you clean or healthy should touch private areas",
+          "You don't need as much help staying clean as you get older",
+          "Doctors and nurses help keep you healthy during check-ups",
+          "No adults should offer to help clean you - tell a trusted adult if this happens",
+          "Tell a trusted adult about any confusing or uncomfortable touches"
+        ],
+        conversationStarters: [
+          {
+            scenario: "When is it okay?",
+            dialogues: [
+              { speaker: "Parent", text: "When you were little, I had to give you baths. Do you need that help now?" },
+              { speaker: "Child", text: "No, I can do it myself now!" },
+              { speaker: "Parent", text: "That's right! If someone offers to help you when you don't need it, what should you do?" },
+              { speaker: "Child", text: "Say no and tell you about it." }
+            ]
+          }
         ]
       }
     ],
     resources: [
       {
-        category: "Coming Soon",
+        category: "Internet Safety",
         links: [
-          { title: "Resources for 4th grade will be added soon" }
+          { title: "Internet Safety for Kids - The Annie E. Casey Foundation" },
+          { title: "8 Internet Safety Rules for Kids" },
+          { title: "Be Internet Awesome" },
+          { title: "A Guide to Internet Safety for Kids in 2025" },
+          { title: "Internet Safety Activity Book" },
+          { title: "Online Safety Worksheet" }
         ]
+      },
+      {
+        category: "Body Language",
+        links: [
+          { title: "Nonverbal communication: body language and tone of voice" },
+          { title: "3 Tips on Helping Kids Understand Emotions and Body Language" }
+        ]
+      },
+      {
+        category: "Boundaries + Consent",
+        links: [
+          { title: "Growing Kids and Boundaries: Teaching Consent By Age and Stage" }
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What, specifically, do I report about?",
+        answer: "Remind your child that the same rules stand: anything that is out of the ordinary, makes them uncomfortable, or is unsafe, needs to be reported to a trusted adult. At this age, focus on internet topics like social media or video games, peer relationships, and the clean and healthy rule."
       }
     ]
   },
@@ -504,51 +919,133 @@ export const elementarySchoolData: GradeContent[] = [
     highlightMessage: "Preparing for middle school with comprehensive safety education and relationship skills.",
     topics: [
       {
-        id: "peer-pressure-5th",
-        title: "Handling Peer Pressure",
-        icon: "Users",
-        color: "bg-cyan-100 text-cyan-700",
-        summary: "Strategies for making safe choices with peer influence",
-        keyPoints: [
-          "Recognizing different forms of peer pressure",
-          "Practicing assertive communication and saying no",
-          "Understanding the difference between positive and negative peer influence",
-          "Building confidence in personal decision-making"
-        ]
-      },
-      {
-        id: "healthy-relationships-5th",
-        title: "Healthy Relationships",
-        icon: "HeartHandshake",
-        color: "bg-rose-100 text-rose-700",
-        summary: "Understanding respect, boundaries, and communication in relationships",
-        keyPoints: [
-          "What healthy relationships look like (friends, family, future relationships)",
-          "Red flags in relationships and friendships",
-          "Communication skills and conflict resolution",
-          "Understanding consent in all types of relationships"
-        ]
-      },
-      {
         id: "online-safety-5th",
-        title: "Advanced Online Safety",
+        title: "Online Safety",
         icon: "Globe",
         color: "bg-indigo-100 text-indigo-700",
-        summary: "Navigating social media and online relationships safely",
+        summary: "Navigating the internet safely and protecting private information",
         keyPoints: [
-          "Understanding online predators and grooming tactics",
-          "Safe social media use and privacy settings",
-          "Recognizing and reporting inappropriate content",
-          "Digital wellness and healthy screen time habits"
+          "Private information tells someone more about who you are",
+          "Only interact with people you know in real life",
+          "Don't share photos, full name, or location online",
+          "Tell a trusted adult about uncomfortable online interactions",
+          "Strangers exist on social media AND gaming platforms"
+        ],
+        conversationStarters: [
+          {
+            scenario: "What is private information?",
+            dialogues: [
+              { speaker: "Parent", text: "What are some things about you that are private?" },
+              { speaker: "Child", text: "My full name, where I live, my phone number?" },
+              { speaker: "Parent", text: "Exactly! Even pictures of your face can tell strangers about you. That's why we keep them private." }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Public vs Private Game",
+            description: "Sort information cards into 'okay to share' and 'keep private' categories",
+            icon: "Lock"
+          },
+          {
+            title: "Social Media Agreement",
+            description: "Create a family agreement about safe social media use together",
+            icon: "FileCheck"
+          }
+        ]
+      },
+      {
+        id: "body-language-5th",
+        title: "Reading Body Language",
+        icon: "User",
+        color: "bg-cyan-100 text-cyan-700",
+        summary: "Understanding how emotions show up in faces and bodies",
+        keyPoints: [
+          "Emotions show up on people's faces (smiling = happy, frowning = sad)",
+          "Emotions show up in body language (crossed arms, clenched fists)",
+          "We can respond to what bodies tell us, even without words",
+          "Check body language before asking for hugs or touch"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Reading emotions",
+            dialogues: [
+              { speaker: "Parent", text: "If someone's face is red and their fists are clenched, what might they be feeling?" },
+              { speaker: "Child", text: "Angry or frustrated?" },
+              { speaker: "Parent", text: "Right! So would that be a good time to ask them for a hug?" },
+              { speaker: "Child", text: "Probably not - maybe they need space first." }
+            ]
+          }
+        ],
+        activities: [
+          {
+            title: "Emotion Charades",
+            description: "Act out emotions using only face and body - others guess the feeling",
+            icon: "Drama"
+          },
+          {
+            title: "Feelings Journal",
+            description: "Draw or describe how different emotions look and feel",
+            icon: "BookOpen"
+          }
+        ]
+      },
+      {
+        id: "clean-healthy-5th",
+        title: "Clean & Healthy Rule",
+        icon: "Heart",
+        color: "bg-pink-100 text-pink-700",
+        summary: "Understanding who should help with private body parts",
+        keyPoints: [
+          "Only trusted adults keeping you clean or healthy should touch private areas",
+          "You don't need as much help staying clean as you get older",
+          "Doctors and nurses help keep you healthy during check-ups",
+          "No adults should offer to help clean you - tell a trusted adult if this happens",
+          "Tell a trusted adult about any confusing or uncomfortable touches"
+        ],
+        conversationStarters: [
+          {
+            scenario: "When is it okay?",
+            dialogues: [
+              { speaker: "Parent", text: "When you were little, I had to give you baths. Do you need that help now?" },
+              { speaker: "Child", text: "No, I can do it myself now!" },
+              { speaker: "Parent", text: "That's right! If someone offers to help you when you don't need it, what should you do?" },
+              { speaker: "Child", text: "Say no and tell you about it." }
+            ]
+          }
         ]
       }
     ],
     resources: [
       {
-        category: "Coming Soon",
+        category: "Internet Safety",
         links: [
-          { title: "Resources for 5th grade will be added soon" }
+          { title: "Internet Safety for Kids - The Annie E. Casey Foundation" },
+          { title: "8 Internet Safety Rules for Kids" },
+          { title: "Be Internet Awesome" },
+          { title: "A Guide to Internet Safety for Kids in 2025" },
+          { title: "Internet Safety Activity Book" },
+          { title: "Online Safety Worksheet" }
         ]
+      },
+      {
+        category: "Body Language",
+        links: [
+          { title: "Nonverbal communication: body language and tone of voice" },
+          { title: "3 Tips on Helping Kids Understand Emotions and Body Language" }
+        ]
+      },
+      {
+        category: "Boundaries + Consent",
+        links: [
+          { title: "Growing Kids and Boundaries: Teaching Consent By Age and Stage" }
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What, specifically, do I report about?",
+        answer: "Remind your child that the same rules stand: anything that is out of the ordinary, makes them uncomfortable, or is unsafe, needs to be reported to a trusted adult. At this age, focus on internet topics like social media or video games, peer relationships, and the clean and healthy rule."
       }
     ]
   }
