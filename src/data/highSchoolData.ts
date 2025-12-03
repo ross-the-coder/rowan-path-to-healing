@@ -275,11 +275,11 @@ export const highSchoolData: GradeContent[] = [
           "ONGOING: Consent can be withdrawn at any time. This can be for one specific sexual act or the encounter altogether."
         ],
         keyPoints: [
-          "EQUAL: There shouldn't be any power imbalances between partners in a sexual relationship. This might include, for example, someone's age, the amount of money they have, or what job they have. It can also include relationships such as between boss and employee, teacher and student, or coach and player. There are specific laws about this, as well.",
-          "HONEST: People in a sexual relationship need to be clear and upfront about who they are, their sexual health, and any pertinent sexual history. This might look like a conversation between partners before engaging in any sexual behavior.",
-          "WANTED: Each sexual encounter must be met with an enthusiastic agreement from all parties involved. No coercion must be used in order to get someone to participate in sexual acts. For example, if someone continued to pressure someone else until they said yes, that would be considered coercion.",
-          "SPECIFIC: Each sexual act is discussed and agreed upon by both partners. This would also be part of a conversation between partners before engaging in any sexual behavior.",
-          "ONGOING: Consent can be withdrawn at any time. This can be for one specific sexual act or the encounter altogether."
+          "Equal: No power imbalances between partners (age, money, job, position)",
+          "Honest: Clear and upfront about identity, sexual health, and relevant history",
+          "Wanted: Enthusiastic agreement from all parties – no coercion or pressure",
+          "Specific: Each act is discussed and agreed upon by both partners",
+          "Ongoing: Consent can be withdrawn at any time, for any specific act or the entire encounter"
         ],
         conversationStarters: [
           {
