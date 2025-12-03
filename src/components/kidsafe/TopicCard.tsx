@@ -78,11 +78,17 @@ export const TopicCard = ({ topic, onComplete, isCompleted }: TopicCardProps) =>
                 📖 Read Full Content
               </AccordionTrigger>
               <AccordionContent className="space-y-3 pt-4">
-                {(topic as any).fullContent.map((paragraph: string, idx: number) => (
-                  <p key={idx} className="text-sm leading-relaxed text-muted-foreground">
-                    <GlossaryHighlighter text={paragraph} />
-                  </p>
-                ))}
+                {(topic as any).fullContent.map((paragraph: string, idx: number) => {
+                  const isBulletItem = paragraph.trim().startsWith('•');
+                  return (
+                    <p 
+                      key={idx} 
+                      className={`text-sm leading-relaxed text-muted-foreground ${isBulletItem ? 'ml-6' : ''}`}
+                    >
+                      <GlossaryHighlighter text={paragraph.trim()} />
+                    </p>
+                  );
+                })}
               </AccordionContent>
             </AccordionItem>
           )}
