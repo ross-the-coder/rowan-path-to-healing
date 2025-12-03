@@ -92,7 +92,7 @@ export const TopicCard = ({ topic, onComplete, isCompleted }: TopicCardProps) =>
                         key={idx} 
                         className={`text-sm leading-relaxed text-muted-foreground ${isBulletItem ? 'ml-6' : ''}`}
                       >
-                        <strong className="text-foreground">{keyword}:</strong>{' '}
+                        <strong className="text-primary">{keyword}:</strong>{' '}
                         <GlossaryHighlighter text={rest} />
                       </p>
                     );
