@@ -55,10 +55,21 @@ export const TopicCard = ({ topic, onComplete, isCompleted }: TopicCardProps) =>
       </CardHeader>
 
       <CardContent className="p-6 space-y-6">
+        {/* Full Content (if available) */}
+        {'fullContent' in topic && (topic as any).fullContent && (
+          <div className="space-y-3">
+            {(topic as any).fullContent.map((paragraph: string, idx: number) => (
+              <p key={idx} className="text-sm leading-relaxed text-muted-foreground">
+                <GlossaryHighlighter text={paragraph} />
+              </p>
+            ))}
+          </div>
+        )}
+
         {/* Key Points */}
-        <div>
+        <div className="bg-muted/30 rounded-lg p-4">
           <h4 className="font-semibold mb-3 flex items-center gap-2">
-            <Badge variant="outline">Key Points</Badge>
+            <Badge variant="outline">Key Points Summary</Badge>
           </h4>
           <ul className="space-y-2">
             {topic.keyPoints.map((point, idx) => (
