@@ -79,13 +79,31 @@ export const TopicCard = ({ topic, onComplete, isCompleted }: TopicCardProps) =>
               </AccordionTrigger>
               <AccordionContent className="space-y-3 pt-4">
                 {(topic as any).fullContent.map((paragraph: string, idx: number) => {
-                  const isBulletItem = paragraph.trim().startsWith('•');
+                  const trimmed = paragraph.trim();
+                  const isBulletItem = trimmed.startsWith('•');
+                  
+                  // Check if paragraph starts with a keyword followed by colon (e.g., "EQUAL:")
+                  const keywordMatch = trimmed.match(/^([A-Z]+):\s*(.*)$/);
+                  
+                  if (keywordMatch) {
+                    const [, keyword, rest] = keywordMatch;
+                    return (
+                      <p 
+                        key={idx} 
+                        className={`text-sm leading-relaxed text-muted-foreground ${isBulletItem ? 'ml-6' : ''}`}
+                      >
+                        <strong className="text-foreground">{keyword}:</strong>{' '}
+                        <GlossaryHighlighter text={rest} />
+                      </p>
+                    );
+                  }
+                  
                   return (
                     <p 
                       key={idx} 
                       className={`text-sm leading-relaxed text-muted-foreground ${isBulletItem ? 'ml-6' : ''}`}
                     >
-                      <GlossaryHighlighter text={paragraph.trim()} />
+                      <GlossaryHighlighter text={trimmed} />
                     </p>
                   );
                 })}
