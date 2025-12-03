@@ -55,37 +55,31 @@ export const TopicCard = ({ topic, onComplete, isCompleted }: TopicCardProps) =>
       </CardHeader>
 
       <CardContent className="p-6 space-y-6">
-        {/* Key Points */}
-        <div>
-          <h4 className="font-semibold mb-3 flex items-center gap-2">
-            <Badge variant="outline">Key Points</Badge>
-          </h4>
-          <ul className="space-y-2">
-            {topic.keyPoints.map((point, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-sm">
-                <span className="text-primary mt-0.5">•</span>
-                <GlossaryHighlighter text={point} />
-              </li>
+        {/* Full Content - show PDF content directly */}
+        {'fullContent' in topic && (topic as any).fullContent ? (
+          <div className="space-y-3">
+            {(topic as any).fullContent.map((paragraph: string, idx: number) => (
+              <p key={idx} className="text-sm leading-relaxed text-foreground">
+                <GlossaryHighlighter text={paragraph} />
+              </p>
             ))}
-          </ul>
-        </div>
+          </div>
+        ) : (
+          /* Fallback to keyPoints if no fullContent */
+          <div>
+            <ul className="space-y-2">
+              {topic.keyPoints.map((point, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-sm">
+                  <span className="text-primary mt-0.5">•</span>
+                  <GlossaryHighlighter text={point} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
-        {/* Full Content, Conversation Starters & Activities in Accordion */}
+        {/* Conversation Starters & Activities in Accordion */}
         <Accordion type="multiple" className="w-full">
-          {'fullContent' in topic && (topic as any).fullContent && (
-            <AccordionItem value="full-content">
-              <AccordionTrigger className="text-sm font-semibold">
-                📖 Read Full Content
-              </AccordionTrigger>
-              <AccordionContent className="space-y-3 pt-4">
-                {(topic as any).fullContent.map((paragraph: string, idx: number) => (
-                  <p key={idx} className="text-sm leading-relaxed text-muted-foreground">
-                    <GlossaryHighlighter text={paragraph} />
-                  </p>
-                ))}
-              </AccordionContent>
-            </AccordionItem>
-          )}
           {topic.conversationStarters && topic.conversationStarters.length > 0 && (
             <AccordionItem value="conversations">
               <AccordionTrigger className="text-sm font-semibold">
