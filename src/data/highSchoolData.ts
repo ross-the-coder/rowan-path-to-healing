@@ -53,8 +53,8 @@ export const highSchoolData: GradeContent[] = [
           "Example 2: One day at school, someone bumps into you in the hallway. They apologize, and you keep going on with your day. The next day, though, it happens again. It keeps happening every day for an entire week. This WOULD be considered sexual harassment. Though it seems like the first time was unintentional, the person continued to touch someone else when it was unwanted and it continued to happen. When that is the case, it is not an accident."
         ],
         keyPoints: [
-          "Sexual harassment can be verbal, including inappropriate comments, catcalling, or discriminatory language",
-          "Physical sexual harassment is any unwanted touch on any part of the body",
+          "Sexual harassment can be verbal: inappropriate comments, catcalling, or discriminatory language",
+          "Physical sexual harassment: any unwanted touch on any part of the body",
           "Touch is considered physical sexual harassment as long as it is unwanted – it does not need to be repeated",
           "Physical sexual harassment isn't always sexual in nature – 'sexual' refers to touch of another's body",
           "Accidental, one-time contact is not harassment, but repeated unwanted contact is"
@@ -84,15 +84,15 @@ export const highSchoolData: GradeContent[] = [
           "This is different from sexual harassment, which typically involves repeated behavior on non-intimate areas of the body."
         ],
         keyPoints: [
-          "Sexual assault is any unwanted touch to an intimate area of the body",
-          "In Connecticut, intimate parts include breasts, butt, genitals, and inner thighs",
+          "Sexual assault: any unwanted touch to an intimate area of the body",
+          "In Connecticut, intimate parts include: breasts, butt, genitals, and inner thighs",
           "Your child can label any parts of their body as intimate, but Connecticut law specifically covers these areas",
           "Sexual assault covers behaviors that are unwanted – they do not have to be repeated to be covered under law",
           "This is different from sexual harassment, which typically involves repeated behavior on non-intimate areas"
         ]
       },
       {
-        id: "sexting-csam",
+        id: "sexting-csam-9",
         title: "Sexting & Child Sexual Abuse Material",
         icon: "Smartphone",
         color: "purple",
@@ -107,9 +107,9 @@ export const highSchoolData: GradeContent[] = [
           "Our goal is not to get them into trouble for CSAM-related charges. Our goal is to teach minors about the risks to lessen their chances of engaging in this behavior."
         ],
         keyPoints: [
-          "Sexting is sending intimate content through text, social media, or messaging apps – including written content, images, videos, and even suggestive emojis",
+          "Sexting: sending intimate content through text, social media, or messaging apps – including written content, images, videos, and even suggestive emojis",
           "Anyone under 18 who takes or sends intimate photos of themselves or others is engaging in illegal behavior",
-          "Child Sexual Abuse Material (CSAM) is any visual depiction of sexual conduct involving a minor (under 18)",
+          "Child Sexual Abuse Material (CSAM): any visual depiction of sexual conduct involving a minor (under 18)",
           "Previously called 'child pornography' – the new language reflects that children cannot consent to creating such material",
           "Even if a minor agrees to take or send a photo, this is NOT consent – minors cannot legally consent to creating intimate images",
           "Our goal is not to get teens in trouble, but to teach them about risks to prevent this behavior"
@@ -123,7 +123,7 @@ export const highSchoolData: GradeContent[] = [
         ]
       },
       {
-        id: "sextortion",
+        id: "sextortion-9",
         title: "Sextortion",
         icon: "Lock",
         color: "orange",
@@ -174,11 +174,11 @@ export const highSchoolData: GradeContent[] = [
           "• Have action taken by your school to prevent sexual harassment",
           "Your child might have heard of Title IX before because of its original purpose – to aim for equality within scholastic sports programs.",
           "One example to use to explain Title IX might be: The softball team at a high school plays on a field equipped with stadium seating and powerful lights. The team goes over right after school to practice, and can be on the field after it gets dark because of the lighting. The baseball team at the same high school plays on a field with no amenities. The team has to leave school early in order to get in a full practice before the field gets dark.",
-          "This situation is an example of a Title IX violation. The baseball team has to miss school in order to get in a full practice, which the softball team does not have to do. The baseball team does not have access to the same resources, like the powerful lights, that the softball team has.",
+          "This situation is an example of a Title IX violation. The baseball team has to miss school in order to get a full practice, which the softball team does not have to do. The baseball team does not have access to the same resources, like the powerful lights, that the softball team has.",
           "To remedy this situation, the school could either put lights on the baseball field as well, or create a system in which each team plays on the baseball field one day and the softball field the next to make their access to school and sports the same."
         ],
         keyPoints: [
-          "Title IX protects students from sex and gender-based discrimination in education programs receiving federal funding",
+          "Title IX: protects students from sex and gender-based discrimination in education programs receiving federal funding",
           "Your rights include: getting an equal education, being free from discrimination, feeling safe at school",
           "You have the right to report sexual harassment and have your school take action to prevent it",
           "Title IX originally aimed for equality in scholastic sports programs",
@@ -261,7 +261,7 @@ export const highSchoolData: GradeContent[] = [
     intro: "Tenth grade expands on understanding consent, age of consent laws, healthy relationships, and power dynamics. These topics prepare students to navigate increasingly complex social situations.",
     topics: [
       {
-        id: "consent-framework",
+        id: "consent-framework-10",
         title: "Understanding Consent",
         icon: "CheckCircle",
         color: "green",
@@ -269,9 +269,9 @@ export const highSchoolData: GradeContent[] = [
         fullContent: [
           "You or your child might have heard of different acronyms to remember the parts of consent. This toolkit is an updated way to measure consent.",
           "EQUAL: There shouldn't be any power imbalances between partners in a sexual relationship. This might include, for example, someone's age, the amount of money they have, or what job they have. It can also include relationships such as between boss and employee, teacher and student, or coach and player. There are specific laws about this, as well:",
-          "    • Between a boss and employee: The younger person must be over the age of 18. However, it is important to discuss the power dynamics at play here.",
-          "    • Between a teacher and student: In the state of Connecticut, it is illegal for any teacher and their student to have a sexual relationship, regardless of age. The law applies not only to students in the school in which the teacher works, but also the rest of the students in the district.",
-          "    • Coach and player: The younger person must be over the age of 18. However, it is important to discuss the power dynamics at play here. In addition, if the coach works for the school, the same rules regarding teacher and student apply instead of the age of 18 rule.",
+          "• Between a boss and employee: The younger person must be over the age of 18. However, it is important to discuss the power dynamics at play here.",
+          "• Between a teacher and student: In the state of Connecticut, it is illegal for any teacher and their student to have a sexual relationship, regardless of age. The law applies not only to students in the school in which the teacher works, but also the rest of the students in the district.",
+          "• Coach and player: The younger person must be over the age of 18. However, it is important to discuss the power dynamics at play here. In addition, if the coach works for the school, the same rules regarding teacher and student apply instead of the age of 18 rule.",
           "HONEST: People in a sexual relationship need to be clear and upfront about who they are, their sexual health, and any pertinent sexual history. This might look like a conversation between partners before engaging in any sexual behavior.",
           "WANTED: Each sexual encounter must be met with an enthusiastic agreement from all parties involved. No coercion must be used in order to get someone to participate in sexual acts. For example, if someone continued to pressure someone else until they said yes, that would be considered coercion.",
           "SPECIFIC: Each sexual act is discussed and agreed upon by both partners. This would also be part of a conversation between partners before engaging in any sexual behavior.",
@@ -296,7 +296,7 @@ export const highSchoolData: GradeContent[] = [
         ]
       },
       {
-        id: "age-of-consent",
+        id: "age-of-consent-10",
         title: "Age of Consent Laws",
         icon: "Calendar",
         color: "blue",
@@ -323,7 +323,7 @@ export const highSchoolData: GradeContent[] = [
         activities: [
           {
             title: "Age of Consent Scenarios Activity",
-            description: "Discuss which relationships are legal in CT: 16 & 35 (Legal - 16 is above age of consent, but discuss power dynamics), 16 & 17 (Legal), 15 & 18 (Illegal - 3+ year gap and 15 is below age of consent), 14 & 17 (Illegal - same rule applies), 15 & 15 (Legal - both fall within exemption law). Bonus: A 16 and 25 year old have a legal relationship in CT. They go to NYC for the weekend. Is their relationship legal there? (No - NY's age of consent is 17, and the 25 year old would be at fault)",
+            description: "Discuss which relationships are legal in CT:\n• 16 & 35: Legal – 16 is above age of consent, but discuss power dynamics\n• 16 & 17: Legal\n• 15 & 18: Illegal – 3+ year gap and 15 is below age of consent\n• 14 & 17: Illegal – same rule applies\n• 15 & 15: Legal – both fall within exemption law\n\nBonus: A 16 and 25 year old have a legal relationship in CT. They go to NYC for the weekend. Is their relationship legal there? (No – NY's age of consent is 17, and the 25 year old would be at fault)",
             icon: "HelpCircle"
           }
         ],
@@ -339,32 +339,7 @@ export const highSchoolData: GradeContent[] = [
         ]
       },
       {
-        id: "healthy-relationships-10",
-        title: "Healthy vs. Unhealthy Relationships",
-        icon: "Heart",
-        color: "pink",
-        summary: "Recognizing the key elements that make relationships healthy and safe.",
-        fullContent: [
-          "Understanding the difference between healthy and unhealthy relationships is crucial as you navigate social connections.",
-          "Key elements of healthy relationships include:",
-          "EMPATHY: Understanding and sharing your partner's feelings. Being able to put yourself in their shoes.",
-          "BOUNDARIES: Respecting personal limits and space. Everyone has the right to set their own boundaries.",
-          "RESPECT: Valuing your partner's thoughts, feelings, and choices. Treating them as an equal.",
-          "TRUST: Being reliable and honest with each other. Building confidence in your relationship.",
-          "EQUITY: Fair treatment and equal power in the relationship. Neither person dominates.",
-          "COMMUNICATION: Open, honest dialogue about feelings and needs. Being able to talk through problems."
-        ],
-        keyPoints: [
-          "Empathy: Understanding and sharing your partner's feelings",
-          "Boundaries: Respecting personal limits and space",
-          "Respect: Valuing your partner's thoughts, feelings, and choices",
-          "Trust: Being reliable and honest with each other",
-          "Equity: Fair treatment and equal power in the relationship",
-          "Communication: Open, honest dialogue about feelings and needs"
-        ]
-      },
-      {
-        id: "power-dynamics",
+        id: "power-dynamics-10",
         title: "Equal Relationships & Power Dynamics",
         icon: "Scale",
         color: "orange",
@@ -400,29 +375,7 @@ export const highSchoolData: GradeContent[] = [
         ]
       },
       {
-        id: "boundaries-types",
-        title: "Types of Boundaries",
-        icon: "Shield",
-        color: "purple",
-        summary: "Understanding emotional, physical, and digital boundaries in relationships.",
-        fullContent: [
-          "Understanding different types of boundaries helps you protect yourself and respect others.",
-          "EMOTIONAL BOUNDARIES: Protecting your feelings and mental well-being. This includes the right to have your own thoughts and feelings, to not take responsibility for others' emotions, and to have your feelings respected.",
-          "PHYSICAL BOUNDARIES: Personal space and comfort with touch. Everyone has different comfort levels with physical contact, and these should always be respected.",
-          "DIGITAL BOUNDARIES: Privacy online, sharing of information and images. This includes who can see your social media, what photos of you can be shared, and how you communicate online.",
-          "Everyone has the right to set their own boundaries in each of these areas.",
-          "Healthy relationships respect all types of boundaries without question or pushback."
-        ],
-        keyPoints: [
-          "Emotional boundaries: Protecting your feelings and mental well-being",
-          "Physical boundaries: Personal space and comfort with touch",
-          "Digital boundaries: Privacy online, sharing of information and images",
-          "Everyone has the right to set their own boundaries",
-          "Healthy relationships respect all types of boundaries"
-        ]
-      },
-      {
-        id: "intoxication-incapacitation",
+        id: "intoxication-incapacitation-10",
         title: "Intoxication & Incapacitation",
         icon: "AlertTriangle",
         color: "red",
@@ -469,223 +422,95 @@ export const highSchoolData: GradeContent[] = [
   {
     grade: "11th Grade",
     gradeLevel: "High School Year 3",
-    intro: "Eleventh grade reinforces consent and legal concepts while diving deeper into power dynamics, incapacitation, and preparing students for the increased independence that comes with approaching adulthood.",
+    intro: "Eleventh grade reinforces consent and legal concepts while introducing critical thinking about rape culture, addressing victim blaming, and preparing students for the increased independence that comes with approaching adulthood.",
     topics: [
       {
-        id: "consent-legal-11",
-        title: "Consent & Legal Considerations",
-        icon: "Scale",
-        color: "blue",
-        summary: "Understanding specific legal restrictions on relationships involving authority figures.",
+        id: "rape-culture-11",
+        title: "Rape Culture",
+        icon: "AlertOctagon",
+        color: "red",
+        summary: "Understanding how societal attitudes normalize sexual violence and what we can do about it.",
         fullContent: [
-          "Understanding the legal considerations around consent is especially important as you get older.",
-          "TEACHER AND STUDENT: In the state of Connecticut, it is illegal for any teacher and their student to have a sexual relationship, regardless of age. The law applies not only to students in the school in which the teacher works, but also the rest of the students in the district.",
-          "COACH AND PLAYER: The younger person must be over the age of 18. However, it is important to discuss the power dynamics at play here. In addition, if the coach works for the school, the same rules regarding teacher and student apply instead of the age of 18 rule.",
-          "BOSS AND EMPLOYEE: Illegal if the employee is under 18.",
-          "These laws exist because of the inherent power imbalance in these relationships.",
-          "Even legal relationships can be unhealthy if there's a significant power difference."
+          "Rape culture is defined by a society in which sexual violence is accepted and normalized due to the societal attitudes regarding sex and gender.",
+          "Rape culture is seen throughout many different outlets:",
+          "• Laws – what is and isn't considered illegal, how people who have committed crimes of sexual violence are punished, and how we talk about how cases should or should not be prosecuted. For example, while the age of consent in Connecticut is 16, the age one is considered an adult is 18. This means that, while a minor can have a sexual relationship with an adult, if the adult is caught, they cannot be tried as a sex offender in the state of Connecticut.",
+          "• Language – words and phrases that are used that perpetuate rape culture. Some examples might be how we use words like 'bitch,' 'slut,' and 'whore.' Another example might be when people use phrases like 'Boys will be boys' or 'She was asking for it.'",
+          "• Media – normalizing behaviors in TV, movies, and print. Things like showing scenes without consent and playing it for laughs, or centering a show or movie around a main character who commits an act of sexual violence and then is shown to be a 'good guy' by the end.",
+          "Regardless of what you see in these outlets, it's important to reaffirm that your child can create and maintain healthy boundaries – no matter how common these things can be. We hope these healthy foundations help set your child up for success."
         ],
         keyPoints: [
-          "Teacher and student: Illegal in CT regardless of age – applies to all students in the district",
-          "Coach and player: The player must be over 18, unless the coach works for the school (then teacher rules apply)",
-          "Boss and employee: Illegal if the employee is under 18",
-          "These laws exist because of the inherent power imbalance in these relationships",
-          "Even legal relationships can be unhealthy if there's a significant power difference"
-        ]
-      },
-      {
-        id: "consent-principles-11",
-        title: "Principles of Consent (Review)",
-        icon: "CheckCircle",
-        color: "green",
-        summary: "Reinforcing the key components of valid consent.",
-        fullContent: [
-          "HONEST: People in a sexual relationship need to be clear and upfront about who they are, their sexual health, and any pertinent sexual history. This might look like a conversation between partners before engaging in any sexual behavior.",
-          "WANTED: Each sexual encounter must be met with an enthusiastic agreement from all parties involved. No coercion must be used in order to get someone to participate in sexual acts. For example, if someone continued to pressure someone else until they said yes, that would be considered coercion.",
-          "SPECIFIC: Each sexual act is discussed and agreed upon by both partners. This would also be part of a conversation between partners before engaging in any sexual behavior.",
-          "ONGOING: Consent can be withdrawn at any time. This can be for one specific sexual act or the encounter altogether."
-        ],
-        keyPoints: [
-          "Honest: Clear and upfront about identity, sexual health, and history",
-          "Wanted: Enthusiastic agreement without coercion",
-          "Specific: Each act discussed and agreed upon",
-          "Ongoing: Can be withdrawn at any time"
-        ]
-      },
-      {
-        id: "age-of-consent-11",
-        title: "Age of Consent (Review)",
-        icon: "Calendar",
-        color: "blue",
-        summary: "Reinforcing Connecticut's age of consent laws and their implications.",
-        fullContent: [
-          "The age of consent in Connecticut is 16.",
-          "There is, however, a close in age exemption law in Connecticut. Also called Romeo and Juliet laws, these statutes state that someone over 13 can engage in sexual behavior with someone else as long as the age difference is less than three years.",
-          "It is highly unlikely that someone is born on exactly the same date with a three year difference – so, if it's questionable, the answer is probably no.",
-          "While it isn't developmentally appropriate for people so young to be engaging in sexual behavior, the close in age exemption law allows for someone 12 or under to engage in sexual behavior with someone else as long as the age difference is less than two years.",
-          "The age of consent law is not to punish kids for doing something wrong – it's to protect kids from adults.",
-          "The age of consent law only covers sexual relationships. While it does not cover romantic relationships, it's important to discuss with your child that these kinds of relationships are still not okay.",
-          "One of the most important things to share with your child is that it is never their fault if they are the younger person in an illegal relationship stemming from the age of consent. It is always the older person's responsibility to ensure the relationship is legal."
-        ],
-        keyPoints: [
-          "Connecticut age of consent: 16",
-          "Close-in-age exemption: Over 13 can engage with someone within 3 years",
-          "For 12 or under: age difference must be less than 2 years",
-          "Laws protect kids from adults, not punish kids",
-          "It is never the younger person's fault"
-        ],
-        activities: [
-          {
-            title: "Age of Consent Scenarios Review",
-            description: "Review scenarios: 16 & 35 (Legal but concerning - discuss power dynamics), 16 & 17 (Legal), 15 & 18 (Illegal), 14 & 17 (Illegal), 15 & 15 (Legal under exemption). Cross-state scenario: 16 & 25 traveling to NYC (Illegal in NY where age of consent is 17).",
-            icon: "HelpCircle"
-          }
-        ]
-      },
-      {
-        id: "equal-relationships-11",
-        title: "Equal Relationships & Power Dynamics",
-        icon: "Users",
-        color: "orange",
-        summary: "Deeper exploration of power dynamics and their impact on consent.",
-        fullContent: [
-          "To go back to one of the main tenets of consent, it's important to discuss equal versus unequal relationships.",
-          "Power is the main reason why a relationship might be unequal – and there are many kinds of power a person might hold over another.",
-          "A great question to ask is: What do adults have that kids don't have?",
-          "Some responses might include a job, house, car, or money. Another answer might even be about the body's development, such as the frontal lobe which is responsible for decision making, and how it doesn't fully develop until someone is 25.",
-          "For all of these reasons, an adult inherently has power over a child.",
-          "People can also have power over others based on their relationships. Certain sexual relationships are illegal, including:",
-          "• A boss and an employee who is under 18",
-          "• Any faculty or staff of a school and a student – In Connecticut, this law prevents any faculty or staff member from having a sexual relationship with any student in the district",
-          "• A coach and their player who is under 18 (if coach is employed by school, faculty/staff rules apply)",
-          "In addition to illegal relationships between adults and minors, as well as specific relationships that are considered illegal under the law, it's important to have an open discussion about consent regarding developmental ability."
-        ],
-        keyPoints: [
-          "Power is the main reason relationships become unequal",
-          "Adults have power over children (jobs, money, housing, fully developed brains)",
-          "The frontal lobe doesn't fully develop until age 25",
-          "Illegal relationships include: boss/employee under 18, school faculty/student, coach/player under 18",
-          "Consider consent regarding developmental ability"
+          "Rape culture: a society in which sexual violence is accepted and normalized due to societal attitudes regarding sex and gender",
+          "Seen in laws: how sexual violence crimes are defined, prosecuted, and punished",
+          "Seen in language: words like 'slut' or phrases like 'boys will be boys' and 'she was asking for it'",
+          "Seen in media: normalizing non-consensual behavior or portraying perpetrators as 'good guys'",
+          "Your child can create and maintain healthy boundaries regardless of these societal influences"
         ],
         conversationStarters: [
           {
-            scenario: "Discussing power and brain development",
+            scenario: "Discussing rape culture in media",
             dialogues: [
-              { speaker: "Parent", text: "Did you know that the part of your brain responsible for decision-making doesn't fully develop until you're 25?" },
-              { speaker: "Child", text: "Really? That seems old." },
-              { speaker: "Parent", text: "It's one reason why adults inherently have power over young people – their brains are more developed. It's also why certain relationships with authority figures are illegal, even if you're above the age of consent." }
+              { speaker: "Parent", text: "Have you ever noticed in movies or TV when something that should be taken seriously is played for laughs?" },
+              { speaker: "Child", text: "Like what?" },
+              { speaker: "Parent", text: "Sometimes scenes without clear consent are shown as romantic or funny. That's part of what we call 'rape culture' – when media normalizes behaviors that aren't okay. It's important to recognize these messages so we can think critically about them." }
             ]
           }
         ]
       },
       {
-        id: "sexual-harassment-11",
-        title: "Sexual Harassment (Review)",
-        icon: "ShieldAlert",
-        color: "red",
-        summary: "Reinforcing understanding of verbal and physical sexual harassment.",
+        id: "victim-blaming-11",
+        title: "Victim Blaming",
+        icon: "MessageSquareX",
+        color: "orange",
+        summary: "Understanding why victim blaming happens and how to counter it.",
         fullContent: [
-          "Sexual harassment can be verbal, which may include inappropriate comments, catcalling, or other inappropriate language used either in a sexual manner or in a way that discriminates against a person's gender.",
-          "Not only can sexual harassment be verbal, but it can also be physical. It is any touch, on any part of the body.",
-          "Touch is considered physical sexual harassment as long as it is unwanted – it does not need to be repeated.",
-          "Physical sexual harassment isn't always sexual in nature. The word 'sexual' is used to reference the touch of somebody else's body.",
-          "Example to illustrate: One day at school, someone bumps into you in the hallway. They apologize, and you keep going on with your day. (Not harassment) vs. The same thing happens every day for an entire week. (This IS harassment – when unwanted contact is repeated, it's not an accident.)"
+          "Victim blaming occurs when the victim of a crime or other wrongful act is held responsible for what happened to them.",
+          "Victim blaming is incredibly prevalent when it comes to crimes of sexual violence. It can sound like, 'If they wore different clothing…,' 'They shouldn't have been drinking…,' or 'They should have said no more clearly.'",
+          "All three of these examples, and more, place the responsibility on the victim when it truly lies on the perpetrator.",
+          "One of the main reasons people might victim blame is something called the 'Just World Belief.' The Just World Belief is a cognitive bias where someone believes they live in a world in which good things happen to good people and bad things happen to bad people.",
+          "If someone lives with this kind of belief, they think that anyone who had a bad thing happen to them must have done something wrong to deserve it – and that's not true.",
+          "One of the most important things to share with your child is that, if they become a victim of any kind of assault, whether that be sexual or not, they will be believed – and it will never be their fault."
         ],
         keyPoints: [
-          "Verbal harassment: inappropriate comments, catcalling, discriminatory language",
-          "Physical harassment: any unwanted touch on any part of the body",
-          "Does not need to be repeated to be harassment",
-          "Repeated 'accidental' contact is harassment"
+          "Victim blaming: when the victim of a crime is held responsible for what happened to them",
+          "Common examples: 'If they wore different clothing...,' 'They shouldn't have been drinking...,' 'They should have said no more clearly'",
+          "All of these place responsibility on the victim when it belongs on the perpetrator",
+          "Just World Belief: a cognitive bias where people believe good things happen to good people and bad things happen to bad people",
+          "This belief leads people to think victims must have done something wrong – which is not true",
+          "Most important message: If your child becomes a victim, they will be believed and it will never be their fault"
+        ],
+        conversationStarters: [
+          {
+            scenario: "Explaining the Just World Belief",
+            dialogues: [
+              { speaker: "Parent", text: "Have you ever heard someone say things like 'they shouldn't have been drinking' or 'they should have dressed differently' when talking about someone who was hurt?" },
+              { speaker: "Child", text: "Yeah, sometimes." },
+              { speaker: "Parent", text: "That's called victim blaming, and it's never okay. People do it because of something called the 'Just World Belief' – thinking that bad things only happen to people who deserve it. But that's not true. If something ever happens to you, it will never be your fault, and I will always believe you." }
+            ]
+          }
         ]
       },
       {
-        id: "sexual-assault-11",
-        title: "Sexual Assault (Review)",
-        icon: "AlertOctagon",
-        color: "red",
-        summary: "Reinforcing understanding of sexual assault under Connecticut law.",
-        fullContent: [
-          "Sexual assault is any unwanted touch to an intimate area of the body.",
-          "State law defines what are considered intimate parts of the body in which unwanted touching would be considered sexual assault. In Connecticut, the parts of the body included are the breasts, butt, genitals, and inner thighs.",
-          "Your child can label any parts of their body as intimate; however, Connecticut only covers these parts under state law.",
-          "Sexual assault covers behaviors that are unwanted – they do not have to be repeated in order to be covered under law."
-        ],
-        keyPoints: [
-          "Any unwanted touch to intimate areas (breasts, butt, genitals, inner thighs in CT)",
-          "Does not have to be repeated to be illegal",
-          "You can label any body part as intimate to you personally"
-        ]
-      },
-      {
-        id: "intoxication-11",
-        title: "Intoxication & Incapacitation (Review)",
-        icon: "AlertTriangle",
-        color: "red",
-        summary: "Reinforcing understanding of how substances affect consent.",
-        fullContent: [
-          "While you may not legally be able to use recreational drugs like alcohol or marijuana due to age, it's important to learn the signs of intoxication for safety reasons.",
-          "When it comes to sexual behavior, use of or intoxication by substances does not always remove somebody's ability to consent. However, that changes when somebody becomes incapacitated.",
-          "Signs of incapacitation include: an inability to undress oneself, stumbling and cannot walk unassisted, can't understand what they're agreeing to, and unable to understand possible consequences such as STDs or pregnancy.",
-          "If someone who is incapacitated said 'yes,' it still wouldn't be considered consent.",
-          "This law leaves a gray area, so good judgment must be used to ensure everyone is engaging in consensual sexual activity.",
-          "This law is to protect people from others who would take advantage of incapacitated individuals."
-        ],
-        keyPoints: [
-          "Know signs of intoxication for safety",
-          "Intoxication doesn't always remove ability to consent, but incapacitation does",
-          "Signs of incapacitation: can't undress, stumbling, can't understand agreement or consequences",
-          "A 'yes' from someone incapacitated is NOT consent",
-          "Use good judgment – when in doubt, the answer is no"
-        ]
-      },
-      {
-        id: "title-ix-11",
-        title: "Title IX (Review)",
-        icon: "Scale",
-        color: "blue",
-        summary: "Understanding your educational rights under Title IX.",
-        fullContent: [
-          "Title IX aims to protect students from sex and gender-based discrimination in education programs or activities that receive federal funding.",
-          "The rights students receive from Title IX are:",
-          "• Get an equal education",
-          "• Be free from discrimination",
-          "• Feel safe at school",
-          "• Report sexual harassment",
-          "• Have action taken by your school to prevent sexual harassment",
-          "Your child might have heard of Title IX before because of its original purpose – to aim for equality within scholastic sports programs.",
-          "Example: The softball team has stadium lights for evening practice, but the baseball team has to leave early. This unequal access to education is a Title IX violation. Solutions could include adding lights to the baseball field or rotating fields."
-        ],
-        keyPoints: [
-          "Protects from sex/gender discrimination in federally funded education",
-          "Rights: equal education, freedom from discrimination, safety, ability to report harassment",
-          "Originally aimed at sports equality",
-          "Covers unequal access to resources that affects education"
-        ]
-      },
-      {
-        id: "bystander-11",
-        title: "Being an Empowered Bystander (Review)",
+        id: "bystander-review-11",
+        title: "Being an Empowered Bystander: Review",
         icon: "Users",
         color: "green",
-        summary: "Reviewing the 5 D's framework for bystander intervention.",
+        summary: "Reinforcing the 5 D's framework with more complex scenarios.",
         fullContent: [
-          "The framework we use is called the 5 D's. It was developed and tested by college students to introduce new ways people can be effective bystanders without directly confronting a situation.",
-          "This is incredibly important, as not everybody feels comfortable stepping directly into a situation and getting involved. This framework provides the opportunity for everyone to be a bystander.",
-          "Example Scenario: You are in the cafeteria at school and two students start getting into a physical fight.",
-          "DIRECT: Intervene directly if safe. Tell the person to stop.",
-          "DISTRACT: Create a diversion to de-escalate. Make a loud noise (drop a water bottle), but don't escalate (no food fights).",
-          "DELEGATE: Seek help from a third party – security officer, teacher, principal.",
-          "DOCUMENT: Take photos/videos only if safe. Check school policies. Share only with victim, not social media.",
-          "DELAY: Check in with the affected person afterwards.",
-          "The goal is to de-escalate, not escalate the situation."
+          "As a review, the 5 D's framework provides ways to safely intervene when you witness harmful situations:",
+          "DIRECT: Intervene directly if it's safe to do so. Step into the situation and tell the person to stop.",
+          "DISTRACT: Create a diversion to de-escalate the situation without directly confronting anyone.",
+          "DELEGATE: Seek help from a third party, like a trusted adult, security, or authority figure.",
+          "DOCUMENT: Take photos or videos, only if it is safe to do so. Always share with the victim only, never on social media.",
+          "DELAY: Check in with the person being harassed afterwards to offer support.",
+          "By 11th grade, students can apply these concepts to more nuanced situations and recognize when intervention is appropriate and safe."
         ],
         keyPoints: [
-          "5 D's allow intervention without direct confrontation",
-          "Direct: Intervene if safe",
-          "Distract: Create diversion without escalating",
-          "Delegate: Get help from authority",
-          "Document: Record safely, share only with victim",
-          "Delay: Check in afterwards"
+          "Direct: Intervene directly if safe",
+          "Distract: Create a diversion to de-escalate",
+          "Delegate: Get help from a trusted adult or authority",
+          "Document: Record only if safe, share only with victim",
+          "Delay: Check in with the person afterwards",
+          "Apply these to more complex situations as you mature"
         ]
       }
     ],
@@ -693,290 +518,132 @@ export const highSchoolData: GradeContent[] = [
       {
         category: "Support Resources",
         links: [
-          { title: "RAINN (Rape, Abuse & Incest National Network)" },
-          { title: "Love Is Respect - Teen Dating Abuse Hotline" },
-          { title: "Connecticut Sexual Assault Crisis Services" }
+          { title: "RAINN - Rape, Abuse & Incest National Network" },
+          { title: "National Sexual Assault Hotline - 1-800-656-4673" },
+          { title: "Connecticut Alliance to End Sexual Violence" }
         ]
       }
     ],
     faqs: [
       {
-        question: "Can sexual violence occur between two people who are equally intoxicated?",
-        answer: "If someone is unable to consent because they are incapacitated, it would be considered sexual violence. If there are two people who are incapacitated, it would be unlikely that they would physically be able to engage in any sexual behavior. However, if two people were equally intoxicated (but not incapacitated), it becomes a gray area. Good judgment should always be used."
+        question: "What should I do if I notice victim blaming in my own thinking?",
+        answer: "Recognizing victim blaming in yourself is the first step to changing it. When you catch yourself thinking 'they could have...' or 'why didn't they...', pause and remind yourself that the responsibility always lies with the person who caused harm, not the person who was harmed. It takes practice to unlearn these thought patterns, but awareness is key."
       }
     ]
   },
   {
     grade: "12th Grade",
     gradeLevel: "High School Year 4",
-    intro: "Twelfth grade prepares students for life after high school, including understanding workplace rights, college campus safety, and complex topics like rape culture. This year focuses on the transition to adulthood and increased independence.",
+    intro: "Twelfth grade prepares students for life after high school with essential knowledge about workplace rights, Title IX protections in college, and how to maintain safety as they gain full independence.",
     topics: [
       {
-        id: "consent-12",
-        title: "Consent Framework (Review)",
-        icon: "CheckCircle",
-        color: "green",
-        summary: "Final review of the consent framework before transitioning to adulthood.",
+        id: "workplace-rights-12",
+        title: "Your Rights as an Employee",
+        icon: "Briefcase",
+        color: "blue",
+        summary: "Understanding your legal protections against harassment and discrimination in the workplace.",
         fullContent: [
-          "EQUAL: There shouldn't be any power imbalances between partners in a sexual relationship. This might include someone's age, the amount of money they have, or what job they have. It can also include relationships such as between boss and employee, teacher and student, or coach and player.",
-          "HONEST: People in a sexual relationship need to be clear and upfront about who they are, their sexual health, and any pertinent sexual history. This might look like a conversation between partners before engaging in any sexual behavior.",
-          "WANTED: Each sexual encounter must be met with an enthusiastic agreement from all parties involved. No coercion must be used in order to get someone to participate in sexual acts.",
-          "SPECIFIC: Each sexual act is discussed and agreed upon by both partners.",
-          "ONGOING: Consent can be withdrawn at any time. This can be for one specific sexual act or the encounter altogether."
+          "As your child grows up and begins to enter the workforce, it's important that they understand that sexual harassment is prohibited by law in the workplace.",
+          "When your child begins their job search after college or high school, it's important they know that an employer cannot ask them to disclose personal information during the interview process. For example, questions about immigration status, gender identity, and criminal history are off limits in the state of Connecticut.",
+          "While their employer might not be able to ask them about their immigration status, your child might still want to be aware of their rights as an immigrant in the workplace. The Fair Labor Standards Act covers undocumented workers as well, which means they cannot be discriminated against based on their gender, they must be paid at least minimum wage, and they have protections against unsafe working conditions.",
+          "In addition, your child should be compensated for any overtime worked. Working overtime equates to working over 40 hours in one week."
         ],
         keyPoints: [
-          "Equal: No power imbalances",
-          "Honest: Clear about identity, health, history",
-          "Wanted: Enthusiastic, uncoerced agreement",
-          "Specific: Each act agreed upon",
-          "Ongoing: Can be withdrawn anytime"
-        ]
-      },
-      {
-        id: "equal-relationships-12",
-        title: "Equal Relationships & Power (Review)",
-        icon: "Scale",
-        color: "orange",
-        summary: "Understanding power dynamics as you enter adulthood.",
-        fullContent: [
-          "Power is the main reason why a relationship might be unequal – and there are many kinds of power a person might hold over another.",
-          "What do adults have that kids don't have? Jobs, housing, cars, money. And fully developed brains – the frontal lobe responsible for decision-making doesn't fully develop until age 25.",
-          "People can also have power over others based on their relationships. Certain sexual relationships are illegal:",
-          "• A boss and an employee who is under 18",
-          "• Any faculty or staff of a school and a student (in CT, applies to entire district)",
-          "• A coach and their player who is under 18 (if employed by school, faculty rules apply)",
-          "In addition to illegal relationships, it's important to discuss consent regarding developmental ability.",
-          "Even as you become a legal adult, be aware of power dynamics in your relationships."
+          "Sexual harassment is prohibited by law in the workplace",
+          "Employers cannot ask about: immigration status, gender identity, or criminal history in CT",
+          "The Fair Labor Standards Act covers undocumented workers",
+          "All workers have protection against gender discrimination, must be paid minimum wage, and have workplace safety protections",
+          "Overtime (over 40 hours per week) must be compensated"
         ],
-        keyPoints: [
-          "Power creates inequality in relationships",
-          "Adults have advantages: jobs, money, housing, developed brains",
-          "Frontal lobe develops until age 25",
-          "Be aware of power dynamics even in legal relationships"
-        ]
-      },
-      {
-        id: "rape-culture",
-        title: "Rape Culture",
-        icon: "AlertOctagon",
-        color: "red",
-        summary: "Understanding how society normalizes sexual violence and how to combat it.",
-        fullContent: [
-          "Rape culture refers to an environment in which rape is prevalent and normalized due to societal attitudes about gender and sexuality.",
-          "It is not that our culture promotes rape, or that we as a society commonly engage in rape – but we normalize it.",
-          "The culture on college campuses also contributes to our own views and attitudes about sexuality, sexual behaviors, and gender norms. While individuals may have different views than others, often the societal view dictates actual behavior.",
-          "Being on a college campus is a completely new experience and a different environment than people are accustomed to. Many people are experiencing more freedom and a lack of supervision for the first time. Because of this, people can engage in behaviors that are inappropriate and that hurt others.",
-          "Rape culture has continuously proven to contribute to acts of sexual violence. Included in this are:",
-          "• Exclusion of male and LGBTQ+ victims/survivors from the conversation",
-          "• Protection of perpetrators",
-          "• Jokes about sexual violence",
-          "• Placing an undue burden on victims/survivors, such as victim blaming"
-        ],
-        keyPoints: [
-          "Rape culture: environment where rape is normalized due to societal attitudes",
-          "Our culture doesn't promote rape, but normalizes it",
-          "College campuses can contribute to problematic attitudes and behaviors",
-          "New freedom and lack of supervision can lead to inappropriate behaviors",
-          "Rape culture includes: excluding male/LGBTQ+ survivors, protecting perpetrators, jokes about violence, victim blaming"
-        ]
-      },
-      {
-        id: "victim-blaming",
-        title: "Victim Blaming",
-        icon: "ShieldAlert",
-        color: "red",
-        summary: "Understanding why victim blaming is harmful and why it's never the victim's fault.",
-        fullContent: [
-          "Victim blaming questions the choices of a victim in a way that directly or indirectly implies they were responsible for what happened to them.",
-          "It is never the victim's fault – ever.",
-          "Individuals will respond in the way that is safest for them to do so at the time, whether that is with physical response or shutting down.",
-          "People may have a fear that they will encounter further harm if they fight back during an act of sexual violence.",
-          "Some victims/survivors also experience tonic immobility, which is an involuntary response to a dangerous situation, and can cause someone to 'freeze'.",
-          "Understanding these responses helps us support survivors rather than blame them for not reacting the way we might expect."
-        ],
-        keyPoints: [
-          "Victim blaming implies the victim was responsible for what happened",
-          "It is NEVER the victim's fault – ever",
-          "Victims respond in whatever way feels safest at the time",
-          "Fighting back may increase fear of harm",
-          "Tonic immobility ('freezing') is an involuntary response to danger"
-        ]
-      },
-      {
-        id: "bystander-advanced",
-        title: "Being an Empowered Bystander: College & Workplace",
-        icon: "Users",
-        color: "green",
-        summary: "Advanced bystander intervention scenarios for post-high school life.",
-        fullContent: [
-          "Because you are nearing the time you will be working or in higher education, discussing ways you can be an empowered bystander in these scenarios can prepare you for engaging in these behaviors.",
-          "COLLEGE EXAMPLE: You are at a fraternity party with a group of friends. While at the party, you notice one of the fraternity brothers having a conversation with a woman. It looks slightly heated. The fraternity brother grabs the woman's wrist and starts pulling her behind him towards a bedroom.",
-          "• Direct: Step into the situation and tell the fraternity brother to stop. Good if you're friends with them, but could be unsafe due to the physical aspect.",
-          "• Distract: Make a loud noise (spill a drink) to change focus. Or pretend the woman's ride has arrived to remove her from the situation.",
-          "• Delegate: Get your group of friends to take action – one calls campus police while another approaches the woman.",
-          "• Document: Take a photo or video, sharing directly with the woman impacted.",
-          "• Delay: Check in with the woman the next day to make sure she is safe.",
-          "WORKPLACE EXAMPLE: You hear a coworker make a sexual remark about another coworker as they walk by. The target's face turns red and they walk away faster.",
-          "• Direct: Tell the colleague their behavior is unacceptable and an example of sexual harassment.",
-          "• Distract: Immediately switch the topic to a task that needs to be done.",
-          "• Delegate: Coordinate responses – one person confronts the harasser, one checks on the target, another changes the subject for everyone else.",
-          "• Document: Take evidence of what happened or the aftermath. Share only with the impacted coworker.",
-          "• Delay: Check in with the affected coworker later to make sure they feel safe and provide support."
-        ],
-        keyPoints: [
-          "The 5 D's apply in college and workplace settings",
-          "College scenarios may involve parties, dorms, campus events",
-          "Workplace scenarios involve coworkers and professional settings",
-          "Adapt your approach to the specific situation and your relationship to those involved",
-          "Always prioritize safety and support for the person being harassed"
-        ],
-        activities: [
+        conversationStarters: [
           {
-            title: "College Scenario Discussion",
-            description: "Walk through the fraternity party scenario: A fraternity brother grabs a woman's wrist and pulls her toward a bedroom. Discuss how you would apply each of the 5 D's. What feels safest? What might be most effective?",
-            icon: "GraduationCap"
-          },
-          {
-            title: "Workplace Scenario Discussion",
-            description: "Walk through the workplace scenario: A coworker makes a sexual remark about another coworker. How would you apply each D? Consider: When is Direct appropriate? How might you Delegate effectively?",
-            icon: "Briefcase"
+            scenario: "Discussing interview rights",
+            dialogues: [
+              { speaker: "Parent", text: "When you start interviewing for jobs, there are certain things employers can't legally ask you about in Connecticut." },
+              { speaker: "Child", text: "Like what?" },
+              { speaker: "Parent", text: "They can't ask about your immigration status, gender identity, or criminal history. If an interviewer asks these questions, that's a red flag about the company." }
+            ]
           }
         ]
       },
       {
-        id: "title-vii",
-        title: "Workplace Rights: Title VII",
-        icon: "Briefcase",
-        color: "blue",
-        summary: "Understanding your rights against workplace discrimination and harassment.",
-        fullContent: [
-          "Talking about workplace and Title VII rights is important no matter what your path is. This doesn't just include students going right into the workforce after high school, but also students going into the workforce after higher education.",
-          "The rights provided by Title VII include:",
-          "• Work in a safe discrimination-free environment",
-          "• Be told about your company's sexual harassment policies, including how to report",
-          "• Report the harassment to HR or your boss",
-          "• Have your complaint taken seriously and investigated",
-          "• Do nothing (you have the right to choose not to report)",
-          "Title VII includes sexual harassment and sexual assault.",
-          "Legally, you CANNOT be fired for these actions:",
-          "• Talking about or speaking out against sexual harassment",
-          "• Picketing or protesting against sexual harassment",
-          "• Asking your employer what will happen and who will know if you file a complaint",
-          "• Filing charges with a government agency",
-          "• Suing them",
-          "• Testifying as a witness",
-          "How to report:",
-          "• Tell your boss, your boss' supervisor, or HR depending on what you have in your workplace",
-          "• Go to your union, if you have one",
-          "• File with the EEOC (the government)"
-        ],
-        keyPoints: [
-          "Right to work in a safe, discrimination-free environment",
-          "Right to know harassment policies and reporting procedures",
-          "Right to have complaints taken seriously and investigated",
-          "Cannot be fired for speaking out, protesting, filing charges, or testifying",
-          "Report to: boss/HR, union, or EEOC (government agency)"
-        ]
-      },
-      {
-        id: "title-ix-college",
-        title: "Title IX in Higher Education",
+        id: "college-title-ix-12",
+        title: "Title IX in College",
         icon: "GraduationCap",
-        color: "blue",
-        summary: "Understanding expanded Title IX rights at colleges and universities.",
+        color: "purple",
+        summary: "Understanding how Title IX protections extend to higher education.",
         fullContent: [
-          "Review: Title IX protects students from sex and gender-based discrimination in education programs receiving federal funding.",
-          "Additional rights at higher education institutions include:",
-          "• To know what the process is when you file a Title IX complaint, such as an informal mediation or a formal hearing",
-          "• To get support services from your college, university, or school, such as counseling",
-          "• To have your Title IX case be treated the same as anyone else's would be",
-          "• To have your case investigated within 60 days of filing",
-          "• To be free of fear of retaliation from your college, university, or school for reporting sexual violence",
-          "Further stipulations of Title IX include:",
-          "• Applies to and protects everyone (students and faculty)",
-          "• Schools have to be proactive in preventing discrimination from occurring",
-          "• Covers 'on-campus' violations",
-          "• Title IX doesn't just cover sexual violence – it also covers discrimination based on binary gender (male or female), sexual orientation, and against transgender students",
-          "• Protects students from harassment from other students, teachers, administration, and staff – as well as systemic discrimination",
-          "Title IX resources outside of your institution:",
-          "• Office of Civil Rights (if your school fails to follow Title IX protocols, you can file a complaint with the OCR within 180 days)",
-          "• Pending Cases Department of Ed (shows colleges under investigation for violating Title IX)",
-          "Important to remember:",
-          "• Ask about confidentiality rules – some resources may be mandated reporters",
-          "• There is amnesty in Connecticut schools – no disciplinary action for drugs or alcohol when reporting sexual violence (as long as it didn't put others' health and safety at risk)"
+          "Title IX continues to protect students in college. This means you have the right to:",
+          "• Get an equal education",
+          "• Be free from discrimination",
+          "• Feel safe at school",
+          "• Report sexual harassment",
+          "• Have action taken by your school to prevent sexual harassment",
+          "Colleges and universities that receive federal funding must have a Title IX coordinator. This person is responsible for handling complaints and ensuring the school complies with Title IX requirements.",
+          "If you experience sexual harassment or assault in college, you have the right to report it to your school's Title IX office. The school must investigate and take action to protect you.",
+          "Many colleges also have confidential resources like counseling centers where you can get support without triggering an investigation if that's your preference."
         ],
         keyPoints: [
-          "Right to know the complaint process (mediation vs hearing)",
-          "Right to support services like counseling",
-          "Right to equal treatment and investigation within 60 days",
-          "Right to freedom from retaliation",
-          "Protects everyone – students, faculty, all genders, sexual orientations",
-          "File with Office of Civil Rights if school fails to follow protocols",
-          "CT has amnesty for drugs/alcohol when reporting sexual violence"
+          "Title IX continues to protect you in college",
+          "Rights include: equal education, freedom from discrimination, feeling safe, reporting harassment, having action taken",
+          "Colleges receiving federal funding must have a Title IX coordinator",
+          "You can report sexual harassment or assault to your school's Title IX office",
+          "Confidential resources like counseling centers may be available if you prefer support without an investigation"
         ]
       },
       {
-        id: "clery-act",
-        title: "The Clery Act",
-        icon: "FileText",
-        color: "purple",
-        summary: "Understanding your right to know about campus safety and crime statistics.",
+        id: "independence-safety-12",
+        title: "Safety as an Independent Adult",
+        icon: "Shield",
+        color: "green",
+        summary: "Preparing for maintaining personal safety as you gain full independence.",
         fullContent: [
-          "The Clery Act is a consumer protection law that requires colleges and universities to be transparent about campus crime policy and statistics.",
-          "The Clery Act is a federal law, meaning it covers the entirety of the United States.",
-          "One way to explain consumer protection is that you have a right to know what you are spending money on – and that includes your education.",
-          "The Clery Act was created to honor Jeanne Clery. She was a student at Lehigh University who was sexually assaulted and murdered in her dorm room by another student. At the time, there was no mandate that required schools to report the crime rates on campus to prospective and current students. At Lehigh University, the violent crime rate was quite high. For this reason, the people choosing to go to Lehigh University, and schools across the nation, had no awareness of whether or not their school was safe.",
-          "An activity that might be helpful for both you and your parents to understand more about the campus climate at higher education institutions you are looking to attend would be to look at the Clery Act data.",
-          "How to find it: Search 'Name of School + Clery Act Data/Health and Safety Report' online. The data should be available and will include three years worth of information about different crimes that have occurred on campus.",
-          "What does this data tell you about the campus climate? What does it tell you about sexual violence at this school?",
-          "While the data will not have every instance of crime listed (for various reasons), it does show how many cases have been reported to the school.",
-          "The data can also vary by school size – for example, a school with 20,000 students having 10 cases of sexual violence versus a school with 2,000 students having 10 cases leads to different conclusions about campus climate."
+          "As you transition to adulthood, whether going to college, entering the workforce, or both, you'll have more independence than ever before. With that independence comes the responsibility to maintain your own safety.",
+          "Continue to apply what you've learned:",
+          "• Use the consent framework (Equal, Honest, Wanted, Specific, Ongoing) in all relationships",
+          "• Recognize and avoid situations with power imbalances",
+          "• Know the signs of healthy and unhealthy relationships",
+          "• Be an empowered bystander using the 5 D's",
+          "• Know your rights in the workplace and at school",
+          "• Recognize victim blaming and don't participate in it",
+          "Remember that you can always reach out for help. Resources like RAINN (1-800-656-4673), local crisis centers, and campus resources are available whenever you need them."
         ],
         keyPoints: [
-          "Consumer protection law requiring transparency about campus crime",
-          "Federal law covering all US colleges and universities",
-          "Created to honor Jeanne Clery, murdered at Lehigh University",
-          "You have the right to know what you're paying for – including safety",
-          "Search '[School Name] + Clery Act Data' to find reports",
-          "Reports include 3 years of crime data",
-          "Consider school size when evaluating data"
+          "Independence comes with responsibility for your own safety",
+          "Continue using the consent framework in all relationships",
+          "Recognize power imbalances and unhealthy relationship patterns",
+          "Be an empowered bystander",
+          "Know your workplace and educational rights",
+          "Resources are always available when you need help"
         ],
         activities: [
           {
-            title: "Research Clery Act Data",
-            description: "Look up the Clery Act data for colleges you're considering. Search '[School Name] + Clery Act Data' online. Review the 3 years of crime statistics. Questions to consider: What does this tell you about campus safety? How does the school size affect interpretation? What patterns do you notice?",
-            icon: "Search"
+            title: "Resource Mapping",
+            description: "Before starting college or a new job, research and create a list of available resources: Title IX office location and contact, campus counseling center, local crisis hotline, HR department contact, and trusted people you can reach out to.",
+            icon: "Map"
           }
         ]
       }
     ],
     resources: [
       {
-        category: "College Preparation",
-        links: [
-          { title: "Office of Civil Rights - Title IX Information" },
-          { title: "Clery Center - Campus Safety Resources" },
-          { title: "EEOC - Equal Employment Opportunity Commission" },
-          { title: "Know Your IX - Student Rights Organization" }
-        ]
-      },
-      {
-        category: "Support Resources",
+        category: "Transition Resources",
         links: [
           { title: "RAINN - Rape, Abuse & Incest National Network" },
-          { title: "National Sexual Assault Hotline: 1-800-656-4673" },
-          { title: "Love Is Respect - Healthy Relationships" }
+          { title: "Know Your IX - Student rights organization" },
+          { title: "U.S. Equal Employment Opportunity Commission" },
+          { title: "Connecticut Commission on Human Rights and Opportunities" }
         ]
       }
     ],
     faqs: [
       {
-        question: "What should I do if my school doesn't follow Title IX protocols?",
-        answer: "If your school, college, or university fails to follow Title IX protocols, you can file a complaint with the Office of Civil Rights (OCR) within 180 days of reporting to the school. You can also check the Pending Cases Department of Ed to see colleges currently under investigation for Title IX violations."
+        question: "What should I do if I experience harassment at work?",
+        answer: "Document the harassment by writing down what happened, when, where, and who was involved. Report it to HR or your supervisor. If your company doesn't address it, you can file a complaint with the Connecticut Commission on Human Rights and Opportunities or the U.S. Equal Employment Opportunity Commission. Remember, retaliation for reporting harassment is illegal."
       },
       {
-        question: "Will I get in trouble for drugs or alcohol if I report sexual violence?",
-        answer: "In Connecticut schools, there is amnesty for drugs or alcohol when reporting sexual violence, meaning no disciplinary action will be taken as long as your substance use didn't put others' health and safety at risk. This is designed to encourage reporting without fear of getting in trouble for other violations."
+        question: "How do I find my college's Title IX office?",
+        answer: "Most colleges list their Title IX coordinator and office on their website, often under Student Affairs or Equity and Compliance. You can also ask at your school's student services or dean's office. It's a good idea to locate these resources before you need them."
       }
     ]
   }
