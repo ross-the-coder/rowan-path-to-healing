@@ -14,7 +14,7 @@ const PillarsSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="rounded-2xl overflow-hidden shadow-lg bg-primary/10">
-                <img src={outreachImage} alt="Community outreach volunteers working together at an educational event" className="w-full h-[400px] object-contain" />
+                <img src={outreachImage} alt="Community outreach volunteers working together at an educational event" className="w-full h-[400px] object-cover" />
               </div>
             </div>
             <div className="order-1 lg:order-2 space-y-6">
