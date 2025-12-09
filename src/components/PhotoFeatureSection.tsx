@@ -10,7 +10,7 @@ const PhotoFeatureSection = () => {
           <div className="relative">
             <div className="absolute -top-8 -left-8 w-full h-full bg-accent/20 rounded-3xl"></div>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-              <img alt="Diverse group of women in supportive group therapy session empowering each other" className="w-full h-[500px] object-cover" src="/lovable-uploads/e5bd0df1-6118-447d-a9fd-668df60d35fb.png" />
+              <img alt="Diverse group of women in supportive group therapy session empowering each other" className="w-full h-[500px] object-cover" src={counselingHopeImage} />
               <div className="absolute inset-0 bg-gradient-to-t from-accent/40 to-transparent"></div>
             </div>
           </div>
