@@ -121,7 +121,7 @@ const PillarsSection = () => {
             </div>
             <div>
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img alt="One-on-one counseling session with caring professional" className="w-full h-[400px] object-cover" src="/lovable-uploads/208509db-9f35-423f-ac91-0b2a29dd5887.png" />
+                <img alt="One-on-one counseling session with caring professional" className="w-full h-[400px] object-cover" src="/lovable-uploads/ed07927a-cbba-47b3-9280-820eff27dc01.png" />
               </div>
             </div>
           </div>
