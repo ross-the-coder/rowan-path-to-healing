@@ -6,21 +6,15 @@ import counselingImage from "@/assets/counseling-session.jpg";
 import outreachImage from "@/assets/community-outreach.jpg";
 import healingImage from "@/assets/healing-garden.jpg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-
 const PillarsSection = () => {
-  return (
-    <section className="py-0">
+  return <section className="py-0">
       {/* Prevent Section */}
       <div className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src={outreachImage} 
-                  alt="Community outreach volunteers working together at an educational event"
-                  className="w-full h-[400px] object-cover"
-                />
+                <img src={outreachImage} alt="Community outreach volunteers working together at an educational event" className="w-full h-[400px] object-cover" />
               </div>
             </div>
             <div className="order-1 lg:order-2 space-y-6">
@@ -127,11 +121,7 @@ const PillarsSection = () => {
             </div>
             <div>
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src={counselingImage} 
-                  alt="One-on-one counseling session with caring professional"
-                  className="w-full h-[400px] object-cover"
-                />
+                <img alt="One-on-one counseling session with caring professional" className="w-full h-[400px] object-cover" src="/lovable-uploads/0d5abac7-b4ad-43c6-aef4-4dc83b832aa3.png" />
               </div>
             </div>
           </div>
@@ -144,11 +134,7 @@ const PillarsSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src={healingImage} 
-                  alt="Peaceful healing garden with people having therapeutic conversations"
-                  className="w-full h-[400px] object-cover"
-                />
+                <img src={healingImage} alt="Peaceful healing garden with people having therapeutic conversations" className="w-full h-[400px] object-cover" />
               </div>
             </div>
             <div className="order-1 lg:order-2 space-y-6">
@@ -185,8 +171,6 @@ const PillarsSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PillarsSection;
