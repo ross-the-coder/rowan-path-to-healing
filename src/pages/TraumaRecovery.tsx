@@ -1,8 +1,46 @@
 import Layout from "@/components/Layout";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Stethoscope, Heart, Users, Clock, Shield, CheckCircle } from "lucide-react";
+import { Stethoscope, Heart, Users, Shield } from "lucide-react";
 import { TraumaRecoveryIntakeForm } from "@/components/TraumaRecoveryIntakeForm";
+
+const teamMembers = [
+  {
+    name: "Luke Robbins, LCSW",
+    title: "Clinical Director (EN/ES/FR)",
+    credentials: "EMDRIA-Approved Facilitator and EMDR Certified Provider",
+    bio: "Luke Robbins (he/him/his) is a Licensed Clinical Social Worker (LCSW), a Certified EMDR Provider, an EMDRIA-approved EMDR Consultant, and an Approved EMDR Facilitator. Luke received his MSW from the University of Chicago in 2015 and is licensed in Connecticut, Indiana, and Maine.",
+    details: "Luke started at The Rowan Center in the Fall of 2019 as the Director of Counseling. Since then, Luke has served as the supervisor and coordinator of our master's-level counseling internship program, and as our Chief Operating Officer, before transitioning to his current role of Clinical Director in June of 2023. In addition to overseeing the day-to-day operations of the Trauma Recovery Clinic at The Rowan Center, Luke continues to provide clinical supervision to the LMSWs on our staff, as well as to the MSW interns in both our short-term crisis counseling program and in the clinic.",
+    specialties: "Luke is able to offer direct client services in English, French, and Spanish. He has experience working with clients exhibiting symptoms of depression, anxiety, PTSD, and OCD, as well as victims and survivors of sexual violence, first responders, adults who suffered trauma as children, anger issues, difficulties with self-esteem and self-reliance, sleep disturbance, and individuals who identify as sex addicts.",
+    languages: ["English", "Spanish", "French"],
+  },
+  {
+    name: "Isabel Negron, LCSW",
+    title: "Assistant Clinic Director",
+    credentials: "EMDR Provider",
+    bio: "Isabel Negron (she/her) is a Licensed Clinical Social Worker (LCSW) and an EMDR provider since 2022. She is working towards her Certified EMDR Therapist status. Isabel received her MSW from Fairfield University in 2022 and is licensed in Connecticut.",
+    details: "Isabel started at The Rowan Center in the Fall of 2021 as a master's-level intern before being asked to join our team after graduating with her MSW. She served as our Bilingual (EN/ES) Intake Coordinator before transitioning into her current role as our first Bilingual (EN/ES) Staff Therapist at the Trauma Recovery Clinic at TRC.",
+    specialties: "Isabel is able to offer direct client services in English and Spanish. She has experience working with clients exhibiting symptoms of depression, anxiety, and PTSD, and especially with victims and survivors of sexual violence and other forms of trauma.",
+    languages: ["English", "Spanish"],
+  },
+  {
+    name: "Zachary Boccarossa, LMSW",
+    title: "Bilingual (EN/ES) Staff Therapist and Trauma Fellow",
+    credentials: "",
+    bio: "Zachary Boccarossa (he/him) received his Masters in Social Work (MSW) from Fairfield University in 2025, and is a licensed LMSW in Connecticut. Zachary is a trained EMDR Provider, and he is pursuing additional specialization in EMDR.",
+    details: "Zachary also completed his first year MSW internship at The Rowan Center, providing short-term crisis counseling services to victims and survivors of sexual violence in our Counseling program. Zachary is a certified sexual assault advocate and counselor in the State of Connecticut.",
+    specialties: "He is able to offer direct client services in English and Spanish. He has experience working with clients exhibiting symptoms of depression, anxiety, and PTSD, and especially with victims and survivors of sexual violence.",
+    languages: ["English", "Spanish"],
+  },
+  {
+    name: "Taina Colon, LMSW",
+    title: "Bilingual (EN/ES) Staff Therapist and Trauma Fellow",
+    credentials: "",
+    bio: "Taina Colon (she/her) received her Masters in Social Work (MSW) from Fordham University in 2024, and is a licensed LMSW in Connecticut. Taina is a trained EMDR Provider, and she is pursuing additional specialization in EMDR.",
+    details: "While completing her MSW, Taina completed a year-long internship at The Rowan Center, providing short-term crisis counseling services to victims and survivors of sexual violence in our Counseling program. Taina served as the Bilingual/Bicultural Counselor and Intake Coordinator of the Counseling program at the Rowan Center from June of 2024 until June of 2025, before transitioning into her role in the Trauma Recovery Clinic. Taina is a certified sexual assault advocate and counselor in the State of Connecticut.",
+    specialties: "She is able to offer direct client services in English and Spanish.",
+    languages: ["English", "Spanish"],
+  },
+];
 
 const TraumaRecovery = () => {
   return (
@@ -69,7 +107,7 @@ const TraumaRecovery = () => {
           </div>
 
           {/* Intake Process */}
-          <div className="mb-12">
+          <div className="mb-16">
             <h2 className="text-2xl font-bold text-center text-foreground mb-6">Getting Started</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="text-center">
@@ -96,6 +134,63 @@ const TraumaRecovery = () => {
             </div>
             
             <TraumaRecoveryIntakeForm />
+          </div>
+
+          {/* Meet the Team Section */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-seasons font-normal text-foreground mb-4">Meet Our Team</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our experienced, trauma-informed clinicians are here to support you on your healing journey.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {teamMembers.map((member, index) => (
+                <div 
+                  key={member.name}
+                  className={`flex flex-col lg:flex-row gap-8 p-8 rounded-2xl ${
+                    index % 2 === 0 ? 'bg-muted/30' : 'bg-accent/5'
+                  }`}
+                >
+                  {/* Placeholder for photo */}
+                  <div className="flex-shrink-0 mx-auto lg:mx-0">
+                    <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-accent/20">
+                      <Users className="h-16 w-16 text-accent/40" />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <div className="mb-4">
+                      <h3 className="text-2xl font-semibold text-foreground">{member.name}</h3>
+                      <p className="text-primary font-medium">{member.title}</p>
+                      {member.credentials && (
+                        <p className="text-sm text-accent italic">{member.credentials}</p>
+                      )}
+                    </div>
+
+                    {/* Language badges */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {member.languages.map((lang) => (
+                        <span 
+                          key={lang}
+                          className="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full font-medium"
+                        >
+                          {lang}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="space-y-3 text-muted-foreground">
+                      <p>{member.bio}</p>
+                      <p>{member.details}</p>
+                      <p className="text-foreground/80">{member.specialties}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Support Information */}
