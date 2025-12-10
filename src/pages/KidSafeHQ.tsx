@@ -121,8 +121,8 @@ const KidSafeHQ = () => {
           </div>
         </div>
 
-        {/* News Section */}
-        <NewsSection articles={allArticles} />
+        {/* News Section - Compact for landing page */}
+        <NewsSection articles={allArticles} compact />
       </main>
 
       <Footer />
