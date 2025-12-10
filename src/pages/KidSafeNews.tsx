@@ -10,6 +10,7 @@ import { getAllArticles, parseDate } from "@/data/newsData";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
 import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
+import newsHero from "@/assets/kidsafe-news-hero.jpg";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -102,156 +103,167 @@ const KidSafeNews = () => {
   const hasActiveFilters = searchQuery || selectedTopics.length > 0 || selectedSources.length > 0 || showCtOnly;
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-muted/30">
       <Navigation />
       
       <main className="flex-grow pt-24">
-        {/* Header */}
-        <div className="bg-primary/5 border-b">
-          <div className="container mx-auto px-4 py-8">
-            <div className="flex items-center gap-4 mb-4">
-              <Link to="/kidsafehq">
-                <img src={kidSafeHQLogo} alt="KidSafeHQ" className="h-16 w-auto" />
-              </Link>
+        {/* Hero Section */}
+        <div className="relative h-64 md:h-80">
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={newsHero} 
+              alt="News and media about child safety" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+          </div>
+          <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
+            <Link to="/kidsafehq" className="mb-4">
+              <img src={kidSafeHQLogo} alt="KidSafeHQ" className="h-16 w-auto brightness-0 invert" />
+            </Link>
+            <div className="flex items-center gap-3 mb-2">
+              <Newspaper className="h-8 w-8 text-white" />
+              <h1 className="text-3xl md:text-4xl font-bold text-white">In the News</h1>
             </div>
-            <div className="flex items-center gap-3">
-              <Newspaper className="h-8 w-8 text-primary" />
-              <h1 className="text-3xl font-bold">In the News</h1>
-            </div>
-            <p className="text-muted-foreground mt-2">
+            <p className="text-white/80 text-lg max-w-2xl">
               Stay informed about child safety issues, legislation, and awareness efforts
             </p>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-8">
-          {/* Search and Filters */}
-          <div className="mb-8 space-y-4">
-            {/* Search Bar and Source Dropdown Row */}
-            <div className="flex flex-wrap items-center gap-4">
-              <div className="relative flex-grow max-w-md">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input
-                  type="text"
-                  placeholder="Search articles..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10"
-                />
+        {/* Filters Section */}
+        <div className="bg-background border-y-2 border-border shadow-sm">
+          <div className="container mx-auto px-4 py-6">
+            <div className="space-y-4">
+              {/* Search Bar and Source Dropdown Row */}
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="relative flex-grow max-w-md">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    placeholder="Search articles..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-10 border-2 border-border bg-background"
+                  />
+                </div>
+
+                {/* Source Dropdown */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" className="gap-2 border-2 border-border">
+                      Sources
+                      {selectedSources.length > 0 && (
+                        <Badge variant="secondary" className="ml-1 px-1.5 py-0 text-xs">
+                          {selectedSources.length}
+                        </Badge>
+                      )}
+                      <ChevronDown className="h-4 w-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-64 max-h-80 overflow-y-auto bg-background border-2 border-border z-50" align="start">
+                    <DropdownMenuLabel>Filter by Source</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    {allSources.map(source => (
+                      <DropdownMenuCheckboxItem
+                        key={source}
+                        checked={selectedSources.includes(source)}
+                        onCheckedChange={() => toggleSource(source)}
+                      >
+                        {source}
+                      </DropdownMenuCheckboxItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+
+                {/* View Toggle */}
+                <div className="flex items-center border-2 border-border rounded-md bg-background">
+                  <Button
+                    variant={viewMode === "grid" ? "default" : "ghost"}
+                    size="sm"
+                    onClick={() => setViewMode("grid")}
+                    className="rounded-r-none gap-1.5"
+                  >
+                    <LayoutGrid className="h-4 w-4" />
+                    Grid
+                  </Button>
+                  <Button
+                    variant={viewMode === "list" ? "default" : "ghost"}
+                    size="sm"
+                    onClick={() => setViewMode("list")}
+                    className="rounded-l-none gap-1.5"
+                  >
+                    <List className="h-4 w-4" />
+                    List
+                  </Button>
+                </div>
               </div>
 
-              {/* Source Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="gap-2">
-                    Sources
-                    {selectedSources.length > 0 && (
-                      <Badge variant="secondary" className="ml-1 px-1.5 py-0 text-xs">
-                        {selectedSources.length}
-                      </Badge>
-                    )}
-                    <ChevronDown className="h-4 w-4" />
+              {/* CT Filter Toggle and Clear */}
+              <div className="flex items-center gap-4">
+                <Button
+                  variant={showCtOnly ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setShowCtOnly(!showCtOnly)}
+                  className={`gap-2 ${!showCtOnly ? "border-2 border-border" : ""}`}
+                >
+                  <MapPin className="h-4 w-4" />
+                  Connecticut Only
+                </Button>
+                
+                {hasActiveFilters && (
+                  <Button variant="ghost" size="sm" onClick={clearFilters} className="gap-2">
+                    <X className="h-4 w-4" />
+                    Clear Filters
                   </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-64 max-h-80 overflow-y-auto bg-background z-50" align="start">
-                  <DropdownMenuLabel>Filter by Source</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  {allSources.map(source => (
-                    <DropdownMenuCheckboxItem
+                )}
+              </div>
+
+              {/* Topic Filters */}
+              <div>
+                <h3 className="text-sm font-medium mb-2">Filter by Topic</h3>
+                <div className="flex flex-wrap gap-2">
+                  {allTopics.map(topic => (
+                    <Badge
+                      key={topic}
+                      variant="secondary"
+                      className={`cursor-pointer transition-all border border-border ${
+                        selectedTopics.includes(topic) 
+                          ? "ring-2 ring-primary ring-offset-2" 
+                          : "hover:opacity-80"
+                      }`}
+                      onClick={() => toggleTopic(topic)}
+                    >
+                      {selectedTopics.includes(topic) && <Check className="h-3 w-3 mr-1" />}
+                      {topic}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              {/* Selected Sources Display */}
+              {selectedSources.length > 0 && (
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-sm text-muted-foreground">Selected sources:</span>
+                  {selectedSources.map(source => (
+                    <Badge
                       key={source}
-                      checked={selectedSources.includes(source)}
-                      onCheckedChange={() => toggleSource(source)}
+                      variant="secondary"
+                      className="cursor-pointer gap-1 border border-border"
+                      onClick={() => toggleSource(source)}
                     >
                       {source}
-                    </DropdownMenuCheckboxItem>
+                      <X className="h-3 w-3" />
+                    </Badge>
                   ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              {/* View Toggle */}
-              <div className="flex items-center border rounded-md">
-                <Button
-                  variant={viewMode === "grid" ? "default" : "ghost"}
-                  size="sm"
-                  onClick={() => setViewMode("grid")}
-                  className="rounded-r-none gap-1.5"
-                >
-                  <LayoutGrid className="h-4 w-4" />
-                  Grid
-                </Button>
-                <Button
-                  variant={viewMode === "list" ? "default" : "ghost"}
-                  size="sm"
-                  onClick={() => setViewMode("list")}
-                  className="rounded-l-none gap-1.5"
-                >
-                  <List className="h-4 w-4" />
-                  List
-                </Button>
-              </div>
-            </div>
-
-            {/* CT Filter Toggle and Clear */}
-            <div className="flex items-center gap-4">
-              <Button
-                variant={showCtOnly ? "default" : "outline"}
-                size="sm"
-                onClick={() => setShowCtOnly(!showCtOnly)}
-                className="gap-2"
-              >
-                <MapPin className="h-4 w-4" />
-                Connecticut Only
-              </Button>
-              
-              {hasActiveFilters && (
-                <Button variant="ghost" size="sm" onClick={clearFilters} className="gap-2">
-                  <X className="h-4 w-4" />
-                  Clear Filters
-                </Button>
+                </div>
               )}
             </div>
-
-            {/* Topic Filters */}
-            <div>
-              <h3 className="text-sm font-medium mb-2">Filter by Topic</h3>
-              <div className="flex flex-wrap gap-2">
-                {allTopics.map(topic => (
-                  <Badge
-                    key={topic}
-                    variant="secondary"
-                    className={`cursor-pointer transition-all ${
-                      selectedTopics.includes(topic) 
-                        ? "ring-2 ring-primary ring-offset-2" 
-                        : "hover:opacity-80"
-                    }`}
-                    onClick={() => toggleTopic(topic)}
-                  >
-                    {selectedTopics.includes(topic) && <Check className="h-3 w-3 mr-1" />}
-                    {topic}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-
-            {/* Selected Sources Display */}
-            {selectedSources.length > 0 && (
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm text-muted-foreground">Selected sources:</span>
-                {selectedSources.map(source => (
-                  <Badge
-                    key={source}
-                    variant="secondary"
-                    className="cursor-pointer gap-1"
-                    onClick={() => toggleSource(source)}
-                  >
-                    {source}
-                    <X className="h-3 w-3" />
-                  </Badge>
-                ))}
-              </div>
-            )}
           </div>
+        </div>
 
+        {/* Articles Section */}
+        <div className="container mx-auto px-4 py-8">
           {/* Results Count */}
           <div className="flex items-center justify-between mb-6">
             <p className="text-sm text-muted-foreground">
