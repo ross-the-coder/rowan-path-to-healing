@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Stethoscope, Heart, Users, Shield } from "lucide-react";
 import { TraumaRecoveryIntakeForm } from "@/components/TraumaRecoveryIntakeForm";
 
+import lukeHeadshot from "@/assets/luke-robbins-headshot.webp";
+import isabelHeadshot from "@/assets/isabel-negron-headshot.webp";
+import zacharyHeadshot from "@/assets/zachary-boccarossa-headshot.webp";
+import tainaHeadshot from "@/assets/taina-colon-headshot.webp";
+
 const teamMembers = [
   {
     name: "Luke Robbins, LCSW",
@@ -12,6 +17,7 @@ const teamMembers = [
     details: "Luke started at The Rowan Center in the Fall of 2019 as the Director of Counseling. Since then, Luke has served as the supervisor and coordinator of our master's-level counseling internship program, and as our Chief Operating Officer, before transitioning to his current role of Clinical Director in June of 2023. In addition to overseeing the day-to-day operations of the Trauma Recovery Clinic at The Rowan Center, Luke continues to provide clinical supervision to the LMSWs on our staff, as well as to the MSW interns in both our short-term crisis counseling program and in the clinic.",
     specialties: "Luke is able to offer direct client services in English, French, and Spanish. He has experience working with clients exhibiting symptoms of depression, anxiety, PTSD, and OCD, as well as victims and survivors of sexual violence, first responders, adults who suffered trauma as children, anger issues, difficulties with self-esteem and self-reliance, sleep disturbance, and individuals who identify as sex addicts.",
     languages: ["English", "Spanish", "French"],
+    image: lukeHeadshot,
   },
   {
     name: "Isabel Negron, LCSW",
@@ -21,6 +27,7 @@ const teamMembers = [
     details: "Isabel started at The Rowan Center in the Fall of 2021 as a master's-level intern before being asked to join our team after graduating with her MSW. She served as our Bilingual (EN/ES) Intake Coordinator before transitioning into her current role as our first Bilingual (EN/ES) Staff Therapist at the Trauma Recovery Clinic at TRC.",
     specialties: "Isabel is able to offer direct client services in English and Spanish. She has experience working with clients exhibiting symptoms of depression, anxiety, and PTSD, and especially with victims and survivors of sexual violence and other forms of trauma.",
     languages: ["English", "Spanish"],
+    image: isabelHeadshot,
   },
   {
     name: "Zachary Boccarossa, LMSW",
@@ -30,6 +37,7 @@ const teamMembers = [
     details: "Zachary also completed his first year MSW internship at The Rowan Center, providing short-term crisis counseling services to victims and survivors of sexual violence in our Counseling program. Zachary is a certified sexual assault advocate and counselor in the State of Connecticut.",
     specialties: "He is able to offer direct client services in English and Spanish. He has experience working with clients exhibiting symptoms of depression, anxiety, and PTSD, and especially with victims and survivors of sexual violence.",
     languages: ["English", "Spanish"],
+    image: zacharyHeadshot,
   },
   {
     name: "Taina Colon, LMSW",
@@ -39,6 +47,7 @@ const teamMembers = [
     details: "While completing her MSW, Taina completed a year-long internship at The Rowan Center, providing short-term crisis counseling services to victims and survivors of sexual violence in our Counseling program. Taina served as the Bilingual/Bicultural Counselor and Intake Coordinator of the Counseling program at the Rowan Center from June of 2024 until June of 2025, before transitioning into her role in the Trauma Recovery Clinic. Taina is a certified sexual assault advocate and counselor in the State of Connecticut.",
     specialties: "She is able to offer direct client services in English and Spanish.",
     languages: ["English", "Spanish"],
+    image: tainaHeadshot,
   },
 ];
 
@@ -153,11 +162,13 @@ const TraumaRecovery = () => {
                     index % 2 === 0 ? 'bg-muted/30' : 'bg-accent/5'
                   }`}
                 >
-                  {/* Placeholder for photo */}
+                  {/* Team member photo */}
                   <div className="flex-shrink-0 mx-auto lg:mx-0">
-                    <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-accent/20">
-                      <Users className="h-16 w-16 text-accent/40" />
-                    </div>
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-48 h-48 rounded-2xl object-cover object-top border-2 border-accent/20 shadow-lg"
+                    />
                   </div>
 
                   {/* Content */}
