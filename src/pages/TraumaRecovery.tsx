@@ -68,45 +68,6 @@ const TraumaRecovery = () => {
             </div>
           </div>
 
-          {/* Treatment Approaches */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center text-foreground mb-8">Our Treatment Approaches</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">EMDR Therapy</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Eye Movement Desensitization and Reprocessing helps process traumatic memories and reduce their emotional impact.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Trauma-Focused CBT</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Cognitive Behavioral Therapy specifically adapted for trauma survivors to process experiences and develop coping skills.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Somatic Approaches</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Body-based therapies that help address the physical impacts of trauma and support healing through the body-mind connection.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
           {/* Intake Process */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-center text-foreground mb-6">Getting Started</h2>
