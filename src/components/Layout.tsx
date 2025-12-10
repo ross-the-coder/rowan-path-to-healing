@@ -1,5 +1,6 @@
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import QuickEscape from "./QuickEscape";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,6 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+      <QuickEscape />
     </div>
   );
 };
