@@ -36,7 +36,7 @@ const TraumaRecovery = () => {
                 services we offer, including talk therapy, EMDR, and other clinical therapy modalities.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                 <div className="bg-background rounded-xl p-6 border border-accent/20">
                   <div className="flex items-center gap-3 mb-3">
                     <Shield className="h-6 w-6 text-accent" />
@@ -55,11 +55,11 @@ const TraumaRecovery = () => {
                     Clients must be at least 18 years old.
                   </p>
                 </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-accent/20">
-                <div className="flex items-center gap-3">
-                  <Stethoscope className="h-6 w-6 text-accent" />
+                <div className="bg-background rounded-xl p-6 border border-accent/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Stethoscope className="h-6 w-6 text-accent" />
+                    <h3 className="font-semibold text-foreground">Fully Licensed</h3>
+                  </div>
                   <p className="text-muted-foreground">
                     The TRC is fully licensed by the CT Department of Public Health.
                   </p>
