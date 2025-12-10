@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ExternalLink, Calendar, Newspaper, Search, X, MapPin, ChevronDown, Check } from "lucide-react";
+import { ExternalLink, Calendar, Newspaper, Search, X, MapPin, ChevronDown, Check, LayoutGrid, List, ChevronLeft, ChevronRight } from "lucide-react";
 import { getAllArticles, parseDate } from "@/data/newsData";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
@@ -19,12 +19,16 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+const ITEMS_PER_PAGE_GRID = 9;
+
 const KidSafeNews = () => {
   const allArticles = getAllArticles();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
   const [showCtOnly, setShowCtOnly] = useState(false);
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Extract unique topics and sources
   const allTopics = useMemo(() => {
@@ -44,26 +48,33 @@ const KidSafeNews = () => {
   // Filter articles
   const filteredArticles = useMemo(() => {
     return allArticles.filter(article => {
-      // Search filter
       const matchesSearch = searchQuery === "" || 
         article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         article.source.toLowerCase().includes(searchQuery.toLowerCase()) ||
         article.topics.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
 
-      // Topic filter
       const matchesTopics = selectedTopics.length === 0 ||
         article.topics.some(t => selectedTopics.includes(t));
 
-      // Source filter
       const matchesSources = selectedSources.length === 0 ||
         selectedSources.includes(article.source);
 
-      // CT filter
       const matchesCt = !showCtOnly || article.isConnecticut;
 
       return matchesSearch && matchesTopics && matchesSources && matchesCt;
     });
   }, [allArticles, searchQuery, selectedTopics, selectedSources, showCtOnly]);
+
+  // Pagination for grid view
+  const totalPages = Math.ceil(filteredArticles.length / ITEMS_PER_PAGE_GRID);
+  const paginatedArticles = viewMode === "grid" 
+    ? filteredArticles.slice((currentPage - 1) * ITEMS_PER_PAGE_GRID, currentPage * ITEMS_PER_PAGE_GRID)
+    : filteredArticles;
+
+  // Reset to page 1 when filters change
+  useMemo(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedTopics, selectedSources, showCtOnly]);
 
   const toggleTopic = (topic: string) => {
     setSelectedTopics(prev => 
@@ -156,6 +167,28 @@ const KidSafeNews = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+
+              {/* View Toggle */}
+              <div className="flex items-center border rounded-md">
+                <Button
+                  variant={viewMode === "grid" ? "default" : "ghost"}
+                  size="sm"
+                  onClick={() => setViewMode("grid")}
+                  className="rounded-r-none gap-1.5"
+                >
+                  <LayoutGrid className="h-4 w-4" />
+                  Grid
+                </Button>
+                <Button
+                  variant={viewMode === "list" ? "default" : "ghost"}
+                  size="sm"
+                  onClick={() => setViewMode("list")}
+                  className="rounded-l-none gap-1.5"
+                >
+                  <List className="h-4 w-4" />
+                  List
+                </Button>
+              </div>
             </div>
 
             {/* CT Filter Toggle and Clear */}
@@ -220,61 +253,148 @@ const KidSafeNews = () => {
           </div>
 
           {/* Results Count */}
-          <p className="text-sm text-muted-foreground mb-6">
-            Showing {filteredArticles.length} of {allArticles.length} articles
-          </p>
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-sm text-muted-foreground">
+              Showing {viewMode === "grid" ? `${paginatedArticles.length} of ` : ""}{filteredArticles.length} articles
+              {viewMode === "grid" && totalPages > 1 && ` (Page ${currentPage} of ${totalPages})`}
+            </p>
+          </div>
 
-          {/* Articles Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredArticles.map((article) => (
-              <Card key={article.id} className="hover:shadow-lg transition-shadow flex flex-col">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                    <Calendar className="h-3 w-3" />
-                    <span>{format(parseDate(article.date), "MMMM d, yyyy")}</span>
-                    {article.isConnecticut && (
-                      <>
-                        <span className="mx-1">•</span>
-                        <span className="flex items-center gap-1 text-primary font-medium">
-                          <MapPin className="h-3 w-3" />
-                          CT
-                        </span>
-                      </>
-                    )}
-                  </div>
-                  <div className="text-xs font-medium text-primary mb-2">{article.source}</div>
-                  <a 
-                    href={article.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-lg leading-tight hover:text-primary transition-colors line-clamp-3"
+          {/* Grid View */}
+          {viewMode === "grid" && (
+            <>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {paginatedArticles.map((article) => (
+                  <Card key={article.id} className="hover:shadow-lg transition-shadow flex flex-col">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                        <Calendar className="h-3 w-3" />
+                        <span>{format(parseDate(article.date), "MMMM d, yyyy")}</span>
+                        {article.isConnecticut && (
+                          <>
+                            <span className="mx-1">•</span>
+                            <span className="flex items-center gap-1 text-primary font-medium">
+                              <MapPin className="h-3 w-3" />
+                              CT
+                            </span>
+                          </>
+                        )}
+                      </div>
+                      <div className="text-xs font-medium text-primary mb-2">{article.source}</div>
+                      <a 
+                        href={article.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-lg leading-tight hover:text-primary transition-colors line-clamp-3"
+                      >
+                        {article.title}
+                      </a>
+                    </CardHeader>
+                    <CardContent className="flex-grow flex flex-col justify-end pt-0">
+                      <div className="flex flex-wrap gap-1.5 mb-4">
+                        {article.topics.map((topic) => (
+                          <Badge key={topic} variant="secondary" className="text-xs">
+                            {topic}
+                          </Badge>
+                        ))}
+                      </div>
+                      <Button asChild variant="outline" size="sm" className="w-full">
+                        <a 
+                          href={article.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          Read Article
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-8">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                    disabled={currentPage === 1}
                   >
-                    {article.title}
-                  </a>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col justify-end pt-0">
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {article.topics.map((topic) => (
-                      <Badge key={topic} variant="secondary" className="text-xs">
-                        {topic}
-                      </Badge>
+                    <ChevronLeft className="h-4 w-4" />
+                    Previous
+                  </Button>
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                      <Button
+                        key={page}
+                        variant={currentPage === page ? "default" : "ghost"}
+                        size="sm"
+                        onClick={() => setCurrentPage(page)}
+                        className="w-8 h-8 p-0"
+                      >
+                        {page}
+                      </Button>
                     ))}
                   </div>
-                  <Button asChild variant="outline" size="sm" className="w-full">
-                    <a 
-                      href={article.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      Read Article
-                      <ExternalLink className="h-3 w-3" />
-                    </a>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                    disabled={currentPage === totalPages}
+                  >
+                    Next
+                    <ChevronRight className="h-4 w-4" />
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </div>
+              )}
+            </>
+          )}
+
+          {/* List View */}
+          {viewMode === "list" && (
+            <div className="border rounded-lg divide-y">
+              {paginatedArticles.map((article) => (
+                <a
+                  key={article.id}
+                  href={article.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 p-4 hover:bg-muted/50 transition-colors group"
+                >
+                  <div className="flex-grow min-w-0">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
+                      <span>{format(parseDate(article.date), "MMM d, yyyy")}</span>
+                      <span>•</span>
+                      <span className="font-medium text-primary">{article.source}</span>
+                      {article.isConnecticut && (
+                        <>
+                          <span>•</span>
+                          <span className="flex items-center gap-0.5 text-primary">
+                            <MapPin className="h-3 w-3" />
+                            CT
+                          </span>
+                        </>
+                      )}
+                    </div>
+                    <h3 className="font-medium text-sm leading-snug group-hover:text-primary transition-colors mb-2">
+                      {article.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-1">
+                      {article.topics.map((topic) => (
+                        <Badge key={topic} variant="secondary" className="text-xs">
+                          {topic}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <ExternalLink className="h-4 w-4 text-muted-foreground shrink-0 mt-1 group-hover:text-primary" />
+                </a>
+              ))}
+            </div>
+          )}
 
           {filteredArticles.length === 0 && (
             <div className="text-center py-12">
