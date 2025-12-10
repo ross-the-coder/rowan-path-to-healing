@@ -10,6 +10,7 @@ import { middleSchoolData } from "@/data/middleSchoolData";
 import { TopicCard } from "@/components/kidsafe/TopicCard";
 import { FAQSection } from "@/components/kidsafe/FAQSection";
 import { ResourceLinks } from "@/components/kidsafe/ResourceLinks";
+import kidsafeMiddle from "@/assets/kidsafe-middle.jpg";
 
 const KidSafeMiddle = () => {
   const [completedTopics, setCompletedTopics] = useState<Set<string>>(new Set());
@@ -30,9 +31,17 @@ const KidSafeMiddle = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <div className="bg-gradient-to-br from-green-500/10 via-green-600/5 to-green-500/5 pt-24 pb-12">
-        <div className="container mx-auto px-4">
-          <Button asChild variant="ghost" className="mb-4">
+      <div className="relative pt-24 pb-12">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={kidsafeMiddle} 
+            alt="Middle school students" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-green-600/80 via-green-600/70 to-green-600/80" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <Button asChild variant="ghost" className="mb-4 text-white hover:bg-white/20">
             <Link to="/kidsafehq">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Age Groups
@@ -41,10 +50,10 @@ const KidSafeMiddle = () => {
           
           <div className="text-center max-w-4xl mx-auto space-y-4">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <BookOpen className="h-12 w-12 text-green-600" />
-              <h1 className="text-4xl font-bold">Middle School Safety Guide</h1>
+              <BookOpen className="h-12 w-12 text-white" />
+              <h1 className="text-4xl font-bold text-white">Middle School Safety Guide</h1>
             </div>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white/90">
               Interactive guides for middle schoolers navigating friendships, emotions, digital life, and growing independence. Essential topics for ages 11-14.
             </p>
           </div>

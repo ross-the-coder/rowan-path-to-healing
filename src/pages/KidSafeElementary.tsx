@@ -11,6 +11,7 @@ import { elementarySchoolData } from "@/data/kidSafeData";
 import { TopicCard } from "@/components/kidsafe/TopicCard";
 import { ResourceLinks } from "@/components/kidsafe/ResourceLinks";
 import { FAQSection } from "@/components/kidsafe/FAQSection";
+import kidsafeElementary from "@/assets/kidsafe-elementary.jpg";
 
 const KidSafeElementary = () => {
   const [completedTopics, setCompletedTopics] = useState<Set<string>>(new Set());
@@ -31,9 +32,17 @@ const KidSafeElementary = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/5 pt-24 pb-12">
-        <div className="container mx-auto px-4">
-          <Button asChild variant="ghost" className="mb-4">
+      <div className="relative pt-24 pb-12">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={kidsafeElementary} 
+            alt="Elementary school children" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/80" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <Button asChild variant="ghost" className="mb-4 text-white hover:bg-white/20">
             <Link to="/kidsafehq">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Age Groups
@@ -41,8 +50,8 @@ const KidSafeElementary = () => {
           </Button>
           
           <div className="text-center max-w-4xl mx-auto space-y-4">
-            <h1 className="text-4xl font-bold">Elementary School</h1>
-            <p className="text-xl text-muted-foreground">
+            <h1 className="text-4xl font-bold text-white">Elementary School</h1>
+            <p className="text-xl text-white/90">
               Age-appropriate lessons for K-5th grade about safety, boundaries, and healthy relationships
             </p>
             <div className="flex flex-wrap gap-2 justify-center mt-4">

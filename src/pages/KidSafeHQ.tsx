@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, GraduationCap, School, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
+import kidsafeElementary from "@/assets/kidsafe-elementary.jpg";
+import kidsafeMiddle from "@/assets/kidsafe-middle.jpg";
+import kidsafeHigh from "@/assets/kidsafe-high.jpg";
+import kidsafeResources from "@/assets/kidsafe-resources.jpg";
 
 const KidSafeHQ = () => {
   const ageGroups = [
@@ -13,28 +17,32 @@ const KidSafeHQ = () => {
       description: "Age-appropriate lessons for K-5th grade about safety, boundaries, and healthy relationships",
       icon: School,
       link: "/kidsafehq/elementary",
-      color: "from-blue-500/10 to-blue-600/5"
+      color: "from-blue-500/10 to-blue-600/5",
+      image: kidsafeElementary
     },
     {
       title: "Middle School",
       description: "Interactive guides for middle schoolers navigating friendships, emotions, and growing independence",
       icon: Users,
       link: "/kidsafehq/middle",
-      color: "from-green-500/10 to-green-600/5"
+      color: "from-green-500/10 to-green-600/5",
+      image: kidsafeMiddle
     },
     {
       title: "High School",
       description: "Resources for teens about healthy relationships, consent, digital safety, and more",
       icon: GraduationCap,
       link: "/kidsafehq/high",
-      color: "from-purple-500/10 to-purple-600/5"
+      color: "from-purple-500/10 to-purple-600/5",
+      image: kidsafeHigh
     },
     {
       title: "Resources",
       description: "Additional materials, guides, and external resources for parents, educators, and caregivers",
       icon: BookOpen,
       link: "/kidsafehq/resources",
-      color: "from-orange-500/10 to-orange-600/5"
+      color: "from-orange-500/10 to-orange-600/5",
+      image: kidsafeResources
     }
   ];
 
@@ -68,7 +76,14 @@ const KidSafeHQ = () => {
             {ageGroups.map((group) => {
               const IconComponent = group.icon;
               return (
-                <Card key={group.title} className={`hover:shadow-lg transition-shadow bg-gradient-to-br ${group.color}`}>
+                <Card key={group.title} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${group.color}`}>
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={group.image} 
+                      alt={group.title} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       <IconComponent className="h-8 w-8 text-primary" />
