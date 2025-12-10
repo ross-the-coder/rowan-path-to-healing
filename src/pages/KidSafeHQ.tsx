@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, GraduationCap, School, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
+import kidsafeHqHero from "@/assets/kidsafe-hq-hero.jpg";
 import kidsafeElementary from "@/assets/kidsafe-elementary.jpg";
 import kidsafeMiddle from "@/assets/kidsafe-middle.jpg";
 import kidsafeHigh from "@/assets/kidsafe-high.jpg";
@@ -52,8 +53,16 @@ const KidSafeHQ = () => {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/5 pt-24 pb-16">
-          <div className="container mx-auto px-4">
+        <div className="relative pt-24 pb-16">
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={kidsafeHqHero} 
+              alt="Parent and child having a warm conversation" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/80" />
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="text-center max-w-4xl mx-auto space-y-6">
               <div className="flex items-center justify-center mb-6">
                 <img 
@@ -62,7 +71,7 @@ const KidSafeHQ = () => {
                   className="h-48 w-auto"
                 />
               </div>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-white/90">
                 Interactive guides to help you have important conversations with your children about safety, boundaries, and healthy relationships
               </p>
             </div>
