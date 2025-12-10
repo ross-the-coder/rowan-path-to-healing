@@ -10,6 +10,7 @@ import { highSchoolData } from "@/data/highSchoolData";
 import { TopicCard } from "@/components/kidsafe/TopicCard";
 import { FAQSection } from "@/components/kidsafe/FAQSection";
 import { ResourceLinks } from "@/components/kidsafe/ResourceLinks";
+import kidsafeHigh from "@/assets/kidsafe-high.jpg";
 
 const KidSafeHigh = () => {
   const [completedTopics, setCompletedTopics] = useState<Set<string>>(new Set());
@@ -30,9 +31,17 @@ const KidSafeHigh = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <div className="bg-gradient-to-br from-purple-500/10 via-purple-600/5 to-purple-500/5 pt-24 pb-12">
-        <div className="container mx-auto px-4">
-          <Button asChild variant="ghost" className="mb-4">
+      <div className="relative pt-24 pb-12">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={kidsafeHigh} 
+            alt="High school students" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-600/80 via-purple-600/70 to-purple-600/80" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <Button asChild variant="ghost" className="mb-4 text-white hover:bg-white/20">
             <Link to="/kidsafehq">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Age Groups
@@ -41,10 +50,10 @@ const KidSafeHigh = () => {
           
           <div className="text-center max-w-4xl mx-auto space-y-4">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <GraduationCap className="h-12 w-12 text-purple-600" />
-              <h1 className="text-4xl font-bold">High School Safety Guide</h1>
+              <GraduationCap className="h-12 w-12 text-white" />
+              <h1 className="text-4xl font-bold text-white">High School Safety Guide</h1>
             </div>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white/90">
               Comprehensive guides for high schoolers on consent, healthy relationships, legal rights, and preparing for life after graduation. Essential topics for ages 14-18.
             </p>
           </div>
