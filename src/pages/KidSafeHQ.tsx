@@ -85,9 +85,6 @@ const KidSafeHQ = () => {
           </div>
         </div>
 
-        {/* News Ticker - CT Local */}
-        <NewsTicker articles={tickerArticles} />
-
         {/* Age Group Selection */}
         <div className="container mx-auto px-4 py-16">
           <h2 className="text-3xl font-bold text-center mb-12">Select an Age Group</h2>
@@ -119,10 +116,17 @@ const KidSafeHQ = () => {
               );
             })}
           </div>
-        </div>
 
-        {/* News Section - Compact for landing page */}
-        <NewsSection articles={allArticles} compact />
+          {/* News Ticker - CT Local */}
+          <div className="max-w-5xl mx-auto mt-6">
+            <NewsTicker articles={tickerArticles} />
+          </div>
+
+          {/* News Section - Styled like 5th card */}
+          <div className="max-w-5xl mx-auto mt-6">
+            <NewsSection articles={allArticles} compact />
+          </div>
+        </div>
       </main>
 
       <Footer />

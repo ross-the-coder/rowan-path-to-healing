@@ -16,62 +16,61 @@ const NewsSection = ({ articles, compact = false }: NewsSectionProps) => {
 
   if (compact) {
     return (
-      <div className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <Card className="max-w-4xl mx-auto">
-            <CardHeader className="pb-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Newspaper className="h-6 w-6 text-primary" />
-                  <h2 className="text-2xl font-bold">In the News</h2>
-                </div>
-                <Button asChild variant="outline" size="sm" className="gap-2">
-                  <Link to="/kidsafehq/news">
-                    View All
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <div className="divide-y">
-                {displayArticles.map((article) => (
-                  <a
-                    key={article.id}
-                    href={article.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block py-4 first:pt-0 last:pb-0 hover:bg-muted/50 -mx-2 px-2 rounded transition-colors group"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-grow min-w-0">
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
-                          <span>{format(parseDate(article.date), "MMM d, yyyy")}</span>
+      <Card className="hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br from-red-500/10 to-red-600/5">
+        <CardHeader className="pb-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Newspaper className="h-8 w-8 text-primary" />
+              <h3 className="text-2xl font-bold">In the News</h3>
+            </div>
+            <Button asChild className="gap-2">
+              <Link to="/kidsafehq/news">
+                View All
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <p className="text-muted-foreground text-base mt-2">
+            Stay informed about child safety news, legislation, and awareness efforts
+          </p>
+        </CardHeader>
+        <CardContent className="pt-0">
+          <div className="divide-y divide-border/50">
+            {displayArticles.map((article) => (
+              <a
+                key={article.id}
+                href={article.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-3 first:pt-0 last:pb-0 hover:bg-background/50 -mx-2 px-2 rounded transition-colors group"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-grow min-w-0">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
+                      <span>{format(parseDate(article.date), "MMM d, yyyy")}</span>
+                      <span>•</span>
+                      <span className="font-medium text-primary">{article.source}</span>
+                      {article.isConnecticut && (
+                        <>
                           <span>•</span>
-                          <span className="font-medium text-primary">{article.source}</span>
-                          {article.isConnecticut && (
-                            <>
-                              <span>•</span>
-                              <span className="flex items-center gap-0.5 text-primary">
-                                <MapPin className="h-3 w-3" />
-                                CT
-                              </span>
-                            </>
-                          )}
-                        </div>
-                        <h3 className="font-medium text-sm leading-snug group-hover:text-primary transition-colors line-clamp-2">
-                          {article.title}
-                        </h3>
-                      </div>
-                      <ExternalLink className="h-4 w-4 text-muted-foreground shrink-0 mt-1 group-hover:text-primary" />
+                          <span className="flex items-center gap-0.5 text-primary">
+                            <MapPin className="h-3 w-3" />
+                            CT
+                          </span>
+                        </>
+                      )}
                     </div>
-                  </a>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+                    <h4 className="font-medium text-sm leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                      {article.title}
+                    </h4>
+                  </div>
+                  <ExternalLink className="h-4 w-4 text-muted-foreground shrink-0 mt-1 group-hover:text-primary" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
     );
   }
 
