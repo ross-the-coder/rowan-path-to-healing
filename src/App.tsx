@@ -11,6 +11,7 @@ import CrisisServices from "./pages/CrisisServices";
 import VictimAdvocacy from "./pages/VictimAdvocacy";
 import TraumaRecovery from "./pages/TraumaRecovery";
 import Resources from "./pages/Resources";
+import CommunityResources from "./pages/CommunityResources";
 import Impact from "./pages/Impact";
 import Donate from "./pages/Donate";
 import Events from "./pages/Events";
@@ -50,7 +51,7 @@ const App = () => {
             <Route path="/crisis-services" element={<CrisisServices />} />
             <Route path="/victim-advocacy" element={<VictimAdvocacy />} />
             <Route path="/trauma-recovery" element={<TraumaRecovery />} />
-            <Route path="/resources" element={<Resources />} />
+            <Route path="/resources" element={<CommunityResources />} />
             <Route path="/impact" element={<Impact />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/events" element={<Events />} />
