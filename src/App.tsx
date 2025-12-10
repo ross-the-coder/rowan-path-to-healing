@@ -28,6 +28,7 @@ import KidSafeResources from "./pages/KidSafeResources";
 import KidSafeNews from "./pages/KidSafeNews";
 import CTLawsReporting from "./pages/CTLawsReporting";
 import Reminders from "./pages/Reminders";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -67,6 +68,7 @@ const App = () => {
           <Route path="/kidsafehq/news" element={<KidSafeNews />} />
             <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
             <Route path="/reminders" element={<Reminders />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
