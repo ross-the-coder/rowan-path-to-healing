@@ -15,7 +15,9 @@ import {
   School, 
   Handshake, 
   Globe,
-  ChevronDown
+  ChevronDown,
+  LayoutGrid,
+  List
 } from "lucide-react";
 import {
   Select,
@@ -29,6 +31,14 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { 
   communityResources, 
   getUniqueCategories, 
@@ -44,6 +54,7 @@ const CommunityResources = () => {
   const [selectedResourceType, setSelectedResourceType] = useState<string>("all");
   const [selectedLocation, setSelectedLocation] = useState<string>("all");
   const [isFiltersOpen, setIsFiltersOpen] = useState(true);
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const categories = getUniqueCategories();
   const resourceTypes = getUniqueResourceTypes();
@@ -233,42 +244,142 @@ const CommunityResources = () => {
             </Collapsible>
           </Card>
 
-          {/* Results Count */}
-          <div className="mb-6 flex items-center justify-between">
+          {/* Results Count and View Toggle */}
+          <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <p className="text-muted-foreground">
               Showing <span className="font-semibold text-foreground">{filteredResources.length}</span> of {communityResources.length} resources
             </p>
-            {hasActiveFilters && (
-              <div className="flex flex-wrap gap-2">
-                {selectedCategory !== "all" && (
-                  <Badge variant="secondary" className="gap-1">
-                    {selectedCategory}
-                    <X className="h-3 w-3 cursor-pointer" onClick={() => setSelectedCategory("all")} />
-                  </Badge>
-                )}
-                {selectedResourceType !== "all" && (
-                  <Badge variant="secondary" className="gap-1">
-                    {selectedResourceType}
-                    <X className="h-3 w-3 cursor-pointer" onClick={() => setSelectedResourceType("all")} />
-                  </Badge>
-                )}
-                {selectedLocation !== "all" && (
-                  <Badge variant="secondary" className="gap-1">
-                    {selectedLocation}
-                    <X className="h-3 w-3 cursor-pointer" onClick={() => setSelectedLocation("all")} />
-                  </Badge>
-                )}
+            <div className="flex items-center gap-4">
+              {hasActiveFilters && (
+                <div className="flex flex-wrap gap-2">
+                  {selectedCategory !== "all" && (
+                    <Badge variant="secondary" className="gap-1">
+                      {selectedCategory}
+                      <X className="h-3 w-3 cursor-pointer" onClick={() => setSelectedCategory("all")} />
+                    </Badge>
+                  )}
+                  {selectedResourceType !== "all" && (
+                    <Badge variant="secondary" className="gap-1">
+                      {selectedResourceType}
+                      <X className="h-3 w-3 cursor-pointer" onClick={() => setSelectedResourceType("all")} />
+                    </Badge>
+                  )}
+                  {selectedLocation !== "all" && (
+                    <Badge variant="secondary" className="gap-1">
+                      {selectedLocation}
+                      <X className="h-3 w-3 cursor-pointer" onClick={() => setSelectedLocation("all")} />
+                    </Badge>
+                  )}
+                </div>
+              )}
+              {/* View Toggle */}
+              <div className="flex items-center border rounded-lg p-1 bg-muted/50">
+                <Button
+                  variant={viewMode === "grid" ? "default" : "ghost"}
+                  size="sm"
+                  className="h-8 px-3"
+                  onClick={() => setViewMode("grid")}
+                >
+                  <LayoutGrid className="h-4 w-4" />
+                  <span className="sr-only sm:not-sr-only sm:ml-2">Grid</span>
+                </Button>
+                <Button
+                  variant={viewMode === "list" ? "default" : "ghost"}
+                  size="sm"
+                  className="h-8 px-3"
+                  onClick={() => setViewMode("list")}
+                >
+                  <List className="h-4 w-4" />
+                  <span className="sr-only sm:not-sr-only sm:ml-2">List</span>
+                </Button>
               </div>
-            )}
+            </div>
           </div>
 
-          {/* Resource Cards Grid */}
+          {/* Resource Display */}
           {filteredResources.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredResources.map((resource) => (
-                <ResourceCard key={resource.id} resource={resource} getCategoryColor={getCategoryColor} getLocationBadgeColor={getLocationBadgeColor} getCategoryIcon={getCategoryIcon} />
-              ))}
-            </div>
+            viewMode === "grid" ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredResources.map((resource) => (
+                  <ResourceCard key={resource.id} resource={resource} getCategoryColor={getCategoryColor} getLocationBadgeColor={getLocationBadgeColor} getCategoryIcon={getCategoryIcon} />
+                ))}
+              </div>
+            ) : (
+              <Card>
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="w-[250px]">Organization</TableHead>
+                      <TableHead className="hidden md:table-cell">Description</TableHead>
+                      <TableHead className="hidden sm:table-cell">Category</TableHead>
+                      <TableHead className="hidden lg:table-cell">Location</TableHead>
+                      <TableHead className="hidden lg:table-cell">Phone</TableHead>
+                      <TableHead className="text-right">Link</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {filteredResources.map((resource) => (
+                      <TableRow key={resource.id} className="hover:bg-muted/50">
+                        <TableCell className="font-medium">
+                          <div>
+                            <div className="font-semibold">{resource.name}</div>
+                            <div className="text-xs text-muted-foreground mt-1 flex flex-wrap gap-1">
+                              {resource.resourceTypes.slice(0, 2).map((type) => (
+                                <Badge key={type} variant="secondary" className="text-xs py-0">
+                                  {type}
+                                </Badge>
+                              ))}
+                              {resource.resourceTypes.length > 2 && (
+                                <Badge variant="secondary" className="text-xs py-0">
+                                  +{resource.resourceTypes.length - 2}
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                        </TableCell>
+                        <TableCell className="hidden md:table-cell max-w-xs">
+                          <p className="line-clamp-2 text-sm text-muted-foreground">
+                            {resource.description}
+                          </p>
+                        </TableCell>
+                        <TableCell className="hidden sm:table-cell">
+                          <Badge variant="outline" className={`${getCategoryColor(resource.category)} gap-1`}>
+                            {getCategoryIcon(resource.category)}
+                            {resource.category}
+                          </Badge>
+                        </TableCell>
+                        <TableCell className="hidden lg:table-cell">
+                          <Badge className={getLocationBadgeColor(resource.catchmentArea)}>
+                            {resource.catchmentArea}
+                          </Badge>
+                        </TableCell>
+                        <TableCell className="hidden lg:table-cell">
+                          {resource.phone ? (
+                            <a 
+                              href={`tel:${resource.phone.replace(/[^0-9]/g, '')}`}
+                              className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                            >
+                              <Phone className="h-3 w-3" />
+                              {resource.phone}
+                            </a>
+                          ) : (
+                            <span className="text-muted-foreground text-sm">—</span>
+                          )}
+                        </TableCell>
+                        <TableCell className="text-right">
+                          <Button asChild size="sm" variant="outline">
+                            <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="h-4 w-4" />
+                              <span className="sr-only">Visit {resource.name}</span>
+                            </a>
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </Card>
+            )
           ) : (
             <Card className="py-12">
               <CardContent className="text-center">
