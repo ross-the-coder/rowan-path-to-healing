@@ -152,11 +152,13 @@ const KidSafeResources = () => {
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
   const [glossarySearch, setGlossarySearch] = useState("");
 
-  const filteredTerms = glossaryTerms.filter(
-    (item) =>
-      item.term.toLowerCase().includes(glossarySearch.toLowerCase()) ||
-      item.definition.toLowerCase().includes(glossarySearch.toLowerCase())
-  );
+  const filteredTerms = glossaryTerms
+    .filter(
+      (item) =>
+        item.term.toLowerCase().includes(glossarySearch.toLowerCase()) ||
+        item.definition.toLowerCase().includes(glossarySearch.toLowerCase())
+    )
+    .sort((a, b) => a.term.localeCompare(b.term));
 
   return (
     <div className="min-h-screen flex flex-col">
