@@ -26,7 +26,7 @@ const Impact = () => {
       icon: TrendingUp,
       number: "30+",
       label: "Years of service",
-      description: "Supporting South Fairfield County since our founding"
+      description: "Supporting Lower Fairfield County since our founding"
     }
   ];
 
@@ -94,7 +94,7 @@ const Impact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="font-roboto text-lg mb-4">
-                    We provide age-appropriate education to students, parents, educators, and professionals throughout South Fairfield County. Our programs help prevent sexual violence before it occurs by teaching boundaries, consent, and bystander intervention.
+                    We provide age-appropriate education to students, parents, educators, and professionals throughout Lower Fairfield County. Our programs help prevent sexual violence before it occurs by teaching boundaries, consent, and bystander intervention.
                   </p>
                   <p className="font-roboto text-muted-foreground">
                     Serving 8 towns: Stamford, Norwalk, Darien, Greenwich, New Canaan, Westport, Weston, and Wilton

@@ -19,7 +19,7 @@ const Careers = () => {
       title: "Prevention Education Specialist",
       department: "Prevention",
       type: "Full-time",
-      location: "South Fairfield County",
+      location: "Lower Fairfield County",
       description: "Develop and deliver prevention education programs in schools and community settings.",
       requirements: ["Bachelor's degree required", "Experience in education or youth services", "Strong presentation skills"],
       posted: "1 week ago"
