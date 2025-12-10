@@ -1,10 +1,14 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, BookOpen, ExternalLink, GraduationCap, School, Building } from "lucide-react";
+import { ArrowLeft, BookOpen, ExternalLink, GraduationCap, School, Building, Search, BookText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Input } from "@/components/ui/input";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { glossaryTerms } from "@/data/glossaryData";
 
 // Aggregated resources from all age groups
 const allResources = {
@@ -145,6 +149,15 @@ const allResources = {
 };
 
 const KidSafeResources = () => {
+  const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
+  const [glossarySearch, setGlossarySearch] = useState("");
+
+  const filteredTerms = glossaryTerms.filter(
+    (item) =>
+      item.term.toLowerCase().includes(glossarySearch.toLowerCase()) ||
+      item.definition.toLowerCase().includes(glossarySearch.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -171,6 +184,64 @@ const KidSafeResources = () => {
       </div>
 
       <main className="flex-1 container mx-auto px-4 py-12">
+        {/* Glossary Section */}
+        <Card className="mb-8 overflow-hidden border-primary/20">
+          <Collapsible open={isGlossaryOpen} onOpenChange={setIsGlossaryOpen}>
+            <CollapsibleTrigger asChild>
+              <CardHeader className="cursor-pointer bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/15 hover:to-secondary/15 transition-colors">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <BookText className="h-8 w-8 text-primary" />
+                    <div>
+                      <CardTitle className="text-xl">Glossary of Terms</CardTitle>
+                      <CardDescription>
+                        {glossaryTerms.length} important terms and definitions
+                      </CardDescription>
+                    </div>
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {isGlossaryOpen ? "Click to collapse" : "Click to expand"}
+                  </div>
+                </div>
+              </CardHeader>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <CardContent className="pt-4">
+                <p className="text-sm text-muted-foreground mb-4">
+                  Search for a term or scroll through the list below to find definitions for key concepts used throughout KidSafeHQ.
+                </p>
+                <div className="relative mb-4">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Search for a term..."
+                    value={glossarySearch}
+                    onChange={(e) => setGlossarySearch(e.target.value)}
+                    className="pl-10"
+                  />
+                </div>
+                <div className="max-h-96 overflow-y-auto space-y-3 pr-2">
+                  {filteredTerms.length > 0 ? (
+                    filteredTerms.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="p-3 rounded-lg bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors"
+                      >
+                        <h4 className="font-semibold text-primary">{item.term}</h4>
+                        <p className="text-sm text-muted-foreground mt-1">{item.definition}</p>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-center text-muted-foreground py-4">
+                      No terms found matching "{glossarySearch}"
+                    </p>
+                  )}
+                </div>
+              </CardContent>
+            </CollapsibleContent>
+          </Collapsible>
+        </Card>
+
+        <h2 className="text-2xl font-bold mb-6">Resources by Age Group</h2>
         <div className="space-y-8">
           {Object.entries(allResources).map(([key, section]) => {
             const IconComponent = section.icon;
