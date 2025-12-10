@@ -19,6 +19,14 @@
   animation-play-state: paused;
 }
 
+.animate-scroll-slow {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll-slow:hover {
+  animation-play-state: paused;
+}
+
 /* The Rowan Center Design System - Compassionate, Professional, Accessible
 All colors MUST be HSL for proper theming.
 */
