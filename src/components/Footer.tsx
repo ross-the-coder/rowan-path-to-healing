@@ -4,6 +4,7 @@ import { NewsletterSubscription } from "./NewsletterSubscription";
 import rowanLogo from "@/assets/rowan-center-logo.png";
 import charityNavigatorBadge from "@/assets/charity-navigator-4-star.webp";
 import candidSeal from "@/assets/candid-seal-platinum-2025.png";
+import ctAllianceLogo from "@/assets/ct-alliance-logo.webp";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
@@ -81,9 +82,9 @@ const Footer = () => {
                 className="inline-block"
               >
                 <img 
-                  src="https://endsexualviolencect.org/wp-content/uploads/2023/10/handswithlogo-hero-v3.webp" 
+                  src={ctAllianceLogo} 
                   alt="Connecticut Alliance to End Sexual Violence" 
-                  className="h-12 object-contain bg-white/10 rounded p-1"
+                  className="h-12 object-contain"
                 />
               </a>
             </div>
