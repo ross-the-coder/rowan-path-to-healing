@@ -60,7 +60,7 @@ const KidSafeHQ = () => {
               alt="Parent and child having a warm conversation" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/75 to-white/85" />
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center max-w-4xl mx-auto space-y-6">
@@ -71,7 +71,7 @@ const KidSafeHQ = () => {
                   className="h-48 w-auto"
                 />
               </div>
-              <p className="text-xl text-white/90">
+              <p className="text-xl text-muted-foreground">
                 Interactive guides to help you have important conversations with your children about safety, boundaries, and healthy relationships
               </p>
             </div>
