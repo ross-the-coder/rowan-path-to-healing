@@ -12,10 +12,9 @@ const TraumaRecovery = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Heart className="h-16 w-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">Trauma Recovery Clinic</h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8 max-w-3xl mx-auto">
-              Professional, trauma-informed mental health care designed to support adult and youth survivors 
-              on their healing journey with accessible, compassionate treatment.
+            <h1 className="text-5xl font-seasons font-normal mb-6">The Trauma Recovery Clinic</h1>
+            <p className="text-2xl font-roboto font-light text-white/90 mb-4">
+              All survivors of trauma deserve hope and healing.
             </p>
           </div>
         </div>
@@ -24,63 +23,49 @@ const TraumaRecovery = () => {
       <div className="py-12">
         <div className="container mx-auto px-4">
 
-          {/* Services Overview */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <Card className="border-accent/20">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <Stethoscope className="h-8 w-8 text-accent" />
-                  <CardTitle className="text-2xl">Trauma-Informed Therapy</CardTitle>
+          {/* About TRC Section */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="bg-muted/30 rounded-2xl p-8 md:p-12">
+              <p className="text-lg text-foreground mb-6 leading-relaxed">
+                The Trauma Recovery Clinic (TRC) at The Rowan Center offers long-term, trauma-informed 
+                clinical therapy to help survivors of trauma heal.
+              </p>
+              <p className="text-lg text-foreground mb-6 leading-relaxed">
+                If you or someone you know has experienced trauma of any kind, our team of therapists 
+                is here to help. Connect with the Trauma Recovery Clinic today to learn more about the 
+                services we offer, including talk therapy, EMDR, and other clinical therapy modalities.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                <div className="bg-background rounded-xl p-6 border border-accent/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Shield className="h-6 w-6 text-accent" />
+                    <h3 className="font-semibold text-foreground">Insurance</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    We are currently serving trauma victims and survivors on the HUSKY health insurance plan.
+                  </p>
                 </div>
-                <CardDescription className="text-base">
-                  Evidence-based treatment approaches tailored to each survivor's unique needs
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5" />
-                    <span>Individual therapy sessions</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5" />
-                    <span>EMDR and trauma-focused CBT</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5" />
-                    <span>Youth and adolescent specialization</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+                <div className="bg-background rounded-xl p-6 border border-accent/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Users className="h-6 w-6 text-accent" />
+                    <h3 className="font-semibold text-foreground">Eligibility</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Clients must be at least 18 years old.
+                  </p>
+                </div>
+              </div>
 
-            <Card className="border-accent/20">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <Heart className="h-8 w-8 text-accent" />
-                  <CardTitle className="text-2xl">Accessible Mental Health Care</CardTitle>
+              <div className="mt-8 pt-6 border-t border-accent/20">
+                <div className="flex items-center gap-3">
+                  <Stethoscope className="h-6 w-6 text-accent" />
+                  <p className="text-muted-foreground">
+                    The TRC is fully licensed by the CT Department of Public Health.
+                  </p>
                 </div>
-                <CardDescription className="text-base">
-                  Making quality mental health care available and affordable for all survivors
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5" />
-                    <span>Sliding scale fees available</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5" />
-                    <span>Insurance accepted</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5" />
-                    <span>Flexible scheduling options</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
 
           {/* Treatment Approaches */}
