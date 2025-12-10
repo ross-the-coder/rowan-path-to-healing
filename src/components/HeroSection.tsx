@@ -74,7 +74,7 @@ const HeroSection = () => {
             </div>
 
             <div className="text-sm text-white/70 font-roboto">
-              <p>Serving South Fairfield County, Connecticut</p>
+              <p>Serving Lower Fairfield County, Connecticut</p>
             </div>
           </div>
         </div>

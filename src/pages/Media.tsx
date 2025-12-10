@@ -23,7 +23,7 @@ const Media = () => {
     {
       title: "2023 Annual Impact Report Released",
       date: "December 8, 2023",
-      summary: "Report shows 40% increase in survivors served and expansion of services across South Fairfield County.",
+      summary: "Report shows 40% increase in survivors served and expansion of services across Lower Fairfield County.",
       type: "Annual Report",
       downloadUrl: "#"
     }
@@ -83,7 +83,7 @@ const Media = () => {
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Resources for journalists, media professionals, and community partners covering 
-            The Rowan Center's work and impact in South Fairfield County.
+            The Rowan Center's work and impact in Lower Fairfield County.
           </p>
         </div>
 

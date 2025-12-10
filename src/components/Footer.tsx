@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, ChevronDown, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronDown, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NewsletterSubscription } from "./NewsletterSubscription";
 import rowanLogo from "@/assets/rowan-center-logo.png";
@@ -66,12 +66,32 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
+
+            {/* CT Alliance Membership */}
+            <div className="mt-6 pt-4 border-t border-white/20">
+              <p className="text-xs text-white/70 mb-3">
+                The Rowan Center is a member of the Connecticut Alliance to End Sexual Violence.
+              </p>
+              <a 
+                href="https://endsexualviolencect.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <img 
+                  src="https://endsexualviolencect.org/wp-content/uploads/2023/10/handswithlogo-hero-v3.webp" 
+                  alt="Connecticut Alliance to End Sexual Violence" 
+                  className="h-12 object-contain bg-white/10 rounded p-1"
+                />
+              </a>
+            </div>
           </div>
 
           {/* Contact Info */}
           <div>
             <h4 className="font-semibold mb-4 text-white text-lg">Contact Us</h4>
             <div className="space-y-3 text-sm">
+              {/* 24/7 Crisis Helpline */}
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-emergency flex-shrink-0" />
                 <div className="text-white/80">
@@ -106,6 +126,8 @@ const Footer = () => {
                   </DropdownMenu>
                 </div>
               </div>
+
+              {/* Trauma Recovery Clinic */}
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-white/60 flex-shrink-0" />
                 <div className="text-white/80">
@@ -113,13 +135,39 @@ const Footer = () => {
                   <a href="tel:2034870675" className="hover:text-white underline">(203) 487-0675</a>
                 </div>
               </div>
+
+              {/* Main Office */}
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-white/60 flex-shrink-0" />
+                <div className="text-white/80">
+                  <div className="font-medium text-white">Main Office</div>
+                  <a href="tel:2033481114" className="hover:text-white underline">(203) 348-1114</a>
+                </div>
+              </div>
+
+              {/* Email */}
               <div className="flex items-center gap-2 text-white/80">
                 <Mail className="h-4 w-4 flex-shrink-0" />
                 <a href="mailto:info@therowancenter.org" className="hover:text-white">info@therowancenter.org</a>
               </div>
+
+              {/* Address */}
               <div className="flex items-start gap-2 text-white/80">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <div>South Fairfield County, CT</div>
+                <div>
+                  <div>2 Enterprise Drive</div>
+                  <div>Shelton, CT 06484</div>
+                </div>
+              </div>
+
+              {/* Hours */}
+              <div className="flex items-start gap-2 text-white/80">
+                <Clock className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-white">Office Hours</div>
+                  <div>Monday - Friday: 9:00 AM - 5:00 PM</div>
+                  <div className="text-xs text-white/60 mt-1">Crisis Helpline available 24/7</div>
+                </div>
               </div>
             </div>
           </div>
@@ -135,35 +183,24 @@ const Footer = () => {
               <li><Link to="/resources" className="text-white/80 hover:text-white transition-colors">Resources</Link></li>
               <li><Link to="/ct-laws-reporting" className="text-white/80 hover:text-white transition-colors">CT Laws & Reporting</Link></li>
             </ul>
+
+            <h4 className="font-semibold mb-3 mt-6 text-white text-lg">Get Involved</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/volunteer" className="text-white/80 hover:text-white transition-colors">Volunteer</Link></li>
+              <li><Link to="/donate" className="text-white/80 hover:text-white transition-colors">Donate</Link></li>
+              <li><Link to="/events" className="text-white/80 hover:text-white transition-colors">Events</Link></li>
+            </ul>
           </div>
 
-          {/* Towns Served & Certification Badges */}
+          {/* Towns Served */}
           <div>
-            <h4 className="font-semibold mb-4 text-white text-lg">Proudly Serving</h4>
+            <h4 className="font-semibold mb-4 text-white text-lg">Proudly Serving Lower Fairfield County</h4>
             <div className="flex flex-wrap gap-1.5 text-xs text-white/70 mb-6">
-              {townsServed.map((town, index) => (
+              {townsServed.map((town) => (
                 <span key={town} className="bg-white/10 px-2 py-1 rounded">
                   {town}
                 </span>
               ))}
-            </div>
-            
-            {/* Certification Badges Placeholder */}
-            <div className="flex gap-3 mt-4">
-              <div className="w-16 h-16 bg-white/10 rounded flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/ed07927a-cbba-47b3-9280-820eff27dc01.png" 
-                  alt="Charity Certification" 
-                  className="w-14 h-14 object-contain"
-                />
-              </div>
-              <div className="w-16 h-16 bg-white/10 rounded flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/f903cc06-e1be-4e30-9696-bead5dad2d04.png" 
-                  alt="Charity Certification" 
-                  className="w-14 h-14 object-contain"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -171,7 +208,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
-            <p>© 2025 The Rowan Center. All rights reserved.</p>
+            <div className="text-center md:text-left">
+              <p>© 2025 The Rowan Center. All rights reserved.</p>
+              <p className="text-xs mt-1">The Rowan Center is a registered 501(c)(3) nonprofit organization. EIN: 06-0988641</p>
+            </div>
             <div className="flex gap-6">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/about" className="hover:text-white transition-colors">About Us</Link>
