@@ -5,11 +5,19 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ExternalLink, Calendar, Newspaper, Search, X, MapPin } from "lucide-react";
+import { ExternalLink, Calendar, Newspaper, Search, X, MapPin, ChevronDown, Check } from "lucide-react";
 import { getAllArticles, parseDate } from "@/data/newsData";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
 import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const KidSafeNews = () => {
   const allArticles = getAllArticles();
@@ -108,19 +116,49 @@ const KidSafeNews = () => {
         <div className="container mx-auto px-4 py-8">
           {/* Search and Filters */}
           <div className="mb-8 space-y-4">
-            {/* Search Bar */}
-            <div className="relative max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="text"
-                placeholder="Search articles..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10"
-              />
+            {/* Search Bar and Source Dropdown Row */}
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="relative flex-grow max-w-md">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Search articles..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+
+              {/* Source Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="gap-2">
+                    Sources
+                    {selectedSources.length > 0 && (
+                      <Badge variant="secondary" className="ml-1 px-1.5 py-0 text-xs">
+                        {selectedSources.length}
+                      </Badge>
+                    )}
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-64 max-h-80 overflow-y-auto bg-background z-50" align="start">
+                  <DropdownMenuLabel>Filter by Source</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  {allSources.map(source => (
+                    <DropdownMenuCheckboxItem
+                      key={source}
+                      checked={selectedSources.includes(source)}
+                      onCheckedChange={() => toggleSource(source)}
+                    >
+                      {source}
+                    </DropdownMenuCheckboxItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
 
-            {/* CT Filter Toggle */}
+            {/* CT Filter Toggle and Clear */}
             <div className="flex items-center gap-4">
               <Button
                 variant={showCtOnly ? "default" : "outline"}
@@ -147,32 +185,38 @@ const KidSafeNews = () => {
                 {allTopics.map(topic => (
                   <Badge
                     key={topic}
-                    variant={selectedTopics.includes(topic) ? "default" : "outline"}
-                    className="cursor-pointer hover:bg-primary/80 transition-colors"
+                    variant="secondary"
+                    className={`cursor-pointer transition-all ${
+                      selectedTopics.includes(topic) 
+                        ? "ring-2 ring-primary ring-offset-2" 
+                        : "hover:opacity-80"
+                    }`}
                     onClick={() => toggleTopic(topic)}
                   >
+                    {selectedTopics.includes(topic) && <Check className="h-3 w-3 mr-1" />}
                     {topic}
                   </Badge>
                 ))}
               </div>
             </div>
 
-            {/* Source Filters */}
-            <div>
-              <h3 className="text-sm font-medium mb-2">Filter by Source</h3>
-              <div className="flex flex-wrap gap-2">
-                {allSources.map(source => (
+            {/* Selected Sources Display */}
+            {selectedSources.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-sm text-muted-foreground">Selected sources:</span>
+                {selectedSources.map(source => (
                   <Badge
                     key={source}
-                    variant={selectedSources.includes(source) ? "default" : "secondary"}
-                    className="cursor-pointer hover:opacity-80 transition-opacity"
+                    variant="secondary"
+                    className="cursor-pointer gap-1"
                     onClick={() => toggleSource(source)}
                   >
                     {source}
+                    <X className="h-3 w-3" />
                   </Badge>
                 ))}
               </div>
-            </div>
+            )}
           </div>
 
           {/* Results Count */}
