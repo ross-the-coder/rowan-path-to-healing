@@ -10,8 +10,15 @@ import kidsafeElementary from "@/assets/kidsafe-elementary.jpg";
 import kidsafeMiddle from "@/assets/kidsafe-middle.jpg";
 import kidsafeHigh from "@/assets/kidsafe-high.jpg";
 import kidsafeResources from "@/assets/kidsafe-resources.jpg";
+import NewsTicker from "@/components/kidsafe/NewsTicker";
+import NewsSection from "@/components/kidsafe/NewsSection";
+import { getConnecticutArticles, getAllArticles } from "@/data/newsData";
 
 const KidSafeHQ = () => {
+  const ctArticles = getConnecticutArticles();
+  const allArticles = getAllArticles();
+  const tickerArticles = ctArticles.slice(0, 5);
+  
   const ageGroups = [
     {
       title: "Elementary School",
@@ -78,6 +85,9 @@ const KidSafeHQ = () => {
           </div>
         </div>
 
+        {/* News Ticker - CT Local */}
+        <NewsTicker articles={tickerArticles} />
+
         {/* Age Group Selection */}
         <div className="container mx-auto px-4 py-16">
           <h2 className="text-3xl font-bold text-center mb-12">Select an Age Group</h2>
@@ -110,6 +120,9 @@ const KidSafeHQ = () => {
             })}
           </div>
         </div>
+
+        {/* News Section */}
+        <NewsSection articles={allArticles} />
       </main>
 
       <Footer />
