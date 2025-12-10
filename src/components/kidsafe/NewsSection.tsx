@@ -1,9 +1,10 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Calendar, Newspaper } from "lucide-react";
+import { ExternalLink, Calendar, Newspaper, ArrowRight } from "lucide-react";
 import { NewsArticle, parseDate } from "@/data/newsData";
 import { format } from "date-fns";
+import { Link } from "react-router-dom";
 
 interface NewsSectionProps {
   articles: NewsArticle[];
@@ -16,9 +17,19 @@ const NewsSection = ({ articles, showAll = false }: NewsSectionProps) => {
   return (
     <div className="py-12 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="flex items-center gap-3 mb-8">
-          <Newspaper className="h-8 w-8 text-primary" />
-          <h2 className="text-3xl font-bold">In the News</h2>
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-3">
+            <Newspaper className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold">In the News</h2>
+          </div>
+          {!showAll && (
+            <Button asChild variant="outline" className="gap-2">
+              <Link to="/kidsafehq/news">
+                View All News
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          )}
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

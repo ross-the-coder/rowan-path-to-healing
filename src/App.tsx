@@ -25,6 +25,7 @@ import KidSafeElementary from "./pages/KidSafeElementary";
 import KidSafeMiddle from "./pages/KidSafeMiddle";
 import KidSafeHigh from "./pages/KidSafeHigh";
 import KidSafeResources from "./pages/KidSafeResources";
+import KidSafeNews from "./pages/KidSafeNews";
 import CTLawsReporting from "./pages/CTLawsReporting";
 import Reminders from "./pages/Reminders";
 import NotFound from "./pages/NotFound";
@@ -63,6 +64,7 @@ const App = () => {
           <Route path="/kidsafehq/middle" element={<KidSafeMiddle />} />
           <Route path="/kidsafehq/high" element={<KidSafeHigh />} />
           <Route path="/kidsafehq/resources" element={<KidSafeResources />} />
+          <Route path="/kidsafehq/news" element={<KidSafeNews />} />
             <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
             <Route path="/reminders" element={<Reminders />} />
             <Route path="*" element={<NotFound />} />
