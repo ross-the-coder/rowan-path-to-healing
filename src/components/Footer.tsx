@@ -2,6 +2,8 @@ import { Phone, Mail, MapPin, ChevronDown, Facebook, Instagram, Linkedin, Clock 
 import { Link } from "react-router-dom";
 import { NewsletterSubscription } from "./NewsletterSubscription";
 import rowanLogo from "@/assets/rowan-center-logo.png";
+import charityNavigatorBadge from "@/assets/charity-navigator-4-star.webp";
+import candidSeal from "@/assets/candid-seal-platinum-2025.png";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
@@ -201,6 +203,34 @@ const Footer = () => {
                   {town}
                 </span>
               ))}
+            </div>
+
+            {/* Certification Badges */}
+            <div className="flex gap-4 items-center">
+              <a 
+                href="https://www.charitynavigator.org/ein/061037583" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img 
+                  src={charityNavigatorBadge} 
+                  alt="Charity Navigator 4-Star Rating" 
+                  className="h-20 bg-white rounded p-1"
+                />
+              </a>
+              <a 
+                href="https://www.guidestar.org/profile/06-1037583" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img 
+                  src={candidSeal} 
+                  alt="Candid Platinum Transparency 2025" 
+                  className="h-20"
+                />
+              </a>
             </div>
           </div>
         </div>
