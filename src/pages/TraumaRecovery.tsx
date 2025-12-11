@@ -1,8 +1,9 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Stethoscope, Heart, Users, Shield } from "lucide-react";
+import { Stethoscope, Users, Shield } from "lucide-react";
 import { TraumaRecoveryIntakeForm } from "@/components/TraumaRecoveryIntakeForm";
 
+import traumaRecoveryLogo from "@/assets/trauma-recovery-clinic-logo.png";
 import lukeHeadshot from "@/assets/luke-robbins-headshot.webp";
 import isabelHeadshot from "@/assets/isabel-negron-headshot.webp";
 import zacharyHeadshot from "@/assets/zachary-boccarossa-headshot.webp";
@@ -55,12 +56,15 @@ const TraumaRecovery = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-[hsl(var(--accent))] text-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Heart className="h-16 w-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">The Trauma Recovery Clinic</h1>
-            <p className="text-2xl font-roboto font-light text-white/90 mb-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <img 
+              src={traumaRecoveryLogo} 
+              alt="The Rowan Center - Trauma Recovery Clinic" 
+              className="max-w-md mx-auto mb-6"
+            />
+            <p className="text-xl font-roboto font-light text-muted-foreground">
               All survivors of trauma deserve hope and healing.
             </p>
           </div>
