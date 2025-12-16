@@ -10,14 +10,12 @@ const INeedSection = () => {
   return (
     <section className="py-16 relative overflow-hidden">
       {/* Background with subtle photo overlay */}
-      <div className="absolute inset-0 bg-muted/20 z-0">
-        <div className="absolute right-0 top-0 w-1/2 h-full opacity-5">
-          <img 
-            src={supportHandsImage} 
-            alt="Supporting hands"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={supportHandsImage} 
+          alt="Supporting hands"
+          className="w-full h-full object-cover opacity-10"
+        />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
