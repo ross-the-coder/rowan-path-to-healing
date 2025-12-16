@@ -149,6 +149,37 @@ const BoardOfDirectors = () => {
           </div>
         </section>
 
+        {/* Advisory Council */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-foreground text-center mb-8">Advisory Council</h2>
+          <Card>
+            <CardContent className="pt-6">
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {[
+                  "Michael P. Diliberto",
+                  "Dr. Catherine Ford, MD",
+                  "Whitney Franklin",
+                  "Lee Ganshaw, PNP",
+                  "Robert Hagan",
+                  "Colleen O'Neil",
+                  "Stephanie Paulmeno, MS, RN, NHA",
+                  "Jayme Stevenson, Former Board Member",
+                  "Kate Vivanco, EdM, LCSW",
+                  "Gayle Weinstein, Former Chair of the Board",
+                  "Rebecca Wilson, LMSW",
+                ].map((name, index) => (
+                  <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
+                    <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Users className="h-5 w-5 text-accent" />
+                    </div>
+                    <span className="text-sm font-medium">{name}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Governance */}
         <section className="mb-16">
           <Card className="border-primary/20">
