@@ -19,6 +19,7 @@ import Volunteer from "./pages/Volunteer";
 import Blog from "./pages/Blog";
 import Media from "./pages/Media";
 import BoardOfDirectors from "./pages/BoardOfDirectors";
+import Staff from "./pages/Staff";
 import Financials from "./pages/Financials";
 import Careers from "./pages/Careers";
 import KidSafeHQ from "./pages/KidSafeHQ";
@@ -60,6 +61,7 @@ const App = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/media" element={<Media />} />
             <Route path="/board-of-directors" element={<BoardOfDirectors />} />
+            <Route path="/staff" element={<Staff />} />
             <Route path="/financials" element={<Financials />} />
             <Route path="/careers" element={<Careers />} />
           <Route path="/kidsafehq" element={<KidSafeHQ />} />
