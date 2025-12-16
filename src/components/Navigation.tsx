@@ -138,10 +138,18 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/board-of-directors" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/staff" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Our Team</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Staff, board, and advisory council
+                              Meet our dedicated staff
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link to="/board-of-directors" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Board of Directors</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Our leadership and governance
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -264,6 +272,12 @@ const Navigation = () => {
                 </Link>
                 <Link to="/crisis-services" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Crisis Services
+                </Link>
+                <Link to="/staff" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
+                  Our Team
+                </Link>
+                <Link to="/board-of-directors" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
+                  Board of Directors
                 </Link>
                 <Link to="/trauma-recovery" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Trauma Recovery
