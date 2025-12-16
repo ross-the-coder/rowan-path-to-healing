@@ -19,15 +19,15 @@ const Layout = ({ children }: LayoutProps) => {
   
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="w-full flex justify-center py-2 bg-muted">
-        <chariot-tile cid="live_94b0c45a4d4331c03a8a7aba670bd6bfe484c5ceec4f468525a7a77addc78c88"></chariot-tile>
-      </div>
       <Navigation />
       <main className="flex-1">
         {children}
       </main>
       <Footer />
       <QuickEscape />
+      <div className="fixed bottom-6 left-6 z-50">
+        <chariot-tile cid="live_94b0c45a4d4331c03a8a7aba670bd6bfe484c5ceec4f468525a7a77addc78c88"></chariot-tile>
+      </div>
     </div>
   );
 };
