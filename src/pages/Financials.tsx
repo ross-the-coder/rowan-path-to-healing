@@ -6,42 +6,40 @@ import { FileText, Download, DollarSign, TrendingUp } from "lucide-react";
 const Financials = () => {
   const reports = [
     {
+      year: "2024-2025",
+      title: "Annual Report 2024-2025",
+      description: "Complete overview of our programs, impact, and financial performance",
+      size: "2.5 MB",
+      downloadUrl: "/reports/TRC_2024-25_Annual_Report.pdf"
+    },
+    {
       year: "2023",
       title: "Annual Report 2023",
-      description: "Complete overview of our programs, impact, and financial performance",
+      description: "Previous year's comprehensive report and financial statements",
       size: "2.1 MB"
     },
     {
       year: "2022",
       title: "Annual Report 2022",
-      description: "Previous year's comprehensive report and financial statements",
-      size: "1.8 MB"
-    },
-    {
-      year: "2021",
-      title: "Annual Report 2021",
       description: "Historical performance and program outcomes",
-      size: "1.9 MB"
+      size: "1.8 MB"
     }
   ];
 
   const financialHighlights = [
     {
       metric: "Total Revenue",
-      value: "$2.3M",
-      change: "+12%",
+      value: "$1.6M",
       icon: DollarSign
     },
     {
       metric: "Program Expenses",
-      value: "87%",
-      change: "Efficient",
+      value: "78%",
       icon: TrendingUp
     },
     {
-      metric: "People Served",
-      value: "3,847",
-      change: "+23%",
+      metric: "Services Provided",
+      value: "8,244",
       icon: FileText
     }
   ];
@@ -61,7 +59,7 @@ const Financials = () => {
 
         {/* Financial Highlights */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground text-center mb-8">2023 Highlights</h2>
+        <h2 className="text-3xl font-bold text-foreground text-center mb-8">2024-2025 Highlights</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {financialHighlights.map((item, index) => (
               <Card key={index} className="text-center">
@@ -70,9 +68,7 @@ const Financials = () => {
                     <item.icon className="h-8 w-8 text-primary" />
                   </div>
                   <CardTitle className="text-2xl">{item.value}</CardTitle>
-                  <CardDescription>
-                    {item.metric} <span className="text-primary font-medium">({item.change})</span>
-                  </CardDescription>
+                  <CardDescription>{item.metric}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -96,9 +92,11 @@ const Financials = () => {
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-sm text-muted-foreground">Size: {report.size}</span>
                   </div>
-                  <Button className="w-full" variant="outline">
-                    <Download className="h-4 w-4 mr-2" />
-                    Download PDF
+                  <Button className="w-full" variant="outline" asChild>
+                    <a href={report.downloadUrl || "#"} download={!!report.downloadUrl} target="_blank" rel="noopener noreferrer">
+                      <Download className="h-4 w-4 mr-2" />
+                      Download PDF
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
