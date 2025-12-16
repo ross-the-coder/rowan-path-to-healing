@@ -10,11 +10,19 @@ declare global {
   }
 }
 
-const ChariotDonation = () => {
+interface ChariotDonationProps {
+  position?: "floating" | "top";
+}
+
+const ChariotDonation: React.FC<ChariotDonationProps> = ({ position = "floating" }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const containerClass = position === "floating" 
+    ? "fixed bottom-6 left-6 z-50" 
+    : "relative";
+
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className={containerClass}>
       {isExpanded ? (
         <div className="animate-scale-in bg-background rounded-lg shadow-xl p-4 relative">
           <Button
