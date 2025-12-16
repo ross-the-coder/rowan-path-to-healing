@@ -12,9 +12,6 @@ const Layout = ({ children }: LayoutProps) => {
   
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="w-full bg-muted py-2 px-4 flex justify-end">
-        <ChariotDonation position={"top" as const} />
-      </div>
       <Navigation />
       <main className="flex-1">
         {children}

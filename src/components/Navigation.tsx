@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import logoImage from "@/assets/rowan-center-logo.png";
+import ChariotDonation from "./ChariotDonation";
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return <header className="sticky top-0 z-50">
@@ -54,6 +55,7 @@ const Navigation = () => {
             <Languages className="h-4 w-4" />
             Translate
           </a>
+          <ChariotDonation position="top" />
         </div>
       </div>
 
