@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Mail, Phone } from "lucide-react";
+import staffPhoto from "@/assets/rowan-center-staff.webp";
 
 const Staff = () => {
   const leadershipTeam = [
@@ -99,6 +100,15 @@ const Staff = () => {
             help navigate present circumstances such as hospital exams and court proceedings, and 
             community education aimed at preventing sexual violence in the future.
           </p>
+        </div>
+
+        {/* Team Photo */}
+        <div className="mb-16">
+          <img 
+            src={staffPhoto} 
+            alt="The Rowan Center staff members pose for a group photo" 
+            className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+          />
         </div>
 
         {/* Leadership Team */}
