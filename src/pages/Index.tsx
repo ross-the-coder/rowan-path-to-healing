@@ -4,7 +4,6 @@ import INeedSection from "@/components/INeedSection";
 import PillarsSection from "@/components/PillarsSection";
 import PhotoFeatureSection from "@/components/PhotoFeatureSection";
 import CommunityPartnersSection from "@/components/CommunityPartnersSection";
-import NewsTickerHome from "@/components/NewsTickerHome";
 
 const Index = () => {
   console.log("Index component rendering");
@@ -12,7 +11,6 @@ const Index = () => {
   return (
     <Layout>
       <HeroSection />
-      <NewsTickerHome />
       <INeedSection />
       <CommunityPartnersSection />
       <PhotoFeatureSection />
