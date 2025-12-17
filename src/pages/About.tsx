@@ -20,7 +20,7 @@ const About = () => {
     name: "Maria Rodriguez",
     title: "Prevention Education Manager",
     image: "/placeholder.svg",
-    bio: "Maria develops and implements prevention education programs across Lower Fairfield County."
+    bio: "Maria develops and implements prevention education programs across Southern Fairfield County."
   }, {
     name: "James Thompson",
     title: "Crisis Response Coordinator",
