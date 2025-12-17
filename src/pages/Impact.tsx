@@ -18,8 +18,8 @@ const Impact = () => {
     },
     {
       icon: BookOpen,
-      number: "150+",
-      label: "Professional training sessions",
+      number: "723",
+      label: "Counseling Clients",
       description: "Educating teachers, law enforcement, and community professionals"
     },
     {
