@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
                 Center does not associate this data with individual user identities and it is solely used for the 
                 analysis of site use. The Rowan Center's website is not intended to handle confidential information. 
                 If you need to discuss a confidential matter, please refer to our Contact page to email our staff 
-                directly or call our 24/7 confidential hotline.
+                directly or call our 24/7 confidential helpline.
               </p>
             </section>
 
@@ -98,7 +98,7 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl font-semibold text-secondary mb-4">Social Media</h2>
               <p className="text-muted-foreground leading-relaxed">
                 The Rowan Center's social media pages are not intended for confidential communication. To receive 
-                support and services, please reach out to our 24/7 confidential hotline. While we cannot guarantee 
+                support and services, please reach out to our 24/7 confidential helpline. While we cannot guarantee 
                 confidentiality on our social media platforms, The Rowan Center strives to keep all communication 
                 on these sites as secure as possible. If any post contains sensitive information, such as identifying 
                 details of another survivor, our team will take immediate action, including removal of the comment 

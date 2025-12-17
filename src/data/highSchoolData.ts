@@ -619,7 +619,7 @@ export const highSchoolData: GradeContent[] = [
         activities: [
           {
             title: "Resource Mapping",
-            description: "Before starting college or a new job, research and create a list of available resources: Title IX office location and contact, campus counseling center, local crisis hotline, HR department contact, and trusted people you can reach out to.",
+            description: "Before starting college or a new job, research and create a list of available resources: Title IX office location and contact, campus counseling center, local crisis helpline, HR department contact, and trusted people you can reach out to.",
             icon: "Map"
           }
         ]
