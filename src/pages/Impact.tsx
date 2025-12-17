@@ -12,8 +12,8 @@ const Impact = () => {
     },
     {
       icon: Users,
-      number: "1,200+",
-      label: "Students reached through education",
+      number: "22,100",
+      label: "Students educated",
       description: "Prevention programs across 8 towns"
     },
     {
