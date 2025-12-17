@@ -10,7 +10,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return <header className="sticky top-0 z-50">
       {/* Crisis Banner */}
-      <div className="bg-white py-3 px-4 border-b">
+      <div className="bg-white py-5 px-4 border-b">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm font-roboto">
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:pl-36">
             <DropdownMenu>
