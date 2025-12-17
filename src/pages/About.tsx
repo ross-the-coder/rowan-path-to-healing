@@ -31,11 +31,7 @@ const About = () => {
       {/* Full Bleed Hero with Photo Overlay */}
       <section className="relative min-h-[500px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroAboutImage} 
-            alt="Team members collaborating at The Rowan Center"
-            className="w-full h-full object-cover"
-          />
+          <img src={heroAboutImage} alt="Team members collaborating at The Rowan Center" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent"></div>
         </div>
         
@@ -63,11 +59,8 @@ const About = () => {
               <CardTitle className="text-3xl mb-4">Our Mission</CardTitle>
             </CardHeader>
             <CardContent className="">
-              <p className="text-lg text-center leading-relaxed">
-                The Rowan Center exists to prevent sexual violence and other trauma, respond to crisis when harm occurs, 
-                and support adult and youth survivors on their path to healing. We carry out this mission through prevention 
-                education, 24/7 counseling and support, and accessible, trauma informed mental health care.
-              </p>
+              <p className="text-lg text-center leading-relaxed">The Rowan Center exists to prevent sexual violence and other trauma, respond to crisis when harm occurs,
+and support adult and youth survivors on their path to healing. </p>
             </CardContent>
           </Card>
         </section>
@@ -96,11 +89,7 @@ const About = () => {
           {/* Floating Image */}
           <div className="absolute right-0 top-0 w-1/3 h-full hidden lg:block">
             <div className="sticky top-8 rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src={teamCollaborationImage} 
-                alt="Team collaboration at The Rowan Center"
-                className="w-full h-[400px] object-cover"
-              />
+              <img src={teamCollaborationImage} alt="Team collaboration at The Rowan Center" className="w-full h-[400px] object-cover" />
             </div>
           </div>
           
