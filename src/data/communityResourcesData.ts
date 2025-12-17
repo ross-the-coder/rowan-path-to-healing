@@ -88,7 +88,7 @@ export const communityResources: CommunityResource[] = [
     id: "7",
     name: "Inspirica",
     url: "https://inspiricact.org/",
-    description: "Provides emergency shelter, permanent supportive housing, and affordable housing. Has food pantries and soup kitchens across lower Fairfield County. Provides job training for the hospitality and food industries.",
+    description: "Provides emergency shelter, permanent supportive housing, and affordable housing. Has food pantries and soup kitchens across Southern Fairfield County. Provides job training for the hospitality and food industries.",
     category: "Community",
     resourceTypes: ["Food", "Immigration", "Housing"],
     catchmentArea: "Local",
@@ -98,7 +98,7 @@ export const communityResources: CommunityResource[] = [
   },
   {
     id: "8",
-    name: "The Food Bank of Lower Fairfield County",
+    name: "The Food Bank of Southern Fairfield County",
     url: "https://foodbanklfc.org/",
     description: "Has soup kitchen, food pantry, job skills programs, supportive services, SNAP benefits, and hygiene products. Has a Financial Opportunity Center.",
     category: "Community",
