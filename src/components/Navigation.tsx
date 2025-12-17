@@ -11,50 +11,52 @@ const Navigation = () => {
   return <header className="sticky top-0 z-50">
       {/* Crisis Banner */}
       <div className="bg-white py-3 px-4 border-b">
-        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-sm font-roboto">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
-                <Phone className="h-4 w-4 mr-2" />
-                Crisis Helpline 24/7
-                <ChevronDown className="h-4 w-4 ml-2" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-background z-50">
-              <DropdownMenuItem asChild>
-                <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
-                  <Phone className="h-4 w-4" />
-                  <div>
-                    <div className="font-medium">English</div>
-                    <div className="text-sm text-muted-foreground">(203) 329-2929</div>
-                  </div>
-                </a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
-                  <Phone className="h-4 w-4" />
-                  <div>
-                    <div className="font-medium">Español</div>
-                    <div className="text-sm text-muted-foreground">(888) 568-8332</div>
-                  </div>
-                </a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-          <Button asChild size="sm" className="bg-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/90 text-white">
-            <Link to="/kidsafehq">
-              KidSafeHQ
-            </Link>
-          </Button>
-          <Button asChild size="sm" className="bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-white">
-            <Link to="/trauma-recovery">
-              Trauma Recovery Clinic
-            </Link>
-          </Button>
-          <a href="#translate" className="text-foreground hover:underline flex items-center gap-1">
-            <Languages className="h-4 w-4" />
-            Translate
-          </a>
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm font-roboto">
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
+                  <Phone className="h-4 w-4 mr-2" />
+                  Crisis Helpline 24/7
+                  <ChevronDown className="h-4 w-4 ml-2" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-background z-50">
+                <DropdownMenuItem asChild>
+                  <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
+                    <Phone className="h-4 w-4" />
+                    <div>
+                      <div className="font-medium">English</div>
+                      <div className="text-sm text-muted-foreground">(203) 329-2929</div>
+                    </div>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
+                    <Phone className="h-4 w-4" />
+                    <div>
+                      <div className="font-medium">Español</div>
+                      <div className="text-sm text-muted-foreground">(888) 568-8332</div>
+                    </div>
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Button asChild size="sm" className="bg-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/90 text-white">
+              <Link to="/kidsafehq">
+                KidSafeHQ
+              </Link>
+            </Button>
+            <Button asChild size="sm" className="bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-white">
+              <Link to="/trauma-recovery">
+                Trauma Recovery Clinic
+              </Link>
+            </Button>
+            <a href="#translate" className="text-foreground hover:underline flex items-center gap-1">
+              <Languages className="h-4 w-4" />
+              Translate
+            </a>
+          </div>
           <ChariotDonation position="top" />
         </div>
       </div>
