@@ -144,7 +144,7 @@ const Footer = () => {
                 <Phone className="h-4 w-4 text-white/60 flex-shrink-0" />
                 <div className="text-white/80">
                   <div className="font-medium text-white">Main Office</div>
-                  <a href="tel:2033481114" className="hover:text-white underline">(203) 348-1114</a>
+                  <a href="tel:2033489346" className="hover:text-white underline">(203) 348-9346</a>
                 </div>
               </div>
 
@@ -158,8 +158,8 @@ const Footer = () => {
               <div className="flex items-start gap-2 text-white/80">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div>2 Enterprise Drive</div>
-                  <div>Shelton, CT 06484</div>
+                  <div>1111 Summer Street, Suite 202</div>
+                  <div>Stamford, CT 06905</div>
                 </div>
               </div>
 
