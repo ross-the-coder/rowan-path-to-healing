@@ -6,7 +6,7 @@ const Impact = () => {
   const stats = [
     {
       icon: Phone,
-      number: "3,500+",
+      number: "4,000",
       label: "Crisis calls answered annually",
       description: "24/7 support for survivors and their loved ones"
     },
