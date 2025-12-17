@@ -4,7 +4,7 @@ import { Shield, Phone, Heart, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import counselingImage from "@/assets/counseling-session.jpg";
 import outreachImage from "@/assets/community-outreach.jpg";
-import healingImage from "@/assets/healing-garden.jpg";
+import healingImage from "@/assets/family-embracing.jpg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 const PillarsSection = () => {
   return <section className="py-0">
@@ -134,7 +134,7 @@ const PillarsSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img src={healingImage} alt="Peaceful healing garden with people having therapeutic conversations" className="w-full h-[400px] object-cover" />
+                <img src={healingImage} alt="Family embracing on porch at sunset, showing hope and healing" className="w-full h-[400px] object-cover" />
               </div>
             </div>
             <div className="order-1 lg:order-2 space-y-6">
