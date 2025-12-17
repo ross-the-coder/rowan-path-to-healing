@@ -66,7 +66,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center -mt-2 -mb-2 relative z-10">
-              <div className="bg-white rounded-lg shadow-lg px-6 py-4">
+              <div className="bg-white rounded-lg px-6 py-4" style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.15)' }}>
                 <img src={logoImage} alt="The Rowan Center" className="h-20 w-auto" />
               </div>
             </Link>
