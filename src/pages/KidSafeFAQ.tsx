@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { faqData, getUniqueGrades, getUniqueTopics, getGradeLevel, getRelatedResources, topicToResourceMapping } from "@/data/faqData";
 import { searchResources, getAgeGroupLabel, MatchedResource } from "@/utils/resourceMatcher";
+import { supabase } from "@/integrations/supabase/client";
 
 const KidSafeFAQ = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -47,6 +48,39 @@ const KidSafeFAQ = () => {
     }
     return [];
   }, [filteredFAQs.length, searchQuery]);
+
+  // Track search queries for FAQ improvement
+  const lastSavedQuery = useRef<string>("");
+  
+  useEffect(() => {
+    const saveSearchQuery = async () => {
+      // Only save if query is meaningful (3+ chars) and different from last saved
+      if (searchQuery.length >= 3 && searchQuery !== lastSavedQuery.current) {
+        // Debounce: wait 1.5s after user stops typing
+        const timeoutId = setTimeout(async () => {
+          if (searchQuery === lastSavedQuery.current) return;
+          
+          lastSavedQuery.current = searchQuery;
+          
+          const matchedTopics = recommendedResources
+            .map(r => r.category)
+            .filter((v, i, a) => a.indexOf(v) === i)
+            .slice(0, 5);
+
+          await supabase.from("faq_search_queries").insert({
+            query: searchQuery,
+            had_faq_results: filteredFAQs.length > 0,
+            had_resource_results: recommendedResources.length > 0,
+            matched_topics: matchedTopics
+          });
+        }, 1500);
+
+        return () => clearTimeout(timeoutId);
+      }
+    };
+
+    saveSearchQuery();
+  }, [searchQuery, filteredFAQs.length, recommendedResources]);
 
   const toggleGrade = (grade: string) => {
     setSelectedGrades(prev =>
