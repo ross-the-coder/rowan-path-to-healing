@@ -71,6 +71,33 @@ export type Database = {
         }
         Relationships: []
       }
+      faq_search_queries: {
+        Row: {
+          created_at: string
+          had_faq_results: boolean
+          had_resource_results: boolean
+          id: string
+          matched_topics: string[] | null
+          query: string
+        }
+        Insert: {
+          created_at?: string
+          had_faq_results?: boolean
+          had_resource_results?: boolean
+          id?: string
+          matched_topics?: string[] | null
+          query: string
+        }
+        Update: {
+          created_at?: string
+          had_faq_results?: boolean
+          had_resource_results?: boolean
+          id?: string
+          matched_topics?: string[] | null
+          query?: string
+        }
+        Relationships: []
+      }
       newsletter_subscriptions: {
         Row: {
           email: string
