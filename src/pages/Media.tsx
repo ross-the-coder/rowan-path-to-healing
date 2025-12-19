@@ -23,7 +23,7 @@ const Media = () => {
     {
       title: "2023 Annual Impact Report Released",
       date: "December 8, 2023",
-      summary: "Report shows 40% increase in survivors served and expansion of services across Southern Fairfield County.",
+      summary: "Report shows 40% increase in survivors served and expansion of services across Lower Fairfield County.",
       type: "Annual Report",
       downloadUrl: "#"
     }

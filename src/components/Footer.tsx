@@ -197,7 +197,7 @@ const Footer = () => {
 
           {/* Towns Served */}
           <div>
-            <h4 className="font-semibold mb-4 text-white text-lg">Proudly Serving Southern Fairfield County</h4>
+            <h4 className="font-semibold mb-4 text-white text-lg">Proudly Serving Lower Fairfield County</h4>
             <div className="flex flex-wrap gap-1.5 text-xs text-white/70 mb-6">
               {townsServed.map((town) => (
                 <span key={town} className="bg-white/10 px-2 py-1 rounded">
