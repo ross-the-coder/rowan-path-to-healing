@@ -132,117 +132,64 @@ export const kidSafeResourcesData: AgeGroupResources[] = [
     key: "middle",
     resources: [
       {
-        category: "Digital Safety Resources",
+        category: "Boundaries",
         links: [
           { 
-            title: "NCMEC - Parents' Guide to Smartphone Safety", 
-            keywords: ["smartphone", "phone", "digital safety", "parents", "ncmec", "device", "mobile"]
-          },
-          { 
-            title: "NCMEC - Gaming Safely Guide", 
-            keywords: ["gaming", "online games", "safety", "ncmec", "video games", "gaming safety"]
-          },
-          { 
-            title: "NCMEC - AI and Child Safety Online: Guide for Parents", 
-            keywords: ["ai", "artificial intelligence", "online safety", "parents", "ncmec", "ai-generated"]
-          },
-          { 
-            title: "CyberTipline.org - Report online exploitation", 
-            keywords: ["cybertipline", "report", "exploitation", "online", "ncmec", "reporting"]
+            title: "8 Ways to Teach Kids about Consent and Healthy Boundaries",
+            url: "https://childmind.org/article/how-to-talk-to-kids-about-sex-and-consent/",
+            description: "Ideas on how to continue the conversation with children about having their own boundaries, and what to do if they aren't respected. Also includes a list of books that cover this topic.",
+            keywords: ["consent", "boundaries", "healthy boundaries", "kids", "children", "body autonomy", "permission"]
           }
         ]
       },
       {
-        category: "Support Organizations",
+        category: "Empathy",
         links: [
           { 
-            title: "CT Support Group - Teen support groups and online community", 
-            keywords: ["support group", "teen", "connecticut", "community", "mental health"]
-          },
-          { 
-            title: "Boys & Girls Club of Stamford - Gary Wendt Teen Center", 
-            keywords: ["boys and girls club", "stamford", "teen", "youth", "community"]
-          },
-          { 
-            title: "Child Guidance Center of Southern CT - Resource hub (EN/ES)", 
-            keywords: ["child guidance", "connecticut", "mental health", "spanish", "resources", "bilingual"]
+            title: "Key Strategies to Teach Children Empathy",
+            url: "https://kidshealth.org/classroom/6to8/personal/growing/empathy.pdf",
+            description: "Includes age-specific ways to encourage empathy in your child, as well as a helpful visual to map out a timeline of age-appropriate activities and conversations.",
+            keywords: ["empathy", "teach", "children", "strategies", "feelings", "emotions", "understanding"]
           }
         ]
       },
       {
-        category: "Reporting & Support Services",
+        category: "Internet Safety",
         links: [
           { 
-            title: "Take It Down - NCMEC service to remove intimate images", 
-            keywords: ["take it down", "ncmec", "intimate images", "remove", "sexting", "sextortion"]
+            title: "A Guide to Internet Safety for Kids in 2025 | SafeWise",
+            url: "https://www.safewise.com/resources/internet-safety-for-kids/",
+            description: "Provides information about online threats, state-based online safety laws, internet safety technology for parents to give to their children, and tips and tools for how to teach and protect your children.",
+            keywords: ["internet safety", "online safety", "kids", "digital", "protection", "web", "2025"]
           },
           { 
-            title: "Commission on Human Rights and Opportunities (CHRO) - State civil rights agency", 
-            keywords: ["chro", "civil rights", "discrimination", "connecticut", "reporting", "harassment"]
-          },
-          { 
-            title: "Office for Civil Rights - US Department of Education (Federal)", 
-            keywords: ["civil rights", "education", "federal", "title ix", "discrimination", "reporting"]
+            title: "Neurodivergent children's online safety issues | Internet Matters",
+            url: "https://www.internetmatters.org/advice/neurodivergent-children/neurodivergent-online-safety-issues/",
+            description: "Important information about risks that neurodivergent children may face when they are using the internet. It covers sexting and sexual abuse, grooming and exploitation, cyberbullying, oversharing, and peer pressure.",
+            keywords: ["neurodivergent", "online safety", "internet", "autism", "adhd", "grooming", "cyberbullying"]
           }
         ]
       },
       {
-        category: "Educational Resources",
+        category: "Sexting",
         links: [
           { 
-            title: "National Center for Missing & Exploited Children - Netsmartz Middle School Presentation", 
-            keywords: ["ncmec", "netsmartz", "middle school", "presentation", "online safety", "education"]
+            title: "Sexting: How to Talk With Kids About the Risks - HealthyChildren.org",
+            url: "https://www.healthychildren.org/English/family-life/Media/Pages/the-new-problem-of-sexting.aspx",
+            description: "Information about sexting and its risks, as well as ways to engage in conversation with your child about it.",
+            keywords: ["sexting", "risks", "talk", "kids", "conversation", "digital", "images"]
           },
           { 
-            title: "NCMEC - You Sent a Sext. Now What?", 
-            keywords: ["sexting", "sext", "ncmec", "consequences", "what to do", "help"]
+            title: "How to Talk to Your Kids About Sexting - Child Mind Institute",
+            url: "https://childmind.org/article/talking-to-kids-about-sexting/",
+            description: "Includes conversation starters to talk to your children about sexting, and is offered in a video format as well.",
+            keywords: ["sexting", "talk", "kids", "conversation", "child mind", "video"]
           },
           { 
-            title: "NCMEC - Who is a Trusted Adult?", 
-            keywords: ["trusted adult", "ncmec", "safe adult", "reporting", "help"]
-          },
-          { 
-            title: "Connecticut Law - The Rowan Center", 
-            keywords: ["connecticut", "law", "rowan center", "legal", "ct laws", "reporting"]
-          }
-        ]
-      },
-      {
-        category: "Additional Support Organizations",
-        links: [
-          { 
-            title: "National Sexual Violence Resource Center (NSVRC)", 
-            keywords: ["nsvrc", "sexual violence", "resources", "national", "support"]
-          },
-          { 
-            title: "Thorn for Parents - Interactive scenarios and guides", 
-            keywords: ["thorn", "parents", "scenarios", "guides", "digital safety", "csam"]
-          },
-          { 
-            title: "Love146 - Parent and teen capacity building", 
-            keywords: ["love146", "parents", "teens", "trafficking", "prevention", "education"]
-          }
-        ]
-      },
-      {
-        category: "Legal and Reporting Resources",
-        links: [
-          { 
-            title: "Take It Down - NCMEC", 
-            keywords: ["take it down", "ncmec", "remove images", "sexting", "sextortion", "legal"]
-          }
-        ]
-      },
-      {
-        category: "Sextortion Resources",
-        links: [
-          { 
-            title: "NCMEC - Sextortion Resources for Families", 
-            keywords: ["sextortion", "ncmec", "families", "blackmail", "threats", "help"]
-          },
-          { 
-            title: "FBI Tips for Sextortion Victims", 
-            keywords: ["sextortion", "fbi", "victims", "law enforcement", "reporting", "help"]
+            title: "What to do when your child shares explicit material: A step-by-step guide - ParentsTogether",
+            url: "https://parents-together.org/what-to-do-when-your-child-shares-explicit-material-a-step-by-step-guide/",
+            description: "A checklist and information about what to do if your child has sent Child Sexual Abuse Material to another person. Includes a video on sextortion to understand what might be happening in this situation.",
+            keywords: ["sexting", "explicit", "csam", "sextortion", "parents", "guide", "checklist"]
           }
         ]
       }
