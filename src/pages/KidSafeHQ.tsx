@@ -43,6 +43,17 @@ const KidSafeHQ = () => {
       link: "/kidsafehq/high",
       color: "from-purple-500/10 to-purple-600/5",
       image: kidsafeHigh
+    }
+  ];
+
+  const supportCards = [
+    {
+      title: "FAQ",
+      description: "Common questions from students about safety, consent, relationships, and more",
+      icon: HelpCircle,
+      link: "/kidsafehq/faq",
+      color: "from-teal-500/10 to-teal-600/5",
+      image: kidsafeResources
     },
     {
       title: "Resources",
@@ -50,14 +61,6 @@ const KidSafeHQ = () => {
       icon: BookOpen,
       link: "/kidsafehq/resources",
       color: "from-orange-500/10 to-orange-600/5",
-      image: kidsafeResources
-    },
-    {
-      title: "FAQ",
-      description: "Common questions from students about safety, consent, relationships, and more",
-      icon: HelpCircle,
-      link: "/kidsafehq/faq",
-      color: "from-teal-500/10 to-teal-600/5",
       image: kidsafeResources
     }
   ];
@@ -93,15 +96,15 @@ const KidSafeHQ = () => {
           </div>
         </div>
 
-        {/* Age Group Selection */}
+        {/* Age Group Selection - 3 in a row */}
         <div className="container mx-auto px-4 py-16">
           <h2 className="text-3xl font-bold text-center mb-12">Select an Age Group</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {ageGroups.map((group) => {
               const IconComponent = group.icon;
               return (
                 <Card key={group.title} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${group.color}`}>
-                  <div className="h-48 overflow-hidden">
+                  <div className="h-40 overflow-hidden">
                     <img 
                       src={group.image} 
                       alt={group.title} 
@@ -110,10 +113,10 @@ const KidSafeHQ = () => {
                   </div>
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
-                      <IconComponent className="h-8 w-8 text-primary" />
-                      <CardTitle className="text-2xl">{group.title}</CardTitle>
+                      <IconComponent className="h-7 w-7 text-primary" />
+                      <CardTitle className="text-xl">{group.title}</CardTitle>
                     </div>
-                    <CardDescription className="text-base">{group.description}</CardDescription>
+                    <CardDescription className="text-sm">{group.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button asChild className="w-full">
@@ -125,13 +128,43 @@ const KidSafeHQ = () => {
             })}
           </div>
 
+          {/* FAQ and Resources - 2 in a row */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-8">
+            {supportCards.map((card) => {
+              const IconComponent = card.icon;
+              return (
+                <Card key={card.title} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${card.color}`}>
+                  <div className="h-36 overflow-hidden">
+                    <img 
+                      src={card.image} 
+                      alt={card.title} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-2">
+                      <IconComponent className="h-7 w-7 text-primary" />
+                      <CardTitle className="text-xl">{card.title}</CardTitle>
+                    </div>
+                    <CardDescription className="text-sm">{card.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Button asChild className="w-full">
+                      <Link to={card.link}>Explore Content</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+
           {/* News Ticker - CT Local */}
-          <div className="max-w-5xl mx-auto mt-6">
+          <div className="max-w-6xl mx-auto mt-10">
             <NewsTicker articles={tickerArticles} />
           </div>
 
-          {/* News Section - Styled like 5th card */}
-          <div className="max-w-5xl mx-auto mt-6">
+          {/* News Section */}
+          <div className="max-w-6xl mx-auto mt-6">
             <NewsSection articles={allArticles} compact />
           </div>
         </div>
