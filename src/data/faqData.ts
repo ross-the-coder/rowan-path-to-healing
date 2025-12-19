@@ -175,3 +175,43 @@ export const getGradeLevel = (grade: string): "elementary" | "middle" | "high" =
   if (middleGrades.includes(grade)) return "middle";
   return "high";
 };
+
+// Topic to resource category mapping
+export const topicToResourceMapping: Record<string, { categories: string[]; level: ("elementary" | "middle" | "high")[] }> = {
+  "Reporting": { categories: ["Reporting & Support Services", "Educational Resources"], level: ["elementary", "middle"] },
+  "Trusted adults": { categories: ["Educational Resources", "Support Organizations"], level: ["elementary", "middle"] },
+  "Joking vs. being mean": { categories: ["Empathy", "Body Language"], level: ["elementary", "middle"] },
+  "Clean and healthy rule": { categories: ["Boundaries"], level: ["elementary"] },
+  "Social media": { categories: ["Digital Safety Resources", "Internet Safety"], level: ["elementary", "middle", "high"] },
+  "Private information": { categories: ["Digital Safety Resources", "Safety Resources"], level: ["middle", "high"] },
+  "Child sexual abuse material (CSAM)": { categories: ["Reporting & Support Services", "Safety Resources", "Legal and Reporting Resources"], level: ["middle", "high"] },
+  "Sexting": { categories: ["Digital Safety Resources", "Educational Resources", "Safety Resources"], level: ["middle", "high"] },
+  "Sextortion": { categories: ["Reporting & Support Services", "Safety Resources", "Legal and Reporting Resources"], level: ["middle", "high"] },
+  "Sexual harassment": { categories: ["Relationship Resources", "Transition Resources", "Support Resources"], level: ["middle", "high"] },
+  "Title IX": { categories: ["Transition Resources", "Legal and Reporting Resources"], level: ["high"] },
+  "Consent": { categories: ["Boundaries", "Relationship Resources", "Educational Resources"], level: ["elementary", "middle", "high"] },
+  "Age of consent": { categories: ["Educational Resources", "Relationship Resources"], level: ["middle", "high"] },
+  "Sexual assault": { categories: ["Support Resources", "Relationship Resources"], level: ["high"] },
+  "Intoxication/Incapacitation": { categories: ["Support Resources", "Relationship Resources"], level: ["high"] },
+  "Rape": { categories: ["Support Resources", "Relationship Resources"], level: ["high"] },
+  "Rape culture": { categories: ["Support Resources", "Additional Support Organizations"], level: ["high"] },
+  "Victim blaming": { categories: ["Support Resources", "Additional Support Organizations"], level: ["high"] }
+};
+
+export const getRelatedResources = (topics: string[]): { categories: string[]; level: ("elementary" | "middle" | "high")[] } => {
+  const categories = new Set<string>();
+  const levels = new Set<"elementary" | "middle" | "high">();
+  
+  topics.forEach(topic => {
+    const mapping = topicToResourceMapping[topic];
+    if (mapping) {
+      mapping.categories.forEach(c => categories.add(c));
+      mapping.level.forEach(l => levels.add(l));
+    }
+  });
+  
+  return {
+    categories: Array.from(categories),
+    level: Array.from(levels)
+  };
+};

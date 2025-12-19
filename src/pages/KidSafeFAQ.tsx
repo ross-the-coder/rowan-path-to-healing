@@ -3,12 +3,12 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, HelpCircle, Search, BookOpen, Filter, X } from "lucide-react";
+import { ArrowLeft, HelpCircle, Search, BookOpen, Filter, X, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { faqData, getUniqueGrades, getUniqueTopics, getGradeLevel } from "@/data/faqData";
+import { faqData, getUniqueGrades, getUniqueTopics, getGradeLevel, getRelatedResources, topicToResourceMapping } from "@/data/faqData";
 
 const KidSafeFAQ = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -193,9 +193,9 @@ const KidSafeFAQ = () => {
                     <div className="flex flex-wrap gap-1 mt-2">
                       {faq.grades.slice(0, 3).map(grade => {
                         const level = getGradeLevel(grade);
-                        const colorClass = level === "elementary" ? "bg-blue-100 text-blue-700" :
-                          level === "middle" ? "bg-green-100 text-green-700" :
-                            "bg-purple-100 text-purple-700";
+                        const colorClass = level === "elementary" ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300" :
+                          level === "middle" ? "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300" :
+                            "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300";
                         return (
                           <Badge key={grade} variant="secondary" className={`text-xs ${colorClass}`}>
                             {grade}
@@ -214,7 +214,7 @@ const KidSafeFAQ = () => {
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     {faq.answer}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     <span className="text-sm text-muted-foreground">Topics:</span>
                     {faq.topics.map(topic => (
                       <Badge
@@ -231,6 +231,40 @@ const KidSafeFAQ = () => {
                       </Badge>
                     ))}
                   </div>
+                  
+                  {/* Related Resources Section */}
+                  {(() => {
+                    const related = getRelatedResources(faq.topics);
+                    if (related.categories.length > 0) {
+                      return (
+                        <div className="mt-4 p-3 rounded-lg bg-teal-50 dark:bg-teal-950/30 border border-teal-200 dark:border-teal-800">
+                          <div className="flex items-center gap-2 mb-2">
+                            <BookOpen className="h-4 w-4 text-teal-600" />
+                            <span className="text-sm font-medium text-teal-800 dark:text-teal-300">Related Resources</span>
+                          </div>
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {related.categories.slice(0, 4).map(category => (
+                              <Badge key={category} variant="secondary" className="text-xs bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300">
+                                {category}
+                              </Badge>
+                            ))}
+                            {related.categories.length > 4 && (
+                              <Badge variant="secondary" className="text-xs">
+                                +{related.categories.length - 4} more
+                              </Badge>
+                            )}
+                          </div>
+                          <Button asChild size="sm" variant="outline" className="text-teal-700 border-teal-300 hover:bg-teal-100 dark:text-teal-300 dark:border-teal-700 dark:hover:bg-teal-900">
+                            <Link to="/kidsafehq/resources">
+                              <ExternalLink className="h-3 w-3 mr-1" />
+                              View Resources
+                            </Link>
+                          </Button>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })()}
                 </AccordionContent>
               </AccordionItem>
             ))}
