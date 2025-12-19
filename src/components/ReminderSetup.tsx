@@ -7,9 +7,19 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Bell, Calendar } from "lucide-react";
 
+// Validate that the URL is a legitimate Zapier webhook
+const isValidZapierUrl = (url: string): boolean => {
+  try {
+    const parsed = new URL(url);
+    return parsed.hostname === 'hooks.zapier.com' && parsed.protocol === 'https:';
+  } catch {
+    return false;
+  }
+};
+
 export const ReminderSetup = () => {
   const [webhookUrl, setWebhookUrl] = useState("");
-  const [reminderTask, setReminderTask] = useState("Add authentication system and build admin dashboard for Rowan Center");
+  const [reminderTask, setReminderTask] = useState("");
   const [reminderDate, setReminderDate] = useState(() => {
     const date = new Date();
     date.setDate(date.getDate() + 14); // 2 weeks from now
@@ -30,8 +40,17 @@ export const ReminderSetup = () => {
       return;
     }
 
+    // Validate the webhook URL is a legitimate Zapier URL
+    if (!isValidZapierUrl(webhookUrl)) {
+      toast({
+        title: "Invalid URL",
+        description: "Please enter a valid Zapier webhook URL (https://hooks.zapier.com/...)",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsLoading(true);
-    console.log("Setting up reminder via Zapier webhook:", webhookUrl);
 
     try {
       await fetch(webhookUrl, {
@@ -44,18 +63,17 @@ export const ReminderSetup = () => {
           task: reminderTask,
           reminder_date: reminderDate,
           created_at: new Date().toISOString(),
-          project: "Rowan Center Website",
-          category: "Security & Admin Dashboard",
         }),
       });
 
       toast({
-        title: "Reminder Sent to Zapier! ✅",
-        description: "Your reminder has been sent to Zapier. Set up a 'Delay Until' action in your Zap to schedule the reminder notification.",
+        title: "Reminder Sent to Zapier!",
+        description: "Your reminder has been sent. Set up a 'Delay Until' action in your Zap to schedule the notification.",
       });
       
-      // Clear the webhook URL after successful setup
+      // Clear the form after successful setup
       setWebhookUrl("");
+      setReminderTask("");
     } catch (error) {
       console.error("Error setting up reminder:", error);
       toast({
