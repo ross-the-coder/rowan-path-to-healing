@@ -129,7 +129,7 @@ const KidSafeHQ = () => {
           </div>
 
           {/* FAQ and Resources - 2 in a row */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-8">
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mt-8">
             {supportCards.map((card) => {
               const IconComponent = card.icon;
               return (
