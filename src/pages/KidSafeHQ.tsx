@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, GraduationCap, School, Users } from "lucide-react";
+import { BookOpen, GraduationCap, School, Users, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
 import kidsafeHqHero from "@/assets/kidsafe-hq-hero.jpg";
@@ -50,6 +50,14 @@ const KidSafeHQ = () => {
       icon: BookOpen,
       link: "/kidsafehq/resources",
       color: "from-orange-500/10 to-orange-600/5",
+      image: kidsafeResources
+    },
+    {
+      title: "FAQ",
+      description: "Common questions from students about safety, consent, relationships, and more",
+      icon: HelpCircle,
+      link: "/kidsafehq/faq",
+      color: "from-teal-500/10 to-teal-600/5",
       image: kidsafeResources
     }
   ];
