@@ -3,12 +3,13 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, HelpCircle, Search, BookOpen, Filter, X, ExternalLink } from "lucide-react";
+import { ArrowLeft, HelpCircle, Search, BookOpen, Filter, X, ExternalLink, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { faqData, getUniqueGrades, getUniqueTopics, getGradeLevel, getRelatedResources, topicToResourceMapping } from "@/data/faqData";
+import { searchResources, getAgeGroupLabel, MatchedResource } from "@/utils/resourceMatcher";
 
 const KidSafeFAQ = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,6 +39,14 @@ const KidSafeFAQ = () => {
       return matchesSearch && matchesGrade && matchesTopic;
     });
   }, [searchQuery, selectedGrades, selectedTopics]);
+
+  // Get recommended resources when no FAQs match but there's a search query
+  const recommendedResources = useMemo(() => {
+    if (filteredFAQs.length === 0 && searchQuery.length >= 2) {
+      return searchResources(searchQuery);
+    }
+    return [];
+  }, [filteredFAQs.length, searchQuery]);
 
   const toggleGrade = (grade: string) => {
     setSelectedGrades(prev =>
@@ -270,18 +279,91 @@ const KidSafeFAQ = () => {
             ))}
           </Accordion>
         ) : (
-          <Card className="text-center py-12">
-            <CardContent>
-              <HelpCircle className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">No questions found</h3>
-              <p className="text-muted-foreground mb-4">
-                Try adjusting your search or filters to find what you're looking for.
-              </p>
-              <Button variant="outline" onClick={clearFilters}>
-                Clear all filters
-              </Button>
-            </CardContent>
-          </Card>
+          <div className="space-y-6">
+            <Card className="text-center py-8">
+              <CardContent>
+                <HelpCircle className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
+                <h3 className="text-lg font-semibold mb-2">No questions found</h3>
+                <p className="text-muted-foreground mb-4">
+                  We couldn't find a matching FAQ for your search.
+                </p>
+                <Button variant="outline" onClick={clearFilters}>
+                  Clear all filters
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Smart Resource Recommendations */}
+            {recommendedResources.length > 0 && (
+              <Card className="border-teal-200 dark:border-teal-800 bg-gradient-to-br from-teal-50/50 to-teal-100/30 dark:from-teal-950/30 dark:to-teal-900/20">
+                <CardHeader>
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="h-5 w-5 text-teal-600" />
+                    <CardTitle className="text-lg">Recommended Resources</CardTitle>
+                  </div>
+                  <CardDescription>
+                    Based on your search for "{searchQuery}", these resources might help:
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3">
+                    {recommendedResources.map((resource, index) => (
+                      <div
+                        key={`${resource.title}-${index}`}
+                        className="p-4 rounded-lg bg-background border hover:border-teal-300 dark:hover:border-teal-700 transition-colors"
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="flex-1 min-w-0">
+                            {resource.url ? (
+                              <a
+                                href={resource.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-medium text-teal-700 dark:text-teal-400 hover:underline flex items-center gap-1"
+                              >
+                                {resource.title}
+                                <ExternalLink className="h-3 w-3 flex-shrink-0" />
+                              </a>
+                            ) : (
+                              <span className="font-medium">{resource.title}</span>
+                            )}
+                            {resource.description && (
+                              <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                                {resource.description}
+                              </p>
+                            )}
+                          </div>
+                          <div className="flex flex-col gap-1 items-end flex-shrink-0">
+                            <Badge variant="secondary" className="text-xs whitespace-nowrap">
+                              {resource.category}
+                            </Badge>
+                            <Badge 
+                              variant="outline" 
+                              className={`text-xs whitespace-nowrap ${
+                                resource.ageGroup === "elementary" ? "border-blue-300 text-blue-700 dark:border-blue-700 dark:text-blue-400" :
+                                resource.ageGroup === "middle" ? "border-green-300 text-green-700 dark:border-green-700 dark:text-green-400" :
+                                "border-purple-300 text-purple-700 dark:border-purple-700 dark:text-purple-400"
+                              }`}
+                            >
+                              {getAgeGroupLabel(resource.ageGroup)}
+                            </Badge>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 pt-4 border-t">
+                    <Button asChild variant="outline" className="w-full">
+                      <Link to="/kidsafehq/resources">
+                        <BookOpen className="h-4 w-4 mr-2" />
+                        Browse All Resources
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+          </div>
         )}
 
         {/* Related Resources Section */}
