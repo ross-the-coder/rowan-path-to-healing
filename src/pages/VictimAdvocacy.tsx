@@ -33,7 +33,7 @@ const VictimAdvocacy = () => {
               </CardHeader>
               <CardContent>
                 <p className="font-roboto text-lg">
-                  While counseling and support groups are for ages 10+, our advocacy services support clients of all ages and their families. All advocacy services are free of charge for anyone in our eight-town service area across Southern Fairfield County: <span className="font-medium">Stamford, Norwalk, Darien, Greenwich, New Canaan, Westport, Weston, and Wilton.</span>
+                  While counseling and support groups are for ages 10+, our advocacy services support clients of all ages and their families. All advocacy services are free of charge for anyone in our eight-town service area across Lower Fairfield County: <span className="font-medium">Stamford, Norwalk, Darien, Greenwich, New Canaan, Westport, Weston, and Wilton.</span>
                 </p>
               </CardContent>
             </Card>
