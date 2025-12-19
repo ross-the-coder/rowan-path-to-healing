@@ -307,50 +307,72 @@ const KidSafeFAQ = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-3">
-                    {recommendedResources.map((resource, index) => (
-                      <div
-                        key={`${resource.title}-${index}`}
-                        className="p-4 rounded-lg bg-background border hover:border-teal-300 dark:hover:border-teal-700 transition-colors"
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex-1 min-w-0">
-                            {resource.url ? (
-                              <a
-                                href={resource.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-medium text-teal-700 dark:text-teal-400 hover:underline flex items-center gap-1"
+                    {recommendedResources.map((resource, index) => {
+                      const isBestMatch = index === 0 && resource.relevanceScore >= 8;
+                      const isHighlyRelevant = index > 0 && index < 3 && resource.relevanceScore >= 6;
+                      
+                      return (
+                        <div
+                          key={`${resource.title}-${index}`}
+                          className={`p-4 rounded-lg bg-background border transition-colors ${
+                            isBestMatch 
+                              ? "border-teal-400 dark:border-teal-600 ring-2 ring-teal-200 dark:ring-teal-800" 
+                              : "hover:border-teal-300 dark:hover:border-teal-700"
+                          }`}
+                        >
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 flex-wrap">
+                                {resource.url ? (
+                                  <a
+                                    href={resource.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium text-teal-700 dark:text-teal-400 hover:underline flex items-center gap-1"
+                                  >
+                                    {resource.title}
+                                    <ExternalLink className="h-3 w-3 flex-shrink-0" />
+                                  </a>
+                                ) : (
+                                  <span className="font-medium">{resource.title}</span>
+                                )}
+                                {isBestMatch && (
+                                  <Badge className="bg-teal-600 text-white text-xs">
+                                    <Sparkles className="h-3 w-3 mr-1" />
+                                    Best Match
+                                  </Badge>
+                                )}
+                                {isHighlyRelevant && (
+                                  <Badge variant="outline" className="border-teal-400 text-teal-700 dark:text-teal-400 text-xs">
+                                    Highly Relevant
+                                  </Badge>
+                                )}
+                              </div>
+                              {resource.description && (
+                                <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                                  {resource.description}
+                                </p>
+                              )}
+                            </div>
+                            <div className="flex flex-col gap-1 items-end flex-shrink-0">
+                              <Badge variant="secondary" className="text-xs whitespace-nowrap">
+                                {resource.category}
+                              </Badge>
+                              <Badge 
+                                variant="outline" 
+                                className={`text-xs whitespace-nowrap ${
+                                  resource.ageGroup === "elementary" ? "border-blue-300 text-blue-700 dark:border-blue-700 dark:text-blue-400" :
+                                  resource.ageGroup === "middle" ? "border-green-300 text-green-700 dark:border-green-700 dark:text-green-400" :
+                                  "border-purple-300 text-purple-700 dark:border-purple-700 dark:text-purple-400"
+                                }`}
                               >
-                                {resource.title}
-                                <ExternalLink className="h-3 w-3 flex-shrink-0" />
-                              </a>
-                            ) : (
-                              <span className="font-medium">{resource.title}</span>
-                            )}
-                            {resource.description && (
-                              <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                                {resource.description}
-                              </p>
-                            )}
-                          </div>
-                          <div className="flex flex-col gap-1 items-end flex-shrink-0">
-                            <Badge variant="secondary" className="text-xs whitespace-nowrap">
-                              {resource.category}
-                            </Badge>
-                            <Badge 
-                              variant="outline" 
-                              className={`text-xs whitespace-nowrap ${
-                                resource.ageGroup === "elementary" ? "border-blue-300 text-blue-700 dark:border-blue-700 dark:text-blue-400" :
-                                resource.ageGroup === "middle" ? "border-green-300 text-green-700 dark:border-green-700 dark:text-green-400" :
-                                "border-purple-300 text-purple-700 dark:border-purple-700 dark:text-purple-400"
-                              }`}
-                            >
-                              {getAgeGroupLabel(resource.ageGroup)}
-                            </Badge>
+                                {getAgeGroupLabel(resource.ageGroup)}
+                              </Badge>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                   <div className="mt-4 pt-4 border-t">
                     <Button asChild variant="outline" className="w-full">
