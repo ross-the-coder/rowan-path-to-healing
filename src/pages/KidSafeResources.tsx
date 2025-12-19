@@ -1,156 +1,33 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, BookOpen, ExternalLink, GraduationCap, School, Building, Search, BookText } from "lucide-react";
+import { ArrowLeft, BookOpen, ExternalLink, GraduationCap, School, Building, Search, BookText, X, Filter } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Badge } from "@/components/ui/badge";
 import { glossaryTerms } from "@/data/glossaryData";
+import { kidSafeResourcesData, searchResources } from "@/data/kidSafeResourcesData";
+import { searchKeywords, getAllTopics } from "@/data/resourceKeywordsData";
 
-// Aggregated resources from all age groups
-const allResources = {
-  elementary: {
-    title: "Elementary School (K-5)",
-    icon: School,
-    resources: [
-      {
-        category: "Boundaries",
-        links: [
-          { title: "8 Ways to Teach Kids about Consent and Healthy Boundaries" },
-          { title: "Growing Kids and Boundaries: Teaching Consent By Age and Stage" },
-          { title: "Teaching Kids About Boundaries - Child Mind Institute" },
-          { title: "Teaching your child to set boundaries with friends" },
-          { title: "Why Children Need Boundaries: A Guide For Parents" }
-        ]
-      },
-      {
-        category: "Empathy",
-        links: [
-          { title: "Key Strategies to Teach Children Empathy" },
-          { title: "The caring child: How to teach empathy (age 5)" },
-          { title: "Empathy Activities for Kind and Not-Bored Kids" },
-          { title: "Social Skills: Empathy at Age 5 | PBS KIDS for Parents" }
-        ]
-      },
-      {
-        category: "Internet Safety",
-        links: [
-          { title: "Internet Safety for Kids - The Annie E. Casey Foundation" },
-          { title: "8 Internet Safety Rules for Kids" },
-          { title: "Be Internet Awesome" },
-          { title: "A Guide to Internet Safety for Kids in 2025" },
-          { title: "Internet Safety Activity Book" },
-          { title: "Online Safety Worksheet" }
-        ]
-      },
-      {
-        category: "Body Language",
-        links: [
-          { title: "Nonverbal communication: body language and tone of voice" },
-          { title: "3 Tips on Helping Kids Understand Emotions and Body Language" }
-        ]
-      }
-    ]
-  },
-  middle: {
-    title: "Middle School (6-8)",
-    icon: GraduationCap,
-    resources: [
-      {
-        category: "Digital Safety Resources",
-        links: [
-          { title: "NCMEC - Parents' Guide to Smartphone Safety" },
-          { title: "NCMEC - Gaming Safely Guide" },
-          { title: "NCMEC - AI and Child Safety Online: Guide for Parents" },
-          { title: "CyberTipline.org - Report online exploitation" }
-        ]
-      },
-      {
-        category: "Support Organizations",
-        links: [
-          { title: "CT Support Group - Teen support groups and online community" },
-          { title: "Boys & Girls Club of Stamford - Gary Wendt Teen Center" },
-          { title: "Child Guidance Center of Southern CT - Resource hub (EN/ES)" }
-        ]
-      },
-      {
-        category: "Reporting & Support Services",
-        links: [
-          { title: "Take It Down - NCMEC service to remove intimate images" },
-          { title: "Commission on Human Rights and Opportunities (CHRO) - State civil rights agency" },
-          { title: "Office for Civil Rights - US Department of Education (Federal)" }
-        ]
-      },
-      {
-        category: "Educational Resources",
-        links: [
-          { title: "National Center for Missing & Exploited Children - Netsmartz Middle School Presentation" },
-          { title: "NCMEC - You Sent a Sext. Now What?" },
-          { title: "NCMEC - Who is a Trusted Adult?" },
-          { title: "Connecticut Law - The Rowan Center" }
-        ]
-      },
-      {
-        category: "Additional Support Organizations",
-        links: [
-          { title: "National Sexual Violence Resource Center (NSVRC)" },
-          { title: "Thorn for Parents - Interactive scenarios and guides" },
-          { title: "Love146 - Parent and teen capacity building" }
-        ]
-      },
-      {
-        category: "Legal and Reporting Resources",
-        links: [
-          { title: "Take It Down - NCMEC" }
-        ]
-      }
-    ]
-  },
-  high: {
-    title: "High School (9-12)",
-    icon: Building,
-    resources: [
-      {
-        category: "Safety Resources",
-        links: [
-          { title: "NCMEC Take It Down Program - Remove intimate images of minors" },
-          { title: "CyberTipline.org - Report online exploitation" },
-          { title: "NCMEC - Online Safety Resources" }
-        ]
-      },
-      {
-        category: "Relationship Resources",
-        links: [
-          { title: "Love Is Respect - National resource for healthy relationships" },
-          { title: "Connecticut Coalition Against Domestic Violence" },
-          { title: "RAINN - Rape, Abuse & Incest National Network" }
-        ]
-      },
-      {
-        category: "Support Resources",
-        links: [
-          { title: "National Sexual Assault Hotline - 1-800-656-4673" },
-          { title: "Connecticut Alliance to End Sexual Violence" }
-        ]
-      },
-      {
-        category: "Transition Resources",
-        links: [
-          { title: "Know Your IX - Student rights organization" },
-          { title: "U.S. Equal Employment Opportunity Commission" },
-          { title: "Connecticut Commission on Human Rights and Opportunities" }
-        ]
-      }
-    ]
-  }
+const iconMap = {
+  elementary: School,
+  middle: GraduationCap,
+  high: Building,
 };
 
 const KidSafeResources = () => {
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
   const [glossarySearch, setGlossarySearch] = useState("");
+  const [resourceSearch, setResourceSearch] = useState("");
+  const [selectedAgeGroups, setSelectedAgeGroups] = useState<Set<string>>(new Set());
+  const [selectedTopics, setSelectedTopics] = useState<Set<string>>(new Set());
+  const [showFilters, setShowFilters] = useState(false);
+
+  const allTopics = useMemo(() => getAllTopics(), []);
 
   const filteredTerms = glossaryTerms
     .filter(
@@ -159,6 +36,99 @@ const KidSafeResources = () => {
         item.definition.toLowerCase().includes(glossarySearch.toLowerCase())
     )
     .sort((a, b) => a.term.localeCompare(b.term));
+
+  // Search results
+  const searchResults = useMemo(() => {
+    if (!resourceSearch.trim()) {
+      return null;
+    }
+    const { results, matchedAgeGroups } = searchResources(resourceSearch);
+    return { results, matchedAgeGroups };
+  }, [resourceSearch]);
+
+  // Filter resources based on selected age groups and topics
+  const filteredResources = useMemo(() => {
+    // If searching, return search results grouped by age group
+    if (searchResults && searchResults.results.length > 0) {
+      const grouped: Record<string, { category: string; resources: typeof searchResults.results }[]> = {};
+      
+      for (const result of searchResults.results) {
+        // Apply age group filter
+        const ageKey = kidSafeResourcesData.find(ag => ag.title === result.ageGroup)?.key || "";
+        if (selectedAgeGroups.size > 0 && !selectedAgeGroups.has(ageKey)) {
+          continue;
+        }
+        
+        if (!grouped[result.ageGroup]) {
+          grouped[result.ageGroup] = [];
+        }
+        
+        // Find or create category
+        let categoryGroup = grouped[result.ageGroup].find(c => c.category === result.category);
+        if (!categoryGroup) {
+          categoryGroup = { category: result.category, resources: [] };
+          grouped[result.ageGroup].push(categoryGroup);
+        }
+        categoryGroup.resources.push(result);
+      }
+      
+      return grouped;
+    }
+    
+    // No search, return all resources with age group filter
+    const result: Record<string, typeof kidSafeResourcesData[0]> = {};
+    
+    for (const ageGroup of kidSafeResourcesData) {
+      if (selectedAgeGroups.size > 0 && !selectedAgeGroups.has(ageGroup.key)) {
+        continue;
+      }
+      result[ageGroup.title] = ageGroup;
+    }
+    
+    return result;
+  }, [searchResults, selectedAgeGroups]);
+
+  const toggleAgeGroup = (key: string) => {
+    const newSet = new Set(selectedAgeGroups);
+    if (newSet.has(key)) {
+      newSet.delete(key);
+    } else {
+      newSet.add(key);
+    }
+    setSelectedAgeGroups(newSet);
+  };
+
+  const toggleTopic = (topic: string) => {
+    const newSet = new Set(selectedTopics);
+    if (newSet.has(topic)) {
+      newSet.delete(topic);
+    } else {
+      newSet.add(topic);
+    }
+    setSelectedTopics(newSet);
+    
+    // When a topic is selected, also update the search to include related keywords
+    if (newSet.size > 0) {
+      setResourceSearch(Array.from(newSet).join(" "));
+    } else {
+      setResourceSearch("");
+    }
+  };
+
+  const clearFilters = () => {
+    setSelectedAgeGroups(new Set());
+    setSelectedTopics(new Set());
+    setResourceSearch("");
+  };
+
+  const hasActiveFilters = selectedAgeGroups.size > 0 || selectedTopics.size > 0 || resourceSearch.trim().length > 0;
+
+  // Suggested topics based on current search
+  const suggestedTopics = useMemo(() => {
+    if (!resourceSearch.trim()) return [];
+    const { topics } = searchKeywords(resourceSearch);
+    return topics.slice(0, 5);
+  }, [resourceSearch]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -186,6 +156,125 @@ const KidSafeResources = () => {
       </div>
 
       <main className="flex-1 container mx-auto px-4 py-12">
+        {/* Search Section */}
+        <Card className="mb-8 overflow-hidden border-primary/20">
+          <CardHeader className="bg-gradient-to-r from-orange-500/10 to-orange-600/5">
+            <CardTitle className="text-xl flex items-center gap-2">
+              <Search className="h-5 w-5" />
+              Search Resources
+            </CardTitle>
+            <CardDescription>
+              Search by topic, keyword, or phrase to find relevant resources
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="pt-6">
+            <div className="space-y-4">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="Search for consent, internet safety, sextortion, boundaries..."
+                  value={resourceSearch}
+                  onChange={(e) => setResourceSearch(e.target.value)}
+                  className="pl-10 pr-10"
+                />
+                {resourceSearch && (
+                  <button
+                    onClick={() => setResourceSearch("")}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+              
+              {/* Suggested Topics */}
+              {suggestedTopics.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-sm text-muted-foreground">Related topics:</span>
+                  {suggestedTopics.map((topic) => (
+                    <Badge
+                      key={topic}
+                      variant="secondary"
+                      className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                      onClick={() => setResourceSearch(topic.toLowerCase())}
+                    >
+                      {topic}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+
+              {/* Filter Toggle */}
+              <div className="flex items-center justify-between">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setShowFilters(!showFilters)}
+                  className="gap-2"
+                >
+                  <Filter className="h-4 w-4" />
+                  {showFilters ? "Hide Filters" : "Show Filters"}
+                </Button>
+                
+                {hasActiveFilters && (
+                  <Button variant="ghost" size="sm" onClick={clearFilters}>
+                    Clear all filters
+                  </Button>
+                )}
+              </div>
+
+              {/* Filters */}
+              {showFilters && (
+                <div className="space-y-4 pt-4 border-t">
+                  {/* Age Group Filters */}
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Filter by Age Group</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {kidSafeResourcesData.map((ageGroup) => (
+                        <Badge
+                          key={ageGroup.key}
+                          variant={selectedAgeGroups.has(ageGroup.key) ? "default" : "outline"}
+                          className="cursor-pointer transition-colors"
+                          onClick={() => toggleAgeGroup(ageGroup.key)}
+                        >
+                          {ageGroup.title}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Topic Filters */}
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Filter by Topic</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {allTopics.map((topic) => (
+                        <Badge
+                          key={topic}
+                          variant={selectedTopics.has(topic) ? "default" : "outline"}
+                          className="cursor-pointer transition-colors text-xs"
+                          onClick={() => toggleTopic(topic)}
+                        >
+                          {topic}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Search Results Summary */}
+        {searchResults && (
+          <div className="mb-6">
+            <p className="text-muted-foreground">
+              Found <span className="font-semibold text-foreground">{searchResults.results.length}</span> resources 
+              {resourceSearch && <> matching "<span className="font-semibold text-foreground">{resourceSearch}</span>"</>}
+            </p>
+          </div>
+        )}
+
         {/* Glossary Section */}
         <Card className="mb-8 overflow-hidden border-primary/20">
           <Collapsible open={isGlossaryOpen} onOpenChange={setIsGlossaryOpen}>
@@ -244,51 +333,153 @@ const KidSafeResources = () => {
         </Card>
 
         <h2 className="text-2xl font-bold mb-6">Resources by Age Group</h2>
-        <div className="space-y-8">
-          {Object.entries(allResources).map(([key, section]) => {
-            const IconComponent = section.icon;
-            return (
-              <Card key={key} className="overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
-                  <div className="flex items-center gap-3">
-                    <IconComponent className="h-8 w-8 text-primary" />
-                    <div>
-                      <CardTitle className="text-xl">{section.title}</CardTitle>
-                      <CardDescription>Resources for {section.title.toLowerCase()} students and their families</CardDescription>
+        
+        {/* Display filtered/searched resources */}
+        {searchResults && searchResults.results.length > 0 ? (
+          // Search results view
+          <div className="space-y-8">
+            {Object.entries(filteredResources).map(([ageGroupTitle, categories]) => {
+              const ageGroupData = kidSafeResourcesData.find(ag => ag.title === ageGroupTitle);
+              if (!ageGroupData) return null;
+              const IconComponent = iconMap[ageGroupData.key];
+              
+              return (
+                <Card key={ageGroupTitle} className="overflow-hidden">
+                  <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-8 w-8 text-primary" />
+                      <div>
+                        <CardTitle className="text-xl">{ageGroupTitle}</CardTitle>
+                        <CardDescription>
+                          {(categories as { category: string; resources: unknown[] }[]).reduce((acc, c) => acc + c.resources.length, 0)} matching resources
+                        </CardDescription>
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-6">
-                  <Accordion type="multiple" className="w-full">
-                    {section.resources.map((resourceGroup, idx) => (
-                      <AccordionItem key={idx} value={`${key}-resource-${idx}`}>
-                        <AccordionTrigger className="text-sm font-semibold hover:no-underline">
-                          <span className="flex items-center gap-2">
-                            📚 {resourceGroup.category}
-                            <span className="text-xs text-muted-foreground font-normal">
-                              ({resourceGroup.links.length} resources)
+                  </CardHeader>
+                  <CardContent className="pt-6">
+                    <Accordion type="multiple" className="w-full" defaultValue={(categories as { category: string }[]).map((c, i) => `${ageGroupData.key}-resource-${i}`)}>
+                      {(categories as { category: string; resources: { resource: { title: string; keywords: string[] } }[] }[]).map((categoryGroup, idx) => (
+                        <AccordionItem key={idx} value={`${ageGroupData.key}-resource-${idx}`}>
+                          <AccordionTrigger className="text-sm font-semibold hover:no-underline">
+                            <span className="flex items-center gap-2">
+                              📚 {categoryGroup.category}
+                              <span className="text-xs text-muted-foreground font-normal">
+                                ({categoryGroup.resources.length} resources)
+                              </span>
                             </span>
-                          </span>
-                        </AccordionTrigger>
-                        <AccordionContent className="space-y-2 pt-2">
-                          {resourceGroup.links.map((link, linkIdx) => (
-                            <div 
-                              key={linkIdx}
-                              className="flex items-start gap-2 p-3 rounded-lg hover:bg-muted/50 transition-colors border border-transparent hover:border-border"
-                            >
-                              <ExternalLink className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                              <span className="text-sm">{link.title}</span>
-                            </div>
-                          ))}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
+                          </AccordionTrigger>
+                          <AccordionContent className="space-y-2 pt-2">
+                            {categoryGroup.resources.map((item, linkIdx) => (
+                              <div 
+                                key={linkIdx}
+                                className="flex items-start gap-2 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/20 hover:bg-orange-100 dark:hover:bg-orange-950/30 transition-colors border border-orange-200 dark:border-orange-800"
+                              >
+                                <ExternalLink className="h-4 w-4 text-orange-600 flex-shrink-0 mt-0.5" />
+                                <div>
+                                  <span className="text-sm font-medium">{item.resource.title}</span>
+                                  <div className="flex flex-wrap gap-1 mt-1">
+                                    {item.resource.keywords.slice(0, 3).map((kw, kwIdx) => (
+                                      <Badge key={kwIdx} variant="outline" className="text-xs">
+                                        {kw}
+                                      </Badge>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        ) : searchResults && searchResults.results.length === 0 ? (
+          // No search results
+          <Card className="p-8 text-center">
+            <div className="text-muted-foreground">
+              <Search className="h-12 w-12 mx-auto mb-4 opacity-50" />
+              <h3 className="text-lg font-semibold mb-2">No resources found</h3>
+              <p>Try searching for different keywords or browse all resources below.</p>
+              <Button variant="outline" className="mt-4" onClick={clearFilters}>
+                Show all resources
+              </Button>
+            </div>
+          </Card>
+        ) : (
+          // Default view - all resources
+          <div className="space-y-8">
+            {Object.entries(filteredResources).map(([key, ageGroup]) => {
+              const section = ageGroup as typeof kidSafeResourcesData[0];
+              const IconComponent = iconMap[section.key];
+              return (
+                <Card key={key} className="overflow-hidden">
+                  <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-8 w-8 text-primary" />
+                      <div>
+                        <CardTitle className="text-xl">{section.title}</CardTitle>
+                        <CardDescription>Resources for {section.title.toLowerCase()} students and their families</CardDescription>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-6">
+                    <Accordion type="multiple" className="w-full">
+                      {section.resources.map((resourceGroup, idx) => (
+                        <AccordionItem key={idx} value={`${section.key}-resource-${idx}`}>
+                          <AccordionTrigger className="text-sm font-semibold hover:no-underline">
+                            <span className="flex items-center gap-2">
+                              📚 {resourceGroup.category}
+                              <span className="text-xs text-muted-foreground font-normal">
+                                ({resourceGroup.links.length} resources)
+                              </span>
+                            </span>
+                          </AccordionTrigger>
+                          <AccordionContent className="space-y-2 pt-2">
+                            {resourceGroup.links.map((link, linkIdx) => (
+                              <div 
+                                key={linkIdx}
+                                className="flex items-start gap-2 p-3 rounded-lg hover:bg-muted/50 transition-colors border border-transparent hover:border-border"
+                              >
+                                <ExternalLink className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                                <div>
+                                  <span className="text-sm">{link.title}</span>
+                                  <div className="flex flex-wrap gap-1 mt-1">
+                                    {link.keywords.slice(0, 3).map((kw, kwIdx) => (
+                                      <Badge key={kwIdx} variant="outline" className="text-xs opacity-60">
+                                        {kw}
+                                      </Badge>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        )}
+
+        {/* No results from filtering */}
+        {!searchResults && Object.keys(filteredResources).length === 0 && (
+          <Card className="p-8 text-center">
+            <div className="text-muted-foreground">
+              <Filter className="h-12 w-12 mx-auto mb-4 opacity-50" />
+              <h3 className="text-lg font-semibold mb-2">No resources match your filters</h3>
+              <p>Try adjusting your filters to see more resources.</p>
+              <Button variant="outline" className="mt-4" onClick={clearFilters}>
+                Clear filters
+              </Button>
+            </div>
+          </Card>
+        )}
 
         {/* Contact Section */}
         <Card className="mt-12 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/20 border-orange-200 dark:border-orange-800">
