@@ -171,11 +171,9 @@ export const VolunteerApplicationForm = ({ language = "en" }: VolunteerApplicati
 
         if (uploadError) throw uploadError;
 
-        const { data: urlData } = supabase.storage
-          .from('volunteer-resumes')
-          .getPublicUrl(filePath);
-        
-        resumeUrl = urlData.publicUrl;
+        // Store the file path - admins will generate signed URLs on-demand
+        // This is more secure than storing URLs since the bucket is private
+        resumeUrl = filePath;
       }
 
       // Insert application
