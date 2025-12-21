@@ -1,0 +1,51 @@
+{
+  "name": "the-rowan-center",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy",
+    "import:all": "tsx migrations/import-all.ts",
+    "import:board": "tsx migrations/import-board-members-updated.ts",
+    "import:glossary": "tsx migrations/import-glossary.ts",
+    "import:faqs": "tsx migrations/import-faqs.ts",
+    "import:authors": "tsx migrations/import-authors.ts",
+    "import:blog": "tsx migrations/import-blog-posts.ts",
+    "import:events": "tsx migrations/import-events.ts",
+    "import:news": "tsx migrations/import-news.ts",
+    "import:news-csv": "tsx migrations/import-news-from-csv.ts",
+    "import:resources": "tsx migrations/import-community-resources.ts",
+    "import:kidsafe-faqs": "tsx migrations/import-kidsafe-faqs.ts",
+    "import:kidsafe-page-faqs": "tsx migrations/import-kidsafe-page-faqs.ts",
+    "import:kidsafe-resources": "tsx migrations/import-kidsafe-resources.ts"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/vision": "^5.0.1",
+    "react": "^19.1",
+    "react-dom": "^19.1",
+    "sanity": "^5.0.1",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^5.0.2",
+    "@types/react": "^19.1",
+    "eslint": "^9.28",
+    "prettier": "^3.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.8"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  }
+}

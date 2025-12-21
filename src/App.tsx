@@ -3,37 +3,41 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import CrisisSupport from "./pages/CrisisSupport";
-import PreventionEducation from "./pages/PreventionEducation";
-import CrisisServices from "./pages/CrisisServices";
-import VictimAdvocacy from "./pages/VictimAdvocacy";
-import TraumaRecovery from "./pages/TraumaRecovery";
-import Resources from "./pages/Resources";
-import CommunityResources from "./pages/CommunityResources";
-import Impact from "./pages/Impact";
-import Donate from "./pages/Donate";
-import Events from "./pages/Events";
-import Volunteer from "./pages/Volunteer";
-import Blog from "./pages/Blog";
-import Media from "./pages/Media";
-import BoardOfDirectors from "./pages/BoardOfDirectors";
-import Staff from "./pages/Staff";
-import Financials from "./pages/Financials";
-import Careers from "./pages/Careers";
-import KidSafeHQ from "./pages/KidSafeHQ";
-import KidSafeElementary from "./pages/KidSafeElementary";
-import KidSafeMiddle from "./pages/KidSafeMiddle";
-import KidSafeHigh from "./pages/KidSafeHigh";
-import KidSafeResources from "./pages/KidSafeResources";
-import KidSafeFAQ from "./pages/KidSafeFAQ";
-import KidSafeNews from "./pages/KidSafeNews";
-import News from "./pages/News";
-import CTLawsReporting from "./pages/CTLawsReporting";
-import Reminders from "./pages/Reminders";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import NotFound from "./pages/NotFound";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
+import { lazy, Suspense } from "react";
+
+// Lazy load all page components
+const Index = lazy(() => import("./pages/Index"));
+const About = lazy(() => import("./pages/About"));
+const CrisisSupport = lazy(() => import("./pages/CrisisSupport"));
+const PreventionEducation = lazy(() => import("./pages/PreventionEducation"));
+const CrisisServices = lazy(() => import("./pages/CrisisServices"));
+const VictimAdvocacy = lazy(() => import("./pages/VictimAdvocacy"));
+const TraumaRecovery = lazy(() => import("./pages/TraumaRecovery"));
+const CommunityResources = lazy(() => import("./pages/CommunityResources"));
+const Impact = lazy(() => import("./pages/Impact"));
+const Donate = lazy(() => import("./pages/Donate"));
+const Events = lazy(() => import("./pages/Events"));
+const Volunteer = lazy(() => import("./pages/Volunteer"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Media = lazy(() => import("./pages/Media"));
+const BoardOfDirectors = lazy(() => import("./pages/BoardOfDirectors"));
+const Financials = lazy(() => import("./pages/Financials"));
+const Careers = lazy(() => import("./pages/Careers"));
+const KidSafeHQ = lazy(() => import("./pages/KidSafeHQ"));
+const KidSafeElementary = lazy(() => import("./pages/KidSafeElementary"));
+const KidSafeMiddle = lazy(() => import("./pages/KidSafeMiddle"));
+const KidSafeHigh = lazy(() => import("./pages/KidSafeHigh"));
+const KidSafeResources = lazy(() => import("./pages/KidSafeResources"));
+const KidSafeNews = lazy(() => import("./pages/KidSafeNews"));
+const News = lazy(() => import("./pages/News"));
+const CTLawsReporting = lazy(() => import("./pages/CTLawsReporting"));
+const Reminders = lazy(() => import("./pages/Reminders"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const StaffLogin = lazy(() => import("./pages/StaffLogin"));
+const Admin = lazy(() => import("./pages/Admin"));
 
 const queryClient = new QueryClient();
 
@@ -42,44 +46,48 @@ const App = () => {
   
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/crisis-support" element={<CrisisSupport />} />
-            <Route path="/prevention-education" element={<PreventionEducation />} />
-            <Route path="/crisis-services" element={<CrisisServices />} />
-            <Route path="/victim-advocacy" element={<VictimAdvocacy />} />
-            <Route path="/trauma-recovery" element={<TraumaRecovery />} />
-            <Route path="/resources" element={<CommunityResources />} />
-            <Route path="/impact" element={<Impact />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/volunteer" element={<Volunteer />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/media" element={<Media />} />
-            <Route path="/board-of-directors" element={<BoardOfDirectors />} />
-            <Route path="/staff" element={<Staff />} />
-            <Route path="/financials" element={<Financials />} />
-            <Route path="/careers" element={<Careers />} />
-          <Route path="/kidsafehq" element={<KidSafeHQ />} />
-          <Route path="/kidsafehq/elementary" element={<KidSafeElementary />} />
-          <Route path="/kidsafehq/middle" element={<KidSafeMiddle />} />
-          <Route path="/kidsafehq/high" element={<KidSafeHigh />} />
-          <Route path="/kidsafehq/resources" element={<KidSafeResources />} />
-          <Route path="/kidsafehq/faq" element={<KidSafeFAQ />} />
-          <Route path="/kidsafehq/news" element={<KidSafeNews />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
-            <Route path="/reminders" element={<Reminders />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/crisis-support" element={<CrisisSupport />} />
+                <Route path="/prevention-education" element={<PreventionEducation />} />
+                <Route path="/crisis-services" element={<CrisisServices />} />
+                <Route path="/victim-advocacy" element={<VictimAdvocacy />} />
+                <Route path="/trauma-recovery" element={<TraumaRecovery />} />
+                <Route path="/resources" element={<CommunityResources />} />
+                <Route path="/impact" element={<Impact />} />
+                <Route path="/donate" element={<Donate />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/volunteer" element={<Volunteer />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/media" element={<Media />} />
+                <Route path="/board-of-directors" element={<BoardOfDirectors />} />
+                <Route path="/financials" element={<Financials />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/kidsafehq" element={<KidSafeHQ />} />
+                <Route path="/kidsafehq/elementary" element={<KidSafeElementary />} />
+                <Route path="/kidsafehq/middle" element={<KidSafeMiddle />} />
+                <Route path="/kidsafehq/high" element={<KidSafeHigh />} />
+                <Route path="/kidsafehq/resources" element={<KidSafeResources />} />
+                <Route path="/kidsafehq/news" element={<KidSafeNews />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
+                <Route path="/reminders" element={<Reminders />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/staff-login" element={<StaffLogin />} />
+                <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </BrowserRouter>
+        </TooltipProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 };

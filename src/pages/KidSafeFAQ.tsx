@@ -8,21 +8,44 @@ import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { faqData, getUniqueGrades, getUniqueTopics, getGradeLevel, getRelatedResources, topicToResourceMapping } from "@/data/faqData";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useKidSafeFAQs } from "@/hooks/useSanityData";
+import { getUniqueGrades, getUniqueTopics, getGradeLevel, getRelatedResources, topicToResourceMapping } from "@/data/faqData";
 import { searchResources, getAgeGroupLabel, MatchedResource } from "@/utils/resourceMatcher";
 import { supabase } from "@/integrations/supabase/client";
 
 const KidSafeFAQ = () => {
+  const { data: faqData, isLoading } = useKidSafeFAQs();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGrades, setSelectedGrades] = useState<string[]>([]);
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
 
-  const allGrades = getUniqueGrades();
-  const allTopics = getUniqueTopics();
+  // Helper function to get unique grades from Sanity data
+  const allGrades = useMemo(() => {
+    if (!faqData) return [];
+    const grades = new Set<string>();
+    faqData.forEach((faq: any) => faq.grades?.forEach((g: string) => grades.add(g)));
+    return Array.from(grades).sort((a, b) => {
+      const gradeOrder: Record<string, number> = {
+        "3rd": 3, "4th": 4, "5th": 5, "6th": 6, "7th": 7, "8th": 8,
+        "9th": 9, "10th": 10, "11th": 11, "12th": 12
+      };
+      return (gradeOrder[a] || 0) - (gradeOrder[b] || 0);
+    });
+  }, [faqData]);
+
+  // Helper function to get unique topics from Sanity data
+  const allTopics = useMemo(() => {
+    if (!faqData) return [];
+    const topics = new Set<string>();
+    faqData.forEach((faq: any) => faq.topics?.forEach((t: string) => topics.add(t)));
+    return Array.from(topics).sort();
+  }, [faqData]);
 
   const filteredFAQs = useMemo(() => {
-    return faqData.filter(faq => {
+    if (!faqData) return [];
+    return faqData.filter((faq: any) => {
       // Search filter
       const matchesSearch = searchQuery === "" ||
         faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -39,7 +62,7 @@ const KidSafeFAQ = () => {
 
       return matchesSearch && matchesGrade && matchesTopic;
     });
-  }, [searchQuery, selectedGrades, selectedTopics]);
+  }, [faqData, searchQuery, selectedGrades, selectedTopics]);
 
   // Get recommended resources when no FAQs match but there's a search query
   const recommendedResources = useMemo(() => {
@@ -109,6 +132,42 @@ const KidSafeFAQ = () => {
     }
     return null;
   };
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navigation />
+        <div className="bg-gradient-to-br from-teal-500/10 via-teal-600/5 to-teal-500/5 pt-24 pb-12">
+          <div className="container mx-auto px-4">
+            <Skeleton className="h-10 w-48 mb-4" />
+            <div className="text-center max-w-4xl mx-auto space-y-4">
+              <Skeleton className="h-12 w-96 mx-auto" />
+              <Skeleton className="h-6 w-full" />
+            </div>
+          </div>
+        </div>
+        <main className="flex-1 container mx-auto px-4 py-12">
+          <Card className="mb-8">
+            <CardContent className="pt-6">
+              <Skeleton className="h-12 w-full mb-4" />
+            </CardContent>
+          </Card>
+          <div className="space-y-4">
+            {[1, 2, 3].map((i) => (
+              <Card key={i}>
+                <CardHeader>
+                  <Skeleton className="h-6 w-full" />
+                  <Skeleton className="h-4 w-32 mt-2" />
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -217,17 +276,17 @@ const KidSafeFAQ = () => {
         {/* Results Count */}
         <div className="flex items-center justify-between mb-6">
           <p className="text-muted-foreground">
-            Showing {filteredFAQs.length} of {faqData.length} questions
+            Showing {filteredFAQs.length} of {faqData?.length || 0} questions
           </p>
         </div>
 
         {/* FAQ List */}
         {filteredFAQs.length > 0 ? (
           <Accordion type="multiple" className="space-y-4">
-            {filteredFAQs.map((faq) => (
+            {filteredFAQs.map((faq: any) => (
               <AccordionItem
-                key={faq.id}
-                value={`faq-${faq.id}`}
+                key={faq._id}
+                value={`faq-${faq._id}`}
                 className="border rounded-lg px-4 bg-card"
               >
                 <AccordionTrigger className="text-left hover:no-underline py-4">
