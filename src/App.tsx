@@ -38,6 +38,7 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const StaffLogin = lazy(() => import("./pages/StaffLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
+const Staff = lazy(() => import("./pages/Staff"));
 
 const queryClient = new QueryClient();
 
@@ -81,6 +82,7 @@ const App = () => {
                 <Route path="/reminders" element={<Reminders />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/staff-login" element={<StaffLogin />} />
+                <Route path="/staff" element={<Staff />} />
                 <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
