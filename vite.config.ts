@@ -10,11 +10,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [
-    react({
-      babel: {
-        plugins: [['babel-plugin-react-compiler', { target: '19' }]],
-      },
-    }),
+    react(),
     mode === "development" && componentTagger()
   ].filter(Boolean),
   resolve: {
