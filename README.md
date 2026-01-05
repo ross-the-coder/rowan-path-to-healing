@@ -2,6 +2,8 @@
 
 ## Project info
 
+This website is for Rowan Center
+
 **URL**: https://lovable.dev/projects/2b7324c2-5f2f-489b-8af3-c37a77042bd7
 
 ## How can I edit this code?
