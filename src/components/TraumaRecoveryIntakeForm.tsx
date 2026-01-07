@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 const translations = {
   en: {
-    title: "Trauma Recovery Clinic Intake Form",
+    title: "Trauma Recovery Practice Intake Form",
     description: "Share your information so we can schedule your first conversation.",
     firstName: "First Name",
     lastName: "Last Name",
@@ -29,7 +29,7 @@ const translations = {
     voicemailYes: "If you call me and I do not answer, you have my permission to leave me a voicemail",
     voicemailNo: "If you call me and I do not answer, please do not leave me a voicemail",
     requestDescription: "Please briefly describe your request for services",
-    eligibility: "Please confirm you are eligible for services. You must meet both criteria to receive care at the Trauma Recovery Clinic.",
+    eligibility: "Please confirm you are eligible for services. You must meet both criteria to receive care at the Trauma Recovery Practice.",
     eligibilityNote: "If you do not meet these criteria,",
     eligibilityLink: "click here to contact our Crisis Counseling team",
     age18: "I am 18 years old or older",
@@ -50,7 +50,7 @@ const translations = {
     eligibilityRequired: "You must confirm both eligibility criteria",
   },
   es: {
-    title: "Formulario de Admisión de la Clínica de Recuperación de Trauma",
+    title: "Formulario de Admisión del Consultorio de Recuperación de Trauma",
     description: "Comparta su información para que podamos programar su primera conversación.",
     firstName: "Nombre",
     lastName: "Apellido",
@@ -62,7 +62,7 @@ const translations = {
     voicemailYes: "Si me llama y no contesto, tiene mi permiso para dejarme un mensaje de voz",
     voicemailNo: "Si me llama y no contesto, por favor no me deje un mensaje de voz",
     requestDescription: "Por favor describa brevemente su solicitud de servicios",
-    eligibility: "Por favor confirme que es elegible para los servicios. Debe cumplir con ambos criterios para recibir atención en la Clínica de Recuperación de Trauma.",
+    eligibility: "Por favor confirme que es elegible para los servicios. Debe cumplir con ambos criterios para recibir atención en el Consultorio de Recuperación de Trauma.",
     eligibilityNote: "Si no cumple con estos criterios,",
     eligibilityLink: "haga clic aquí para contactar a nuestro equipo de Consejería de Crisis",
     age18: "Tengo 18 años o más",
