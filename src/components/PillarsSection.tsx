@@ -1,10 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield, Phone, Heart, ChevronDown } from "lucide-react";
+import { Shield, Phone, GraduationCap, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import counselingImage from "@/assets/counseling-session.jpg";
 import outreachImage from "@/assets/community-outreach.jpg";
 import healingImage from "@/assets/family-embracing.jpg";
+import kidsafeLogo from "@/assets/kidsafe-hq-logo.png";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 const PillarsSection = () => {
   return <section className="py-0">
@@ -128,44 +129,44 @@ const PillarsSection = () => {
         </div>
       </div>
 
-      {/* Trauma Recovery Section */}
-      <div className="bg-color-block-accent text-white py-20">
+      {/* KidSafeHQ Section */}
+      <div className="bg-color-block-blue text-white py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img src={healingImage} alt="Family embracing on porch at sunset, showing hope and healing" className="w-full h-[400px] object-cover" />
+                <img src={healingImage} alt="Family learning together about personal safety" className="w-full h-[400px] object-cover" />
               </div>
             </div>
             <div className="order-1 lg:order-2 space-y-6">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                  <Heart className="h-8 w-8 text-white" />
+                <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center p-2">
+                  <img src={kidsafeLogo} alt="KidSafeHQ Logo" className="w-full h-full object-contain" />
                 </div>
-                <h2 className="text-4xl font-seasons font-normal">Trauma Recovery</h2>
+                <h2 className="text-4xl font-seasons font-normal">KidSafeHQ</h2>
               </div>
               <p className="text-xl font-roboto font-light text-white/90 leading-relaxed">
-                Long-term healing support and specialized therapeutic services designed for survivors on their journey to recovery.
+                Empowering families with age-appropriate resources to teach children about personal safety, consent, and healthy boundaries.
               </p>
               <div className="space-y-3">
-                <div className="font-roboto font-medium text-white">Recovery services include:</div>
+                <div className="font-roboto font-medium text-white">Resources for every age:</div>
                 <ul className="space-y-2 text-white/80">
                   <li className="flex items-start gap-2">
                     <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
-                    <span>Individual trauma-informed counseling</span>
+                    <span>Age-appropriate safety education guides</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
-                    <span>Support groups and peer connections</span>
+                    <span>Conversation starters for parents and caregivers</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
-                    <span>Specialized therapy programs</span>
+                    <span>Interactive activities and educational resources</span>
                   </li>
                 </ul>
               </div>
-              <Button asChild variant="outline" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-accent backdrop-blur-sm">
-                <Link to="/trauma-recovery">Explore Recovery Services</Link>
+              <Button asChild variant="outline" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-blue-accent backdrop-blur-sm">
+                <Link to="/kidsafe-hq">Explore KidSafeHQ</Link>
               </Button>
             </div>
           </div>
