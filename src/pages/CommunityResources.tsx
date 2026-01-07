@@ -47,6 +47,7 @@ import {
   type CommunityResource 
 } from "@/data/communityResourcesData";
 import resourcesImage from "@/assets/resources-learning.jpg";
+import ResourceMap from "@/components/ResourceMap";
 
 const CommunityResources = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -243,6 +244,9 @@ const CommunityResources = () => {
               </CollapsibleContent>
             </Collapsible>
           </Card>
+
+          {/* Interactive Map */}
+          <ResourceMap resources={filteredResources} getCategoryColor={getCategoryColor} />
 
           {/* Results Count and View Toggle */}
           <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
