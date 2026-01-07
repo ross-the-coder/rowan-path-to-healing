@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Card } from '@/components/ui/card';
 import { supabase } from '@/integrations/supabase/client';
 import type { CommunityResource } from '@/data/communityResourcesData';
-
 interface ResourceMapProps {
   resources: CommunityResource[];
   getCategoryColor: (category: string) => string;
@@ -64,18 +63,24 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }
   const [error, setError] = useState<string | null>(null);
   const [isMapInitialized, setIsMapInitialized] = useState(false);
 
-  // Filter resources that have CT addresses
-  const mappableResources = resources.filter(r => r.address && getTownFromAddress(r.address));
+  // Filter resources that have CT addresses - memoize to prevent infinite loops
+  const mappableResources = useMemo(() => 
+    resources.filter(r => r.address && getTownFromAddress(r.address)),
+    [resources]
+  );
 
-  // Group resources by town for legend
-  const resourcesByTown = mappableResources.reduce((acc, resource) => {
-    const town = getTownFromAddress(resource.address);
-    if (town) {
-      if (!acc[town]) acc[town] = [];
-      acc[town].push(resource);
-    }
-    return acc;
-  }, {} as Record<string, CommunityResource[]>);
+  // Group resources by town for legend - memoize to prevent recalculation
+  const resourcesByTown = useMemo(() => 
+    mappableResources.reduce((acc, resource) => {
+      const town = getTownFromAddress(resource.address);
+      if (town) {
+        if (!acc[town]) acc[town] = [];
+        acc[town].push(resource);
+      }
+      return acc;
+    }, {} as Record<string, CommunityResource[]>),
+    [mappableResources]
+  );
 
   // Fetch Mapbox token from edge function
   useEffect(() => {
@@ -284,9 +289,8 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }
         map.current.remove();
         map.current = null;
       }
-      setIsMapInitialized(false);
     };
-  }, [mapboxToken, mappableResources]);
+  }, [mapboxToken]);
 
   if (isLoading) {
     return (
