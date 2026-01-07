@@ -5,6 +5,8 @@ import { Heart, CreditCard, Landmark, PiggyBank } from "lucide-react";
 import ChariotConnect from "react-chariot-connect";
 import { toast } from "sonner";
 import donateHeroImage from "@/assets/donate-hero.jpg";
+import donateEventsImage from "@/assets/donate-events.jpg";
+import donateVolunteerImage from "@/assets/donate-volunteer.jpg";
 
 // TODO: Replace with your actual Chariot Connect ID from https://dashboard.givechariot.com
 const CHARIOT_CONNECT_ID = "YOUR_CHARIOT_CID";
@@ -209,34 +211,46 @@ const Donate = () => {
 
         {/* Other Ways to Help */}
         <section>
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-accent/10 border-accent/20">
-              <CardHeader>
-                <CardTitle className="text-2xl font-seasons text-center">Other Ways to Help</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <h3 className="font-seasons text-lg mb-2">Attend Events</h3>
-                    <p className="font-roboto text-muted-foreground mb-4">
-                      Join us at upcoming fundraisers and community events
-                    </p>
-                    <Button variant="outline" asChild>
-                      <a href="/events">View Events</a>
-                    </Button>
-                  </div>
-                  <div className="text-center">
-                    <h3 className="font-seasons text-lg mb-2">Volunteer</h3>
-                    <p className="font-roboto text-muted-foreground mb-4">
-                      Become a certified crisis advocate volunteer
-                    </p>
-                    <Button variant="outline" asChild>
-                      <a href="/volunteer">Learn More</a>
-                    </Button>
-                  </div>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-seasons font-normal text-center mb-12">Other Ways to Help</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={donateEventsImage} 
+                    alt="Community members attending a Rowan Center event"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </CardContent>
-            </Card>
+                <CardContent className="p-6 text-center">
+                  <h3 className="font-seasons text-xl mb-2">Attend Events</h3>
+                  <p className="font-roboto text-muted-foreground mb-4">
+                    Join us at upcoming fundraisers and community events
+                  </p>
+                  <Button variant="outline" asChild>
+                    <a href="/events">View Events</a>
+                  </Button>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={donateVolunteerImage} 
+                    alt="Volunteers at a Rowan Center community event"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="font-seasons text-xl mb-2">Volunteer</h3>
+                  <p className="font-roboto text-muted-foreground mb-4">
+                    Become a certified crisis advocate volunteer
+                  </p>
+                  <Button variant="outline" asChild>
+                    <a href="/volunteer">Learn More</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
 
