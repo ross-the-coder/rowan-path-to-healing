@@ -57,7 +57,7 @@ const Navigation = () => {
               Translate
             </a>
           </div>
-          <ChariotDonation position="top" />
+          <ChariotDonation />
         </div>
       </div>
 
