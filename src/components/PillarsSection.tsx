@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield, Phone, GraduationCap, Heart, ChevronDown } from "lucide-react";
+import { Shield, Phone, GraduationCap, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import counselingImage from "@/assets/counseling-session.jpg";
 import outreachImage from "@/assets/community-outreach.jpg";
@@ -168,50 +168,6 @@ const PillarsSection = () => {
               <Button asChild variant="outline" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-blue-accent backdrop-blur-sm">
                 <Link to="/kidsafe-hq">Explore KidSafeHQ</Link>
               </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Trauma Recovery Section */}
-      <div className="bg-accent/15 py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
-                  <Heart className="h-8 w-8 text-accent" />
-                </div>
-                <h2 className="text-4xl font-seasons font-normal text-foreground">Trauma Recovery</h2>
-              </div>
-              <p className="text-xl font-roboto font-light text-foreground/90 leading-relaxed">
-                Long-term healing support and specialized therapeutic services designed for survivors on their journey to recovery.
-              </p>
-              <div className="space-y-3">
-                <div className="font-roboto font-medium text-foreground">Recovery services include:</div>
-                <ul className="space-y-2 text-foreground/80">
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                    <span>Individual trauma-informed counseling</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                    <span>Support groups and peer connections</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                    <span>Specialized therapy programs</span>
-                  </li>
-                </ul>
-              </div>
-              <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white">
-                <Link to="/trauma-recovery">Explore Recovery Services</Link>
-              </Button>
-            </div>
-            <div>
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img src={counselingImage} alt="Counseling session with caring professional" className="w-full h-[400px] object-cover" />
-              </div>
             </div>
           </div>
         </div>
