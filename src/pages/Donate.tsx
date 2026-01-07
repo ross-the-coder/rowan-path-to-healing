@@ -192,6 +192,37 @@ const Donate = () => {
             </Card>
           </div>
         </section>
+
+        {/* Organization Info */}
+        <section className="mt-16 pt-12 border-t border-border">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="font-roboto text-muted-foreground mb-4">
+              The Rowan Center is a registered 501(c)(3) nonprofit organization.
+            </p>
+            <p className="font-roboto text-muted-foreground mb-4">
+              <strong>EIN:</strong> 06-1037583
+            </p>
+            <p className="font-roboto text-muted-foreground mb-6">
+              The Rowan Center is a member of the Connecticut Alliance to End Sexual Violence.
+            </p>
+            <div className="font-roboto text-muted-foreground mb-4">
+              <p>1111 Summer St, Suite 202</p>
+              <p>Stamford, Connecticut 06905</p>
+            </div>
+            <p className="font-roboto text-muted-foreground mb-2">
+              <strong>Phone:</strong> (203) 348-9346 — staffed M-F, 9 AM to 5 PM
+            </p>
+            <p className="font-roboto text-muted-foreground mb-6">
+              <strong>Email:</strong>{" "}
+              <a href="mailto:info@therowancenter.org" className="text-primary hover:underline">
+                info@therowancenter.org
+              </a>
+            </p>
+            <p className="font-roboto text-sm text-muted-foreground">
+              © The Rowan Center 2024, all rights reserved.
+            </p>
+          </div>
+        </section>
       </div>
     </Layout>
   );
