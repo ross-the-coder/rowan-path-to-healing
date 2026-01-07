@@ -22,6 +22,15 @@ serve(async (req) => {
       );
     }
 
+    // Validate token format - must start with pk.
+    if (!mapboxToken.startsWith('pk.')) {
+      console.error('Invalid Mapbox token format - must start with pk.');
+      return new Response(
+        JSON.stringify({ error: 'Invalid Mapbox token format' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
     console.log('Returning Mapbox token');
     return new Response(
       JSON.stringify({ token: mapboxToken }),
