@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, CreditCard, Landmark, PiggyBank } from "lucide-react";
 import ChariotConnect from "react-chariot-connect";
 import { toast } from "sonner";
+import donateHeroImage from "@/assets/donate-hero.jpg";
 
 // TODO: Replace with your actual Chariot Connect ID from https://dashboard.givechariot.com
 const CHARIOT_CONNECT_ID = "YOUR_CHARIOT_CID";
@@ -32,14 +33,22 @@ const Donate = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-secondary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Heart className="h-16 w-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">
+      <section className="relative min-h-[500px] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={donateHeroImage} 
+            alt="Community members gathered at a Rowan Center fundraising event"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/60"></div>
+        </div>
+        <div className="container mx-auto px-4 py-20 relative z-10">
+          <div className="max-w-3xl">
+            <Heart className="h-12 w-12 text-white mb-6" />
+            <h1 className="text-5xl font-seasons font-normal mb-6 text-white">
               Support Our Mission
             </h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8">
+            <p className="text-xl font-roboto font-light text-white/90">
               Your donation helps us prevent sexual violence, respond to crisis, and support survivors on their path to healing.
             </p>
           </div>
