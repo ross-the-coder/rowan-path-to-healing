@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { MapPin, ExternalLink, Phone, Key } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { supabase } from '@/integrations/supabase/client';
 import type { CommunityResource } from '@/data/communityResourcesData';
 
 interface ResourceMapProps {
@@ -62,9 +59,10 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const popupRef = useRef<mapboxgl.Popup | null>(null);
-  const [mapboxToken, setMapboxToken] = useState<string>('');
+  const [mapboxToken, setMapboxToken] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [isMapInitialized, setIsMapInitialized] = useState(false);
-  const [tokenInput, setTokenInput] = useState('');
 
   // Filter resources that have CT addresses
   const mappableResources = resources.filter(r => r.address && getTownFromAddress(r.address));
@@ -79,18 +77,33 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }
     return acc;
   }, {} as Record<string, CommunityResource[]>);
 
-  const handleSetToken = () => {
-    if (tokenInput.trim()) {
-      setMapboxToken(tokenInput.trim());
-      localStorage.setItem('mapbox_token', tokenInput.trim());
-    }
-  };
-
+  // Fetch Mapbox token from edge function
   useEffect(() => {
-    const savedToken = localStorage.getItem('mapbox_token');
-    if (savedToken) {
-      setMapboxToken(savedToken);
-    }
+    const fetchToken = async () => {
+      try {
+        setIsLoading(true);
+        const { data, error } = await supabase.functions.invoke('get-mapbox-token');
+        
+        if (error) {
+          console.error('Error fetching Mapbox token:', error);
+          setError('Unable to load map configuration');
+          return;
+        }
+        
+        if (data?.token) {
+          setMapboxToken(data.token);
+        } else {
+          setError('Map configuration not available');
+        }
+      } catch (err) {
+        console.error('Error fetching Mapbox token:', err);
+        setError('Unable to load map');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchToken();
   }, []);
 
   useEffect(() => {
@@ -263,6 +276,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }
 
     } catch (error) {
       console.error('Map initialization error:', error);
+      setError('Failed to initialize map');
     }
 
     return () => {
@@ -274,39 +288,25 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }
     };
   }, [mapboxToken, mappableResources]);
 
-  if (!mapboxToken) {
+  if (isLoading) {
     return (
-      <Card className="mb-8">
-        <CardContent className="py-8">
-          <div className="flex flex-col items-center text-center gap-4 max-w-md mx-auto">
-            <div className="p-3 rounded-full bg-primary/10">
-              <Key className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Enable Interactive Map</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Enter your Mapbox public token to view resource locations on an interactive map. 
-                Get your free token at{' '}
-                <a href="https://mapbox.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  mapbox.com
-                </a>
-              </p>
-            </div>
-            <div className="flex w-full gap-2">
-              <Input
-                type="text"
-                placeholder="pk.eyJ1Ijoi..."
-                value={tokenInput}
-                onChange={(e) => setTokenInput(e.target.value)}
-                className="flex-1"
-              />
-              <Button onClick={handleSetToken} disabled={!tokenInput.trim()}>
-                <MapPin className="h-4 w-4 mr-2" />
-                Show Map
-              </Button>
-            </div>
+      <Card className="mb-8 overflow-hidden">
+        <div className="h-[400px] w-full flex items-center justify-center bg-muted/50">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-3"></div>
+            <p className="text-sm text-muted-foreground">Loading map...</p>
           </div>
-        </CardContent>
+        </div>
+      </Card>
+    );
+  }
+
+  if (error || !mapboxToken) {
+    return (
+      <Card className="mb-8 overflow-hidden">
+        <div className="h-[400px] w-full flex items-center justify-center bg-muted/50">
+          <p className="text-sm text-muted-foreground">{error || 'Map unavailable'}</p>
+        </div>
       </Card>
     );
   }
