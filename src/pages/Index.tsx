@@ -12,9 +12,9 @@ const Index = () => {
     <Layout>
       <HeroSection />
       <INeedSection />
-      <CommunityPartnersSection />
       <PhotoFeatureSection />
       <PillarsSection />
+      <CommunityPartnersSection />
     </Layout>
   );
 };
