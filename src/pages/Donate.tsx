@@ -2,8 +2,33 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, CreditCard, Landmark, PiggyBank } from "lucide-react";
+import ChariotConnect from "react-chariot-connect";
+import { toast } from "sonner";
+
+// TODO: Replace with your actual Chariot Connect ID from https://dashboard.givechariot.com
+const CHARIOT_CONNECT_ID = "YOUR_CHARIOT_CID";
 
 const Donate = () => {
+  const handleDAFSuccess = (e: any) => {
+    console.log("DAF donation successful:", e);
+    toast.success("Thank you for your DAF donation!");
+  };
+
+  const handleDAFExit = (e: any) => {
+    console.log("DAF widget exited:", e);
+  };
+
+  const handleDAFError = (e: any) => {
+    console.error("DAF widget error:", e);
+    toast.error("There was an issue with the DAF widget. Please try again.");
+  };
+
+  const handleDonationRequest = () => {
+    return {
+      amount: undefined, // Let donor choose amount
+    };
+  };
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -99,9 +124,16 @@ const Donate = () => {
                   <p className="font-roboto text-muted-foreground mb-6 flex-1">
                     When you give to The Rowan Center through your Donor-Advised Fund, you're helping provide counseling, prevention education, and advocacy to survivors of sexual violence in Lower Fairfield County. Your support expands trauma-informed care, fights sex trafficking, and educates thousands of students on consent, safety, and healthy relationships. A gift through your DAF is a powerful way to support our mission today—and ensure we're here for anyone who needs us tomorrow.
                   </p>
-                  <Button className="w-full" size="lg" variant="outline">
-                    Give via DAF
-                  </Button>
+                  <div className="w-full flex justify-center">
+                    <ChariotConnect
+                      cid={CHARIOT_CONNECT_ID}
+                      theme="LightModeTheme"
+                      onDonationRequest={handleDonationRequest}
+                      onSuccess={handleDAFSuccess}
+                      onExit={handleDAFExit}
+                      onError={handleDAFError}
+                    />
+                  </div>
                 </CardContent>
               </Card>
 
