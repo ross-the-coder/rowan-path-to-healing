@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import donateHeroImage from "@/assets/donate-hero.jpg";
 import donateEventsImage from "@/assets/donate-events.jpg";
 import donateVolunteerImage from "@/assets/donate-volunteer.jpg";
+import donateCommunityImage from "@/assets/donate-community.jpg";
 
 // TODO: Replace with your actual Chariot Connect ID from https://dashboard.givechariot.com
 const CHARIOT_CONNECT_ID = "YOUR_CHARIOT_CID";
@@ -94,6 +95,19 @@ const Donate = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </section>
+
+        {/* Community Image Section */}
+        <section className="mb-16">
+          <div className="max-w-5xl mx-auto">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src={donateCommunityImage} 
+                alt="Community members enjoying a Rowan Center fundraising event"
+                className="w-full h-80 object-cover"
+              />
+            </div>
           </div>
         </section>
 
