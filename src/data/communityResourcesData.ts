@@ -14,8 +14,8 @@ export interface CommunityResource {
 export const communityResources: CommunityResource[] = [
   {
     id: "1",
-    name: "The Trauma Recovery Clinic at The Rowan Center",
-    url: "https://therowancenter.org/trauma-recovery-clinic/",
+    name: "The Trauma Recovery Practice at The Rowan Center",
+    url: "https://therowancenter.org/trauma-recovery-practice/",
     description: "Long-term therapy for victims/survivors over 18 with HUSKY. Specialized trauma-focused treatment including EMDR and evidence-based approaches.",
     category: "Community",
     resourceTypes: ["Mental Health", "DV", "Trafficking"],

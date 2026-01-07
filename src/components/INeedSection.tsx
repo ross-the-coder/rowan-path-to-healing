@@ -103,7 +103,7 @@ const INeedSection = () => {
                 To speak about long-term therapy
               </h3>
               <p className="text-muted-foreground mb-6 font-roboto">
-                Specialized trauma-informed therapy at our Trauma Recovery Clinic
+                Specialized trauma-informed therapy at our Trauma Recovery Practice
               </p>
               <Button asChild variant="outline" size="sm" className="w-full">
                 <Link to="/trauma-recovery">Learn More</Link>

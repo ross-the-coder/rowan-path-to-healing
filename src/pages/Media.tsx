@@ -9,7 +9,7 @@ const Media = () => {
     {
       title: "The Rowan Center Receives $500K Grant for Trauma Recovery Expansion",
       date: "March 15, 2024",
-      summary: "New funding will allow The Rowan Center to double its trauma recovery clinic capacity and hire additional therapists.",
+      summary: "New funding will allow The Rowan Center to double its trauma recovery practice capacity and hire additional therapists.",
       type: "Press Release",
       downloadUrl: "#"
     },

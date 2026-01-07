@@ -15,7 +15,7 @@ const teamMembers = [
     title: "Clinical Director (EN/ES/FR)",
     credentials: "EMDRIA-Approved Facilitator and EMDR Certified Provider",
     bio: "Luke Robbins (he/him/his) is a Licensed Clinical Social Worker (LCSW), a Certified EMDR Provider, an EMDRIA-approved EMDR Consultant, and an Approved EMDR Facilitator. Luke received his MSW from the University of Chicago in 2015 and is licensed in Connecticut, Indiana, and Maine.",
-    details: "Luke started at The Rowan Center in the Fall of 2019 as the Director of Counseling. Since then, Luke has served as the supervisor and coordinator of our master's-level counseling internship program, and as our Chief Operating Officer, before transitioning to his current role of Clinical Director in June of 2023. In addition to overseeing the day-to-day operations of the Trauma Recovery Clinic at The Rowan Center, Luke continues to provide clinical supervision to the LMSWs on our staff, as well as to the MSW interns in both our short-term crisis counseling program and in the clinic.",
+    details: "Luke started at The Rowan Center in the Fall of 2019 as the Director of Counseling. Since then, Luke has served as the supervisor and coordinator of our master's-level counseling internship program, and as our Chief Operating Officer, before transitioning to his current role of Clinical Director in June of 2023. In addition to overseeing the day-to-day operations of the Trauma Recovery Practice at The Rowan Center, Luke continues to provide clinical supervision to the LMSWs on our staff, as well as to the MSW interns in both our short-term crisis counseling program and in the practice.",
     specialties: "Luke is able to offer direct client services in English, French, and Spanish. He has experience working with clients exhibiting symptoms of depression, anxiety, PTSD, and OCD, as well as victims and survivors of sexual violence, first responders, adults who suffered trauma as children, anger issues, difficulties with self-esteem and self-reliance, sleep disturbance, and individuals who identify as sex addicts.",
     languages: ["English", "Spanish", "French"],
     image: lukeHeadshot,
@@ -25,7 +25,7 @@ const teamMembers = [
     title: "Assistant Clinic Director",
     credentials: "EMDR Provider",
     bio: "Isabel Negron (she/her) is a Licensed Clinical Social Worker (LCSW) and an EMDR provider since 2022. She is working towards her Certified EMDR Therapist status. Isabel received her MSW from Fairfield University in 2022 and is licensed in Connecticut.",
-    details: "Isabel started at The Rowan Center in the Fall of 2021 as a master's-level intern before being asked to join our team after graduating with her MSW. She served as our Bilingual (EN/ES) Intake Coordinator before transitioning into her current role as our first Bilingual (EN/ES) Staff Therapist at the Trauma Recovery Clinic at TRC.",
+    details: "Isabel started at The Rowan Center in the Fall of 2021 as a master's-level intern before being asked to join our team after graduating with her MSW. She served as our Bilingual (EN/ES) Intake Coordinator before transitioning into her current role as our first Bilingual (EN/ES) Staff Therapist at the Trauma Recovery Practice at TRC.",
     specialties: "Isabel is able to offer direct client services in English and Spanish. She has experience working with clients exhibiting symptoms of depression, anxiety, and PTSD, and especially with victims and survivors of sexual violence and other forms of trauma.",
     languages: ["English", "Spanish"],
     image: isabelHeadshot,
@@ -45,7 +45,7 @@ const teamMembers = [
     title: "Bilingual (EN/ES) Staff Therapist and Trauma Fellow",
     credentials: "",
     bio: "Taina Colon (she/her) received her Masters in Social Work (MSW) from Fordham University in 2024, and is a licensed LMSW in Connecticut. Taina is a trained EMDR Provider, and she is pursuing additional specialization in EMDR.",
-    details: "While completing her MSW, Taina completed a year-long internship at The Rowan Center, providing short-term crisis counseling services to victims and survivors of sexual violence in our Counseling program. Taina served as the Bilingual/Bicultural Counselor and Intake Coordinator of the Counseling program at the Rowan Center from June of 2024 until June of 2025, before transitioning into her role in the Trauma Recovery Clinic. Taina is a certified sexual assault advocate and counselor in the State of Connecticut.",
+    details: "While completing her MSW, Taina completed a year-long internship at The Rowan Center, providing short-term crisis counseling services to victims and survivors of sexual violence in our Counseling program. Taina served as the Bilingual/Bicultural Counselor and Intake Coordinator of the Counseling program at the Rowan Center from June of 2024 until June of 2025, before transitioning into her role in the Trauma Recovery Practice. Taina is a certified sexual assault advocate and counselor in the State of Connecticut.",
     specialties: "She is able to offer direct client services in English and Spanish.",
     languages: ["English", "Spanish"],
     image: tainaHeadshot,
@@ -77,8 +77,8 @@ const TraumaRecovery = () => {
           {/* About TRC Section */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="bg-muted/30 rounded-2xl p-8 md:p-12">
-              <p className="text-lg text-foreground mb-6 leading-relaxed">
-                The Trauma Recovery Clinic (TRC) at The Rowan Center offers long-term, trauma-informed 
+            <p className="text-lg text-foreground mb-6 leading-relaxed">
+                The Trauma Recovery Practice (TRP) at The Rowan Center offers long-term, trauma-informed 
                 clinical therapy to help survivors of trauma heal.
               </p>
               <p className="text-lg text-foreground mb-6 leading-relaxed">
@@ -112,7 +112,7 @@ const TraumaRecovery = () => {
                     <h3 className="font-semibold text-foreground">Fully Licensed</h3>
                   </div>
                   <p className="text-muted-foreground">
-                    The TRC is fully licensed by the CT Department of Public Health.
+                    The TRP is fully licensed by the CT Department of Public Health.
                   </p>
                 </div>
               </div>
