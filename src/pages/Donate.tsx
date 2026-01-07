@@ -93,11 +93,11 @@ const Donate = () => {
                   <CardTitle className="font-seasons text-2xl">Donor Advised Fund</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="font-roboto text-lg font-medium text-foreground mb-4">
-                    Give through your DAF
+                  <p className="font-roboto text-muted-foreground mb-4 flex-1">
+                    When you give to The Rowan Center through your Donor-Advised Fund (DAF), you're helping provide life-changing counseling, prevention education, and advocacy to survivors of sexual violence in Lower Fairfield County. Your support allows us to expand trauma-informed care, fight back against sex trafficking in our communities, and educate thousands of students each year on consent, safety, and healthy relationships.
                   </p>
-                  <p className="font-roboto text-muted-foreground mb-6 flex-1">
-                    Use your Donor Advised Fund to make a tax-advantaged gift to The Rowan Center. DAF donations allow you to recommend grants from your fund to support our mission of healing and prevention.
+                  <p className="font-roboto text-muted-foreground mb-6">
+                    A gift through your DAF is a powerful and flexible way to support our mission today—and ensure we're here for anyone who needs us tomorrow.
                   </p>
                   <Button className="w-full" size="lg" variant="outline">
                     Give via DAF
