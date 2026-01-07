@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 const PhotoFeatureSection = () => {
-  return <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+  return <section className="py-20 bg-purple/15">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Floating Photo with Color Overlay */}
