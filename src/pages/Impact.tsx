@@ -11,14 +11,11 @@ const Impact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <TrendingUp className="h-16 w-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">Our Impact</h1>
+            <h1 className="text-5xl font-seasons font-normal mb-6">Making a Real Difference</h1>
             <p className="text-xl font-roboto font-light text-white/90 mb-8">
-              The Rowan Center served <span class="stat-highlight">8,244 people</span> through direct services, provided
-              mental health support to <span class="stat-highlight">723 counseling clients</span>, and educated over{" "}
-              <span class="stat-highlight">22,100 individuals</span> through presentations and outreach. With a{" "}
-              <span class="stat-highlight">68% increase in outreach activities</span>, we've expanded our reach to
-              strengthen community resilience and support.
-            </p>{" "}
+              Every day, The Rowan Center works to prevent sexual violence, respond to crisis, and support survivors on
+              their healing journey.
+            </p>
           </div>
         </div>
       </section>
