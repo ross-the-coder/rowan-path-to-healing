@@ -3,22 +3,30 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Users, Briefcase, Mail } from "lucide-react";
 import { useBoardMembers } from "@/hooks/useSanityData";
 import { Skeleton } from "@/components/ui/skeleton";
+import { boardOfficers, boardMembers as fallbackBoardMembers } from "@/data/boardMembersData";
 
 const BoardOfDirectors = () => {
   const { data: allMembers, isLoading, error } = useBoardMembers();
   
-  // Separate officers from regular board members based on title
-  const officers = allMembers?.filter(member => 
-    member.title?.includes("Chair") || 
-    member.title?.includes("Treasurer") || 
-    member.title?.includes("Secretary")
-  ) || [];
+  // Use Sanity data if available, otherwise fall back to static data
+  const hasSanityData = allMembers && allMembers.length > 0;
   
-  const boardMembers = allMembers?.filter(member => 
-    !member.title?.includes("Chair") && 
-    !member.title?.includes("Treasurer") && 
-    !member.title?.includes("Secretary")
-  ) || [];
+  // Separate officers from regular board members based on title
+  const officers = hasSanityData 
+    ? allMembers.filter(member => 
+        member.title?.includes("Chair") || 
+        member.title?.includes("Treasurer") || 
+        member.title?.includes("Secretary")
+      )
+    : boardOfficers;
+  
+  const boardMembers = hasSanityData
+    ? allMembers.filter(member => 
+        !member.title?.includes("Chair") && 
+        !member.title?.includes("Treasurer") && 
+        !member.title?.includes("Secretary")
+      )
+    : fallbackBoardMembers;
 
   // Show loading state
   if (isLoading) {
