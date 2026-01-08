@@ -1,35 +1,9 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Phone, BookOpen, TrendingUp } from "lucide-react";
+import { TrendingUp } from "lucide-react";
+import ImpactStatistics from "@/components/ImpactStatistics";
 
 const Impact = () => {
-  const stats = [
-    {
-      icon: Phone,
-      number: "4,000",
-      label: "Crisis calls answered annually",
-      description: "24/7 support for survivors and their loved ones"
-    },
-    {
-      icon: Users,
-      number: "22,100",
-      label: "Students educated",
-      description: "Prevention programs across 8 towns"
-    },
-    {
-      icon: BookOpen,
-      number: "723",
-      label: "Counseling Clients",
-      description: "Educating teachers, law enforcement, and community professionals"
-    },
-    {
-      icon: TrendingUp,
-      number: "30+",
-      label: "Years of service",
-      description: "Supporting Lower Fairfield County since our founding"
-    }
-  ];
-
   return (
     <Layout>
       {/* Hero Section */}
@@ -48,42 +22,11 @@ const Impact = () => {
       </section>
 
       <div className="container mx-auto px-4 py-16">
-        {/* Statistics */}
-        <section className="mb-16">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-seasons font-normal text-center mb-12">By the Numbers</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              {stats.map((stat, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-secondary/10 p-3 rounded-lg">
-                        <stat.icon className="h-8 w-8 text-secondary" />
-                      </div>
-                      <div>
-                        <div className="text-4xl font-seasons font-bold text-secondary mb-2">
-                          {stat.number}
-                        </div>
-                        <CardTitle className="font-seasons text-xl mb-2">
-                          {stat.label}
-                        </CardTitle>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="font-roboto text-muted-foreground">
-                      {stat.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Interactive Statistics */}
+        <ImpactStatistics />
 
         {/* Service Areas */}
-        <section className="mb-16">
+        <section className="mb-16 mt-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-seasons font-normal text-center mb-12">How We Serve Our Community</h2>
             
