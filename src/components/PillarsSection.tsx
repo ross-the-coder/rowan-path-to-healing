@@ -10,7 +10,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 const PillarsSection = () => {
   return <section className="py-0">
       {/* Prevent Section */}
-      <div className="bg-primary text-white py-20">
+      <div className="text-white py-20 bg-sky-900">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">

@@ -8,10 +8,11 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import logoImage from "@/assets/rowan-center-logo.png";
 import ChariotDonation from "./ChariotDonation";
 import LanguageSwitcher from "./LanguageSwitcher";
-
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   return <header className="sticky top-0 z-50">
       {/* Crisis Banner */}
       <div className="bg-white py-5 px-4 border-b">
@@ -67,7 +68,9 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center -mt-2 -mb-2 relative z-10">
-              <div className="bg-white rounded-lg px-6 py-4" style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.15)' }}>
+              <div className="bg-white rounded-lg px-6 py-4" style={{
+              boxShadow: '0 0 15px rgba(0, 0, 0, 0.15)'
+            }}>
                 <img src={logoImage} alt="The Rowan Center" className="h-20 w-auto" />
               </div>
             </Link>
@@ -256,15 +259,7 @@ const Navigation = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="lg:hidden text-white hover:text-white/80" 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Navigation menu"
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-navigation"
-            >
+            <Button variant="ghost" size="sm" className="lg:hidden text-white hover:text-white/80" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Navigation menu" aria-expanded={isMobileMenuOpen} aria-controls="mobile-navigation">
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
