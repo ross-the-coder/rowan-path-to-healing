@@ -72,8 +72,8 @@ All colors MUST be HSL for proper theming.
     --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Crisis/Emergency - Warm Orange #EE5B2B */
-    --emergency: 14 85% 55%;
+    /* Crisis/Emergency - Warm Orange #D13400 */
+    --emergency: 15 100% 41%;
     --emergency-foreground: 0 0% 100%;
 
     /* Color Block Backgrounds */
@@ -82,7 +82,7 @@ All colors MUST be HSL for proper theming.
     --color-block-accent: 255 24% 45%;
     --color-block-blue: 221 42% 38%;
     --color-block-light: 194 48% 85%;
-    --color-block-warm: 14 85% 55%;
+    --color-block-warm: 15 100% 41%;
 
     /* Borders and Inputs */
     --border: 210 20% 90%;
@@ -141,7 +141,7 @@ All colors MUST be HSL for proper theming.
     --destructive: 0 55% 45%;
     --destructive-foreground: 0 0% 95%;
 
-    --emergency: 14 85% 55%;
+    --emergency: 15 100% 41%;
     --emergency-foreground: 0 0% 95%;
 
     --border: 208 25% 20%;
@@ -154,7 +154,7 @@ All colors MUST be HSL for proper theming.
     --color-block-accent: 255 24% 65%;
     --color-block-blue: 221 42% 55%;
     --color-block-light: 194 48% 25%;
-    --color-block-warm: 14 85% 55%;
+    --color-block-warm: 15 100% 41%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
