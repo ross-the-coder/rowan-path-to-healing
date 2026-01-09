@@ -34,7 +34,7 @@ const INeedSection = () => {
               <p className="text-muted-foreground mb-6 font-roboto">
                 24/7 crisis helpline for immediate, confidential support
               </p>
-              <div className="space-y-4 bg-sky-900">
+              <div className="space-y-4 bg-sky-900/0">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="outline" className="w-full">
