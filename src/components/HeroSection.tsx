@@ -4,21 +4,16 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import supportGroupImage from "@/assets/support-group.jpg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-
 const HeroSection = () => {
-  const { t } = useTranslation();
-
-  return (
-    <section className="relative overflow-hidden">
+  const {
+    t
+  } = useTranslation();
+  return <section className="relative overflow-hidden">
       {/* Full Bleed Hero with Photo Overlay */}
       <div className="relative min-h-[600px] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={supportGroupImage} 
-            alt={t('hero.imageAlt')}
-            className="w-full h-full object-cover"
-          />
+          <img src={supportGroupImage} alt={t('hero.imageAlt')} className="w-full h-full object-cover" />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/70 pointer-events-none"></div>
         </div>
@@ -82,7 +77,7 @@ const HeroSection = () => {
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-blue-accent text-white py-12">
+      <div className="bg-blue-accent text-white py-12 bg-sky-900">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
@@ -100,8 +95,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
