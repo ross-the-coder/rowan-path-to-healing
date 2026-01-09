@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, ChevronDown, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { NewsletterSubscription } from "./NewsletterSubscription";
 import rowanLogo from "@/assets/rowan-center-logo.png";
 import charityNavigatorBadge from "@/assets/charity-navigator-4-star.webp";
@@ -9,6 +10,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const townsServed = [
     "Darien", "Greenwich", "New Canaan", "Norwalk", 
     "Stamford", "Weston", "Westport", "Wilton"
@@ -29,14 +31,14 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <img 
               src={rowanLogo} 
-              alt="The Rowan Center" 
+              alt={t('footer.logoAlt')} 
               className="h-16 mb-4 brightness-0 invert"
             />
             <p className="text-white/80 mb-4 text-sm">
-              A Sexual Assault Resource Agency
+              {t('footer.tagline')}
             </p>
             <p className="text-sm text-white/70 mb-4">
-              Preventing trauma. Responding to crisis. Supporting healing.
+              {t('footer.missionShort')}
             </p>
             
             {/* Social Media Links */}
@@ -73,7 +75,7 @@ const Footer = () => {
             {/* CT Alliance Membership */}
             <div className="mt-6 pt-4 border-t border-white/20">
               <p className="text-xs text-white/70 mb-3">
-                The Rowan Center is a member of the Connecticut Alliance to End Sexual Violence.
+                {t('footer.allianceMembership')}
               </p>
               <a 
                 href="https://endsexualviolencect.org" 
@@ -92,13 +94,13 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4 text-white text-lg">Contact Us</h4>
+            <h4 className="font-semibold mb-4 text-white text-lg">{t('footer.contact')}</h4>
             <div className="space-y-3 text-sm">
               {/* 24/7 Crisis Helpline */}
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-emergency flex-shrink-0" />
                 <div className="text-white/80">
-                  <div className="font-medium text-white">24/7 Crisis Helpline</div>
+                  <div className="font-medium text-white">{t('crisis.hotline')}</div>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="sm" className="h-auto p-0 text-white/80 hover:text-white hover:bg-transparent">
@@ -134,7 +136,7 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-white/60 flex-shrink-0" />
                 <div className="text-white/80">
-                  <div className="font-medium text-white">Trauma Recovery Clinic</div>
+                  <div className="font-medium text-white">{t('nav.traumaRecovery')}</div>
                   <a href="tel:2034870675" className="hover:text-white underline">(203) 487-0675</a>
                 </div>
               </div>
@@ -143,7 +145,7 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-white/60 flex-shrink-0" />
                 <div className="text-white/80">
-                  <div className="font-medium text-white">Main Office</div>
+                  <div className="font-medium text-white">{t('footer.mainOffice')}</div>
                   <a href="tel:2033489346" className="hover:text-white underline">(203) 348-9346</a>
                 </div>
               </div>
@@ -167,9 +169,9 @@ const Footer = () => {
               <div className="flex items-start gap-2 text-white/80">
                 <Clock className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="font-medium text-white">Office Hours</div>
-                  <div>Monday - Friday: 9:00 AM - 5:00 PM</div>
-                  <div className="text-xs text-white/60 mt-1">Crisis Helpline available 24/7</div>
+                  <div className="font-medium text-white">{t('footer.officeHours')}</div>
+                  <div>{t('footer.weekdayHours')}</div>
+                  <div className="text-xs text-white/60 mt-1">{t('footer.crisisAvailable')}</div>
                 </div>
               </div>
             </div>
@@ -177,27 +179,27 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4 text-white text-lg">Services</h4>
+            <h4 className="font-semibold mb-4 text-white text-lg">{t('footer.services')}</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/prevention-education" className="text-white/80 hover:text-white transition-colors">Prevention Education</Link></li>
-              <li><Link to="/crisis-services" className="text-white/80 hover:text-white transition-colors">Crisis Support</Link></li>
-              <li><Link to="/victim-advocacy" className="text-white/80 hover:text-white transition-colors">Victim Advocacy</Link></li>
-              <li><Link to="/trauma-recovery" className="text-white/80 hover:text-white transition-colors">Trauma Recovery</Link></li>
-              <li><Link to="/resources" className="text-white/80 hover:text-white transition-colors">Resources</Link></li>
-              <li><Link to="/ct-laws-reporting" className="text-white/80 hover:text-white transition-colors">CT Laws & Reporting</Link></li>
+              <li><Link to="/prevention-education" className="text-white/80 hover:text-white transition-colors">{t('nav.preventionEducation')}</Link></li>
+              <li><Link to="/crisis-services" className="text-white/80 hover:text-white transition-colors">{t('nav.crisisServices')}</Link></li>
+              <li><Link to="/victim-advocacy" className="text-white/80 hover:text-white transition-colors">{t('nav.victimAdvocacy')}</Link></li>
+              <li><Link to="/trauma-recovery" className="text-white/80 hover:text-white transition-colors">{t('nav.traumaRecovery')}</Link></li>
+              <li><Link to="/resources" className="text-white/80 hover:text-white transition-colors">{t('nav.resources')}</Link></li>
+              <li><Link to="/ct-laws-reporting" className="text-white/80 hover:text-white transition-colors">{t('footer.ctLaws')}</Link></li>
             </ul>
 
-            <h4 className="font-semibold mb-3 mt-6 text-white text-lg">Get Involved</h4>
+            <h4 className="font-semibold mb-3 mt-6 text-white text-lg">{t('footer.getInvolved')}</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/volunteer" className="text-white/80 hover:text-white transition-colors">Volunteer</Link></li>
-              <li><Link to="/donate" className="text-white/80 hover:text-white transition-colors">Donate</Link></li>
-              <li><Link to="/events" className="text-white/80 hover:text-white transition-colors">Events</Link></li>
+              <li><Link to="/volunteer" className="text-white/80 hover:text-white transition-colors">{t('nav.volunteer')}</Link></li>
+              <li><Link to="/donate" className="text-white/80 hover:text-white transition-colors">{t('nav.donate')}</Link></li>
+              <li><Link to="/events" className="text-white/80 hover:text-white transition-colors">{t('nav.events')}</Link></li>
             </ul>
           </div>
 
           {/* Towns Served */}
           <div>
-            <h4 className="font-semibold mb-4 text-white text-lg">Proudly Serving Lower Fairfield County</h4>
+            <h4 className="font-semibold mb-4 text-white text-lg">{t('footer.servingArea')}</h4>
             <div className="flex flex-wrap gap-1.5 text-xs text-white/70 mb-6">
               {townsServed.map((town) => (
                 <span key={town} className="bg-white/10 px-2 py-1 rounded">
@@ -240,13 +242,13 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
             <div className="text-center md:text-left">
-              <p>© 2025 The Rowan Center. All rights reserved.</p>
-              <p className="text-xs mt-1">The Rowan Center is a registered 501(c)(3) nonprofit organization. EIN: 06-0988641</p>
+              <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
+              <p className="text-xs mt-1">{t('footer.nonprofit')}</p>
             </div>
             <div className="flex gap-6">
-              <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link to="/about" className="hover:text-white transition-colors">About Us</Link>
-              <Link to="/donate" className="hover:text-white transition-colors">Donate</Link>
+              <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('footer.privacyPolicy')}</Link>
+              <Link to="/about" className="hover:text-white transition-colors">{t('about.title')}</Link>
+              <Link to="/donate" className="hover:text-white transition-colors">{t('nav.donate')}</Link>
             </div>
           </div>
         </div>
