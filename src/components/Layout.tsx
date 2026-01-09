@@ -2,6 +2,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import QuickEscape from "./QuickEscape";
 import ChariotDonation from "./ChariotDonation";
+import SkipNav from "./SkipNav";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,8 +13,9 @@ const Layout = ({ children }: LayoutProps) => {
   
   return (
     <div className="min-h-screen flex flex-col">
+      <SkipNav />
       <Navigation />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {children}
       </main>
       <Footer />

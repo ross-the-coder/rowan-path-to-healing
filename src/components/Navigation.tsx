@@ -255,13 +255,21 @@ const Navigation = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <Button variant="ghost" size="sm" className="lg:hidden text-white hover:text-white/80" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="lg:hidden text-white hover:text-white/80" 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Navigation menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
+            >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
 
           {/* Mobile Navigation */}
-          {isMobileMenuOpen && <div className="lg:hidden border-t border-white/20">
+          {isMobileMenuOpen && <nav id="mobile-navigation" className="lg:hidden border-t border-white/20" aria-label="Mobile navigation">
               <div className="py-4 space-y-2">
                 <Link to="/crisis-support" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Get Help Now
@@ -294,7 +302,7 @@ const Navigation = () => {
                   Blog
                 </Link>
               </div>
-            </div>}
+            </nav>}
         </div>
       </nav>
     </header>;

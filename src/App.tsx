@@ -52,7 +52,12 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+            <Suspense fallback={
+              <div className="flex items-center justify-center min-h-screen" role="status" aria-live="polite">
+                <span>Loading...</span>
+                <span className="sr-only">Page content is loading</span>
+              </div>
+            }>
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />

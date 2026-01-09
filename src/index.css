@@ -179,4 +179,31 @@ All colors MUST be HSL for proper theming.
   h1, h2, h3, h4, h5, h6 {
     @apply font-seasons;
   }
+
+  /* Enhanced Focus Indicators for Accessibility */
+  *:focus-visible {
+    @apply outline-none ring-4 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Focus visible for buttons */
+  button:focus-visible,
+  a:focus-visible {
+    @apply outline-none ring-4 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Focus visible for form inputs */
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-4 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Ensure skip nav link is properly visible when focused */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0, 0, 0, 0);
+  }
 }
