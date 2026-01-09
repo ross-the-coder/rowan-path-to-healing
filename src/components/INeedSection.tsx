@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import supportHandsImage from "@/assets/support-hands.jpg";
 import resourcesImage from "@/assets/resources-learning.jpg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { useTranslation } from "react-i18next";
 
 const INeedSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-16 relative overflow-hidden">
       {/* Background with subtle photo overlay */}
@@ -21,10 +24,10 @@ const INeedSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-seasons font-normal text-foreground mb-4">
-            I need...
+            {t('iNeedSection.title')}
           </h2>
           <p className="text-xl font-roboto font-light text-muted-foreground max-w-2xl mx-auto">
-            Tell us what you're looking for, and we'll help you find the right support.
+            {t('iNeedSection.subtitle')}
           </p>
         </div>
         
@@ -35,17 +38,17 @@ const INeedSection = () => {
                 <Phone className="h-8 w-8 text-secondary" />
               </div>
               <h3 className="text-xl font-seasons font-normal mb-4 text-foreground">
-                To talk to someone right now
+                {t('iNeedSection.talkNow.title')}
               </h3>
               <p className="text-muted-foreground mb-6 font-roboto">
-                24/7 crisis helpline for immediate, confidential support
+                {t('iNeedSection.talkNow.description')}
               </p>
               <div className="space-y-4">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="outline" className="w-full">
                       <Phone className="mr-2 h-4 w-4" />
-                      Call Crisis Helpline
+                      {t('iNeedSection.talkNow.callHelpline')}
                       <ChevronDown className="ml-2 h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
@@ -54,7 +57,7 @@ const INeedSection = () => {
                       <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
                         <Phone className="h-4 w-4" />
                         <div>
-                          <div className="font-medium">English</div>
+                          <div className="font-medium">{t('iNeedSection.talkNow.english')}</div>
                           <div className="text-sm text-muted-foreground">(203) 329-2929</div>
                         </div>
                       </a>
@@ -63,7 +66,7 @@ const INeedSection = () => {
                       <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
                         <Phone className="h-4 w-4" />
                         <div>
-                          <div className="font-medium">Español</div>
+                          <div className="font-medium">{t('iNeedSection.talkNow.spanish')}</div>
                           <div className="text-sm text-muted-foreground">(888) 568-8332</div>
                         </div>
                       </a>
@@ -71,7 +74,7 @@ const INeedSection = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
                 <Button asChild size="sm" className="w-full">
-                  <Link to="/crisis-support">Get Help Now</Link>
+                  <Link to="/crisis-support">{t('iNeedSection.talkNow.getHelpNow')}</Link>
                 </Button>
               </div>
             </CardContent>
@@ -83,13 +86,13 @@ const INeedSection = () => {
                 <BookOpen className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-seasons font-normal mb-4 text-foreground">
-                To learn about options & resources
+                {t('iNeedSection.learnOptions.title')}
               </h3>
               <p className="text-muted-foreground mb-6 font-roboto">
-                Browse our comprehensive resource library and support options
+                {t('iNeedSection.learnOptions.description')}
               </p>
               <Button asChild variant="outline" size="sm" className="w-full">
-                <Link to="/resources">Explore Resources</Link>
+                <Link to="/resources">{t('iNeedSection.learnOptions.exploreResources')}</Link>
               </Button>
             </CardContent>
           </Card>
@@ -100,13 +103,13 @@ const INeedSection = () => {
                 <Heart className="h-8 w-8 text-accent" />
               </div>
               <h3 className="text-xl font-seasons font-normal mb-4 text-foreground">
-                To speak about long-term therapy
+                {t('iNeedSection.longTermTherapy.title')}
               </h3>
               <p className="text-muted-foreground mb-6 font-roboto">
-                Specialized trauma-informed therapy at our Trauma Recovery Practice
+                {t('iNeedSection.longTermTherapy.description')}
               </p>
               <Button asChild variant="outline" size="sm" className="w-full">
-                <Link to="/trauma-recovery">Learn More</Link>
+                <Link to="/trauma-recovery">{t('iNeedSection.longTermTherapy.learnMore')}</Link>
               </Button>
             </CardContent>
           </Card>
@@ -117,13 +120,13 @@ const INeedSection = () => {
                 <Info className="h-8 w-8 text-purple" />
               </div>
               <h3 className="text-xl font-seasons font-normal mb-4 text-foreground">
-                To learn more about The Rowan Center
+                {t('iNeedSection.aboutUs.title')}
               </h3>
               <p className="text-muted-foreground mb-6 font-roboto">
-                Discover our mission, impact, and the work we do in the community
+                {t('iNeedSection.aboutUs.description')}
               </p>
               <Button asChild variant="outline" size="sm" className="w-full">
-                <Link to="/about">About Us</Link>
+                <Link to="/about">{t('iNeedSection.aboutUs.aboutUs')}</Link>
               </Button>
             </CardContent>
           </Card>

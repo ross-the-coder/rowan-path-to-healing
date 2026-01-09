@@ -133,5 +133,106 @@
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "selectLanguage": "Seleccionar idioma"
+  },
+  "iNeedSection": {
+    "title": "Necesito...",
+    "subtitle": "Díganos qué está buscando y le ayudaremos a encontrar el apoyo adecuado.",
+    "talkNow": {
+      "title": "Hablar con alguien ahora mismo",
+      "description": "Línea de ayuda de crisis 24/7 para apoyo inmediato y confidencial",
+      "callHelpline": "Llamar Línea de Crisis",
+      "english": "English",
+      "spanish": "Español",
+      "getHelpNow": "Obtener Ayuda Ahora"
+    },
+    "learnOptions": {
+      "title": "Aprender sobre opciones y recursos",
+      "description": "Explore nuestra biblioteca completa de recursos y opciones de apoyo",
+      "exploreResources": "Explorar Recursos"
+    },
+    "longTermTherapy": {
+      "title": "Hablar sobre terapia a largo plazo",
+      "description": "Terapia especializada informada en trauma en nuestro Consultorio de Recuperación de Trauma",
+      "learnMore": "Más Información"
+    },
+    "aboutUs": {
+      "title": "Aprender más sobre The Rowan Center",
+      "description": "Descubra nuestra misión, impacto y el trabajo que hacemos en la comunidad",
+      "aboutUs": "Sobre Nosotros"
+    }
+  },
+  "pillarsSection": {
+    "prevent": {
+      "title": "Prevenir",
+      "description": "Programas de educación y concientización para prevenir la violencia sexual y el trauma antes de que ocurra.",
+      "servicesTitle": "Nuestros servicios de prevención incluyen:",
+      "communityWorkshops": "Talleres y presentaciones de educación comunitaria",
+      "schoolPrograms": "Programas de prevención basados en escuelas para todas las edades",
+      "bystanderTraining": "Capacitación de intervención de espectadores",
+      "learnMore": "Más Información Sobre Prevención"
+    },
+    "respond": {
+      "title": "Responder",
+      "description": "Apoyo de crisis 24/7 y asistencia inmediata cuando ocurre el daño. Estamos aquí cuando más nos necesita.",
+      "crisisHelpline": "Línea de Ayuda de Crisis",
+      "callNow": "Llamar Ahora",
+      "english": "English",
+      "spanish": "Español",
+      "available247": "Disponible 24/7, completamente confidencial",
+      "servicesTitle": "Servicios de respuesta a crisis:",
+      "helplineSupport": "Línea de ayuda de crisis 24/7 y apoyo por mensaje de texto",
+      "accompaniment": "Acompañamiento al hospital y tribunal",
+      "legalAdvocacy": "Defensa y apoyo legal",
+      "getHelpNow": "Obtener Ayuda Ahora"
+    },
+    "kidsafe": {
+      "title": "KidSafeHQ",
+      "description": "Empoderando a las familias con recursos apropiados para la edad para enseñar a los niños sobre seguridad personal, consentimiento y límites saludables.",
+      "resourcesTitle": "Recursos para cada edad:",
+      "ageAppropriate": "Guías de educación de seguridad apropiadas para la edad",
+      "conversationStarters": "Iniciadores de conversación para padres y cuidadores",
+      "interactiveActivities": "Actividades interactivas y recursos educativos",
+      "explore": "Explorar KidSafeHQ"
+    }
+  },
+  "photoFeature": {
+    "badge": "Recuperación de Trauma",
+    "title": "Un Espacio Seguro para Su Camino de Sanación",
+    "description": "En The Rowan Center, brindamos atención informada en trauma en un ambiente acogedor diseñado para apoyar su camino hacia la sanación. Nuestros terapeutas experimentados están aquí para caminar junto a usted en cada paso del camino.",
+    "individualCounseling": "Consejería individual informada en trauma",
+    "evidenceBased": "Enfoques terapéuticos basados en evidencia",
+    "comfortableEnvironment": "Ambiente cómodo y tranquilo",
+    "learnMore": "Conozca Nuestros Servicios"
+  },
+  "kidsafeHQ": {
+    "hero": {
+      "subtitle": "Guías interactivas para ayudarle a tener conversaciones importantes con sus hijos sobre seguridad, límites y relaciones saludables"
+    },
+    "selectAgeGroup": "Seleccione un Grupo de Edad",
+    "ageGroups": {
+      "elementary": {
+        "title": "Escuela Primaria",
+        "description": "Lecciones apropiadas para la edad para K-5º grado sobre seguridad, límites y relaciones saludables"
+      },
+      "middle": {
+        "title": "Escuela Intermedia",
+        "description": "Guías interactivas para estudiantes de secundaria que navegan amistades, emociones y creciente independencia"
+      },
+      "high": {
+        "title": "Escuela Secundaria",
+        "description": "Recursos para adolescentes sobre relaciones saludables, consentimiento, seguridad digital y más"
+      }
+    },
+    "supportCards": {
+      "faq": {
+        "title": "Preguntas Frecuentes",
+        "description": "Preguntas comunes de estudiantes sobre seguridad, consentimiento, relaciones y más"
+      },
+      "resources": {
+        "title": "Recursos",
+        "description": "Materiales adicionales, guías y recursos externos para padres, educadores y cuidadores"
+      }
+    },
+    "exploreContent": "Explorar Contenido"
   }
 }
