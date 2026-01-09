@@ -8,16 +8,12 @@ import candidSeal from "@/assets/candid-seal-platinum-2025.png";
 import ctAllianceLogo from "@/assets/ct-alliance-logo.webp";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-
 const Footer = () => {
-  const { t } = useTranslation();
-  const townsServed = [
-    "Darien", "Greenwich", "New Canaan", "Norwalk", 
-    "Stamford", "Weston", "Westport", "Wilton"
-  ];
-
-  return (
-    <footer className="bg-[hsl(var(--blue-accent))] text-white">
+  const {
+    t
+  } = useTranslation();
+  const townsServed = ["Darien", "Greenwich", "New Canaan", "Norwalk", "Stamford", "Weston", "Westport", "Wilton"];
+  return <footer className="bg-[hsl(var(--blue-accent))] text-white">
       {/* Newsletter Section */}
       <div className="bg-background border-b border-[hsl(var(--blue-accent))]/20">
         <div className="container mx-auto px-4 py-8">
@@ -25,15 +21,11 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 bg-sky-950">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Organization Info */}
           <div className="lg:col-span-1">
-            <img 
-              src={rowanLogo} 
-              alt={t('footer.logoAlt')} 
-              className="h-16 mb-4 brightness-0 invert"
-            />
+            <img src={rowanLogo} alt={t('footer.logoAlt')} className="h-16 mb-4 brightness-0 invert" />
             <p className="text-white/80 mb-4 text-sm">
               {t('footer.tagline')}
             </p>
@@ -43,31 +35,13 @@ const Footer = () => {
             
             {/* Social Media Links */}
             <div className="flex gap-3 mt-4">
-              <a 
-                href="https://www.facebook.com/therowancenter" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
-                aria-label="Facebook"
-              >
+              <a href="https://www.facebook.com/therowancenter" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a 
-                href="https://www.instagram.com/therowancenter" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
-                aria-label="Instagram"
-              >
+              <a href="https://www.instagram.com/therowancenter" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a 
-                href="https://www.linkedin.com/company/therowancenter" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
-                aria-label="LinkedIn"
-              >
+              <a href="https://www.linkedin.com/company/therowancenter" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -77,17 +51,8 @@ const Footer = () => {
               <p className="text-xs text-white/70 mb-3">
                 {t('footer.allianceMembership')}
               </p>
-              <a 
-                href="https://endsexualviolencect.org" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <img 
-                  src={ctAllianceLogo} 
-                  alt="Connecticut Alliance to End Sexual Violence" 
-                  className="h-12 object-contain"
-                />
+              <a href="https://endsexualviolencect.org" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <img src={ctAllianceLogo} alt="Connecticut Alliance to End Sexual Violence" className="h-12 object-contain" />
               </a>
             </div>
           </div>
@@ -201,38 +166,18 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-white text-lg">{t('footer.servingArea')}</h4>
             <div className="flex flex-wrap gap-1.5 text-xs text-white/70 mb-6">
-              {townsServed.map((town) => (
-                <span key={town} className="bg-white/10 px-2 py-1 rounded">
+              {townsServed.map(town => <span key={town} className="bg-white/10 px-2 py-1 rounded">
                   {town}
-                </span>
-              ))}
+                </span>)}
             </div>
 
             {/* Certification Badges */}
             <div className="flex gap-4 items-center">
-              <a 
-                href="https://www.charitynavigator.org/ein/061037583" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <img 
-                  src={charityNavigatorBadge} 
-                  alt="Charity Navigator 4-Star Rating" 
-                  className="h-20 bg-white rounded p-1"
-                />
+              <a href="https://www.charitynavigator.org/ein/061037583" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={charityNavigatorBadge} alt="Charity Navigator 4-Star Rating" className="h-20 bg-white rounded p-1" />
               </a>
-              <a 
-                href="https://www.guidestar.org/profile/06-1037583" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <img 
-                  src={candidSeal} 
-                  alt="Candid Platinum Transparency 2025" 
-                  className="h-20"
-                />
+              <a href="https://www.guidestar.org/profile/06-1037583" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={candidSeal} alt="Candid Platinum Transparency 2025" className="h-20" />
               </a>
             </div>
           </div>
@@ -242,7 +187,9 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
             <div className="text-center md:text-left">
-              <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
+              <p>{t('footer.copyright', {
+                year: new Date().getFullYear()
+              })}</p>
               <p className="text-xs mt-1">{t('footer.nonprofit')}</p>
             </div>
             <div className="flex gap-6">
@@ -253,8 +200,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

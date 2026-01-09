@@ -10,15 +10,10 @@ import { useTranslation } from "react-i18next";
 const INeedSection = () => {
   const { t } = useTranslation();
   
-  return (
-    <section className="py-16 relative overflow-hidden">
+  return <section className="py-16 relative overflow-hidden">
       {/* Background with subtle photo overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={supportHandsImage} 
-          alt="Supporting hands"
-          className="w-full h-full object-cover opacity-10"
-        />
+        <img src={supportHandsImage} alt="Supporting hands" className="w-full h-full object-cover opacity-10" />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -43,7 +38,7 @@ const INeedSection = () => {
               <p className="text-muted-foreground mb-6 font-roboto">
                 {t('iNeedSection.talkNow.description')}
               </p>
-              <div className="space-y-4">
+              <div className="space-y-4 bg-sky-900/0">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="outline" className="w-full">
@@ -132,8 +127,6 @@ const INeedSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default INeedSection;
