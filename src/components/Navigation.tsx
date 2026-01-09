@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Menu, X, Languages, ChevronDown } from "lucide-react";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import logoImage from "@/assets/rowan-center-logo.png";
 import ChariotDonation from "./ChariotDonation";
+import LanguageSwitcher from "./LanguageSwitcher";
+
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return <header className="sticky top-0 z-50">
@@ -52,10 +54,7 @@ const Navigation = () => {
                 Trauma Recovery Clinic
               </Link>
             </Button>
-            <a href="#translate" className="text-foreground hover:underline flex items-center gap-1">
-              <Languages className="h-4 w-4" />
-              Translate
-            </a>
+            <LanguageSwitcher />
           </div>
           <ChariotDonation />
         </div>

@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "prevent": "Prevent",
+    "respond": "Respond",
+    "resources": "Resources",
+    "donate": "Donate",
+    "contact": "Contact",
+    "events": "Events",
+    "news": "News",
+    "blog": "Blog",
+    "careers": "Careers",
+    "volunteer": "Volunteer",
+    "crisisServices": "Crisis Services",
+    "victimAdvocacy": "Victim Advocacy",
+    "traumaRecovery": "Trauma Recovery",
+    "preventionEducation": "Prevention Education",
+    "communityResources": "Community Resources",
+    "kidsafe": "KidSafe",
+    "boardOfDirectors": "Board of Directors",
+    "staff": "Staff",
+    "media": "Media",
+    "financials": "Financials"
+  },
+  "hero": {
+    "title": "The Rowan Center",
+    "subtitle": "Connecticut's Sexual Assault Crisis Service",
+    "description": "Providing free, confidential support and advocacy for survivors of sexual violence and their loved ones.",
+    "ctaSupport": "Get Support Now",
+    "ctaLearnMore": "Learn More"
+  },
+  "crisis": {
+    "hotline": "24/7 Crisis Hotline",
+    "callNow": "Call Now",
+    "textLine": "Text Line",
+    "confidential": "Free & Confidential"
+  },
+  "services": {
+    "title": "Our Services",
+    "crisisTitle": "Crisis Services",
+    "crisisDesc": "24/7 support for survivors of sexual violence",
+    "advocacyTitle": "Victim Advocacy",
+    "advocacyDesc": "Guidance through medical, legal, and support systems",
+    "therapyTitle": "Trauma Recovery",
+    "therapyDesc": "Professional counseling and therapy services",
+    "preventionTitle": "Prevention Education",
+    "preventionDesc": "Community education and awareness programs"
+  },
+  "footer": {
+    "mission": "Our Mission",
+    "missionText": "To provide comprehensive services to survivors of sexual violence and to lead community efforts to prevent sexual violence through education and advocacy.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "followUs": "Follow Us",
+    "copyright": "© {{year}} The Rowan Center. All rights reserved.",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "required": "Required",
+    "optional": "Optional",
+    "back": "Back",
+    "next": "Next",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "download": "Download",
+    "share": "Share"
+  },
+  "forms": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "message": "Message",
+    "organization": "Organization",
+    "submit": "Submit",
+    "sending": "Sending...",
+    "successMessage": "Your message has been sent successfully!",
+    "errorMessage": "There was an error sending your message. Please try again."
+  },
+  "donate": {
+    "title": "Support Our Mission",
+    "subtitle": "Your donation helps us provide free, confidential services to survivors.",
+    "oneTime": "One-Time",
+    "monthly": "Monthly",
+    "donateNow": "Donate Now",
+    "otherAmount": "Other Amount",
+    "taxDeductible": "Your donation is tax-deductible."
+  },
+  "about": {
+    "title": "About Us",
+    "whoWeAre": "Who We Are",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "history": "Our History",
+    "team": "Our Team"
+  },
+  "events": {
+    "title": "Events",
+    "upcoming": "Upcoming Events",
+    "past": "Past Events",
+    "register": "Register",
+    "details": "Event Details",
+    "date": "Date",
+    "time": "Time",
+    "location": "Location"
+  },
+  "kidsafe": {
+    "title": "KidSafe",
+    "subtitle": "Age-appropriate safety education for children and teens",
+    "elementary": "Elementary School",
+    "middle": "Middle School",
+    "high": "High School",
+    "resources": "Resources",
+    "faq": "FAQ"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "selectLanguage": "Select language"
+  }
+}
