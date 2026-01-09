@@ -17,7 +17,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[hsl(var(--footer))] text-[hsl(var(--footer-foreground))]">
+    <footer className="bg-[hsl(var(--blue-accent))] text-white">
       {/* Newsletter Section */}
       <div className="bg-background border-b border-[hsl(var(--blue-accent))]/20">
         <div className="container mx-auto px-4 py-8">

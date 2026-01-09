@@ -65,10 +65,6 @@ All colors MUST be HSL for proper theming.
     --blue-accent-foreground: 0 0% 100%;
     --blue-accent-light: 221 42% 70%;
 
-    /* Footer - Dark Blue-Gray #445374 */
-    --footer: 222 26% 36%;
-    --footer-foreground: 0 0% 100%;
-
     /* Supporting Colors */
     --muted: 210 20% 96%;
     --muted-foreground: 208 25% 40%; /* Darkened from 55% to 40% for better contrast */
