@@ -5,17 +5,11 @@ import { Link } from "react-router-dom";
 import supportHandsImage from "@/assets/support-hands.jpg";
 import resourcesImage from "@/assets/resources-learning.jpg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-
 const INeedSection = () => {
-  return (
-    <section className="py-16 relative overflow-hidden">
+  return <section className="py-16 relative overflow-hidden">
       {/* Background with subtle photo overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={supportHandsImage} 
-          alt="Supporting hands"
-          className="w-full h-full object-cover opacity-10"
-        />
+        <img src={supportHandsImage} alt="Supporting hands" className="w-full h-full object-cover opacity-10" />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -40,7 +34,7 @@ const INeedSection = () => {
               <p className="text-muted-foreground mb-6 font-roboto">
                 24/7 crisis helpline for immediate, confidential support
               </p>
-              <div className="space-y-4">
+              <div className="space-y-4 bg-sky-900">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="outline" className="w-full">
@@ -129,8 +123,6 @@ const INeedSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default INeedSection;
