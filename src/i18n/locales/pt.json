@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "prevent": "Prevenir",
+    "respond": "Responder",
+    "resources": "Recursos",
+    "donate": "Doar",
+    "contact": "Contato",
+    "events": "Eventos",
+    "news": "Notícias",
+    "blog": "Blog",
+    "careers": "Carreiras",
+    "volunteer": "Voluntariado",
+    "crisisServices": "Serviços de Crise",
+    "victimAdvocacy": "Advocacia de Vítimas",
+    "traumaRecovery": "Recuperação de Trauma",
+    "preventionEducation": "Educação Preventiva",
+    "communityResources": "Recursos Comunitários",
+    "kidsafe": "KidSafe",
+    "boardOfDirectors": "Conselho de Administração",
+    "staff": "Equipe",
+    "media": "Mídia",
+    "financials": "Finanças"
+  },
+  "hero": {
+    "title": "The Rowan Center",
+    "subtitle": "Serviço de Crise de Agressão Sexual de Connecticut",
+    "description": "Fornecendo apoio e advocacia gratuitos e confidenciais para sobreviventes de violência sexual e seus entes queridos.",
+    "ctaSupport": "Obter Apoio Agora",
+    "ctaLearnMore": "Saiba Mais"
+  },
+  "crisis": {
+    "hotline": "Linha de Crise 24/7",
+    "callNow": "Ligar Agora",
+    "textLine": "Linha de Texto",
+    "confidential": "Grátis e Confidencial"
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "crisisTitle": "Serviços de Crise",
+    "crisisDesc": "Apoio 24/7 para sobreviventes de violência sexual",
+    "advocacyTitle": "Advocacia de Vítimas",
+    "advocacyDesc": "Orientação em sistemas médicos, legais e de apoio",
+    "therapyTitle": "Recuperação de Trauma",
+    "therapyDesc": "Serviços profissionais de aconselhamento e terapia",
+    "preventionTitle": "Educação Preventiva",
+    "preventionDesc": "Programas de educação e conscientização comunitária"
+  },
+  "footer": {
+    "mission": "Nossa Missão",
+    "missionText": "Fornecer serviços abrangentes a sobreviventes de violência sexual e liderar esforços comunitários para prevenir a violência sexual através da educação e advocacia.",
+    "quickLinks": "Links Rápidos",
+    "contact": "Entre em Contato",
+    "address": "Endereço",
+    "phone": "Telefone",
+    "email": "E-mail",
+    "followUs": "Siga-nos",
+    "copyright": "© {{year}} The Rowan Center. Todos os direitos reservados.",
+    "privacyPolicy": "Política de Privacidade"
+  },
+  "common": {
+    "learnMore": "Saiba Mais",
+    "readMore": "Leia Mais",
+    "viewAll": "Ver Tudo",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "success": "Sucesso",
+    "required": "Obrigatório",
+    "optional": "Opcional",
+    "back": "Voltar",
+    "next": "Próximo",
+    "close": "Fechar",
+    "search": "Pesquisar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "download": "Baixar",
+    "share": "Compartilhar"
+  },
+  "forms": {
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "email": "Endereço de E-mail",
+    "phone": "Número de Telefone",
+    "message": "Mensagem",
+    "organization": "Organização",
+    "submit": "Enviar",
+    "sending": "Enviando...",
+    "successMessage": "Sua mensagem foi enviada com sucesso!",
+    "errorMessage": "Houve um erro ao enviar sua mensagem. Por favor, tente novamente."
+  },
+  "donate": {
+    "title": "Apoie Nossa Missão",
+    "subtitle": "Sua doação nos ajuda a fornecer serviços gratuitos e confidenciais aos sobreviventes.",
+    "oneTime": "Uma Vez",
+    "monthly": "Mensal",
+    "donateNow": "Doar Agora",
+    "otherAmount": "Outro Valor",
+    "taxDeductible": "Sua doação é dedutível de impostos."
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "whoWeAre": "Quem Somos",
+    "mission": "Nossa Missão",
+    "vision": "Nossa Visão",
+    "history": "Nossa História",
+    "team": "Nossa Equipe"
+  },
+  "events": {
+    "title": "Eventos",
+    "upcoming": "Próximos Eventos",
+    "past": "Eventos Passados",
+    "register": "Registrar",
+    "details": "Detalhes do Evento",
+    "date": "Data",
+    "time": "Hora",
+    "location": "Localização"
+  },
+  "kidsafe": {
+    "title": "KidSafe",
+    "subtitle": "Educação de segurança apropriada para crianças e adolescentes",
+    "elementary": "Ensino Fundamental",
+    "middle": "Ensino Médio Inicial",
+    "high": "Ensino Médio",
+    "resources": "Recursos",
+    "faq": "Perguntas Frequentes"
+  },
+  "accessibility": {
+    "skipToContent": "Pular para o conteúdo",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "selectLanguage": "Selecionar idioma"
+  }
+}
