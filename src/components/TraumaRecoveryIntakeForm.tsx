@@ -140,7 +140,7 @@ export const TraumaRecoveryIntakeForm = ({ language = "en" }: TraumaRecoveryInta
   const onSubmit = async (data: z.infer<ReturnType<typeof createSchema>>) => {
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.from("trauma_recovery_intake").insert({
+      const { error: supabaseError } = await supabase.from("trauma_recovery_intake").insert({
         first_name: data.firstName,
         last_name: data.lastName,
         email: data.email,
@@ -159,8 +159,8 @@ export const TraumaRecoveryIntakeForm = ({ language = "en" }: TraumaRecoveryInta
         form_language: currentLang,
       });
 
-      if (error) {
-        console.error("Supabase error:", error);
+      if (supabaseError) {
+        console.error("Supabase error:", supabaseError);
         toast.error(t.error);
         setIsSubmitting(false);
         return;

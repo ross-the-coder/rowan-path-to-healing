@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, ChevronDown, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronDown, Facebook as FacebookIcon, Instagram as InstagramIcon, Linkedin as LinkedinIcon, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NewsletterSubscription } from "./NewsletterSubscription";
 import rowanLogo from "@/assets/rowan-center-logo.png";
@@ -48,7 +48,7 @@ const Footer = () => {
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="h-5 w-5" />
+                <FacebookIcon className="h-5 w-5" />
               </a>
               <a 
                 href="https://www.instagram.com/therowancenter" 
@@ -57,7 +57,7 @@ const Footer = () => {
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5" />
+                <InstagramIcon className="h-5 w-5" />
               </a>
               <a 
                 href="https://www.linkedin.com/company/therowancenter" 
@@ -66,7 +66,7 @@ const Footer = () => {
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <LinkedinIcon className="h-5 w-5" />
               </a>
             </div>
 
