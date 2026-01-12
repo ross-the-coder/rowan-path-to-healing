@@ -42,12 +42,12 @@ const Staff = () => {
     },
     {
       name: "Zachary Boccarossa, LMSW",
-      title: "Bilingual Staff Therapist at The Trauma Recovery Clinic",
+      title: "Bilingual Staff Therapist at The Trauma Recovery Practice",
       email: "zboccarossa@therowancenter.org",
     },
     {
       name: "Taina Colon, LMSW",
-      title: "Bilingual Staff Therapist at The Trauma Recovery Clinic",
+      title: "Bilingual Staff Therapist at The Trauma Recovery Practice",
       email: "tcolon@therowancenter.org",
     },
     {
@@ -77,7 +77,7 @@ const Staff = () => {
     },
     {
       name: "Isabel Negron, LCSW",
-      title: "Assistant Clinic Director & Bilingual Staff Therapist at The Trauma Recovery Clinic",
+      title: "Assistant Clinic Director & Bilingual Staff Therapist at The Trauma Recovery Practice",
       email: "inegron@trcattherowancenter.org",
     },
     {

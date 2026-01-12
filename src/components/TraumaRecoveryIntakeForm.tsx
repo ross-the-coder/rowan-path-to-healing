@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 const translations = {
   en: {
-    title: "Trauma Recovery Clinic Intake Form",
+    title: "Trauma Recovery Practice Intake Form",
     description: "Share your information so we can schedule your first conversation.",
     firstName: "First Name",
     lastName: "Last Name",
@@ -29,7 +29,7 @@ const translations = {
     voicemailYes: "If you call me and I do not answer, you have my permission to leave me a voicemail",
     voicemailNo: "If you call me and I do not answer, please do not leave me a voicemail",
     requestDescription: "Please briefly describe your request for services",
-    eligibility: "Please confirm you are eligible for services. You must meet both criteria to receive care at the Trauma Recovery Clinic.",
+    eligibility: "Please confirm you are eligible for services. You must meet both criteria to receive care at the Trauma Recovery Practice.",
     eligibilityNote: "If you do not meet these criteria,",
     eligibilityLink: "click here to contact our Crisis Counseling team",
     age18: "I am 18 years old or older",
@@ -159,7 +159,12 @@ export const TraumaRecoveryIntakeForm = ({ language = "en" }: TraumaRecoveryInta
         form_language: currentLang,
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase error:", error);
+        toast.error(t.error);
+        setIsSubmitting(false);
+        return;
+      }
 
       toast.success(t.success);
       form.reset();

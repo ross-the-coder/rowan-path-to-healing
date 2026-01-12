@@ -3,10 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Clock, Shield, Heart, ChevronDown } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { SEO } from "@/components/SEO";
 
 const CrisisSupport = () => {
   return (
     <Layout>
+      <SEO 
+        title="Crisis Support" 
+        description="Free, confidential support available 24/7 for survivors of sexual violence and their loved ones in Fairfield County, CT."
+      />
       <div className="min-h-screen bg-primary">
         {/* Hero Section */}
         <section className="py-20 text-white">

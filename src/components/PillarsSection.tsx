@@ -45,7 +45,7 @@ const PillarsSection = () => {
                 </ul>
               </div>
               <Button asChild variant="outline" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-primary backdrop-blur-sm">
-                <Link to="/prevent">Learn More About Prevention</Link>
+                <Link to="/prevention-education">Learn More About Prevention</Link>
               </Button>
             </div>
           </div>
@@ -116,7 +116,7 @@ const PillarsSection = () => {
                 </ul>
               </div>
               <Button asChild variant="outline" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-secondary backdrop-blur-sm">
-                <Link to="/respond">Get Help Now</Link>
+                <Link to="/crisis-services">Get Help Now</Link>
               </Button>
             </div>
             <div>

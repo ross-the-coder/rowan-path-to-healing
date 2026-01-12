@@ -66,7 +66,7 @@ const HeroSection = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
               <Button variant="outline" size="lg" asChild className="font-roboto font-medium border-white/80 text-white bg-white/10 hover:bg-white hover:text-secondary backdrop-blur-sm">
-                <Link to="/contact">
+                <Link to="/crisis-support">
                   <Heart className="mr-2 h-5 w-5" />
                   Get Support
                 </Link>

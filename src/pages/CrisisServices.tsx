@@ -221,7 +221,7 @@ const CrisisServices = () => {
                 <CardHeader>
                   <CardTitle className="font-seasons flex items-center gap-2">
                     <Heart className="h-5 w-5 text-[hsl(var(--accent))]" />
-                    Long-term Therapy at the Trauma Recovery Clinic
+                    Long-term Therapy at the Trauma Recovery Practice
                   </CardTitle>
                 </CardHeader>
                 <CardContent>

@@ -1,17 +1,28 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield, Users, School, Globe, Download } from "lucide-react";
+import { Shield, Download } from "lucide-react";
 import { PreventionEducationContactForm } from "@/components/PreventionEducationContactForm";
+import preventionEducationHero from "@/assets/preventioneducation.jpg";
+import { SEO } from "@/components/SEO";
 
 const PreventionEducation = () => {
   return (
     <Layout>
+      <SEO 
+        title="Prevention Education" 
+        description="Our prevention education programs work to eliminate sexual violence and other trauma through community engagement and education."
+      />
       {/* Hero Section */}
-      <section className="py-20 bg-secondary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Shield className="h-16 w-16 mx-auto mb-6" />
+      <section className="relative min-h-[500px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={preventionEducationHero} alt="Rowan Center staff engaging with community members at an outreach event" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-20 relative z-10">
+          <div className="max-w-3xl text-white">
+            <Shield className="h-16 w-16 mb-6 text-white" />
             <h1 className="text-5xl font-seasons font-normal mb-6">
               Sexual Violence Prevention Education
             </h1>

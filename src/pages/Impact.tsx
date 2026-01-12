@@ -122,7 +122,7 @@ const Impact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="font-roboto text-lg mb-4">
-                    Through crisis counseling, support groups, and our Trauma Recovery Clinic, we provide comprehensive mental health services to help survivors heal. Our trauma-informed approach centers survivors' choices and needs.
+                    Through crisis counseling, support groups, and our Trauma Recovery Practice, we provide comprehensive mental health services to help survivors heal. Our trauma-informed approach centers survivors' choices and needs.
                   </p>
                   <p className="font-roboto text-muted-foreground">
                     Long-term therapy, support groups, and individual counseling available

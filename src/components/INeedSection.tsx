@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Phone, BookOpen, Heart, Info, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import supportHandsImage from "@/assets/support-hands.jpg";
-import resourcesImage from "@/assets/resources-learning.jpg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const INeedSection = () => {
@@ -103,7 +102,7 @@ const INeedSection = () => {
                 To speak about long-term therapy
               </h3>
               <p className="text-muted-foreground mb-6 font-roboto">
-                Specialized trauma-informed therapy at our Trauma Recovery Clinic
+                Specialized trauma-informed therapy at our Trauma Recovery Practice
               </p>
               <Button asChild variant="outline" size="sm" className="w-full">
                 <Link to="/trauma-recovery">Learn More</Link>

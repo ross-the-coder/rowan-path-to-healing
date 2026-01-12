@@ -130,11 +130,11 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* Trauma Recovery Clinic */}
+              {/* Trauma Recovery Practice */}
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-white/60 flex-shrink-0" />
                 <div className="text-white/80">
-                  <div className="font-medium text-white">Trauma Recovery Clinic</div>
+                  <div className="font-medium text-white">Trauma Recovery Practice</div>
                   <a href="tel:2034870675" className="hover:text-white underline">(203) 487-0675</a>
                 </div>
               </div>

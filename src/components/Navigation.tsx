@@ -49,12 +49,12 @@ const Navigation = () => {
             </Button>
             <Button asChild size="sm" className="bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-white">
               <Link to="/trauma-recovery">
-                Trauma Recovery Clinic
+                Trauma Recovery Practice
               </Link>
             </Button>
-            <a href="#translate" className="text-foreground hover:underline flex items-center gap-1">
+            <a href="https://the--rowan--center-vercel-app.translate.goog/?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer" className="text-foreground hover:underline flex items-center gap-1">
               <Languages className="h-4 w-4" />
-              Translate
+              Español
             </a>
           </div>
           <ChariotDonation position="top" />
@@ -101,7 +101,7 @@ const Navigation = () => {
                           <Link to="/trauma-recovery" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Long-term Therapy</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Trauma Recovery Clinic services
+                              Trauma Recovery Practice services
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -140,7 +140,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/staff" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/about#team" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Our Team</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Meet our dedicated staff
@@ -199,7 +199,7 @@ const Navigation = () => {
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/trauma-recovery" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Trauma Recovery Clinic</div>
+                            <div className="text-sm font-medium leading-none">Trauma Recovery Practice</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Long-term specialized therapy
                             </p>
@@ -275,7 +275,7 @@ const Navigation = () => {
                 <Link to="/crisis-services" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Crisis Services
                 </Link>
-                <Link to="/staff" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
+                <Link to="/about#team" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Our Team
                 </Link>
                 <Link to="/board-of-directors" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">

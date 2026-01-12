@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { lazy, Suspense } from "react";
+import Staff from "@/pages/Staff.tsx";
 
 // Lazy load all page components
 const Index = lazy(() => import("./pages/Index"));
@@ -38,7 +39,6 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const StaffLogin = lazy(() => import("./pages/StaffLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
-const Staff = lazy(() => import("./pages/Staff"));
 
 const queryClient = new QueryClient();
 
