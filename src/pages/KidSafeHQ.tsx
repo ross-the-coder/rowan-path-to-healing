@@ -105,11 +105,11 @@ const KidSafeHQ = () => {
             {ageGroups.map((group) => {
               const IconComponent = group.icon;
               return (
-                <Card key={group.title} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${group.color}`}>
+                <Card key={group.titleKey} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${group.color}`}>
                   <div className="h-40 overflow-hidden">
                     <img 
                       src={group.image} 
-                      alt={group.title} 
+                      alt={t(group.titleKey)}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -135,11 +135,11 @@ const KidSafeHQ = () => {
             {supportCards.map((card) => {
               const IconComponent = card.icon;
               return (
-                <Card key={card.title} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${card.color}`}>
+                <Card key={card.titleKey} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${card.color}`}>
                   <div className="h-36 overflow-hidden">
                     <img 
                       src={card.image} 
-                      alt={card.title} 
+                      alt={t(card.titleKey)}
                       className="w-full h-full object-cover"
                     />
                   </div>
