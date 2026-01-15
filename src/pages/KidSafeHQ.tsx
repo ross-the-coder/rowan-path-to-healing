@@ -50,13 +50,8 @@ const KidSafeHQ = () => {
 
   const supportCards = [
     {
-<<<<<<< HEAD
-      title: "FAQs",
-      description: "Common questions from students about safety, consent, relationships, and more",
-=======
       titleKey: "kidsafeHQ.supportCards.faq.title",
       descriptionKey: "kidsafeHQ.supportCards.faq.description",
->>>>>>> 3efa7537dda1e3c7128fd39744b01456ebf291ad
       icon: HelpCircle,
       link: "/kidsafehq/faqs",
       color: "from-teal-500/10 to-teal-600/5",

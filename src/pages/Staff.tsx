@@ -257,6 +257,7 @@ const Staff = () => {
           </Card>
         </section>
       </div>
-    </Layout>;
+    </Layout>
+  );
 };
 export default Staff;
