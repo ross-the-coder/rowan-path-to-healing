@@ -4,5 +4,7 @@ export default {
   extends: vikeReact,
   clientRouting: true,
   ssr: false,
-  prerender: true
+  prerender: {
+    partial: true
+  }
 };
