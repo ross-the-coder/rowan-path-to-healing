@@ -26,8 +26,15 @@ export async function sanityFetch<T = any>({
   params?: Record<string, any>;
 }): Promise<T> {
   try {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H7',location:'sanity.ts:sanityFetch',message:'Sanity fetch start',data:{queryLength:query.length,paramsKeys:Object.keys(params || {})},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion agent log
+
     return await sanityClient.fetch<T>(query, params);
   } catch (error) {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H7',location:'sanity.ts:sanityFetch',message:'Sanity fetch error',data:{errorType:typeof error,errorMessage:error instanceof Error ? error.message : String(error)},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion agent log
     console.error('Sanity fetch error:', error);
     throw error;
   }

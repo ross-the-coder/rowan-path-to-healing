@@ -40,8 +40,16 @@ const Events = () => {
   // Use Sanity data if available, otherwise fallback
   const upcomingEvents = sanityEvents && sanityEvents.length > 0 ? sanityEvents : fallbackEvents;
 
+  // Log render state for debugging shell-only issue
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H8',location:'Events.tsx:render',message:'Events render state',data:{isLoading,hasError:Boolean(error),sanityEventsCount:Array.isArray(sanityEvents)?sanityEvents.length:null,usingFallback:!(sanityEvents && sanityEvents.length > 0),upcomingEventsCount:upcomingEvents.length},timestamp:Date.now()})}).catch(()=>{});
+  // #endregion agent log
+
   // Loading state
   if (isLoading) {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H8',location:'Events.tsx:loading',message:'Events loading state',data:{},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion agent log
     return (
       <Layout>
         <section className="py-20 bg-secondary text-white">
@@ -98,7 +106,18 @@ const Events = () => {
             <div className="space-y-6">
               {upcomingEvents.map((event: any, index: number) => {
                 const eventDescription = typeof event.description === 'string' ? event.description : event.description?.[0]?.children?.[0]?.text || 'Event details coming soon';
-                const eventDate = event.date ? format(new Date(event.date), 'MMMM d, yyyy') : event.date || 'Coming Soon';
+                const hasDateValue = Boolean(event.date);
+                const dateValue = event.date || null;
+                const parsedDate = hasDateValue ? new Date(event.date) : null;
+                const isValidDate = parsedDate ? !Number.isNaN(parsedDate.getTime()) : false;
+
+                // #region agent log
+                fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H9',location:'Events.tsx:event-map',message:'Events item date parse',data:{index,hasDateValue,dateValueType:typeof dateValue,isValidDate},timestamp:Date.now()})}).catch(()=>{});
+                // #endregion agent log
+
+                const eventDate = hasDateValue && isValidDate
+                  ? format(parsedDate as Date, 'MMMM d, yyyy')
+                  : event.date || 'Coming Soon';
                 
                 return (
                   <Card key={event._id || index} className="hover:shadow-lg transition-shadow">

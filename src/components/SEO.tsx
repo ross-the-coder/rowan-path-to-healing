@@ -17,11 +17,13 @@ export const SEO = ({
   ogImage,
   twitterHandle = "@lovable_dev",
 }: SEOProps) => {
+  const isBrowser = typeof window !== "undefined";
   const siteTitle = "The Rowan Center";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const defaultDescription = "The Rowan Center prevents sexual violence and trauma, provides 24/7 crisis support, and offers trauma-informed mental health care in South Fairfield County, CT.";
   const metaDescription = description || defaultDescription;
-  const url = window.location.origin + window.location.pathname;
+  const fallbackBaseUrl = "https://therowancenter.org";
+  const url = canonical || (isBrowser ? window.location.origin + window.location.pathname : fallbackBaseUrl);
   const canonicalUrl = canonical || url;
   const defaultOgImage = "https://storage.googleapis.com/gpt-engineer-file-uploads/PUECeMNXGPM0EU8ZdKZuh2IgqUN2/social-images/social-1758906601238-Screenshot 2025-09-26 at 1.09.50 PM.png";
   const image = ogImage || defaultOgImage;
@@ -31,13 +33,13 @@ export const SEO = ({
       {/* Standard metadata tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
-      <link rel="canonical" href={canonicalUrl} />
+      {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
 
       {/* Open Graph tags (Facebook, LinkedIn, etc.) */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={url} />
+      {url ? <meta property="og:url" content={url} /> : null}
       <meta property="og:image" content={image} />
 
       {/* Twitter Card tags */}

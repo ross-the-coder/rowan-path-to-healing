@@ -96,10 +96,22 @@ export function useEvents(options?: { upcoming?: boolean; featured?: boolean }) 
         status,
         featured
       }`;
-      
-      return sanityFetch({ query });
+
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H7',location:'useSanityData.ts:useEvents',message:'Sanity events query start',data:{options,queryLength:query.length},timestamp:Date.now()})}).catch(()=>{});
+      // #endregion agent log
+
+      return sanityFetch({ query }).then((result) => {
+        const count = Array.isArray(result) ? result.length : null;
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H7',location:'useSanityData.ts:useEvents',message:'Sanity events query success',data:{resultType:typeof result,resultCount:count},timestamp:Date.now()})}).catch(()=>{});
+        // #endregion agent log
+        return result;
+      });
     },
     staleTime: 5 * 60 * 1000,
+    retry: 0,
+    refetchOnWindowFocus: false,
   });
 }
 
