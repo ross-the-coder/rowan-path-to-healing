@@ -1,4 +1,5 @@
 -- Add security constraints to intake tables
+-- This migration adds email validation and length constraints to intake tables
 
 -- Crisis Counseling Intake
 ALTER TABLE public.crisis_counseling_intake

@@ -40,6 +40,7 @@ const Footer = () => {
             </p>
             
             {/* Social Media Links */}
+            {/* Note: Facebook, Instagram, and Linkedin are React components from lucide-react, not deprecated HTML tags */}
             <div className="flex gap-3 mt-4">
               <a 
                 href="https://www.facebook.com/therowancenter" 
