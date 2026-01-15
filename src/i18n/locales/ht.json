@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "home": "Akèy",
+    "about": "Konsènan",
+    "services": "Sèvis",
+    "prevent": "Prevansyon",
+    "respond": "Repons",
+    "resources": "Resous",
+    "donate": "Fè Don",
+    "contact": "Kontakte",
+    "events": "Evènman",
+    "news": "Nouvèl",
+    "blog": "Blog",
+    "careers": "Karyè",
+    "volunteer": "Volontè",
+    "crisisServices": "Sèvis Kriz",
+    "victimAdvocacy": "Defans Viktim",
+    "traumaRecovery": "Rekiperasyon Twomatis",
+    "preventionEducation": "Edikasyon Prevansyon",
+    "communityResources": "Resous Kominotè",
+    "kidsafe": "KidSafe",
+    "boardOfDirectors": "Konsèy Direktè",
+    "staff": "Anplwaye",
+    "media": "Medya",
+    "financials": "Finans"
+  },
+  "hero": {
+    "title": "Rowan Center",
+    "subtitle": "Sèvis Kriz pou Atak Seksyèl Connecticut",
+    "description": "Bay sipò gratis ak konfidansyèl pou sivivan vyolans seksyèl ak moun yo renmen.",
+    "ctaSupport": "Jwenn Sipò Kounye a",
+    "ctaLearnMore": "Aprann Plis"
+  },
+  "crisis": {
+    "hotline": "Liy Kriz 24/7",
+    "callNow": "Rele Kounye a",
+    "textLine": "Liy Tèks",
+    "confidential": "Gratis ak Konfidansyèl"
+  },
+  "services": {
+    "title": "Sèvis Nou Yo",
+    "crisisTitle": "Sèvis Kriz",
+    "crisisDesc": "Sipò 24/7 pou sivivan vyolans seksyèl",
+    "advocacyTitle": "Defans Viktim",
+    "advocacyDesc": "Gidans nan sistèm medikal, legal ak sipò",
+    "therapyTitle": "Rekiperasyon Twomatis",
+    "therapyDesc": "Sèvis konsèy pwofesyonèl ak terapi",
+    "preventionTitle": "Edikasyon Prevansyon",
+    "preventionDesc": "Pwogram edikasyon ak sansibilizasyon kominotè"
+  },
+  "footer": {
+    "mission": "Misyon Nou",
+    "missionText": "Bay sèvis konplè pou sivivan vyolans seksyèl epi dirije efò kominotè pou anpeche vyolans seksyèl atravè edikasyon ak defans.",
+    "quickLinks": "Lyen Rapid",
+    "contact": "Kontakte Nou",
+    "address": "Adrès",
+    "phone": "Telefòn",
+    "email": "Imèl",
+    "followUs": "Swiv Nou",
+    "copyright": "© {{year}} Rowan Center. Tout dwa rezève.",
+    "privacyPolicy": "Politik Konfidansyalite"
+  },
+  "common": {
+    "learnMore": "Aprann Plis",
+    "readMore": "Li Plis",
+    "viewAll": "Wè Tout",
+    "submit": "Soumèt",
+    "cancel": "Anile",
+    "loading": "Chajman...",
+    "error": "Te gen yon erè",
+    "success": "Siksè",
+    "required": "Obligatwa",
+    "optional": "Opsyonèl",
+    "back": "Retounen",
+    "next": "Pwochen",
+    "close": "Fèmen",
+    "search": "Rechèch",
+    "filter": "Filtre",
+    "sort": "Klase",
+    "download": "Telechaje",
+    "share": "Pataje"
+  },
+  "forms": {
+    "firstName": "Prenon",
+    "lastName": "Non Fanmi",
+    "email": "Adrès Imèl",
+    "phone": "Nimewo Telefòn",
+    "message": "Mesaj",
+    "organization": "Òganizasyon",
+    "submit": "Soumèt",
+    "sending": "Voye...",
+    "successMessage": "Mesaj ou te voye avèk siksè!",
+    "errorMessage": "Te gen yon erè lè w ap voye mesaj ou. Tanpri eseye ankò."
+  },
+  "donate": {
+    "title": "Sipòte Misyon Nou",
+    "subtitle": "Don ou ede nou bay sèvis gratis ak konfidansyèl pou sivivan yo.",
+    "oneTime": "Yon Sèl Fwa",
+    "monthly": "Chak Mwa",
+    "donateNow": "Fè Don Kounye a",
+    "otherAmount": "Lòt Kantite",
+    "taxDeductible": "Don ou a dediktib nan taks."
+  },
+  "about": {
+    "title": "Konsènan Nou",
+    "whoWeAre": "Ki Moun Nou Ye",
+    "mission": "Misyon Nou",
+    "vision": "Vizyon Nou",
+    "history": "Istwa Nou",
+    "team": "Ekip Nou"
+  },
+  "events": {
+    "title": "Evènman",
+    "upcoming": "Evènman k ap Vini",
+    "past": "Evènman Pase",
+    "register": "Anrejistre",
+    "details": "Detay Evènman",
+    "date": "Dat",
+    "time": "Lè",
+    "location": "Kote"
+  },
+  "kidsafe": {
+    "title": "KidSafe",
+    "subtitle": "Edikasyon sekirite apwopriye pou timoun ak adolesan",
+    "elementary": "Lekòl Elemantè",
+    "middle": "Lekòl Mwayen",
+    "high": "Lekòl Segondè",
+    "resources": "Resous",
+    "faq": "Kesyon Souvan Poze"
+  },
+  "accessibility": {
+    "skipToContent": "Ale nan kontni",
+    "openMenu": "Louvri meni",
+    "closeMenu": "Fèmen meni",
+    "selectLanguage": "Chwazi lang"
+  }
+}

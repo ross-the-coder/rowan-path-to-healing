@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { BookOpen, GraduationCap, School, Users, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
 import kidsafeHqHero from "@/assets/kidsafe-hq-hero.jpg";
 import kidsafeElementary from "@/assets/kidsafe-elementary.jpg";
@@ -15,30 +16,31 @@ import NewsSection from "@/components/kidsafe/NewsSection";
 import { getConnecticutArticles, getAllArticles } from "@/data/newsData";
 
 const KidSafeHQ = () => {
+  const { t } = useTranslation();
   const ctArticles = getConnecticutArticles();
   const allArticles = getAllArticles();
   const tickerArticles = ctArticles.slice(0, 5);
   
   const ageGroups = [
     {
-      title: "Elementary School",
-      description: "Age-appropriate lessons for K-5th grade about safety, boundaries, and healthy relationships",
+      titleKey: "kidsafeHQ.ageGroups.elementary.title",
+      descriptionKey: "kidsafeHQ.ageGroups.elementary.description",
       icon: School,
       link: "/kidsafehq/elementary",
       color: "from-blue-500/10 to-blue-600/5",
       image: kidsafeElementary
     },
     {
-      title: "Middle School",
-      description: "Interactive guides for middle schoolers navigating friendships, emotions, and growing independence",
+      titleKey: "kidsafeHQ.ageGroups.middle.title",
+      descriptionKey: "kidsafeHQ.ageGroups.middle.description",
       icon: Users,
       link: "/kidsafehq/middle",
       color: "from-green-500/10 to-green-600/5",
       image: kidsafeMiddle
     },
     {
-      title: "High School",
-      description: "Resources for teens about healthy relationships, consent, digital safety, and more",
+      titleKey: "kidsafeHQ.ageGroups.high.title",
+      descriptionKey: "kidsafeHQ.ageGroups.high.description",
       icon: GraduationCap,
       link: "/kidsafehq/high",
       color: "from-purple-500/10 to-purple-600/5",
@@ -48,16 +50,21 @@ const KidSafeHQ = () => {
 
   const supportCards = [
     {
+<<<<<<< HEAD
       title: "FAQs",
       description: "Common questions from students about safety, consent, relationships, and more",
+=======
+      titleKey: "kidsafeHQ.supportCards.faq.title",
+      descriptionKey: "kidsafeHQ.supportCards.faq.description",
+>>>>>>> 3efa7537dda1e3c7128fd39744b01456ebf291ad
       icon: HelpCircle,
       link: "/kidsafehq/faqs",
       color: "from-teal-500/10 to-teal-600/5",
       image: kidsafeResources
     },
     {
-      title: "Resources",
-      description: "Additional materials, guides, and external resources for parents, educators, and caregivers",
+      titleKey: "kidsafeHQ.supportCards.resources.title",
+      descriptionKey: "kidsafeHQ.supportCards.resources.description",
       icon: BookOpen,
       link: "/kidsafehq/resources",
       color: "from-orange-500/10 to-orange-600/5",
@@ -90,7 +97,7 @@ const KidSafeHQ = () => {
                 />
               </div>
               <p className="text-xl text-muted-foreground">
-                Interactive guides to help you have important conversations with your children about safety, boundaries, and healthy relationships
+                {t('kidsafeHQ.hero.subtitle')}
               </p>
             </div>
           </div>
@@ -98,29 +105,29 @@ const KidSafeHQ = () => {
 
         {/* Age Group Selection - 3 in a row */}
         <div className="container mx-auto px-4 py-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Select an Age Group</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t('kidsafeHQ.selectAgeGroup')}</h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {ageGroups.map((group) => {
               const IconComponent = group.icon;
               return (
-                <Card key={group.title} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${group.color}`}>
+                <Card key={group.titleKey} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${group.color}`}>
                   <div className="h-40 overflow-hidden">
                     <img 
                       src={group.image} 
-                      alt={group.title} 
+                      alt={t(group.titleKey)}
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       <IconComponent className="h-7 w-7 text-primary" />
-                      <CardTitle className="text-xl">{group.title}</CardTitle>
+                      <CardTitle className="text-xl">{t(group.titleKey)}</CardTitle>
                     </div>
-                    <CardDescription className="text-sm">{group.description}</CardDescription>
+                    <CardDescription className="text-sm">{t(group.descriptionKey)}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button asChild className="w-full">
-                      <Link to={group.link}>Explore Content</Link>
+                      <Link to={group.link}>{t('kidsafeHQ.exploreContent')}</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -133,24 +140,24 @@ const KidSafeHQ = () => {
             {supportCards.map((card) => {
               const IconComponent = card.icon;
               return (
-                <Card key={card.title} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${card.color}`}>
+                <Card key={card.titleKey} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${card.color}`}>
                   <div className="h-36 overflow-hidden">
                     <img 
                       src={card.image} 
-                      alt={card.title} 
+                      alt={t(card.titleKey)}
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       <IconComponent className="h-7 w-7 text-primary" />
-                      <CardTitle className="text-xl">{card.title}</CardTitle>
+                      <CardTitle className="text-xl">{t(card.titleKey)}</CardTitle>
                     </div>
-                    <CardDescription className="text-sm">{card.description}</CardDescription>
+                    <CardDescription className="text-sm">{t(card.descriptionKey)}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button asChild className="w-full">
-                      <Link to={card.link}>Explore Content</Link>
+                      <Link to={card.link}>{t('kidsafeHQ.exploreContent')}</Link>
                     </Button>
                   </CardContent>
                 </Card>

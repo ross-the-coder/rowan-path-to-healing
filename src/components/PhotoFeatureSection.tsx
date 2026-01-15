@@ -2,8 +2,11 @@ import counselingHopeImage from "@/assets/group-therapy-diverse.jpg";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const PhotoFeatureSection = () => {
-  return <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+  const { t } = useTranslation();
+  
+  return <section className="py-20 bg-purple/15">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Floating Photo with Color Overlay */}
@@ -19,38 +22,36 @@ const PhotoFeatureSection = () => {
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-full">
               <Heart className="h-5 w-5 text-accent" />
-              <span className="text-sm font-roboto font-medium text-accent">Trauma Recovery</span>
+              <span className="text-sm font-roboto font-medium text-accent">{t('photoFeature.badge')}</span>
             </div>
             
             <h2 className="text-4xl font-seasons font-normal text-foreground leading-tight">
-              A Safe Space for Your Healing Journey
+              {t('photoFeature.title')}
             </h2>
             
             <p className="text-lg font-roboto font-light text-muted-foreground leading-relaxed">
-              At The Rowan Center, we provide trauma-informed care in a welcoming environment 
-              designed to support your path to healing. Our experienced therapists are here to 
-              walk alongside you every step of the way.
+              {t('photoFeature.description')}
             </p>
 
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
-                <span className="font-roboto text-foreground">Individual trauma-informed counseling</span>
+                <span className="font-roboto text-foreground">{t('photoFeature.individualCounseling')}</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
-                <span className="font-roboto text-foreground">Evidence-based therapeutic approaches</span>
+                <span className="font-roboto text-foreground">{t('photoFeature.evidenceBased')}</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
-                <span className="font-roboto text-foreground">Comfortable, peaceful environment</span>
+                <span className="font-roboto text-foreground">{t('photoFeature.comfortableEnvironment')}</span>
               </li>
             </ul>
 
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
               <Link to="/trauma-recovery">
                 <Heart className="mr-2 h-5 w-5" />
-                Learn About Our Services
+                {t('photoFeature.learnMore')}
               </Link>
             </Button>
           </div>

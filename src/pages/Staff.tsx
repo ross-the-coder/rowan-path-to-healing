@@ -2,7 +2,6 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Mail, Phone } from "lucide-react";
 import staffPhoto from "@/assets/rowan-center-staff.webp";
-
 interface TeamMember {
   name: string;
   title: string;
@@ -83,9 +82,7 @@ const Staff = () => {
     <Layout>
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Staff
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">The Rowan Center Team</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             The Rowan Center staff plays a critical role in supporting survivors of sexual violence. 
             Their services include counseling for survivors to process their experiences, advocacy to 
@@ -96,11 +93,7 @@ const Staff = () => {
 
         {/* Team Photo */}
         <div className="mb-16">
-          <img 
-            src={staffPhoto} 
-            alt="The Rowan Center staff members pose for a group photo" 
-            className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
-          />
+          <img src={staffPhoto} alt="The Rowan Center staff members pose for a group photo" className="w-full max-w-4xl mx-auto rounded-lg shadow-lg" />
         </div>
 
         {/* Leadership Team */}
@@ -264,8 +257,6 @@ const Staff = () => {
           </Card>
         </section>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Staff;

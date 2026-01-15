@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Clock, Shield, Heart, ChevronDown } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { SEO } from "@/components/SEO";
+import { Link } from "react-router-dom";
 
 const CrisisSupport = () => {
   return (
@@ -204,8 +205,8 @@ const CrisisSupport = () => {
               </div>
               
               <div className="text-center mt-8">
-                <Button size="lg" className="font-roboto">
-                  Access Contact Form
+                <Button asChild size="lg" className="font-roboto">
+                  <Link to="/crisis-services">Access Contact Form</Link>
                 </Button>
               </div>
             </div>

@@ -48,44 +48,44 @@ All colors MUST be HSL for proper theming.
     --popover-foreground: 208 43% 25%;
 
     /* Primary - Deep Blue (Professional, Trustworthy) #386A8E */
-    --primary: 203 43% 39%;
+    --primary: 203 43% 35%; /* Darkened from 39% to 35% for better contrast with white text */
     --primary-foreground: 0 0% 100%;
     --primary-light: 203 43% 54%;
     --primary-lighter: 203 43% 85%;
 
     /* Secondary - Light Blue (Calming, Supportive) #4CA9C4 */
-    --secondary: 194 48% 53%;
+    --secondary: 194 48% 45%; /* Darkened from 53% to 45% for better contrast with white text */
     --secondary-foreground: 0 0% 100%;
     --secondary-light: 194 48% 70%;
 
-    /* Accent - Purple (Healing, Supportive) - Trauma Recovery Practice #7464A2 */
-    --accent: 255 24% 51%;
+    /* Accent - Purple (Healing, Supportive) - Trauma Recovery Clinic #7464A2 */
+    --accent: 255 24% 45%; /* Darkened from 51% to 45% for better contrast with white text */
     --accent-foreground: 0 0% 100%;
     --accent-light: 255 24% 75%;
 
     /* Blue Accent - KidSafeHQ #3E5A97 */
-    --blue-accent: 221 42% 42%;
+    --blue-accent: 221 42% 38%; /* Darkened from 42% to 38% for better contrast with white text */
     --blue-accent-foreground: 0 0% 100%;
     --blue-accent-light: 221 42% 70%;
 
     /* Supporting Colors */
     --muted: 210 20% 96%;
-    --muted-foreground: 208 25% 55%;
+    --muted-foreground: 208 25% 40%; /* Darkened from 55% to 40% for better contrast */
 
     --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Crisis/Emergency - Warm Orange */
-    --emergency: 15 85% 55%;
+    /* Crisis/Emergency - Warm Orange #C55200 */
+    --emergency: 25 100% 39%;
     --emergency-foreground: 0 0% 100%;
 
     /* Color Block Backgrounds */
-    --color-block-primary: 203 43% 39%;
-    --color-block-secondary: 194 48% 53%;
-    --color-block-accent: 255 24% 51%;
-    --color-block-blue: 221 42% 42%;
+    --color-block-primary: 203 43% 35%;
+    --color-block-secondary: 194 48% 45%;
+    --color-block-accent: 255 24% 45%;
+    --color-block-blue: 221 42% 38%;
     --color-block-light: 194 48% 85%;
-    --color-block-warm: 15 85% 55%;
+    --color-block-warm: 25 100% 39%;
 
     /* Borders and Inputs */
     --border: 210 20% 90%;
@@ -144,7 +144,7 @@ All colors MUST be HSL for proper theming.
     --destructive: 0 55% 45%;
     --destructive-foreground: 0 0% 95%;
 
-    --emergency: 15 75% 50%;
+    --emergency: 25 100% 39%;
     --emergency-foreground: 0 0% 95%;
 
     --border: 208 25% 20%;
@@ -157,7 +157,7 @@ All colors MUST be HSL for proper theming.
     --color-block-accent: 255 24% 65%;
     --color-block-blue: 221 42% 55%;
     --color-block-light: 194 48% 25%;
-    --color-block-warm: 15 75% 50%;
+    --color-block-warm: 25 100% 39%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -181,5 +181,54 @@ All colors MUST be HSL for proper theming.
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-seasons;
+  }
+
+  /* Enhanced Focus Indicators for Accessibility */
+  *:focus-visible {
+    @apply outline-none ring-4 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Focus visible for buttons */
+  button:focus-visible,
+  a:focus-visible {
+    @apply outline-none ring-4 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Focus visible for form inputs */
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-4 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Ensure skip nav link is properly visible when focused */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* Improved contrast for semi-transparent text on colored backgrounds */
+  .text-white\/90 {
+    color: rgba(255, 255, 255, 0.95) !important; /* Increased from 90% to 95% */
+  }
+
+  .text-white\/80 {
+    color: rgba(255, 255, 255, 0.90) !important; /* Increased from 80% to 90% */
+  }
+
+  .text-white\/70 {
+    color: rgba(255, 255, 255, 0.85) !important; /* Increased from 70% to 85% */
+  }
+
+  .text-white\/60 {
+    color: rgba(255, 255, 255, 0.80) !important; /* Increased from 60% to 80% */
+  }
+
+  /* Better contrast for badges on dark backgrounds */
+  .bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.20) !important; /* Increased from 10% to 20% */
   }
 }

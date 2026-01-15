@@ -51,7 +51,7 @@ const translations = {
     botField: "Please leave this field empty",
   },
   es: {
-    title: "Formulario de Admisión de la Clínica de Recuperación de Trauma",
+    title: "Formulario de Admisión del Consultorio de Recuperación de Trauma",
     description: "Comparta su información para que podamos programar su primera conversación.",
     firstName: "Nombre",
     lastName: "Apellido",
@@ -63,7 +63,7 @@ const translations = {
     voicemailYes: "Si me llama y no contesto, tiene mi permiso para dejarme un mensaje de voz",
     voicemailNo: "Si me llama y no contesto, por favor no me deje un mensaje de voz",
     requestDescription: "Por favor describa brevemente su solicitud de servicios",
-    eligibility: "Por favor confirme que es elegible para los servicios. Debe cumplir con ambos criterios para recibir atención en la Clínica de Recuperación de Trauma.",
+    eligibility: "Por favor confirme que es elegible para los servicios. Debe cumplir con ambos criterios para recibir atención en el Consultorio de Recuperación de Trauma.",
     eligibilityNote: "Si no cumple con estos criterios,",
     eligibilityLink: "haga clic aquí para contactar a nuestro equipo de Consejería de Crisis",
     age18: "Tengo 18 años o más",

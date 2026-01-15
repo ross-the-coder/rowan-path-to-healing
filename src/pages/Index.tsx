@@ -17,9 +17,9 @@ const Index = () => {
       />
       <HeroSection />
       <INeedSection />
-      <CommunityPartnersSection />
       <PhotoFeatureSection />
       <PillarsSection />
+      <CommunityPartnersSection />
     </Layout>
   );
 };

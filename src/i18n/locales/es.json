@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "prevent": "Prevenir",
+    "respond": "Responder",
+    "resources": "Recursos",
+    "donate": "Donar",
+    "contact": "Contacto",
+    "events": "Eventos",
+    "news": "Noticias",
+    "blog": "Blog",
+    "careers": "Empleos",
+    "volunteer": "Voluntariado",
+    "crisisServices": "Servicios de Crisis",
+    "victimAdvocacy": "Defensa de Víctimas",
+    "traumaRecovery": "Recuperación de Trauma",
+    "preventionEducation": "Educación Preventiva",
+    "communityResources": "Recursos Comunitarios",
+    "kidsafe": "KidSafe",
+    "boardOfDirectors": "Junta Directiva",
+    "staff": "Personal",
+    "media": "Medios",
+    "financials": "Finanzas"
+  },
+  "hero": {
+    "title": "The Rowan Center",
+    "subtitle": "Servicio de Crisis de Agresión Sexual de Connecticut",
+    "description": "Brindamos apoyo y defensa gratuitos y confidenciales para sobrevivientes de violencia sexual y sus seres queridos.",
+    "ctaSupport": "Obtener Apoyo Ahora",
+    "ctaLearnMore": "Más Información"
+  },
+  "crisis": {
+    "hotline": "Línea de Crisis 24/7",
+    "callNow": "Llamar Ahora",
+    "textLine": "Línea de Texto",
+    "confidential": "Gratis y Confidencial"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "crisisTitle": "Servicios de Crisis",
+    "crisisDesc": "Apoyo 24/7 para sobrevivientes de violencia sexual",
+    "advocacyTitle": "Defensa de Víctimas",
+    "advocacyDesc": "Orientación en sistemas médicos, legales y de apoyo",
+    "therapyTitle": "Recuperación de Trauma",
+    "therapyDesc": "Servicios profesionales de consejería y terapia",
+    "preventionTitle": "Educación Preventiva",
+    "preventionDesc": "Programas de educación y concientización comunitaria"
+  },
+  "footer": {
+    "mission": "Nuestra Misión",
+    "missionText": "Proporcionar servicios integrales a sobrevivientes de violencia sexual y liderar esfuerzos comunitarios para prevenir la violencia sexual a través de la educación y la defensa.",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contáctenos",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Correo Electrónico",
+    "followUs": "Síguenos",
+    "copyright": "© {{year}} The Rowan Center. Todos los derechos reservados.",
+    "privacyPolicy": "Política de Privacidad"
+  },
+  "common": {
+    "learnMore": "Más Información",
+    "readMore": "Leer Más",
+    "viewAll": "Ver Todo",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "success": "Éxito",
+    "required": "Requerido",
+    "optional": "Opcional",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "download": "Descargar",
+    "share": "Compartir"
+  },
+  "forms": {
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo Electrónico",
+    "phone": "Número de Teléfono",
+    "message": "Mensaje",
+    "organization": "Organización",
+    "submit": "Enviar",
+    "sending": "Enviando...",
+    "successMessage": "¡Su mensaje ha sido enviado exitosamente!",
+    "errorMessage": "Hubo un error al enviar su mensaje. Por favor, intente de nuevo."
+  },
+  "donate": {
+    "title": "Apoya Nuestra Misión",
+    "subtitle": "Su donación nos ayuda a proporcionar servicios gratuitos y confidenciales a los sobrevivientes.",
+    "oneTime": "Una Vez",
+    "monthly": "Mensual",
+    "donateNow": "Donar Ahora",
+    "otherAmount": "Otra Cantidad",
+    "taxDeductible": "Su donación es deducible de impuestos."
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "whoWeAre": "Quiénes Somos",
+    "mission": "Nuestra Misión",
+    "vision": "Nuestra Visión",
+    "history": "Nuestra Historia",
+    "team": "Nuestro Equipo"
+  },
+  "events": {
+    "title": "Eventos",
+    "upcoming": "Próximos Eventos",
+    "past": "Eventos Pasados",
+    "register": "Registrarse",
+    "details": "Detalles del Evento",
+    "date": "Fecha",
+    "time": "Hora",
+    "location": "Ubicación"
+  },
+  "kidsafe": {
+    "title": "KidSafe",
+    "subtitle": "Educación de seguridad apropiada para niños y adolescentes",
+    "elementary": "Escuela Primaria",
+    "middle": "Escuela Intermedia",
+    "high": "Escuela Secundaria",
+    "resources": "Recursos",
+    "faq": "Preguntas Frecuentes"
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "selectLanguage": "Seleccionar idioma"
+  },
+  "iNeedSection": {
+    "title": "Necesito...",
+    "subtitle": "Díganos qué está buscando y le ayudaremos a encontrar el apoyo adecuado.",
+    "talkNow": {
+      "title": "Hablar con alguien ahora mismo",
+      "description": "Línea de ayuda de crisis 24/7 para apoyo inmediato y confidencial",
+      "callHelpline": "Llamar Línea de Crisis",
+      "english": "English",
+      "spanish": "Español",
+      "getHelpNow": "Obtener Ayuda Ahora"
+    },
+    "learnOptions": {
+      "title": "Aprender sobre opciones y recursos",
+      "description": "Explore nuestra biblioteca completa de recursos y opciones de apoyo",
+      "exploreResources": "Explorar Recursos"
+    },
+    "longTermTherapy": {
+      "title": "Hablar sobre terapia a largo plazo",
+      "description": "Terapia especializada informada en trauma en nuestro Consultorio de Recuperación de Trauma",
+      "learnMore": "Más Información"
+    },
+    "aboutUs": {
+      "title": "Aprender más sobre The Rowan Center",
+      "description": "Descubra nuestra misión, impacto y el trabajo que hacemos en la comunidad",
+      "aboutUs": "Sobre Nosotros"
+    }
+  },
+  "pillarsSection": {
+    "prevent": {
+      "title": "Prevenir",
+      "description": "Programas de educación y concientización para prevenir la violencia sexual y el trauma antes de que ocurra.",
+      "servicesTitle": "Nuestros servicios de prevención incluyen:",
+      "communityWorkshops": "Talleres y presentaciones de educación comunitaria",
+      "schoolPrograms": "Programas de prevención basados en escuelas para todas las edades",
+      "bystanderTraining": "Capacitación de intervención de espectadores",
+      "learnMore": "Más Información Sobre Prevención"
+    },
+    "respond": {
+      "title": "Responder",
+      "description": "Apoyo de crisis 24/7 y asistencia inmediata cuando ocurre el daño. Estamos aquí cuando más nos necesita.",
+      "crisisHelpline": "Línea de Ayuda de Crisis",
+      "callNow": "Llamar Ahora",
+      "english": "English",
+      "spanish": "Español",
+      "available247": "Disponible 24/7, completamente confidencial",
+      "servicesTitle": "Servicios de respuesta a crisis:",
+      "helplineSupport": "Línea de ayuda de crisis 24/7 y apoyo por mensaje de texto",
+      "accompaniment": "Acompañamiento al hospital y tribunal",
+      "legalAdvocacy": "Defensa y apoyo legal",
+      "getHelpNow": "Obtener Ayuda Ahora"
+    },
+    "kidsafe": {
+      "title": "KidSafeHQ",
+      "description": "Empoderando a las familias con recursos apropiados para la edad para enseñar a los niños sobre seguridad personal, consentimiento y límites saludables.",
+      "resourcesTitle": "Recursos para cada edad:",
+      "ageAppropriate": "Guías de educación de seguridad apropiadas para la edad",
+      "conversationStarters": "Iniciadores de conversación para padres y cuidadores",
+      "interactiveActivities": "Actividades interactivas y recursos educativos",
+      "explore": "Explorar KidSafeHQ"
+    }
+  },
+  "photoFeature": {
+    "badge": "Recuperación de Trauma",
+    "title": "Un Espacio Seguro para Su Camino de Sanación",
+    "description": "En The Rowan Center, brindamos atención informada en trauma en un ambiente acogedor diseñado para apoyar su camino hacia la sanación. Nuestros terapeutas experimentados están aquí para caminar junto a usted en cada paso del camino.",
+    "individualCounseling": "Consejería individual informada en trauma",
+    "evidenceBased": "Enfoques terapéuticos basados en evidencia",
+    "comfortableEnvironment": "Ambiente cómodo y tranquilo",
+    "learnMore": "Conozca Nuestros Servicios"
+  },
+  "kidsafeHQ": {
+    "hero": {
+      "subtitle": "Guías interactivas para ayudarle a tener conversaciones importantes con sus hijos sobre seguridad, límites y relaciones saludables"
+    },
+    "selectAgeGroup": "Seleccione un Grupo de Edad",
+    "ageGroups": {
+      "elementary": {
+        "title": "Escuela Primaria",
+        "description": "Lecciones apropiadas para la edad para K-5º grado sobre seguridad, límites y relaciones saludables"
+      },
+      "middle": {
+        "title": "Escuela Intermedia",
+        "description": "Guías interactivas para estudiantes de secundaria que navegan amistades, emociones y creciente independencia"
+      },
+      "high": {
+        "title": "Escuela Secundaria",
+        "description": "Recursos para adolescentes sobre relaciones saludables, consentimiento, seguridad digital y más"
+      }
+    },
+    "supportCards": {
+      "faq": {
+        "title": "Preguntas Frecuentes",
+        "description": "Preguntas comunes de estudiantes sobre seguridad, consentimiento, relaciones y más"
+      },
+      "resources": {
+        "title": "Recursos",
+        "description": "Materiales adicionales, guías y recursos externos para padres, educadores y cuidadores"
+      }
+    },
+    "exploreContent": "Explorar Contenido"
+  }
+}

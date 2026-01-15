@@ -1,13 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Menu, X, Languages, ChevronDown } from "lucide-react";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import logoImage from "@/assets/rowan-center-logo.png";
 import ChariotDonation from "./ChariotDonation";
+import LanguageSwitcher from "./LanguageSwitcher";
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const {
+    t
+  } = useTranslation();
   return <header className="sticky top-0 z-50">
       {/* Crisis Banner */}
       <div className="bg-white py-5 px-4 border-b">
@@ -17,7 +22,7 @@ const Navigation = () => {
               <DropdownMenuTrigger asChild>
                 <Button size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
                   <Phone className="h-4 w-4 mr-2" />
-                  Crisis Helpline 24/7
+                  {t('crisis.hotline')}
                   <ChevronDown className="h-4 w-4 ml-2" />
                 </Button>
               </DropdownMenuTrigger>
@@ -26,7 +31,7 @@ const Navigation = () => {
                   <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
                     <Phone className="h-4 w-4" />
                     <div>
-                      <div className="font-medium">English</div>
+                      <div className="font-medium">{t('common.english')}</div>
                       <div className="text-sm text-muted-foreground">(203) 329-2929</div>
                     </div>
                   </a>
@@ -35,7 +40,7 @@ const Navigation = () => {
                   <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
                     <Phone className="h-4 w-4" />
                     <div>
-                      <div className="font-medium">Español</div>
+                      <div className="font-medium">{t('common.spanish')}</div>
                       <div className="text-sm text-muted-foreground">(888) 568-8332</div>
                     </div>
                   </a>
@@ -44,20 +49,17 @@ const Navigation = () => {
             </DropdownMenu>
             <Button asChild size="sm" className="bg-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/90 text-white">
               <Link to="/kidsafehq">
-                KidSafeHQ
+                {t('nav.kidsafe')}HQ
               </Link>
             </Button>
             <Button asChild size="sm" className="bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-white">
               <Link to="/trauma-recovery">
-                Trauma Recovery Practice
+                {t('nav.traumaRecovery')} Clinic
               </Link>
             </Button>
-            <a href="https://the--rowan--center-vercel-app.translate.goog/?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer" className="text-foreground hover:underline flex items-center gap-1">
-              <Languages className="h-4 w-4" />
-              Español
-            </a>
+            <LanguageSwitcher />
           </div>
-          <ChariotDonation position="top" />
+          <ChariotDonation />
         </div>
       </div>
 
@@ -66,7 +68,9 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center -mt-2 -mb-2 relative z-10">
-              <div className="bg-white rounded-lg px-6 py-4" style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.15)' }}>
+              <div className="bg-white rounded-lg px-6 py-4" style={{
+              boxShadow: '0 0 15px rgba(0, 0, 0, 0.15)'
+            }}>
                 <img src={logoImage} alt="The Rowan Center" className="h-20 w-auto" />
               </div>
             </Link>
@@ -77,31 +81,31 @@ const Navigation = () => {
                 <NavigationMenuList className="gap-6">
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="text-white hover:text-white/80 bg-transparent">
-                      Get Help
+                      {t('nav.getHelp')}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[450px]">
                         <NavigationMenuLink asChild>
                           <Link to="/crisis-support" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Talk to Someone Right Now</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.talkToSomeone')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              24/7 crisis helpline and immediate support
+                              {t('nav.talkToSomeoneDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/resources" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Options & Resources</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.optionsResources')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Browse our resource library and support options
+                              {t('nav.optionsResourcesDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/trauma-recovery" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Long-term Therapy</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.longTermTherapy')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Trauma Recovery Practice services
+                              {t('nav.longTermTherapyDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -111,55 +115,55 @@ const Navigation = () => {
 
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="text-white hover:text-white/80 bg-transparent">
-                      Who We Are
+                      {t('nav.whoWeAre')}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px]">
                         <NavigationMenuLink asChild>
                           <Link to="/about" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Mission & Vision</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.missionVision')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Our story, mission, and values
+                              {t('nav.missionVisionDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/impact" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Our Impact</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.ourImpact')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              See how we're making a difference
+                              {t('nav.ourImpactDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/financials" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Financials</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.financials')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Annual reports and transparency
+                              {t('footer.nonprofit')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/about#team" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Our Team</div>
+                          <Link to="/staff" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">{t('nav.ourTeam')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Meet our dedicated staff
+                              {t('nav.ourTeamDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/board-of-directors" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Board of Directors</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.boardOfDirectors')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Our leadership and governance
+                              {t('nav.boardDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/careers" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Careers & Internships</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.careersInternships')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Join our team
+                              {t('nav.careersDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -169,39 +173,39 @@ const Navigation = () => {
 
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="text-white hover:text-white/80 bg-transparent">
-                      What We Do
+                      {t('nav.whatWeDo')}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px]">
                         <NavigationMenuLink asChild>
                           <Link to="/prevention-education" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Prevention Education</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.preventionEducation')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              School and community programs
+                              {t('nav.preventionDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/crisis-support" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Crisis Services</div>
+                          <Link to="/crisis-services" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">{t('nav.crisisServices')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              24/7 support and crisis counseling
+                              {t('nav.crisisDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/victim-advocacy" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Victim Advocacy</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.victimAdvocacy')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Accompaniment and advocacy services
+                              {t('nav.advocacyDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/trauma-recovery" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Trauma Recovery Practice</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.traumaRecovery')} Clinic</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Long-term specialized therapy
+                              {t('nav.clinicDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -211,31 +215,31 @@ const Navigation = () => {
 
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="text-white hover:text-white/80 bg-transparent">
-                      Get Involved
+                      {t('nav.getInvolved')}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px]">
                         <NavigationMenuLink asChild>
                           <Link to="/donate" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Donate</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.donate')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Support our mission
+                              {t('nav.donateDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/events" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Events</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.events')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Upcoming fundraisers and programs
+                              {t('nav.eventsDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/volunteer" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Volunteer</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.volunteer')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Crisis advocate opportunities
+                              {t('nav.volunteerDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -246,7 +250,7 @@ const Navigation = () => {
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild>
                       <Link to="/blog" className="text-white hover:text-white/80 px-4 py-2">
-                        Blog
+                        {t('nav.blog')}
                       </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -255,13 +259,13 @@ const Navigation = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <Button variant="ghost" size="sm" className="lg:hidden text-white hover:text-white/80" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <Button variant="ghost" size="sm" className="lg:hidden text-white hover:text-white/80" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Navigation menu" aria-expanded={isMobileMenuOpen} aria-controls="mobile-navigation">
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
 
           {/* Mobile Navigation */}
-          {isMobileMenuOpen && <div className="lg:hidden border-t border-white/20">
+          {isMobileMenuOpen && <nav id="mobile-navigation" className="lg:hidden border-t border-white/20" aria-label="Mobile navigation">
               <div className="py-4 space-y-2">
                 <Link to="/crisis-support" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Get Help Now
@@ -294,7 +298,7 @@ const Navigation = () => {
                   Blog
                 </Link>
               </div>
-            </div>}
+            </nav>}
         </div>
       </nav>
     </header>;
