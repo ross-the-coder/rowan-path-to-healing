@@ -174,7 +174,7 @@ function useToast() {
         listeners.splice(index, 1);
       }
     };
-  }, [state]);
+  }, []); // Empty dependency array - setState is stable and effect should only run on mount/unmount
 
   return {
     ...state,
