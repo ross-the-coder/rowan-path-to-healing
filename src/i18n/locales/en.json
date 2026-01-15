@@ -185,5 +185,75 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "selectLanguage": "Select language"
+  },
+  "iNeedSection": {
+    "title": "I Need...",
+    "subtitle": "Tell us what you're looking for and we'll help you find the right support.",
+    "talkNow": {
+      "title": "Talk to someone right now",
+      "description": "24/7 crisis helpline for immediate, confidential support",
+      "callHelpline": "Call Crisis Helpline",
+      "english": "English",
+      "spanish": "Español",
+      "getHelpNow": "Get Help Now"
+    },
+    "learnOptions": {
+      "title": "Learn about options and resources",
+      "description": "Explore our full library of resources and support options",
+      "exploreResources": "Explore Resources"
+    },
+    "longTermTherapy": {
+      "title": "Talk about long-term therapy",
+      "description": "Specialized trauma-informed therapy at our Trauma Recovery Practice",
+      "learnMore": "Learn More"
+    },
+    "aboutUs": {
+      "title": "Learn more about The Rowan Center",
+      "description": "Discover our mission, impact, and the work we do in the community",
+      "aboutUs": "About Us"
+    }
+  },
+  "pillarsSection": {
+    "prevent": {
+      "title": "Prevent",
+      "description": "Education and awareness programs to prevent sexual violence and trauma before it happens.",
+      "servicesTitle": "Our prevention services include:",
+      "communityWorkshops": "Community education workshops and presentations",
+      "schoolPrograms": "School-based prevention programs for all ages",
+      "bystanderTraining": "Bystander intervention training",
+      "learnMore": "Learn More About Prevention"
+    },
+    "respond": {
+      "title": "Respond",
+      "description": "24/7 crisis support and immediate assistance when harm occurs. We're here when you need us most.",
+      "crisisHelpline": "Crisis Helpline",
+      "callNow": "Call Now",
+      "english": "English",
+      "spanish": "Español",
+      "available247": "Available 24/7, completely confidential",
+      "servicesTitle": "Crisis response services:",
+      "helplineSupport": "24/7 crisis helpline and text support",
+      "accompaniment": "Hospital and court accompaniment",
+      "legalAdvocacy": "Legal advocacy and support",
+      "getHelpNow": "Get Help Now"
+    },
+    "kidsafe": {
+      "title": "KidSafeHQ",
+      "description": "Empowering families with age-appropriate resources to teach children about personal safety, consent, and healthy boundaries.",
+      "resourcesTitle": "Resources for every age:",
+      "ageAppropriate": "Age-appropriate safety education guides",
+      "conversationStarters": "Conversation starters for parents and caregivers",
+      "interactiveActivities": "Interactive activities and educational resources",
+      "explore": "Explore KidSafeHQ"
+    }
+  },
+  "photoFeature": {
+    "badge": "Trauma Recovery",
+    "title": "A Safe Space for Your Healing Journey",
+    "description": "At The Rowan Center, we provide trauma-informed care in a welcoming environment designed to support your path to healing. Our experienced therapists are here to walk alongside you every step of the way.",
+    "individualCounseling": "Trauma-informed individual counseling",
+    "evidenceBased": "Evidence-based therapeutic approaches",
+    "comfortableEnvironment": "Comfortable, calming environment",
+    "learnMore": "Learn About Our Services"
   }
 }
