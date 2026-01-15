@@ -1,4 +1,5 @@
 import "@/index.css";
+import "@/i18n/config";
 import { AppRoot } from "@/AppRoot";
 import { usePageContext } from "vike-react/usePageContext";
 
