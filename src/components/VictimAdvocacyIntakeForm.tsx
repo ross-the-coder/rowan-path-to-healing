@@ -40,6 +40,7 @@ const translations = {
     error: "Something went wrong. Please try again or call us directly.",
     required: "This field is required",
     invalidEmail: "Please enter a valid email address",
+    botField: "Please leave this field empty",
   },
   es: {
     title: "Solicitar Servicios de Defensa",
@@ -67,6 +68,7 @@ const translations = {
     error: "Algo salió mal. Por favor intente de nuevo o llámenos directamente.",
     required: "Este campo es obligatorio",
     invalidEmail: "Por favor ingrese un correo electrónico válido",
+    botField: "Por favor, deje este campo vacío",
   },
 };
 
@@ -86,6 +88,7 @@ const createSchema = (lang: "en" | "es") => {
     referrerPhone: z.string().trim().max(50).optional(),
     referrerEmail: z.string().trim().email().max(255).optional().or(z.literal("")),
     referrerOrg: z.string().trim().max(200).optional(),
+    hp_field: z.string().max(0).optional(),
   });
 };
 
@@ -114,12 +117,20 @@ export const VictimAdvocacyIntakeForm = ({ language = "en" }: VictimAdvocacyInta
       referrerPhone: "",
       referrerEmail: "",
       referrerOrg: "",
+      hp_field: "",
     },
   });
 
   const isClient = form.watch("isClient");
 
   const onSubmit = async (data: z.infer<ReturnType<typeof createSchema>>) => {
+    // Honeypot check
+    if (data.hp_field) {
+      console.warn("Honeypot field filled. Potential bot submission.");
+      toast.success(t.success); // Deceive bot
+      form.reset();
+      return;
+    }
     setIsSubmitting(true);
     try {
       const { error } = await supabase.from("victim_advocacy_intake").insert({
@@ -139,7 +150,11 @@ export const VictimAdvocacyIntakeForm = ({ language = "en" }: VictimAdvocacyInta
         form_language: currentLang,
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error("Error submitting form:", error);
+        toast.error(t.error);
+        return;
+      }
 
       toast.success(t.success);
       form.reset();
@@ -170,6 +185,10 @@ export const VictimAdvocacyIntakeForm = ({ language = "en" }: VictimAdvocacyInta
       </CardHeader>
       <CardContent>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <div className="hidden" aria-hidden="true">
+            <Label htmlFor="hp_field">{t.botField}</Label>
+            <Input id="hp_field" {...form.register("hp_field")} tabIndex={-1} autoComplete="off" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">{t.firstName} *</Label>

@@ -48,6 +48,7 @@ const translations = {
     required: "This field is required",
     invalidEmail: "Please enter a valid email address",
     eligibilityRequired: "You must confirm both eligibility criteria",
+    botField: "Please leave this field empty",
   },
   es: {
     title: "Formulario de Admisión de la Clínica de Recuperación de Trauma",
@@ -81,6 +82,7 @@ const translations = {
     required: "Este campo es obligatorio",
     invalidEmail: "Por favor ingrese un correo electrónico válido",
     eligibilityRequired: "Debe confirmar ambos criterios de elegibilidad",
+    botField: "Por favor, deje este campo vacío",
   },
 };
 
@@ -102,6 +104,7 @@ const createSchema = (lang: "en" | "es") => {
     referrerOrg: z.string().trim().max(200).optional(),
     is18OrOlder: z.boolean().refine((val) => val === true, { message: t.eligibilityRequired }),
     hasHuskyInsurance: z.boolean().refine((val) => val === true, { message: t.eligibilityRequired }),
+    hp_field: z.string().max(0).optional(),
   });
 };
 
@@ -132,12 +135,20 @@ export const TraumaRecoveryIntakeForm = ({ language = "en" }: TraumaRecoveryInta
       referrerOrg: "",
       is18OrOlder: false,
       hasHuskyInsurance: false,
+      hp_field: "",
     },
   });
 
   const isClient = form.watch("isClient");
 
   const onSubmit = async (data: z.infer<ReturnType<typeof createSchema>>) => {
+    // Honeypot check
+    if (data.hp_field) {
+      console.warn("Honeypot field filled. Potential bot submission.");
+      toast.success(t.success); // Deceive bot
+      form.reset();
+      return;
+    }
     setIsSubmitting(true);
     try {
       const { error: supabaseError } = await supabase.from("trauma_recovery_intake").insert({
@@ -195,6 +206,10 @@ export const TraumaRecoveryIntakeForm = ({ language = "en" }: TraumaRecoveryInta
       </CardHeader>
       <CardContent>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <div className="hidden" aria-hidden="true">
+            <Label htmlFor="hp_field">{t.botField}</Label>
+            <Input id="hp_field" {...form.register("hp_field")} tabIndex={-1} autoComplete="off" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">{t.firstName} *</Label>
@@ -293,7 +308,7 @@ export const TraumaRecoveryIntakeForm = ({ language = "en" }: TraumaRecoveryInta
             <Label className="text-base">{t.eligibility}</Label>
             <p className="text-sm text-muted-foreground">
               {t.eligibilityNote}{" "}
-              <Link to="/crisis-services" className="text-secondary hover:underline">
+              <Link to="/crisis-support" className="text-secondary hover:underline">
                 {t.eligibilityLink}
               </Link>
             </p>

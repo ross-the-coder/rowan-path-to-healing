@@ -212,7 +212,9 @@ const CrisisServices = () => {
                     Support groups provide a safe, confidential space to share experiences, learn coping strategies, and connect with others on the healing journey. Facilitated by trained professionals.
                   </p>
                   <Button variant="outline" className="w-full" asChild>
-                    <Link to="/crisis-support">Learn More</Link>
+                    <Link to="/crisis-support" className="flex items-center gap-2">
+                      Learn More
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>

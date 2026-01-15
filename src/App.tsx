@@ -13,7 +13,6 @@ const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const CrisisSupport = lazy(() => import("./pages/CrisisSupport"));
 const PreventionEducation = lazy(() => import("./pages/PreventionEducation"));
-const CrisisServices = lazy(() => import("./pages/CrisisServices"));
 const VictimAdvocacy = lazy(() => import("./pages/VictimAdvocacy"));
 const TraumaRecovery = lazy(() => import("./pages/TraumaRecovery"));
 const CommunityResources = lazy(() => import("./pages/CommunityResources"));
@@ -32,6 +31,7 @@ const KidSafeMiddle = lazy(() => import("./pages/KidSafeMiddle"));
 const KidSafeHigh = lazy(() => import("./pages/KidSafeHigh"));
 const KidSafeResources = lazy(() => import("./pages/KidSafeResources"));
 const KidSafeNews = lazy(() => import("./pages/KidSafeNews"));
+const KidSafeFAQ = lazy(() => import("./pages/KidSafeFAQ"));
 const News = lazy(() => import("./pages/News"));
 const CTLawsReporting = lazy(() => import("./pages/CTLawsReporting"));
 const Reminders = lazy(() => import("./pages/Reminders"));
@@ -58,7 +58,6 @@ const App = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/crisis-support" element={<CrisisSupport />} />
                 <Route path="/prevention-education" element={<PreventionEducation />} />
-                <Route path="/crisis-services" element={<CrisisServices />} />
                 <Route path="/victim-advocacy" element={<VictimAdvocacy />} />
                 <Route path="/trauma-recovery" element={<TraumaRecovery />} />
                 <Route path="/resources" element={<CommunityResources />} />
@@ -77,6 +76,12 @@ const App = () => {
                 <Route path="/kidsafehq/high" element={<KidSafeHigh />} />
                 <Route path="/kidsafehq/resources" element={<KidSafeResources />} />
                 <Route path="/kidsafehq/news" element={<KidSafeNews />} />
+                <Route path="/kidsafehq/faqs" element={<KidSafeFAQ />} />
+                <Route path="/kidsafehq/faqs/" element={<KidSafeFAQ />} />
+                <Route path="/kidsafehq/faq" element={<KidSafeFAQ />} />
+                <Route path="/kidsafehq/faq/" element={<KidSafeFAQ />} />
+                <Route path="/KidSafeHQ/FAQs" element={<KidSafeFAQ />} />
+                <Route path="/KidSafeHQ/FAQ" element={<KidSafeFAQ />} />
                 <Route path="/news" element={<News />} />
                 <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
                 <Route path="/reminders" element={<Reminders />} />

@@ -73,3 +73,32 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Security Measures
+
+To ensure the security of intake forms and sensitive data, the following measures are in place:
+
+1.  **Row Level Security (RLS)**: Database tables are protected by Supabase RLS policies. This ensures that while anyone can submit a form (INSERT), only authorized administrators can view or access the data (SELECT).
+2.  **Honeypot Anti-Spam**: All intake forms include hidden "honeypot" fields to detect and reject automated bot submissions without affecting real users.
+3.  **Strict Input Validation**: We use Zod for frontend validation to ensure data conforms to expected formats (e.g., valid email addresses, maximum character lengths) before it is sent to the server.
+4.  **Database Constraints**: The database itself enforces strict rules on data types, lengths, and formats (like email patterns) as a secondary layer of protection against malicious inputs.
+5.  **Encryption at Rest and in Transit**: All data is encrypted while being sent to Supabase and while stored in the database.
+
+## Email Notifications
+
+To be alerted of new submissions, we use Supabase Edge Functions with Database Webhooks and Resend.
+
+### Setup Instructions
+
+1.  **Resend Account**: Create an account at [resend.com](https://resend.com) and get an API Key.
+2.  **Supabase Secrets**: In your Supabase Dashboard, go to Settings -> Edge Functions and add `RESEND_API_KEY` with your key.
+3.  **Deploy Function**: Deploy the code found in `supabase/functions/notify-staff/index.ts` using the Supabase CLI:
+    ```sh
+    supabase functions deploy notify-staff
+    ```
+4.  **Database Webhooks**: In the Supabase Dashboard, go to Database -> Webhooks and create a new webhook:
+    - **Name**: `notify_staff_on_submission`
+    - **Table**: Select each intake table (e.g., `crisis_counseling_intake`).
+    - **Events**: `INSERT`
+    - **Type**: `Supabase Edge Function`
+    - **Function**: `notify-staff`

@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, ChevronDown, Facebook as FacebookIcon, Instagram as InstagramIcon, Linkedin as LinkedinIcon, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronDown, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NewsletterSubscription } from "./NewsletterSubscription";
 import rowanLogo from "@/assets/rowan-center-logo.png";
@@ -48,7 +48,7 @@ const Footer = () => {
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
                 aria-label="Facebook"
               >
-                <FacebookIcon className="h-5 w-5" />
+                <Facebook className="h-5 w-5" />
               </a>
               <a 
                 href="https://www.instagram.com/therowancenter" 
@@ -57,7 +57,7 @@ const Footer = () => {
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
                 aria-label="Instagram"
               >
-                <InstagramIcon className="h-5 w-5" />
+                <Instagram className="h-5 w-5" />
               </a>
               <a 
                 href="https://www.linkedin.com/company/therowancenter" 
@@ -66,7 +66,7 @@ const Footer = () => {
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
                 aria-label="LinkedIn"
               >
-                <LinkedinIcon className="h-5 w-5" />
+                <Linkedin className="h-5 w-5" />
               </a>
             </div>
 
@@ -180,7 +180,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-white text-lg">Services</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/prevention-education" className="text-white/80 hover:text-white transition-colors">Prevention Education</Link></li>
-              <li><Link to="/crisis-services" className="text-white/80 hover:text-white transition-colors">Crisis Support</Link></li>
+              <li><Link to="/crisis-support" className="text-white/80 hover:text-white transition-colors">Crisis Support</Link></li>
               <li><Link to="/victim-advocacy" className="text-white/80 hover:text-white transition-colors">Victim Advocacy</Link></li>
               <li><Link to="/trauma-recovery" className="text-white/80 hover:text-white transition-colors">Trauma Recovery</Link></li>
               <li><Link to="/resources" className="text-white/80 hover:text-white transition-colors">Resources</Link></li>

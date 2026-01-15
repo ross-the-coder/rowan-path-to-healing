@@ -23,7 +23,7 @@ export function useBlogPosts(options?: { featured?: boolean; category?: string }
         excerpt,
         author->{
           name,
-          image
+          photo
         },
         publishedDate,
         category,
@@ -53,7 +53,7 @@ export function useBlogPost(slug: string) {
           author->{
             name,
             bio,
-            image
+            photo
           },
           publishedDate,
           category,
@@ -208,6 +208,8 @@ export function useJobPosting(slug: string) {
   });
 }
 
+import { faqData as fallbackFaqData } from '@/data/faqData';
+
 // FAQs Hook
 export function useFAQs(category?: string) {
   return useQuery({
@@ -239,19 +241,28 @@ export function useFAQs(category?: string) {
 export function useKidSafeFAQs() {
   return useQuery({
     queryKey: ['kidSafeFAQs'],
-    queryFn: () =>
-      sanityFetch({
-        query: `*[_type == "faq" && category == "KidSafe - FAQ Page"] | order(order asc) {
-          _id,
-          question,
-          answer,
-          category,
-          order,
-          grades,
-          topics
-        }`,
-      }),
+    queryFn: async () => {
+      try {
+        const result = await sanityFetch({
+          query: `*[_type == "faq" && category == "KidSafe - FAQ Page"] | order(order asc) {
+            _id,
+            question,
+            answer,
+            category,
+            order,
+            grades,
+            topics
+          }`,
+        });
+        console.log("useKidSafeFAQs: Fetched", result?.length, "items");
+        return result;
+      } catch (err) {
+        console.error("useKidSafeFAQs: Fetch error:", err);
+        throw err;
+      }
+    },
     staleTime: 10 * 60 * 1000,
+    placeholderData: fallbackFaqData,
   });
 }
 
@@ -416,7 +427,7 @@ export function useAuthors() {
           name,
           slug,
           bio,
-          image
+          photo
         }`,
       }),
     staleTime: 15 * 60 * 1000,

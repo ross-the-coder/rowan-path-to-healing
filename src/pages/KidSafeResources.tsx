@@ -1,17 +1,17 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, BookOpen, ExternalLink, GraduationCap, School, Building, Search, BookText, X, Filter } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Badge } from "@/components/ui/badge";
 import { glossaryTerms } from "@/data/glossaryData";
-import { kidSafeResourcesData, searchResources } from "@/data/kidSafeResourcesData";
-import { searchKeywords, getAllTopics } from "@/data/resourceKeywordsData";
+import { kidSafeResourcesData } from "@/data/kidSafeResourcesData";
+import { searchKeywords } from "@/data/resourceKeywordsData";
 
 const iconMap = {
   elementary: School,
@@ -20,6 +20,7 @@ const iconMap = {
 };
 
 const KidSafeResources = () => {
+  const location = useLocation();
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
   const [glossarySearch, setGlossarySearch] = useState("");
   const [resourceSearch, setResourceSearch] = useState("");
@@ -27,66 +28,133 @@ const KidSafeResources = () => {
   const [selectedTopics, setSelectedTopics] = useState<Set<string>>(new Set());
   const [showFilters, setShowFilters] = useState(false);
 
-  const allTopics = useMemo(() => getAllTopics(), []);
-
-  const filteredTerms = glossaryTerms
-    .filter(
-      (item) =>
-        item.term.toLowerCase().includes(glossarySearch.toLowerCase()) ||
-        item.definition.toLowerCase().includes(glossarySearch.toLowerCase())
-    )
-    .sort((a, b) => a.term.localeCompare(b.term));
-
-  // Search results
-  const searchResults = useMemo(() => {
-    if (!resourceSearch.trim()) {
-      return null;
+  // Parse URL parameters for initial search/filter
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const query = params.get("search");
+    const topics = params.get("topic");
+    
+    if (query) {
+      setResourceSearch(query);
     }
-    const { results, matchedAgeGroups } = searchResources(resourceSearch);
-    return { results, matchedAgeGroups };
-  }, [resourceSearch]);
+    
+    if (topics) {
+      const topicArray = topics.split(",").filter(Boolean);
+      setSelectedTopics(new Set(topicArray));
+      // If we have topics but no explicit search query, also populate search for better "dwindling"
+      if (!query) {
+        setResourceSearch(topicArray.join(" "));
+      }
+    }
+  }, [location.search]);
+
+  const allTopics = useMemo(() => {
+    const topics = new Set<string>();
+    kidSafeResourcesData.forEach(ageGroup => {
+      ageGroup.resources.forEach(cat => {
+        topics.add(cat.category);
+      });
+    });
+    return Array.from(topics).sort();
+  }, []);
+
+  const suggestedTopics = useMemo(() => {
+    // Show top topics if no search, or filtered topics if searching
+    if (!resourceSearch.trim()) {
+      const popularTopics = ["Consent", "Boundaries", "Internet Safety", "Social Media", "Sexting", "Healthy Relationships"];
+      return popularTopics.filter(t => allTopics.includes(t));
+    }
+    return allTopics
+      .filter(t => t.toLowerCase().includes(resourceSearch.toLowerCase()))
+      .slice(0, 6);
+  }, [allTopics, resourceSearch]);
+
+
+  const filteredTerms = useMemo(() => {
+    return glossaryTerms
+      .filter(
+        (item) =>
+          item.term.toLowerCase().includes(glossarySearch.toLowerCase()) ||
+          item.definition.toLowerCase().includes(glossarySearch.toLowerCase())
+      )
+      .sort((a, b) => a.term.localeCompare(b.term));
+  }, [glossarySearch]);
+
 
   // Filter resources based on selected age groups and topics
-  const filteredResources = useMemo(() => {
-    // If searching, return search results grouped by age group
-    if (searchResults && searchResults.results.length > 0) {
-      const grouped: Record<string, { category: string; resources: typeof searchResults.results }[]> = {};
-      
-      for (const result of searchResults.results) {
-        // Apply age group filter
-        const ageKey = kidSafeResourcesData.find(ag => ag.title === result.ageGroup)?.key || "";
-        if (selectedAgeGroups.size > 0 && !selectedAgeGroups.has(ageKey)) {
-          continue;
-        }
-        
-        if (!grouped[result.ageGroup]) {
-          grouped[result.ageGroup] = [];
-        }
-        
-        // Find or create category
-        let categoryGroup = grouped[result.ageGroup].find(c => c.category === result.category);
-        if (!categoryGroup) {
-          categoryGroup = { category: result.category, resources: [] };
-          grouped[result.ageGroup].push(categoryGroup);
-        }
-        categoryGroup.resources.push(result);
-      }
-      
-      return grouped;
-    }
-    
-    // No search, return all resources with age group filter
+  const { filteredResources, totalCount } = useMemo(() => {
+    // Group all resources by age group initially
     const result: Record<string, typeof kidSafeResourcesData[0]> = {};
+    const normalizedQuery = resourceSearch.toLowerCase().trim();
+    const queryWords = normalizedQuery.split(/\s+/).filter(w => w.length >= 2);
+    let total = 0;
     
+    // Use searchKeywords utility for better matching if there's a query
+    const searchData = normalizedQuery ? searchKeywords(normalizedQuery) : null;
+    const matchedTopics = searchData ? searchData.topics.map(t => t.toLowerCase()) : [];
+
     for (const ageGroup of kidSafeResourcesData) {
+      // Apply age group filter
       if (selectedAgeGroups.size > 0 && !selectedAgeGroups.has(ageGroup.key)) {
         continue;
       }
-      result[ageGroup.title] = ageGroup;
+
+      // Filter resources within this age group
+      const filteredCategories = ageGroup.resources.map(cat => {
+        const linksWithScore = cat.links.map(link => {
+          let score = 0;
+
+          // If searching, calculate relevance score
+          if (normalizedQuery) {
+            // Exact match boost
+            const titleMatch = link.title.toLowerCase().includes(normalizedQuery);
+            const categoryMatch = cat.category.toLowerCase().includes(normalizedQuery);
+            
+            // Check if link keywords match query words or if they belong to matched topics
+            const keywordMatch = link.keywords.some(kw => 
+              kw.toLowerCase().includes(normalizedQuery) || 
+              normalizedQuery.includes(kw.toLowerCase()) ||
+              matchedTopics.includes(kw.toLowerCase())
+            );
+
+            if (titleMatch) score += 20;
+            if (categoryMatch) score += 15;
+            if (keywordMatch) score += 10;
+
+            // Word-based matching
+            queryWords.forEach(word => {
+              if (link.title.toLowerCase().includes(word)) score += 5;
+              if (cat.category.toLowerCase().includes(word)) score += 3;
+              if (link.keywords.some(kw => kw.toLowerCase().includes(word))) score += 2;
+            });
+          } else {
+            score = 1; // Default visibility when not searching
+          }
+
+          // Apply topic filter (strict if active)
+          if (selectedTopics.size > 0) {
+            const matchesTopic = Array.from(selectedTopics).some(topic => 
+              link.keywords.some(kw => kw.toLowerCase() === topic.toLowerCase()) || 
+              cat.category.toLowerCase() === topic.toLowerCase()
+            );
+            if (!matchesTopic) score = 0;
+          }
+
+          return { ...link, score };
+        }).filter(link => link.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+        return { ...cat, links: linksWithScore };
+      }).filter(cat => cat.links.length > 0);
+
+      if (filteredCategories.length > 0) {
+        result[ageGroup.title] = { ...ageGroup, resources: filteredCategories };
+        total += filteredCategories.reduce((acc, cat) => acc + cat.links.length, 0);
+      }
     }
     
-    return result;
-  }, [searchResults, selectedAgeGroups]);
+    return { filteredResources: result, totalCount: total };
+  }, [resourceSearch, selectedAgeGroups, selectedTopics]);
 
   const toggleAgeGroup = (key: string) => {
     const newSet = new Set(selectedAgeGroups);
@@ -123,12 +191,19 @@ const KidSafeResources = () => {
 
   const hasActiveFilters = selectedAgeGroups.size > 0 || selectedTopics.size > 0 || resourceSearch.trim().length > 0;
 
-  // Suggested topics based on current search
-  const suggestedTopics = useMemo(() => {
-    if (!resourceSearch.trim()) return [];
-    const { topics } = searchKeywords(resourceSearch);
-    return topics.slice(0, 5);
-  }, [resourceSearch]);
+  // Track if search query is present to auto-expand relevant sections
+  const sectionsToExpand = useMemo(() => {
+    if (!resourceSearch.trim() && selectedTopics.size === 0) return [];
+    
+    const expand: string[] = [];
+    Object.entries(filteredResources).forEach(([, ageGroup]) => {
+      const section = ageGroup as typeof kidSafeResourcesData[0];
+      section.resources.forEach((c, i) => {
+        expand.push(`${section.key}-resource-${i}`);
+      });
+    });
+    return expand;
+  }, [filteredResources, resourceSearch, selectedTopics]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -266,10 +341,10 @@ const KidSafeResources = () => {
         </Card>
 
         {/* Search Results Summary */}
-        {searchResults && (
+        {(resourceSearch || selectedAgeGroups.size > 0 || selectedTopics.size > 0) && (
           <div className="mb-6">
             <p className="text-muted-foreground">
-              Found <span className="font-semibold text-foreground">{searchResults.results.length}</span> resources 
+              Found <span className="font-semibold text-foreground">{totalCount}</span> resources 
               {resourceSearch && <> matching "<span className="font-semibold text-foreground">{resourceSearch}</span>"</>}
             </p>
           </div>
@@ -332,16 +407,21 @@ const KidSafeResources = () => {
           </Collapsible>
         </Card>
 
-        <h2 className="text-2xl font-bold mb-6">Resources by Age Group</h2>
+        <h2 className="text-2xl font-bold mb-6">
+          {Object.keys(filteredResources).length > 0 
+            ? "Resources by Age Group" 
+            : resourceSearch.trim() 
+              ? "No exact matches found" 
+              : "Resources by Age Group"
+          }
+        </h2>
         
         {/* Display filtered/searched resources */}
-        {searchResults && searchResults.results.length > 0 ? (
-          // Search results view
+        {Object.keys(filteredResources).length > 0 ? (
           <div className="space-y-8">
-            {Object.entries(filteredResources).map(([ageGroupTitle, categories]) => {
-              const ageGroupData = kidSafeResourcesData.find(ag => ag.title === ageGroupTitle);
-              if (!ageGroupData) return null;
-              const IconComponent = iconMap[ageGroupData.key];
+            {Object.entries(filteredResources).map(([ageGroupTitle, ageGroup]) => {
+              const section = ageGroup as typeof kidSafeResourcesData[0];
+              const IconComponent = iconMap[section.key];
               
               return (
                 <Card key={ageGroupTitle} className="overflow-hidden">
@@ -351,82 +431,21 @@ const KidSafeResources = () => {
                       <div>
                         <CardTitle className="text-xl">{ageGroupTitle}</CardTitle>
                         <CardDescription>
-                          {(categories as { category: string; resources: unknown[] }[]).reduce((acc, c) => acc + c.resources.length, 0)} matching resources
+                          {resourceSearch.trim() 
+                            ? `${section.resources.reduce((acc, c) => acc + c.links.length, 0)} matching resources`
+                            : `Resources for ${section.title.toLowerCase()} students and their families`
+                          }
                         </CardDescription>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-6">
-                    <Accordion type="multiple" className="w-full" defaultValue={(categories as { category: string }[]).map((c, i) => `${ageGroupData.key}-resource-${i}`)}>
-                      {(categories as { category: string; resources: { resource: { title: string; keywords: string[] } }[] }[]).map((categoryGroup, idx) => (
-                        <AccordionItem key={idx} value={`${ageGroupData.key}-resource-${idx}`}>
-                          <AccordionTrigger className="text-sm font-semibold hover:no-underline">
-                            <span className="flex items-center gap-2">
-                              📚 {categoryGroup.category}
-                              <span className="text-xs text-muted-foreground font-normal">
-                                ({categoryGroup.resources.length} resources)
-                              </span>
-                            </span>
-                          </AccordionTrigger>
-                          <AccordionContent className="space-y-2 pt-2">
-                            {categoryGroup.resources.map((item, linkIdx) => (
-                              <div 
-                                key={linkIdx}
-                                className="flex items-start gap-2 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/20 hover:bg-orange-100 dark:hover:bg-orange-950/30 transition-colors border border-orange-200 dark:border-orange-800"
-                              >
-                                <ExternalLink className="h-4 w-4 text-orange-600 flex-shrink-0 mt-0.5" />
-                                <div>
-                                  <span className="text-sm font-medium">{item.resource.title}</span>
-                                  <div className="flex flex-wrap gap-1 mt-1">
-                                    {item.resource.keywords.slice(0, 3).map((kw, kwIdx) => (
-                                      <Badge key={kwIdx} variant="outline" className="text-xs">
-                                        {kw}
-                                      </Badge>
-                                    ))}
-                                  </div>
-                                </div>
-                              </div>
-                            ))}
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        ) : searchResults && searchResults.results.length === 0 ? (
-          // No search results
-          <Card className="p-8 text-center">
-            <div className="text-muted-foreground">
-              <Search className="h-12 w-12 mx-auto mb-4 opacity-50" />
-              <h3 className="text-lg font-semibold mb-2">No resources found</h3>
-              <p>Try searching for different keywords or browse all resources below.</p>
-              <Button variant="outline" className="mt-4" onClick={clearFilters}>
-                Show all resources
-              </Button>
-            </div>
-          </Card>
-        ) : (
-          // Default view - all resources
-          <div className="space-y-8">
-            {Object.entries(filteredResources).map(([key, ageGroup]) => {
-              const section = ageGroup as typeof kidSafeResourcesData[0];
-              const IconComponent = iconMap[section.key];
-              return (
-                <Card key={key} className="overflow-hidden">
-                  <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-8 w-8 text-primary" />
-                      <div>
-                        <CardTitle className="text-xl">{section.title}</CardTitle>
-                        <CardDescription>Resources for {section.title.toLowerCase()} students and their families</CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-6">
-                    <Accordion type="multiple" className="w-full">
+                    <Accordion 
+                      key={sectionsToExpand.length}
+                      type="multiple" 
+                      className="w-full" 
+                      defaultValue={sectionsToExpand}
+                    >
                       {section.resources.map((resourceGroup, idx) => (
                         <AccordionItem key={idx} value={`${section.key}-resource-${idx}`}>
                           <AccordionTrigger className="text-sm font-semibold hover:no-underline">
@@ -441,14 +460,29 @@ const KidSafeResources = () => {
                             {resourceGroup.links.map((link, linkIdx) => (
                               <div 
                                 key={linkIdx}
-                                className="flex items-start gap-2 p-3 rounded-lg hover:bg-muted/50 transition-colors border border-transparent hover:border-border"
+                                className={`flex items-start gap-2 p-3 rounded-lg transition-colors border ${
+                                  resourceSearch.trim()
+                                    ? "bg-orange-50 dark:bg-orange-950/20 hover:bg-orange-100 dark:hover:bg-orange-950/30 border-orange-200 dark:border-orange-800"
+                                    : "hover:bg-muted/50 border-transparent hover:border-border"
+                                }`}
                               >
-                                <ExternalLink className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                                <div>
-                                  <span className="text-sm">{link.title}</span>
+                                <ExternalLink className={`h-4 w-4 flex-shrink-0 mt-0.5 ${resourceSearch.trim() ? "text-orange-600" : "text-primary"}`} />
+                                <div className="flex-1">
+                                  {link.url ? (
+                                    <a 
+                                      href={link.url} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="text-sm font-medium hover:text-orange-600 hover:underline transition-colors"
+                                    >
+                                      {link.title}
+                                    </a>
+                                  ) : (
+                                    <span className="text-sm font-medium">{link.title}</span>
+                                  )}
                                   <div className="flex flex-wrap gap-1 mt-1">
                                     {link.keywords.slice(0, 3).map((kw, kwIdx) => (
-                                      <Badge key={kwIdx} variant="outline" className="text-xs opacity-60">
+                                      <Badge key={kwIdx} variant="outline" className={`text-xs ${resourceSearch.trim() ? "" : "opacity-60"}`}>
                                         {kw}
                                       </Badge>
                                     ))}
@@ -465,21 +499,19 @@ const KidSafeResources = () => {
               );
             })}
           </div>
-        )}
-
-        {/* No results from filtering */}
-        {!searchResults && Object.keys(filteredResources).length === 0 && (
+        ) : (
           <Card className="p-8 text-center">
             <div className="text-muted-foreground">
-              <Filter className="h-12 w-12 mx-auto mb-4 opacity-50" />
-              <h3 className="text-lg font-semibold mb-2">No resources match your filters</h3>
-              <p>Try adjusting your filters to see more resources.</p>
+              <Search className="h-12 w-12 mx-auto mb-4 opacity-50" />
+              <h3 className="text-lg font-semibold mb-2">No resources found</h3>
+              <p>Try searching for different keywords or browse all resources below.</p>
               <Button variant="outline" className="mt-4" onClick={clearFilters}>
-                Clear filters
+                Show all resources
               </Button>
             </div>
           </Card>
         )}
+
 
         {/* Contact Section */}
         <Card className="mt-12 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/20 border-orange-200 dark:border-orange-800">
@@ -489,7 +521,7 @@ const KidSafeResources = () => {
               If you can't find what you're looking for, our team is here to help.
             </p>
             <Button asChild variant="default" className="bg-orange-600 hover:bg-orange-700">
-              <Link to="/crisis-services">Contact Support Services</Link>
+              <Link to="/crisis-support">Contact Support Services</Link>
             </Button>
           </CardContent>
         </Card>

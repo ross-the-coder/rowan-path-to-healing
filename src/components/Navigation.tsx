@@ -182,7 +182,7 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/crisis-services" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/crisis-support" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Crisis Services</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               24/7 support and crisis counseling
@@ -272,7 +272,7 @@ const Navigation = () => {
                 <Link to="/prevention-education" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Prevention Education
                 </Link>
-                <Link to="/crisis-services" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
+                <Link to="/crisis-support" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Crisis Services
                 </Link>
                 <Link to="/about#team" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">

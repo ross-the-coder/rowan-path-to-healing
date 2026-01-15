@@ -24,7 +24,7 @@ const Impact = () => {
     },
     {
       icon: TrendingUp,
-      number: "30+",
+      number: "46+",
       label: "Years of service",
       description: "Supporting Lower Fairfield County since our founding"
     }

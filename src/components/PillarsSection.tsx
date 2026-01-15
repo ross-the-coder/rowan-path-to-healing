@@ -1,8 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, Phone, Heart, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import counselingImage from "@/assets/counseling-session.jpg";
 import outreachImage from "@/assets/community-outreach.jpg";
 import healingImage from "@/assets/family-embracing.jpg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -116,7 +114,7 @@ const PillarsSection = () => {
                 </ul>
               </div>
               <Button asChild variant="outline" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-secondary backdrop-blur-sm">
-                <Link to="/crisis-services">Get Help Now</Link>
+                <Link to="/crisis-support">Get Help Now</Link>
               </Button>
             </div>
             <div>

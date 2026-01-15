@@ -48,10 +48,10 @@ const KidSafeHQ = () => {
 
   const supportCards = [
     {
-      title: "FAQ",
+      title: "FAQs",
       description: "Common questions from students about safety, consent, relationships, and more",
       icon: HelpCircle,
-      link: "/kidsafehq/faq",
+      link: "/kidsafehq/faqs",
       color: "from-teal-500/10 to-teal-600/5",
       image: kidsafeResources
     },

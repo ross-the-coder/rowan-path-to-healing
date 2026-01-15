@@ -89,7 +89,7 @@ const HeroSection = () => {
               <div className="font-roboto">Crisis Support Available</div>
             </div>
             <div>
-              <div className="text-3xl font-seasons font-bold mb-2">30+</div>
+              <div className="text-3xl font-seasons font-bold mb-2">46+</div>
               <div className="font-roboto">Years Serving Our Community</div>
             </div>
             <div>
