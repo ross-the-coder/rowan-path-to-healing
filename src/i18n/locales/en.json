@@ -255,5 +255,36 @@
     "evidenceBased": "Evidence-based therapeutic approaches",
     "comfortableEnvironment": "Comfortable, calming environment",
     "learnMore": "Learn About Our Services"
+  },
+  "kidsafeHQ": {
+    "hero": {
+      "subtitle": "Interactive guides to help you have important conversations with your child about safety, boundaries, and healthy relationships"
+    },
+    "selectAgeGroup": "Select an Age Group",
+    "ageGroups": {
+      "elementary": {
+        "title": "Elementary School",
+        "description": "Age-appropriate lessons for K-5th grade about safety, boundaries, and healthy relationships"
+      },
+      "middle": {
+        "title": "Middle School",
+        "description": "Interactive guides for middle school students navigating friendships, emotions, and growing independence"
+      },
+      "high": {
+        "title": "High School",
+        "description": "Resources for teens on healthy relationships, consent, digital safety, and more"
+      }
+    },
+    "supportCards": {
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "description": "Common student questions about safety, consent, relationships, and more"
+      },
+      "resources": {
+        "title": "Resources",
+        "description": "Additional materials, guides, and external resources for parents, educators, and caregivers"
+      }
+    },
+    "exploreContent": "Explore Content"
   }
 }
