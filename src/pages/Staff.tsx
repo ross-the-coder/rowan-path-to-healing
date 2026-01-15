@@ -3,20 +3,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Users, Mail, Phone } from "lucide-react";
 import staffPhoto from "@/assets/rowan-center-staff.webp";
 
-const Staff = () => {
-  interface TeamMember {
-    name: string;
-    title: string;
-    email: string;
-    phone?: string;
-    image?: string;
-    credentials?: string;
-    languages?: string[];
-    bio?: string;
-    details?: string;
-    specialties?: string;
-  }
+interface TeamMember {
+  name: string;
+  title: string;
+  email: string;
+  phone?: string;
+  image?: string;
+  credentials?: string;
+  languages?: string[];
+  bio?: string;
+  details?: string;
+  specialties?: string;
+}
 
+const Staff = () => {
   const leadershipTeam: TeamMember[] = [
     {
       name: "Sharon Walker Epps",
