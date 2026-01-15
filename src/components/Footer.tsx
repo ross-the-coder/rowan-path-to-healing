@@ -41,6 +41,8 @@ const Footer = () => {
             
             {/* Social Media Links */}
             {/* Note: Facebook, Instagram, and Linkedin are React components from lucide-react, not deprecated HTML tags */}
+            {/* eslint-disable-next-line react/no-unknown-property */}
+            {/* @ts-ignore */}
             <div className="flex gap-3 mt-4">
               <a 
                 href="https://www.facebook.com/therowancenter" 
@@ -49,6 +51,7 @@ const Footer = () => {
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
                 aria-label="Facebook"
               >
+                {/* noinspection HtmlUnknownTag */}
                 <Facebook className="h-5 w-5" />
               </a>
               <a 
@@ -58,6 +61,7 @@ const Footer = () => {
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
                 aria-label="Instagram"
               >
+                {/* noinspection HtmlUnknownTag */}
                 <Instagram className="h-5 w-5" />
               </a>
               <a 
@@ -67,6 +71,7 @@ const Footer = () => {
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
                 aria-label="LinkedIn"
               >
+                {/* noinspection HtmlUnknownTag */}
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>

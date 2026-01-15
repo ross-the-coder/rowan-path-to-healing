@@ -1,5 +1,6 @@
 -- Add security constraints to intake tables
 -- This migration adds email validation and length constraints to intake tables
+-- Note: This is a Supabase migration file. Configure your IDE's SQL data source to point to Supabase for code assistance.
 
 -- Crisis Counseling Intake
 ALTER TABLE public.crisis_counseling_intake
