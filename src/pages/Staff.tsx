@@ -4,7 +4,20 @@ import { Users, Mail, Phone } from "lucide-react";
 import staffPhoto from "@/assets/rowan-center-staff.webp";
 
 const Staff = () => {
-  const leadershipTeam = [
+  interface TeamMember {
+    name: string;
+    title: string;
+    email: string;
+    phone?: string;
+    image?: string;
+    credentials?: string;
+    languages?: string[];
+    bio?: string;
+    details?: string;
+    specialties?: string;
+  }
+
+  const leadershipTeam: TeamMember[] = [
     {
       name: "Sharon Walker Epps",
       title: "Chief Executive Officer",
@@ -28,7 +41,7 @@ const Staff = () => {
     },
   ];
 
-  const staffMembers = [
+  const staffMembers: TeamMember[] = [
     {
       name: "Sarah Anzellotti",
       title: "Adult Counselor and Advocate",

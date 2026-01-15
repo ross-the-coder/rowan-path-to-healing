@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useKidSafeFAQs } from "@/hooks/useSanityData";
 import { faqData as fallbackFaqData, getGradeLevel, getRelatedResources } from "@/data/faqData";
-import { getAgeGroupLabel } from "@/utils/resourceMatcher";
+import { getAgeGroupLabel, searchResources } from "@/utils/resourceMatcher";
 import { supabase } from "@/integrations/supabase/client";
 
 const KidSafeFAQ = () => {
@@ -185,15 +185,17 @@ const KidSafeFAQ = () => {
             .slice(0, 5);
 
           // Use insert with error handling to prevent blocking
-          await supabase.from("faq_search_queries").insert({
+          const { error: insertError } = await supabase.from("faq_search_queries").insert({
             query: searchQuery,
             had_faq_results: filteredFAQs.length > 0,
             had_resource_results: recommendedResources.length > 0,
             matched_topics: matchedTopics
-          }).catch(err => {
-            // Silently fail - don't block UI
-            console.warn("Failed to save search query:", err);
           });
+
+          if (insertError) {
+            // Silently fail - don't block UI
+            console.warn("Failed to save search query:", insertError);
+          }
         } catch (err) {
           // Silently fail - don't block UI
           console.warn("Error saving search query:", err);
