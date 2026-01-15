@@ -333,7 +333,7 @@ const About = () => {
                 <div className="w-16 h-16 mx-auto mb-4 bg-secondary/10 rounded-full flex items-center justify-center">
                   <Heart className="h-8 w-8 text-secondary" />
                 </div>
-                <CardTitle className="text-2xl">[#]</CardTitle>
+                <CardTitle className="text-2xl">20+</CardTitle>
                 <CardDescription className="text-lg">Programs & Services</CardDescription>
               </CardHeader>
               <CardContent>
@@ -348,7 +348,7 @@ const About = () => {
                 <div className="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
                   <Eye className="h-8 w-8 text-accent" />
                 </div>
-                <CardTitle className="text-2xl">[#]</CardTitle>
+                <CardTitle className="text-2xl">22,100</CardTitle>
                 <CardDescription className="text-lg">Community Impact</CardDescription>
               </CardHeader>
               <CardContent>
