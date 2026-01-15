@@ -47,36 +47,45 @@ const getTownFromAddress = (address?: string): string | null => {
   return null;
 };
 
-// Get consistent color for a town
+// Get consistent color for a town, with a fallback for unknown locations
 const getTownColor = (town: string): string => {
   const towns = Object.keys(townCoordinates);
   const index = towns.indexOf(town);
+  if (index === -1) {
+    return '#6B7280'; // neutral gray for "Other"
+  }
   return townColors[index % townColors.length];
+};
+
+const getDeterministicOffset = (id: string) => {
+  let hash = 0;
+  for (let i = 0; i < id.length; i += 1) {
+    hash = (hash * 31 + id.charCodeAt(i)) % 100000;
+  }
+  const offsetX = ((hash % 100) / 100 - 0.5) * 0.02;
+  const offsetY = (((hash / 100) % 100) / 100 - 0.5) * 0.02;
+  return [offsetX, offsetY] as [number, number];
 };
 
 const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const popupRef = useRef<mapboxgl.Popup | null>(null);
+  const markersRef = useRef<mapboxgl.Marker[]>([]);
   const [mapboxToken, setMapboxToken] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isMapInitialized, setIsMapInitialized] = useState(false);
 
-  // Filter resources that have CT addresses - memoize to prevent infinite loops
-  const mappableResources = useMemo(() => 
-    resources.filter(r => r.address && getTownFromAddress(r.address)),
-    [resources]
-  );
+  // Include all resources; fall back to a default location when we can't map a town
+  const mappableResources = useMemo(() => resources, [resources]);
 
   // Group resources by town for legend - memoize to prevent recalculation
   const resourcesByTown = useMemo(() => 
     mappableResources.reduce((acc, resource) => {
-      const town = getTownFromAddress(resource.address);
-      if (town) {
-        if (!acc[town]) acc[town] = [];
-        acc[town].push(resource);
-      }
+      const town = getTownFromAddress(resource.address) || 'Other';
+      if (!acc[town]) acc[town] = [];
+      acc[town].push(resource);
       return acc;
     }, {} as Record<string, CommunityResource[]>),
     [mappableResources]
@@ -193,42 +202,53 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }
       map.current.scrollZoom.disable();
 
       map.current.on('load', () => {
-        // Add markers for each resource
-        mappableResources.forEach((resource) => {
-          const town = getTownFromAddress(resource.address);
-          if (!town || !townCoordinates[town]) return;
+        setIsMapInitialized(true);
+      });
 
-          const coords = townCoordinates[town];
-          // Add small random offset to prevent overlapping
-          const offset = [
-            (Math.random() - 0.5) * 0.015,
-            (Math.random() - 0.5) * 0.015
-          ];
+    } catch (error) {
+      console.error('Map initialization error:', error);
+      setError('Failed to initialize map');
+    }
 
-          const el = document.createElement('div');
-          el.className = 'resource-marker';
-          el.style.width = '24px';
-          el.style.height = '24px';
-          el.style.borderRadius = '50%';
-          el.style.backgroundColor = getTownColor(town);
-          el.style.border = '3px solid white';
-          el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.25)';
-          el.style.cursor = 'pointer';
-          el.style.transition = 'transform 0.2s ease';
+    return () => {
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
+      }
+    };
+  }, [mapboxToken]);
 
-          el.addEventListener('mouseenter', () => {
-            el.style.transform = 'scale(1.3)';
-          });
-          el.addEventListener('mouseleave', () => {
-            el.style.transform = 'scale(1)';
-          });
+  useEffect(() => {
+    if (!map.current || !isMapInitialized) return;
 
-          const marker = new mapboxgl.Marker({ element: el })
-            .setLngLat([coords[0] + offset[0], coords[1] + offset[1]])
-            .addTo(map.current!);
+    // Clear old markers
+    markersRef.current.forEach((marker) => marker.remove());
+    markersRef.current = [];
 
-          // Create popup content
-          const popupContent = `
+    // Add markers for each resource
+    mappableResources.forEach((resource) => {
+      const town = getTownFromAddress(resource.address);
+      const coords = town && townCoordinates[town] ? townCoordinates[town] : [-73.2, 41.2];
+      const [offsetX, offsetY] = getDeterministicOffset(resource.id);
+
+      const el = document.createElement('div');
+      el.className = 'resource-marker';
+      el.style.width = '24px';
+      el.style.height = '24px';
+      el.style.borderRadius = '50%';
+      el.style.backgroundColor = getTownColor(town || 'Other');
+      el.style.border = '3px solid white';
+      el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.25)';
+      el.style.cursor = 'pointer';
+      el.style.transition = 'box-shadow 0.2s ease, border-color 0.2s ease';
+
+      const marker = new mapboxgl.Marker({ element: el })
+        .setLngLat([coords[0] + offsetX, coords[1] + offsetY])
+        .addTo(map.current!);
+
+      markersRef.current.push(marker);
+
+      const popupContent = `
             <div style="max-width: 280px; font-family: system-ui, sans-serif;">
               <h3 style="margin: 0 0 8px 0; font-size: 14px; font-weight: 600; color: hsl(208, 43%, 25%);">
                 ${resource.name}
@@ -258,39 +278,38 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }
             </div>
           `;
 
-          const popup = new mapboxgl.Popup({
-            offset: 15,
-            closeButton: true,
-            closeOnClick: false,
-            maxWidth: '300px'
-          }).setHTML(popupContent);
+      const popup = new mapboxgl.Popup({
+        offset: 15,
+        closeButton: true,
+        closeOnClick: false,
+        maxWidth: '300px'
+      }).setHTML(popupContent);
 
-          marker.setPopup(popup);
-
-          el.addEventListener('click', () => {
-            if (popupRef.current) {
-              popupRef.current.remove();
-            }
-            marker.togglePopup();
-            popupRef.current = popup;
-          });
-        });
-
-        setIsMapInitialized(true);
+      el.addEventListener('mouseenter', () => {
+        el.style.boxShadow = '0 4px 12px rgba(0,0,0,0.35)';
+        el.style.borderColor = 'rgba(255,255,255,0.9)';
+        if (popupRef.current) {
+          popupRef.current.remove();
+        }
+        popup.addTo(map.current!);
+        popupRef.current = popup;
       });
 
-    } catch (error) {
-      console.error('Map initialization error:', error);
-      setError('Failed to initialize map');
-    }
+      el.addEventListener('mouseleave', () => {
+        el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.25)';
+        el.style.borderColor = 'white';
+        popup.remove();
+      });
 
-    return () => {
-      if (map.current) {
-        map.current.remove();
-        map.current = null;
-      }
-    };
-  }, [mapboxToken]);
+      el.addEventListener('click', () => {
+        if (popupRef.current) {
+          popupRef.current.remove();
+        }
+        popup.addTo(map.current!);
+        popupRef.current = popup;
+      });
+    });
+  }, [mappableResources, isMapInitialized]);
 
   if (isLoading) {
     return (
