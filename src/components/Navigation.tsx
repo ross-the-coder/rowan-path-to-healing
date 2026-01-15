@@ -57,6 +57,9 @@ const Navigation = () => {
                 {t('nav.traumaRecovery')} Clinic
               </Link>
             </Button>
+            <Button id="enableRecite" size="sm" variant="outline" className="border-white/30 text-foreground">
+              Accessibility
+            </Button>
             <LanguageSwitcher />
           </div>
           <ChariotDonation />
