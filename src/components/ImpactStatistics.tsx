@@ -39,7 +39,7 @@ const stats: StatItem[] = [
     id: 'sessions',
     value: 1141,
     label: 'Sessions for',
-    sublabel: '69 Clients in the Trauma Recovery Clinic',
+    sublabel: '69 Clients in the Trauma Recovery Practice',
     icon: Brain,
     category: 'services',
     description: 'Specialized trauma-focused therapy sessions'

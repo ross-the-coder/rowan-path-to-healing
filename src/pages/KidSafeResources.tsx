@@ -1,6 +1,8 @@
 import { useState, useMemo, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ReciteMeButton from "@/components/ReciteMeButton";
+import QuickEscape from "@/components/QuickEscape";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, BookOpen, ExternalLink, GraduationCap, School, Building, Search, BookText, X, Filter } from "lucide-react";
@@ -528,6 +530,8 @@ const KidSafeResources = () => {
       </main>
 
       <Footer />
+      <ReciteMeButton />
+      <QuickEscape />
     </div>
   );
 };

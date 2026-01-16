@@ -95,6 +95,15 @@ const CommunityResources = () => {
     selectedResourceType !== "all" || 
     selectedLocation !== "all";
 
+  const createAnchorId = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+  const getResourceAnchorId = (resource: CommunityResource) => createAnchorId(resource.name);
+
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case "Community": return <Building2 className="h-4 w-4" />;
@@ -304,8 +313,15 @@ const CommunityResources = () => {
           {filteredResources.length > 0 ? (
             viewMode === "grid" ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredResources.map((resource) => (
-                  <ResourceCard key={resource.id} resource={resource} getCategoryColor={getCategoryColor} getLocationBadgeColor={getLocationBadgeColor} getCategoryIcon={getCategoryIcon} />
+                  {filteredResources.map((resource) => (
+                    <ResourceCard
+                      key={resource.id}
+                      resource={resource}
+                      getCategoryColor={getCategoryColor}
+                      getLocationBadgeColor={getLocationBadgeColor}
+                      getCategoryIcon={getCategoryIcon}
+                      anchorId={getResourceAnchorId(resource)}
+                    />
                 ))}
               </div>
             ) : (
@@ -323,7 +339,11 @@ const CommunityResources = () => {
                   </TableHeader>
                   <TableBody>
                     {filteredResources.map((resource) => (
-                      <TableRow key={resource.id} className="hover:bg-muted/50">
+                      <TableRow
+                        key={resource.id}
+                        id={getResourceAnchorId(resource)}
+                        className="hover:bg-muted/50 scroll-mt-24"
+                      >
                         <TableCell className="font-medium">
                           <div>
                             <div className="font-semibold">{resource.name}</div>
@@ -433,11 +453,12 @@ interface ResourceCardProps {
   getCategoryColor: (category: string) => string;
   getLocationBadgeColor: (location: string) => string;
   getCategoryIcon: (category: string) => React.ReactNode;
+  anchorId: string;
 }
 
-const ResourceCard = ({ resource, getCategoryColor, getLocationBadgeColor, getCategoryIcon }: ResourceCardProps) => {
+const ResourceCard = ({ resource, getCategoryColor, getLocationBadgeColor, getCategoryIcon, anchorId }: ResourceCardProps) => {
   return (
-    <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-200 group">
+    <Card id={anchorId} className="h-full flex flex-col hover:shadow-lg transition-shadow duration-200 group scroll-mt-24">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-2 mb-2">
           <Badge variant="outline" className={`${getCategoryColor(resource.category)} gap-1`}>

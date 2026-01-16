@@ -1,6 +1,8 @@
-import { useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ReciteMeButton from "@/components/ReciteMeButton";
+import QuickEscape from "@/components/QuickEscape";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -73,7 +75,7 @@ const KidSafeNews = () => {
     : filteredArticles;
 
   // Reset to page 1 when filters change
-  useMemo(() => {
+  useEffect(() => {
     setCurrentPage(1);
   }, [searchQuery, selectedTopics, selectedSources, showCtOnly]);
 
@@ -418,6 +420,8 @@ const KidSafeNews = () => {
       </main>
 
       <Footer />
+      <ReciteMeButton />
+      <QuickEscape />
     </div>
   );
 };

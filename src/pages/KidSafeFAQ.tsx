@@ -1,6 +1,8 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ReciteMeButton from "@/components/ReciteMeButton";
+import QuickEscape from "@/components/QuickEscape";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, HelpCircle, Search, BookOpen, Filter, X, ExternalLink, Sparkles } from "lucide-react";
@@ -886,6 +888,8 @@ const KidSafeFAQ = () => {
       </main>
 
       <Footer />
+      <ReciteMeButton />
+      <QuickEscape />
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ReciteMeButton from "@/components/ReciteMeButton";
+import QuickEscape from "@/components/QuickEscape";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -135,6 +137,8 @@ const KidSafeHigh = () => {
       </div>
 
       <Footer />
+      <ReciteMeButton />
+      <QuickEscape />
     </div>
   );
 };

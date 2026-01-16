@@ -21,44 +21,25 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const translations = {
-  en: {
-    title: "Questions or Scheduling?",
-    subtitle: "Contact our Education Team",
-    firstName: "First Name",
-    lastName: "Last Name",
-    email: "Email",
-    phone: "Phone",
-    organization: "School/Organization (Optional)",
-    message: "Your Question or Message",
-    submit: "Send Message",
-    submitting: "Sending...",
-    success: "Thank you! We'll be in touch soon.",
-    error: "Something went wrong. Please try again.",
-    switchLang: "Español",
-  },
-  es: {
-    title: "¿Preguntas o Programación?",
-    subtitle: "Contacte a nuestro Equipo de Educación",
-    firstName: "Nombre",
-    lastName: "Apellido",
-    email: "Correo Electrónico",
-    phone: "Teléfono",
-    organization: "Escuela/Organización (Opcional)",
-    message: "Su Pregunta o Mensaje",
-    submit: "Enviar Mensaje",
-    submitting: "Enviando...",
-    success: "¡Gracias! Nos pondremos en contacto pronto.",
-    error: "Algo salió mal. Por favor, inténtelo de nuevo.",
-    switchLang: "English",
-  },
+const copy = {
+  title: "Questions or Scheduling?",
+  subtitle: "Contact our Education Team",
+  firstName: "First Name",
+  lastName: "Last Name",
+  email: "Email",
+  phone: "Phone",
+  organization: "School/Organization (Optional)",
+  message: "Your Question or Message",
+  submit: "Send Message",
+  submitting: "Sending...",
+  success: "Thank you! We'll be in touch soon.",
+  error: "Something went wrong. Please try again.",
 };
 
 export const PreventionEducationContactForm = () => {
-  const [language, setLanguage] = useState<"en" | "es">("en");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const t = translations[language];
+  const t = copy;
 
   const {
     register,
@@ -80,7 +61,7 @@ export const PreventionEducationContactForm = () => {
           phone: data.phone,
           organization: data.organization || null,
           message: data.message,
-          form_language: language,
+          form_language: "en",
         },
       ]);
 
@@ -104,15 +85,6 @@ export const PreventionEducationContactForm = () => {
   return (
     <Card className="max-w-2xl mx-auto bg-secondary/5">
       <CardHeader className="text-center">
-        <div className="flex justify-end mb-2">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setLanguage(language === "en" ? "es" : "en")}
-          >
-            {t.switchLang}
-          </Button>
-        </div>
         <CardTitle className="text-3xl font-seasons font-normal">{t.title}</CardTitle>
         <p className="text-muted-foreground font-roboto">{t.subtitle}</p>
       </CardHeader>

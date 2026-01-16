@@ -27,7 +27,7 @@ const teamMembers = [
     title: "Assistant Practice Director",
     credentials: "EMDR Provider",
     bio: "Isabel Negron (she/her) is a Licensed Clinical Social Worker (LCSW) and an EMDR provider since 2022. She is working towards her Certified EMDR Therapist status. Isabel received her MSW from Fairfield University in 2022 and is licensed in Connecticut.",
-    details: "Isabel started at The Rowan Center in the Fall of 2021 as a master's-level intern before being asked to join our team after graduating with her MSW. She served as our Bilingual (EN/ES) Intake Coordinator before transitioning into her current role as our first Bilingual (EN/ES) Staff Therapist at the Trauma Recovery Practice at TRC.",
+    details: "Isabel started at The Rowan Center in the Fall of 2021 as a master's-level intern before being asked to join our team after graduating with her MSW. She served as our Bilingual (EN/ES) Intake Coordinator before transitioning into her current role as our first Bilingual (EN/ES) Staff Therapist at the Trauma Recovery Practice at TRP.",
     specialties: "Isabel is able to offer direct client services in English and Spanish. She has experience working with clients exhibiting symptoms of depression, anxiety, and PTSD, and especially with victims and survivors of sexual violence and other forms of trauma.",
     languages: ["English", "Spanish"],
     image: isabelHeadshot,
@@ -59,7 +59,7 @@ const TraumaRecovery = () => {
     <Layout>
       <SEO 
         title="Trauma Recovery Practice" 
-        description="The Trauma Recovery Practice (TRC) at The Rowan Center offers long-term, trauma-informed clinical therapy to help survivors of trauma heal."
+        description="The Trauma Recovery Practice (TRP) at The Rowan Center offers long-term, trauma-informed clinical therapy to help survivors of trauma heal."
       />
       {/* Hero Section */}
       <section className="relative min-h-[500px] flex items-center overflow-hidden">
@@ -89,11 +89,11 @@ const TraumaRecovery = () => {
       <div className="py-12">
         <div className="container mx-auto px-4">
 
-          {/* About TRC Section */}
+          {/* About TRP Section */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="bg-muted/30 rounded-2xl p-8 md:p-12">
               <p className="text-lg text-foreground mb-6 leading-relaxed">
-                The Trauma Recovery Practice (TRC) at The Rowan Center offers long-term, trauma-informed 
+                The Trauma Recovery Practice (TRP) at The Rowan Center offers long-term, trauma-informed 
                 clinical therapy to help survivors of trauma heal.
               </p>
               <p className="text-lg text-foreground mb-6 leading-relaxed">

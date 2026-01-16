@@ -15,7 +15,7 @@ export const communityResources: CommunityResource[] = [
   {
     id: "1",
     name: "The Trauma Recovery Practice at The Rowan Center",
-    url: "https://therowancenter.org/trauma-recovery-clinic/",
+    url: "https://therowancenter.org/trauma-recovery-practice/",
     description: "Long-term therapy for victims/survivors over 18 with HUSKY. Specialized trauma-focused treatment including EMDR and evidence-based approaches.",
     category: "Community",
     resourceTypes: ["Mental Health", "DV", "Trafficking"],
@@ -38,15 +38,13 @@ export const communityResources: CommunityResource[] = [
   },
   {
     id: "3",
-    name: "PEHT (Project to End Human Trafficking)",
-    url: "https://buildingonect.org/",
-    description: "Provides crisis intervention (hotline) and individual/group counseling to people who have experienced domestic violence. Offers case management, crisis support, transitional housing, residential program, and job training for victims/survivors of human trafficking.",
-    category: "Community",
-    resourceTypes: ["Trafficking", "Housing", "Employment"],
-    catchmentArea: "State",
-    phone: "(203) 973-7348",
-    address: "105 Woodside Dr, Greenwich, CT 06830",
-    tags: ["human trafficking", "crisis", "housing", "job training"]
+    name: "Partnership to End Human Trafficking",
+    url: "https://endtrafficking.org/",
+    description: "National partnership focused on ending human trafficking through education, advocacy, and survivor support.",
+    category: "Partnership",
+    resourceTypes: ["Trafficking", "Advocacy", "Education"],
+    catchmentArea: "National",
+    tags: ["human trafficking", "education", "advocacy", "survivor support"]
   },
   {
     id: "4",
@@ -423,6 +421,48 @@ export const communityResources: CommunityResource[] = [
     resourceTypes: ["For Children", "Online Safety"],
     catchmentArea: "National",
     tags: ["children", "exploitation", "online safety", "reporting"]
+  },
+  {
+    id: "36",
+    name: "Anchor Health",
+    url: "https://anchorhealthct.org/",
+    description: "Provides inclusive healthcare and behavioral health services for the community.",
+    category: "Community",
+    resourceTypes: ["Healthcare", "Mental Health"],
+    catchmentArea: "State",
+    phone: "(203) 225-7777",
+    address: "761 Main St, New Britain, CT 06051",
+    tags: ["healthcare", "behavioral health", "community"]
+  },
+  {
+    id: "37",
+    name: "CT Alliance to End Sexual Violence",
+    url: "https://endsexualviolencect.org/",
+    description: "Statewide coalition providing education, advocacy, and support for survivors.",
+    category: "Partnership",
+    resourceTypes: ["Advocacy", "Education", "Support"],
+    catchmentArea: "State",
+    tags: ["sexual violence", "advocacy", "education", "survivors"]
+  },
+  {
+    id: "38",
+    name: "New Canaan Behavioral Health Alliance",
+    url: "https://newcanaanbha.org/",
+    description: "Local collaboration focused on mental health awareness and prevention.",
+    category: "Community",
+    resourceTypes: ["Mental Health", "Education", "Prevention"],
+    catchmentArea: "Local",
+    tags: ["mental health", "prevention", "education"]
+  },
+  {
+    id: "39",
+    name: "New Canaan Abuse Prevention Partnership",
+    url: "https://newcanaanabusecouncil.com/",
+    description: "Community education and prevention focused on reducing abuse.",
+    category: "Community",
+    resourceTypes: ["Education", "Prevention"],
+    catchmentArea: "Local",
+    tags: ["abuse prevention", "community education"]
   }
 ];
 

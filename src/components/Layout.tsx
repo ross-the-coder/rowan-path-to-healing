@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import QuickEscape from "./QuickEscape";
 import ChariotDonation from "./ChariotDonation";
 import SkipNav from "./SkipNav";
+import ReciteMeButton from "./ReciteMeButton";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+      <ReciteMeButton />
       <QuickEscape />
       <ChariotDonation />
     </div>

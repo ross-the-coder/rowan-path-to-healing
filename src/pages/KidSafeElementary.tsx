@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ReciteMeButton from "@/components/ReciteMeButton";
+import QuickEscape from "@/components/QuickEscape";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -117,6 +119,8 @@ const KidSafeElementary = () => {
       </main>
 
       <Footer />
+      <ReciteMeButton />
+      <QuickEscape />
     </div>
   );
 };

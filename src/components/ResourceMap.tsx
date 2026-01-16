@@ -216,7 +216,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ resources, getCategoryColor }
         map.current = null;
       }
     };
-  }, [mapboxToken]);
+  }, [mapboxToken, isMapInitialized]);
 
   useEffect(() => {
     if (!map.current || !isMapInitialized) return;

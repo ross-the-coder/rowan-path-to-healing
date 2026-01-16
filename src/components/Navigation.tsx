@@ -7,7 +7,6 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import logoImage from "@/assets/rowan-center-logo.png";
 import ChariotDonation from "./ChariotDonation";
-import LanguageSwitcher from "./LanguageSwitcher";
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const {
@@ -15,9 +14,9 @@ const Navigation = () => {
   } = useTranslation();
   return <header className="sticky top-0 z-50">
       {/* Crisis Banner */}
-      <div className="bg-white py-5 px-4 border-b">
-        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm font-roboto">
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:pl-36">
+      <div className="bg-[#e7f1f4] py-5 px-4 border-b">
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-end gap-3 text-sm font-roboto">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-3 w-full">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
@@ -54,13 +53,9 @@ const Navigation = () => {
             </Button>
             <Button asChild size="sm" className="bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-white">
               <Link to="/trauma-recovery">
-                {t('nav.traumaRecovery')} Clinic
+                {t('nav.traumaRecovery')} Practice
               </Link>
             </Button>
-            <Button id="enableRecite" size="sm" variant="outline" className="border-white/30 text-foreground">
-              Accessibility
-            </Button>
-            <LanguageSwitcher />
           </div>
           <ChariotDonation />
         </div>
@@ -206,7 +201,7 @@ const Navigation = () => {
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link to="/trauma-recovery" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">{t('nav.traumaRecovery')} Clinic</div>
+                            <div className="text-sm font-medium leading-none">{t('nav.traumaRecovery')} Practice</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               {t('nav.clinicDesc')}
                             </p>

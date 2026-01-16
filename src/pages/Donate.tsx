@@ -2,35 +2,46 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, CreditCard, Landmark, PiggyBank } from "lucide-react";
-import ChariotConnect from "react-chariot-connect";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import donateHeroImage from "@/assets/donate-hero.jpg";
 import donateEventsImage from "@/assets/donate-events.jpg";
 import donateVolunteerImage from "@/assets/donate-volunteer.jpg";
 import donateCommunityImage from "@/assets/donate-community.jpg";
 
-// TODO: Replace with your actual Chariot Connect ID from https://dashboard.givechariot.com
-const CHARIOT_CONNECT_ID = "YOUR_CHARIOT_CID";
+const DONATE_URL = import.meta.env.VITE_DONATE_URL ?? "https://therowancenter.org/donate/";
+const CHARIOT_BUTTON_CID =
+  import.meta.env.VITE_CHARIOT_BUTTON_CID ??
+  "live_94b0c45a4d4331c03a8a7aba670bd6bfe484c5ceec4f468525a7a77addc78c88";
+const CHARIOT_SCRIPT_SRC = "https://cdn.givechariot.com/components/chariot-components.umd.js";
 
 const Donate = () => {
-  const handleDAFSuccess = (e: any) => {
-    console.log("DAF donation successful:", e);
-    toast.success("Thank you for your DAF donation!");
-  };
+  const [isChariotReady, setIsChariotReady] = useState(false);
 
-  const handleDAFExit = (e: any) => {
-    console.log("DAF widget exited:", e);
-  };
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (customElements.get("chariot-button")) {
+      setIsChariotReady(true);
+      return;
+    }
 
-  const handleDAFError = (e: any) => {
-    console.error("DAF widget error:", e);
-    toast.error("There was an issue with the DAF widget. Please try again.");
-  };
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      `script[src="${CHARIOT_SCRIPT_SRC}"]`
+    );
+    if (existingScript) {
+      existingScript.addEventListener("load", () => setIsChariotReady(true), { once: true });
+      return;
+    }
 
-  const handleDonationRequest = () => {
-    return {
-      amount: undefined, // Let donor choose amount
-    };
+    const script = document.createElement("script");
+    script.src = CHARIOT_SCRIPT_SRC;
+    script.async = true;
+    script.onload = () => setIsChariotReady(true);
+    document.head.appendChild(script);
+  }, []);
+
+  const handleDAFClick = () => {
+    toast.success("Launching donor-advised fund giving...");
   };
 
   return (
@@ -130,8 +141,10 @@ const Donate = () => {
                   <p className="font-roboto text-muted-foreground mb-6 flex-1">
                     Help make our community safer and healthier for all. Invest in prevention education, advocate for victims and survivors, and ensure that everyone who has been impacted by sexual violence can access the counseling and resources they need to heal and move forward.
                   </p>
-                  <Button className="w-full" size="lg">
-                    Donate Now
+                  <Button className="w-full" size="lg" asChild>
+                    <a href={DONATE_URL}>
+                      Donate Now
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -150,14 +163,18 @@ const Donate = () => {
                     When you give to The Rowan Center through your Donor-Advised Fund, you're helping provide counseling, prevention education, and advocacy to survivors of sexual violence in Lower Fairfield County. Your support expands trauma-informed care, fights sex trafficking, and educates thousands of students on consent, safety, and healthy relationships. A gift through your DAF is a powerful way to support our mission today—and ensure we're here for anyone who needs us tomorrow.
                   </p>
                   <div className="w-full flex justify-center">
-                    <ChariotConnect
-                      cid={CHARIOT_CONNECT_ID}
-                      theme="LightModeTheme"
-                      onDonationRequest={handleDonationRequest}
-                      onSuccess={handleDAFSuccess}
-                      onExit={handleDAFExit}
-                      onError={handleDAFError}
-                    />
+                    {isChariotReady && CHARIOT_BUTTON_CID ? (
+                      <chariot-button
+                        cid={CHARIOT_BUTTON_CID}
+                        onClick={handleDAFClick}
+                      ></chariot-button>
+                    ) : (
+                      <Button asChild className="w-full">
+                        <a href="mailto:info@therowancenter.org?subject=Donor%20Advised%20Fund%20Giving">
+                          Contact Us About DAF Giving
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>

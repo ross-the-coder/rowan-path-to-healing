@@ -86,7 +86,7 @@ serve(async (req) => {
           html: `
             <h1>New KidSafeHQ Question</h1>
             <p>A new anonymous KidSafeHQ question was submitted for public sharing.</p>
-            <p><strong>Wants response:</strong> ${Boolean(wantsResponse) ? "Yes" : "No"}</p>
+            <p><strong>Wants response:</strong> ${wantsResponse ? "Yes" : "No"}</p>
             <p><strong>Question:</strong> ${question.trim()}</p>
           `,
         }),
