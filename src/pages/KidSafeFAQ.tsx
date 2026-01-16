@@ -7,6 +7,8 @@ import { ArrowLeft, HelpCircle, Search, BookOpen, Filter, X, ExternalLink, Spark
 import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useKidSafeFAQs } from "@/hooks/useSanityData";
@@ -42,6 +44,15 @@ const KidSafeFAQ = () => {
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | undefined>(undefined);
+  const [questionText, setQuestionText] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [wantsResponse, setWantsResponse] = useState(false);
+  const [consentToShare, setConsentToShare] = useState(false);
+  const [isSubmittingQuestion, setIsSubmittingQuestion] = useState(false);
+  const [questionSubmitError, setQuestionSubmitError] = useState<string | null>(null);
+  const [questionSubmitSuccess, setQuestionSubmitSuccess] = useState(false);
+  const questionFormRef = useRef<HTMLDivElement | null>(null);
+  const questionTextareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Optimize allGrades and allTopics by calculating them from fallbackData once
   // since they are mostly static and Sanity data structure should match
@@ -155,7 +166,7 @@ const KidSafeFAQ = () => {
   // Get recommended resources when no FAQs match but there's a search query
   const recommendedResources = useMemo(() => {
     if (filteredFAQs.length === 0 && searchQuery.length >= 2) {
-      return searchResources(searchQuery);
+      return searchResources(searchQuery, 10);
     }
     return [];
   }, [filteredFAQs.length, searchQuery]);
@@ -226,6 +237,71 @@ const KidSafeFAQ = () => {
     setSelectedGrades([]);
     setSelectedTopics([]);
     setSearchQuery("");
+  };
+
+  const handleJumpToQuestionForm = () => {
+    const trimmedSearch = searchQuery.trim();
+    if (trimmedSearch) {
+      setQuestionText(trimmedSearch);
+    }
+
+    questionFormRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    requestAnimationFrame(() => {
+      questionTextareaRef.current?.focus();
+    });
+  };
+
+  const handleQuestionSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setQuestionSubmitError(null);
+    setQuestionSubmitSuccess(false);
+
+    const trimmedQuestion = questionText.trim();
+    if (trimmedQuestion.length < 10) {
+      setQuestionSubmitError("Please enter a longer question so we can understand it.");
+      return;
+    }
+
+    if (!consentToShare) {
+      setQuestionSubmitError("Please confirm that your question can be shared publicly and anonymously.");
+      return;
+    }
+
+    if (wantsResponse && !contactEmail.trim()) {
+      setQuestionSubmitError("Add an email address if you'd like a response notification.");
+      return;
+    }
+
+    setIsSubmittingQuestion(true);
+
+    try {
+      const { error: submitError } = await supabase.functions.invoke("submit-kidsafe-question", {
+        body: {
+          question: trimmedQuestion,
+          contactEmail: contactEmail.trim() || null,
+          wantsResponse,
+          consentToShare,
+          searchQuery: searchQuery.trim() || null,
+        },
+      });
+
+      if (submitError) {
+        const contextMessage = (submitError as { context?: { error?: string } })?.context?.error;
+        throw new Error(contextMessage || submitError.message);
+      }
+
+      setQuestionSubmitSuccess(true);
+      setQuestionText("");
+      setContactEmail("");
+      setWantsResponse(false);
+      setConsentToShare(false);
+    } catch (err) {
+      console.error("Failed to submit KidSafe question:", err);
+      const message = err instanceof Error ? err.message : "We couldn't submit your question right now.";
+      setQuestionSubmitError(message || "We couldn't submit your question right now. Please try again in a moment.");
+    } finally {
+      setIsSubmittingQuestion(false);
+    }
   };
 
   const hasActiveFilters = selectedGrades.length > 0 || selectedTopics.length > 0 || searchQuery !== "";
@@ -371,7 +447,7 @@ const KidSafeFAQ = () => {
                     </button>
                   )}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <Button
                     variant={showFilters ? "default" : "outline"}
                     onClick={() => setShowFilters(!showFilters)}
@@ -391,6 +467,13 @@ const KidSafeFAQ = () => {
                       Clear
                     </Button>
                   )}
+                  <Button
+                    variant="outline"
+                    onClick={handleJumpToQuestionForm}
+                    className="h-12 border-teal-200 text-teal-700 hover:bg-teal-50"
+                  >
+                    Submit a Question
+                  </Button>
                 </div>
               </div>
 
@@ -664,6 +747,108 @@ const KidSafeFAQ = () => {
               )}
             </div>
           )}
+
+          {/* Anonymous Question Submission */}
+          <Card ref={questionFormRef} className="mt-12 border-teal-200 dark:border-teal-800 bg-white dark:bg-background scroll-mt-24">
+            <CardHeader>
+              <CardTitle className="text-xl">Submit a Question Anonymously</CardTitle>
+              <CardDescription className="text-base">
+                This form is for sharing questions you believe are important for the public to know. It is not monitored for urgent help.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="rounded-lg border border-teal-100 dark:border-teal-900/60 bg-teal-50/50 dark:bg-teal-950/20 p-4 text-sm text-teal-900/80 dark:text-teal-200/80 space-y-2">
+                <p>
+                  Please do not include names, personal descriptions, identifying details, or other private information.
+                </p>
+                <p>
+                  If you need immediate help, please visit{" "}
+                  <Link to="/crisis-support" className="font-semibold text-teal-700 hover:underline">
+                    Talk to Someone Now
+                  </Link>
+                  , explore{" "}
+                  <Link to="/resources" className="font-semibold text-teal-700 hover:underline">
+                    Options & Resources
+                  </Link>
+                  , or connect with{" "}
+                  <Link to="/trauma-recovery" className="font-semibold text-teal-700 hover:underline">
+                    Trauma Recovery Practice
+                  </Link>
+                  .
+                </p>
+              </div>
+
+              <form className="mt-6 space-y-4" onSubmit={handleQuestionSubmit}>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-foreground" htmlFor="kidsafe-question">
+                    Your question
+                  </label>
+                  <Textarea
+                    id="kidsafe-question"
+                    ref={questionTextareaRef}
+                    value={questionText}
+                    onChange={(event) => setQuestionText(event.target.value)}
+                    placeholder="Ask your question here..."
+                    className="min-h-[140px]"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-foreground" htmlFor="kidsafe-email">
+                    Email address (optional)
+                  </label>
+                  <Input
+                    id="kidsafe-email"
+                    type="email"
+                    value={contactEmail}
+                    onChange={(event) => setContactEmail(event.target.value)}
+                    placeholder="name@example.com"
+                  />
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="kidsafe-response"
+                    checked={wantsResponse}
+                    onCheckedChange={(value) => setWantsResponse(Boolean(value))}
+                  />
+                  <label htmlFor="kidsafe-response" className="text-sm text-muted-foreground">
+                    Email me if a response is posted (email is optional and only used for this purpose).
+                  </label>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="kidsafe-consent"
+                    checked={consentToShare}
+                    onCheckedChange={(value) => setConsentToShare(Boolean(value))}
+                  />
+                  <label htmlFor="kidsafe-consent" className="text-sm text-muted-foreground">
+                    I understand my question may be shared publicly and anonymously.
+                  </label>
+                </div>
+
+                {questionSubmitError && (
+                  <p className="text-sm text-red-600">{questionSubmitError}</p>
+                )}
+
+                {questionSubmitSuccess && (
+                  <p className="text-sm text-teal-700">
+                    Thanks! Your question was submitted. We’ll review it and add answers as we can.
+                  </p>
+                )}
+
+                <Button
+                  type="submit"
+                  className="bg-teal-600 hover:bg-teal-700"
+                  disabled={isSubmittingQuestion}
+                >
+                  {isSubmittingQuestion ? "Submitting..." : "Submit Question"}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
 
           {/* Related Resources Section */}
           <Card className="mt-12 bg-gradient-to-r from-teal-500/10 via-teal-600/5 to-teal-500/10 border-teal-200 dark:border-teal-800 overflow-hidden relative">

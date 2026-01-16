@@ -10,7 +10,7 @@ export interface MatchedResource extends ResourceLink {
 /**
  * Searches resources based on a query string, returning matched resources sorted by relevance
  */
-export function searchResources(query: string): MatchedResource[] {
+export function searchResources(query: string, limit = 10): MatchedResource[] {
   const normalizedQuery = query.toLowerCase().trim();
   
   if (!normalizedQuery || normalizedQuery.length < 2) {
@@ -105,7 +105,7 @@ export function searchResources(query: string): MatchedResource[] {
       seen.add(r.title);
       return true;
     })
-    .slice(0, 8); // Return top 8 matches
+    .slice(0, limit); // Return top matches
 }
 
 /**
