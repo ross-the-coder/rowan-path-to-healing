@@ -13,6 +13,14 @@ interface NewsSectionProps {
 
 const NewsSection = ({ articles, compact = false }: NewsSectionProps) => {
   const displayArticles = compact ? articles.slice(0, 4) : articles;
+  const formatArticleDate = (dateValue: string, formatString: string) => {
+    const parsed = parseDate(dateValue);
+    if (Number.isNaN(parsed.getTime())) {
+      return "Date TBD";
+    }
+
+    return format(parsed, formatString);
+  };
 
   if (compact) {
     return (
@@ -47,7 +55,7 @@ const NewsSection = ({ articles, compact = false }: NewsSectionProps) => {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-grow min-w-0">
                     <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
-                      <span>{format(parseDate(article.date), "MMM d, yyyy")}</span>
+                      <span>{formatArticleDate(article.date, "MMM d, yyyy")}</span>
                       <span>•</span>
                       <span className="font-medium text-primary">{article.source}</span>
                       {article.isConnecticut && (
@@ -81,7 +89,7 @@ const NewsSection = ({ articles, compact = false }: NewsSectionProps) => {
           <CardHeader className="pb-3">
             <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
               <Calendar className="h-3 w-3" />
-              <span>{format(parseDate(article.date), "MMMM d, yyyy")}</span>
+              <span>{formatArticleDate(article.date, "MMMM d, yyyy")}</span>
               {article.isConnecticut && (
                 <>
                   <span className="mx-1">•</span>

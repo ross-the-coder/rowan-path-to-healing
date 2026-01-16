@@ -27,6 +27,7 @@ const KidSafeHQ = () => {
       descriptionKey: "kidsafeHQ.ageGroups.elementary.description",
       icon: School,
       link: "/kidsafehq/elementary",
+      buttonLabel: "Explore Grades K-5",
       color: "from-blue-500/10 to-blue-600/5",
       image: kidsafeElementary
     },
@@ -35,6 +36,7 @@ const KidSafeHQ = () => {
       descriptionKey: "kidsafeHQ.ageGroups.middle.description",
       icon: Users,
       link: "/kidsafehq/middle",
+      buttonLabel: "Explore Grades 6, 7, and 8",
       color: "from-green-500/10 to-green-600/5",
       image: kidsafeMiddle
     },
@@ -43,6 +45,7 @@ const KidSafeHQ = () => {
       descriptionKey: "kidsafeHQ.ageGroups.high.description",
       icon: GraduationCap,
       link: "/kidsafehq/high",
+      buttonLabel: "Explore Grades 9, 10, 11, and 12",
       color: "from-purple-500/10 to-purple-600/5",
       image: kidsafeHigh
     }
@@ -54,6 +57,7 @@ const KidSafeHQ = () => {
       descriptionKey: "kidsafeHQ.supportCards.faq.description",
       icon: HelpCircle,
       link: "/kidsafehq/faqs",
+      buttonLabel: "Do you have a question?",
       color: "from-teal-500/10 to-teal-600/5",
       image: kidsafeResources
     },
@@ -62,6 +66,7 @@ const KidSafeHQ = () => {
       descriptionKey: "kidsafeHQ.supportCards.resources.description",
       icon: BookOpen,
       link: "/kidsafehq/resources",
+      buttonLabel: "Dive Deeper",
       color: "from-orange-500/10 to-orange-600/5",
       image: kidsafeResources
     }
@@ -122,7 +127,7 @@ const KidSafeHQ = () => {
                   </CardHeader>
                   <CardContent>
                     <Button asChild className="w-full">
-                      <Link to={group.link}>{t('kidsafeHQ.exploreContent')}</Link>
+                      <Link to={group.link}>{group.buttonLabel}</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -152,7 +157,7 @@ const KidSafeHQ = () => {
                   </CardHeader>
                   <CardContent>
                     <Button asChild className="w-full">
-                      <Link to={card.link}>{t('kidsafeHQ.exploreContent')}</Link>
+                      <Link to={card.link}>{card.buttonLabel}</Link>
                     </Button>
                   </CardContent>
                 </Card>

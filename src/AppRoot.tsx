@@ -7,6 +7,7 @@ import { StaticRouter } from "react-router-dom/server";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { HelmetProvider } from "react-helmet-async";
 import { AppRoutes } from "@/AppRoutes";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
@@ -28,7 +29,9 @@ export const AppRoot = ({ routerType, urlPathname, helmetContext }: AppRootProps
             <Toaster />
             <Sonner />
             <Router {...routerProps}>
-              <AppRoutes />
+              <ErrorBoundary>
+                <AppRoutes />
+              </ErrorBoundary>
             </Router>
           </TooltipProvider>
         </AuthProvider>

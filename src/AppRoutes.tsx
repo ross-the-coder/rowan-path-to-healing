@@ -2,6 +2,13 @@ import { lazy, Suspense, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import Staff from "@/pages/Staff.tsx";
+import KidSafeHQ from "@/pages/KidSafeHQ";
+import KidSafeElementary from "@/pages/KidSafeElementary";
+import KidSafeMiddle from "@/pages/KidSafeMiddle";
+import KidSafeHigh from "@/pages/KidSafeHigh";
+import KidSafeResources from "@/pages/KidSafeResources";
+import KidSafeNews from "@/pages/KidSafeNews";
+import KidSafeFAQ from "@/pages/KidSafeFAQ";
 
 // Lazy load all page components
 const Index = lazy(() => import("./pages/Index"));
@@ -20,13 +27,6 @@ const Media = lazy(() => import("./pages/Media"));
 const BoardOfDirectors = lazy(() => import("./pages/BoardOfDirectors"));
 const Financials = lazy(() => import("./pages/Financials"));
 const Careers = lazy(() => import("./pages/Careers"));
-const KidSafeHQ = lazy(() => import("./pages/KidSafeHQ"));
-const KidSafeElementary = lazy(() => import("./pages/KidSafeElementary"));
-const KidSafeMiddle = lazy(() => import("./pages/KidSafeMiddle"));
-const KidSafeHigh = lazy(() => import("./pages/KidSafeHigh"));
-const KidSafeResources = lazy(() => import("./pages/KidSafeResources"));
-const KidSafeNews = lazy(() => import("./pages/KidSafeNews"));
-const KidSafeFAQ = lazy(() => import("./pages/KidSafeFAQ"));
 const News = lazy(() => import("./pages/News"));
 const CTLawsReporting = lazy(() => import("./pages/CTLawsReporting"));
 const Reminders = lazy(() => import("./pages/Reminders"));
