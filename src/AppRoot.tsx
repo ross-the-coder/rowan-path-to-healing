@@ -18,9 +18,6 @@ type AppRootProps = {
 };
 
 export const AppRoot = ({ routerType, urlPathname, helmetContext }: AppRootProps) => {
-  const Router = routerType === "static" ? StaticRouter : BrowserRouter;
-  const routerProps = routerType === "static" ? { location: urlPathname || "/" } : {};
-
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider context={helmetContext}>
@@ -28,11 +25,19 @@ export const AppRoot = ({ routerType, urlPathname, helmetContext }: AppRootProps
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <Router {...routerProps}>
-              <ErrorBoundary>
-                <AppRoutes />
-              </ErrorBoundary>
-            </Router>
+            {routerType === "static" ? (
+              <StaticRouter location={urlPathname || "/"}>
+                <ErrorBoundary>
+                  <AppRoutes />
+                </ErrorBoundary>
+              </StaticRouter>
+            ) : (
+              <BrowserRouter>
+                <ErrorBoundary>
+                  <AppRoutes />
+                </ErrorBoundary>
+              </BrowserRouter>
+            )}
           </TooltipProvider>
         </AuthProvider>
       </HelmetProvider>

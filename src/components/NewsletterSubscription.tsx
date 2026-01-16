@@ -4,8 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Mail } from "lucide-react";
@@ -49,7 +47,12 @@ export const NewsletterSubscription = () => {
             description: "This email is already on our mailing list.",
           });
         } else {
-          throw error;
+          console.error("Error subscribing to newsletter:", error);
+          toast({
+            title: "Something went wrong",
+            description: "Please try again later.",
+            variant: "destructive",
+          });
         }
       } else {
         toast({
@@ -79,7 +82,7 @@ export const NewsletterSubscription = () => {
         
         <div className="flex-1 text-center md:text-left">
           <h3 className="text-2xl font-seasons font-normal mb-1 text-foreground">
-            Subscribe for Updates & News Alerts
+            Sign up to learn more about keeping your kids safe
           </h3>
           <p className="text-sm font-roboto text-muted-foreground">
             Stay informed about our programs, events, and important community updates

@@ -12,8 +12,21 @@ import zacharyHeadshot from "@/assets/zachary-boccarossa-headshot.webp";
 import tainaHeadshot from "@/assets/taina-colon-headshot.webp";
 import { SEO } from "@/components/SEO";
 
+type TeamMember = {
+  name: string;
+  title: string;
+  email?: string;
+  phone?: string;
+  image?: string;
+  credentials?: string;
+  bio?: string;
+  details?: string;
+  specialties?: string;
+  languages?: string[];
+};
+
 const About = () => {
-  const leadershipTeam = [
+  const leadershipTeam: TeamMember[] = [
     {
       name: "Sharon Walker Epps",
       title: "Chief Executive Officer",
@@ -37,7 +50,7 @@ const About = () => {
     },
   ];
 
-  const staffMembers = [
+  const staffMembers: TeamMember[] = [
     {
       name: "Sarah Anzellotti",
       title: "Crisis Counselor & Data Quality Coordinator",
@@ -75,7 +88,7 @@ const About = () => {
     },
   ];
 
-  const traumaRecoveryTeam = [
+  const traumaRecoveryTeam: TeamMember[] = [
     {
       name: "Luke Robbins, LCSW",
       title: "Clinical Director (EN/ES/FR)",

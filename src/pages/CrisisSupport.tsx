@@ -144,6 +144,22 @@ const CrisisSupport = () => {
                   </li>
                 </ul>
               </div>
+              <Card className="bg-card">
+                <CardHeader>
+                  <CardTitle className="font-seasons">Support Groups</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 font-roboto text-muted-foreground">
+                  <p>
+                    We offer a safe place to share personal experiences, feelings, and coping strategies through different support groups,
+                    including English Group, Spanish Group, Men's Group, Women's 40+ Group, and a Queer Survivor Group for victims in lower
+                    Fairfield County and throughout the State.
+                  </p>
+                  <p>
+                    The groups are well suited for easing trauma survivors' emotional stress, including feelings of isolation, loneliness,
+                    depression, helplessness, and hopelessness, with a focus on creating a sense that victims are not alone.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
