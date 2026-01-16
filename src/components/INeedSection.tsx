@@ -29,128 +29,141 @@ const INeedSection = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <Card className="group relative h-full min-h-[360px] overflow-hidden hover:shadow-lg transition-all duration-300 border-0 hover:-translate-y-1">
-            <div className="absolute inset-0">
-              <img src={supportHandsImage} alt="" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" />
-            </div>
-            <CardContent className="relative z-10 p-8 text-center h-full flex flex-col text-white">
-              <div className="w-16 h-16 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/25 transition-colors">
-                <Phone className="h-8 w-8 text-white" />
+          <div className="flex flex-col gap-3">
+            <Card className="group relative h-full min-h-[320px] overflow-hidden hover:shadow-lg transition-all duration-300 border-0 hover:-translate-y-1">
+              <div className="absolute inset-0">
+                <img src={supportHandsImage} alt="" className="h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" />
               </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-seasons font-normal mb-4 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
-                  {t('iNeedSection.talkNow.title')}
-                </h3>
-                <p className="text-white/95 mb-6 font-roboto drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
-                  {t('iNeedSection.talkNow.description')}
-                </p>
-              </div>
-              <div className="space-y-4 mt-auto">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline" className="w-full bg-white/90 text-slate-900 hover:bg-white">
-                      <Phone className="mr-2 h-4 w-4" />
-                      {t('iNeedSection.talkNow.callHelpline')}
-                      <ChevronDown className="ml-2 h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-background z-50 w-full">
-                    <DropdownMenuItem asChild>
-                      <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
-                        <Phone className="h-4 w-4" />
-                        <div>
-                          <div className="font-medium">{t('iNeedSection.talkNow.english')}</div>
-                          <div className="text-sm text-muted-foreground">(203) 329-2929</div>
-                        </div>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
-                        <Phone className="h-4 w-4" />
-                        <div>
-                          <div className="font-medium">{t('iNeedSection.talkNow.spanish')}</div>
-                          <div className="text-sm text-muted-foreground">(888) 568-8332</div>
-                        </div>
-                      </a>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <Button asChild size="sm" className="w-full bg-secondary hover:bg-secondary/90">
-                  <Link to="/crisis-support">{t('iNeedSection.talkNow.getHelpNow')}</Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+              <CardContent className="relative z-10 p-8 text-center h-full flex flex-col text-white">
+                <div className="w-16 h-16 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/25 transition-colors">
+                  <Phone className="h-8 w-8 text-white" />
+                </div>
+                <div className="flex-1" />
+                <div className="space-y-4">
+                  <h3 className="text-xl font-seasons font-normal text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+                    {t('iNeedSection.talkNow.title')}
+                  </h3>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="outline" className="w-full bg-white/90 text-slate-900 hover:bg-white">
+                        <Phone className="mr-2 h-4 w-4" />
+                        Get Help Now
+                        <ChevronDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="bg-background z-50 w-full">
+                      <DropdownMenuItem asChild>
+                        <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
+                          <Phone className="h-4 w-4" />
+                          <div>
+                            <div className="font-medium">{t('iNeedSection.talkNow.english')}</div>
+                            <div className="text-sm text-muted-foreground">(203) 329-2929</div>
+                          </div>
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
+                          <Phone className="h-4 w-4" />
+                          <div>
+                            <div className="font-medium">{t('iNeedSection.talkNow.spanish')}</div>
+                            <div className="text-sm text-muted-foreground">(888) 568-8332</div>
+                          </div>
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link to="/crisis-support" className="flex items-center gap-2 cursor-pointer">
+                          <Info className="h-4 w-4" />
+                          <div className="font-medium">More options...</div>
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              </CardContent>
+            </Card>
+            <p className="text-sm font-roboto text-muted-foreground text-center">
+              {t('iNeedSection.talkNow.description')}
+            </p>
+          </div>
 
-          <Card className="group relative h-full min-h-[360px] overflow-hidden hover:shadow-lg transition-all duration-300 border-0 hover:-translate-y-1">
-            <div className="absolute inset-0">
-              <img src={resourcesLearningImage} alt="" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" />
-            </div>
-            <CardContent className="relative z-10 p-8 text-center h-full flex flex-col text-white">
-              <div className="w-16 h-16 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/25 transition-colors">
-                <BookOpen className="h-8 w-8 text-white" />
+          <div className="flex flex-col gap-3">
+            <Card className="group relative h-full min-h-[320px] overflow-hidden hover:shadow-lg transition-all duration-300 border-0 hover:-translate-y-1">
+              <div className="absolute inset-0">
+                <img src={resourcesLearningImage} alt="" className="h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" />
               </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-seasons font-normal mb-4 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
-                  {t('iNeedSection.learnOptions.title')}
-                </h3>
-                <p className="text-white/95 mb-6 font-roboto drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
-                  {t('iNeedSection.learnOptions.description')}
-                </p>
-              </div>
-              <Button asChild variant="outline" size="sm" className="w-full mt-auto bg-white/90 text-slate-900 hover:bg-white">
-                <Link to="/resources">{t('iNeedSection.learnOptions.exploreResources')}</Link>
-              </Button>
-            </CardContent>
-          </Card>
+              <CardContent className="relative z-10 p-8 text-center h-full flex flex-col text-white">
+                <div className="w-16 h-16 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/25 transition-colors">
+                  <BookOpen className="h-8 w-8 text-white" />
+                </div>
+                <div className="flex-1" />
+                <div className="space-y-4">
+                  <h3 className="text-xl font-seasons font-normal text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+                    {t('iNeedSection.learnOptions.title')}
+                  </h3>
+                  <Button asChild variant="outline" size="sm" className="w-full bg-white/90 text-slate-900 hover:bg-white">
+                    <Link to="/resources">{t('iNeedSection.learnOptions.exploreResources')}</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            <p className="text-sm font-roboto text-muted-foreground text-center">
+              {t('iNeedSection.learnOptions.description')}
+            </p>
+          </div>
 
-          <Card className="group relative h-full min-h-[360px] overflow-hidden hover:shadow-lg transition-all duration-300 border-0 hover:-translate-y-1">
-            <div className="absolute inset-0">
-              <img src={counselingSessionImage} alt="" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" />
-            </div>
-            <CardContent className="relative z-10 p-8 text-center h-full flex flex-col text-white">
-              <div className="w-16 h-16 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/25 transition-colors">
-                <Heart className="h-8 w-8 text-white" />
+          <div className="flex flex-col gap-3">
+            <Card className="group relative h-full min-h-[320px] overflow-hidden hover:shadow-lg transition-all duration-300 border-0 hover:-translate-y-1">
+              <div className="absolute inset-0">
+                <img src={counselingSessionImage} alt="" className="h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" />
               </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-seasons font-normal mb-4 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
-                  {t('iNeedSection.longTermTherapy.title')}
-                </h3>
-                <p className="text-white/95 mb-6 font-roboto drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
-                  {t('iNeedSection.longTermTherapy.description')}
-                </p>
-              </div>
-              <Button asChild variant="outline" size="sm" className="w-full mt-auto bg-white/90 text-slate-900 hover:bg-white">
-                <Link to="/trauma-recovery">{t('iNeedSection.longTermTherapy.learnMore')}</Link>
-              </Button>
-            </CardContent>
-          </Card>
+              <CardContent className="relative z-10 p-8 text-center h-full flex flex-col text-white">
+                <div className="w-16 h-16 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/25 transition-colors">
+                  <Heart className="h-8 w-8 text-white" />
+                </div>
+                <div className="flex-1" />
+                <div className="space-y-4">
+                  <h3 className="text-xl font-seasons font-normal text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+                    {t('iNeedSection.longTermTherapy.title')}
+                  </h3>
+                  <Button asChild variant="outline" size="sm" className="w-full bg-white/90 text-slate-900 hover:bg-white">
+                    <Link to="/trauma-recovery">{t('iNeedSection.longTermTherapy.learnMore')}</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            <p className="text-sm font-roboto text-muted-foreground text-center">
+              {t('iNeedSection.longTermTherapy.description')}
+            </p>
+          </div>
 
-          <Card className="group relative h-full min-h-[360px] overflow-hidden hover:shadow-lg transition-all duration-300 border-0 hover:-translate-y-1">
-            <div className="absolute inset-0">
-              <img src={heroAboutImage} alt="" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" />
-            </div>
-            <CardContent className="relative z-10 p-8 text-center h-full flex flex-col text-white">
-              <div className="w-16 h-16 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/25 transition-colors">
-                <Info className="h-8 w-8 text-white" />
+          <div className="flex flex-col gap-3">
+            <Card className="group relative h-full min-h-[320px] overflow-hidden hover:shadow-lg transition-all duration-300 border-0 hover:-translate-y-1">
+              <div className="absolute inset-0">
+                <img src={heroAboutImage} alt="" className="h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/60 to-slate-950/80" />
               </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-seasons font-normal mb-4 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
-                  {t('iNeedSection.aboutUs.title')}
-                </h3>
-                <p className="text-white/95 mb-6 font-roboto drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
-                  {t('iNeedSection.aboutUs.description')}
-                </p>
-              </div>
-              <Button asChild variant="outline" size="sm" className="w-full mt-auto bg-white/90 text-slate-900 hover:bg-white">
-                <Link to="/about">{t('iNeedSection.aboutUs.aboutUs')}</Link>
-              </Button>
-            </CardContent>
-          </Card>
+              <CardContent className="relative z-10 p-8 text-center h-full flex flex-col text-white">
+                <div className="w-16 h-16 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/25 transition-colors">
+                  <Info className="h-8 w-8 text-white" />
+                </div>
+                <div className="flex-1" />
+                <div className="space-y-4">
+                  <h3 className="text-xl font-seasons font-normal text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+                    {t('iNeedSection.aboutUs.title')}
+                  </h3>
+                  <Button asChild variant="outline" size="sm" className="w-full bg-white/90 text-slate-900 hover:bg-white">
+                    <Link to="/about">{t('iNeedSection.aboutUs.aboutUs')}</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            <p className="text-sm font-roboto text-muted-foreground text-center">
+              {t('iNeedSection.aboutUs.description')}
+            </p>
+          </div>
         </div>
       </div>
     </section>;
