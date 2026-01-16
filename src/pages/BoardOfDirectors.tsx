@@ -2,11 +2,11 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Briefcase, Mail } from "lucide-react";
 import { useBoardMembers } from "@/hooks/useSanityData";
-import { Skeleton } from "@/components/ui/skeleton";
 import { boardOfficers, boardMembers as fallbackBoardMembers } from "@/data/boardMembersData";
+import boardGroupPhoto from "@/assets/board-of-directors-group-1600.jpg";
 
 const BoardOfDirectors = () => {
-  const { data: allMembers, isLoading, error } = useBoardMembers();
+  const { data: allMembers } = useBoardMembers();
   
   // Use Sanity data if available, otherwise fall back to static data
   const hasSanityData = allMembers && allMembers.length > 0;
@@ -28,34 +28,6 @@ const BoardOfDirectors = () => {
       )
     : fallbackBoardMembers;
 
-  // Show loading state
-  if (isLoading) {
-    return (
-      <Layout>
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-12">
-            <Skeleton className="h-12 w-96 mx-auto mb-6" />
-            <Skeleton className="h-6 w-full max-w-3xl mx-auto" />
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4].map((i) => (
-              <Card key={i}>
-                <CardHeader>
-                  <Skeleton className="h-14 w-14 rounded-full" />
-                  <Skeleton className="h-6 w-48 mt-4" />
-                  <Skeleton className="h-4 w-32 mt-2" />
-                </CardHeader>
-                <CardContent>
-                  <Skeleton className="h-32 w-full" />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </Layout>
-    );
-  }
-
   return (
     <Layout>
       <div className="container mx-auto px-4 py-12">
@@ -71,6 +43,13 @@ const BoardOfDirectors = () => {
 
         {/* Board Officers */}
         <section className="mb-16">
+          <div className="mb-10">
+            <img
+              src={boardGroupPhoto}
+              alt="The Rowan Center board of directors group photo"
+              className="w-full max-w-5xl mx-auto rounded-lg shadow-lg"
+            />
+          </div>
           <h2 className="text-3xl font-bold text-foreground text-center mb-8">Board Officers</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {officers.map((member, index) => (

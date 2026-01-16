@@ -91,6 +91,7 @@ const HeroSection = () => {
             <div>
               <div className="text-3xl font-seasons font-bold mb-2">{t('stats.free')}</div>
               <div className="font-roboto">{t('stats.confidentialServices')}</div>
+              
             </div>
           </div>
         </div>

@@ -15,6 +15,7 @@ import KidSafeFAQ from "@/pages/KidSafeFAQ";
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const CrisisSupport = lazy(() => import("./pages/CrisisSupport"));
+const CrisisServices = lazy(() => import("./pages/CrisisServices"));
 const PreventionEducation = lazy(() => import("./pages/PreventionEducation"));
 const VictimAdvocacy = lazy(() => import("./pages/VictimAdvocacy"));
 const TraumaRecovery = lazy(() => import("./pages/TraumaRecovery"));
@@ -112,6 +113,7 @@ export const AppRoutes = () => (
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
         <Route path="/crisis-support" element={<CrisisSupport />} />
+        <Route path="/crisis-services" element={<CrisisServices />} />
         <Route path="/prevention-education" element={<PreventionEducation />} />
         <Route path="/victim-advocacy" element={<VictimAdvocacy />} />
         <Route path="/trauma-recovery" element={<TraumaRecovery />} />

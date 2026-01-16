@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Users, FileText, Briefcase, Eye, Heart, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroAboutImage from "@/assets/hero-about.jpg";
-import staffPhoto from "@/assets/rowan-center-staff.webp";
+import staffPhoto from "@/assets/rowan-center-staff.jpg";
 import lukeHeadshot from "@/assets/luke-robbins-headshot.webp";
 import isabelHeadshot from "@/assets/isabel-negron-headshot.webp";
 import zacharyHeadshot from "@/assets/zachary-boccarossa-headshot.webp";
@@ -156,154 +156,272 @@ const About = () => {
           {/* Timeline Section */}
           <div className="mb-12">
             <h3 className="text-2xl font-semibold text-center mb-8">Our Journey</h3>
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <div className="relative">
-                {/* Vertical Timeline Line - spans entire height */}
-                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent hidden md:block"></div>
-                
-                <Accordion type="multiple" className="space-y-4">
-                  {/* Timeline Item 1 */}
-                  <AccordionItem value="1978" className="border-none">
-                    <div className="relative flex gap-6">
-                      <div className="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center border-4 border-background shadow-md z-10">
-                        <span className="text-primary font-bold text-lg">1978</span>
+                {/* Horizontal Timeline Line - sits behind the markers */}
+                <div className="absolute left-0 right-0 top-6 h-px bg-gradient-to-r from-primary via-secondary to-accent hidden md:block"></div>
+
+                <Accordion type="multiple" className="flex gap-6 overflow-x-auto pb-4 md:pb-6 md:px-1 snap-x snap-mandatory">
+                  {/* 1979 - Founded */}
+                  <AccordionItem value="1979-founded" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-primary/20 shadow-md text-center">
+                        <span className="text-primary font-bold text-xs leading-tight">1979</span>
                       </div>
-                      <div className="flex-1">
-                        <Card className="border-primary/20">
-                          <AccordionTrigger className="hover:no-underline px-6 py-4">
-                            <CardHeader className="flex-1 text-left p-0">
-                              <CardTitle className="text-xl">Founding Year</CardTitle>
-                            </CardHeader>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <CardContent className="pt-0">
-                              <p className="text-muted-foreground mb-4">
-                                [Placeholder - Add content about the founding of The Rowan Center in 1978, 
-                                the initial services provided, and the founding members' vision.]
-                              </p>
-                              <div className="aspect-video bg-muted/30 rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
-                                <p className="text-muted-foreground/70 text-xs">Historical Photo Placeholder</p>
-                              </div>
-                            </CardContent>
-                          </AccordionContent>
-                        </Card>
-                      </div>
+                      <Card className="w-full border-primary/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">Founded to serve Lower Fairfield County</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              The Rowan Center begins providing counseling, advocacy, and community education for survivors
+                              in Lower Fairfield County.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
                     </div>
                   </AccordionItem>
 
-                  {/* Timeline Item 2 */}
-                  <AccordionItem value="1990s" className="border-none">
-                    <div className="relative flex gap-6">
-                      <div className="flex-shrink-0 w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center border-4 border-background shadow-md z-10">
-                        <span className="text-secondary font-bold text-lg">1990s</span>
+                  {/* 1979 - Stamford Hospital */}
+                  <AccordionItem value="1979-hospital" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-secondary/20 shadow-md text-center">
+                        <span className="text-secondary font-bold text-xs leading-tight">1979</span>
                       </div>
-                      <div className="flex-1">
-                        <Card className="border-secondary/20">
-                          <AccordionTrigger className="hover:no-underline px-6 py-4">
-                            <CardHeader className="flex-1 text-left p-0">
-                              <CardTitle className="text-xl">Expansion Era</CardTitle>
-                            </CardHeader>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <CardContent className="pt-0">
-                              <p className="text-muted-foreground mb-4">
-                                [Placeholder - Add content about key milestones in the 1990s, program expansions, 
-                                or significant community partnerships established during this period.]
-                              </p>
-                              <div className="aspect-video bg-muted/30 rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
-                                <p className="text-muted-foreground/70 text-xs">Historical Photo Placeholder</p>
-                              </div>
-                            </CardContent>
-                          </AccordionContent>
-                        </Card>
-                      </div>
+                      <Card className="w-full border-secondary/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">Began at Stamford Hospital</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              The Center starts in a trailer behind Stamford Hospital, offering immediate crisis support
+                              for survivors arriving at the hospital.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
                     </div>
                   </AccordionItem>
 
-                  {/* Timeline Item 3 */}
-                  <AccordionItem value="2000s" className="border-none">
-                    <div className="relative flex gap-6">
-                      <div className="flex-shrink-0 w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center border-4 border-background shadow-md z-10">
-                        <span className="text-accent font-bold text-lg">2000s</span>
+                  {/* 1980s - Summer Street */}
+                  <AccordionItem value="1980s-summer" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-accent/20 shadow-md text-center">
+                        <span className="text-accent font-bold text-xs leading-tight">1980s</span>
                       </div>
-                      <div className="flex-1">
-                        <Card className="border-accent/20">
-                          <AccordionTrigger className="hover:no-underline px-6 py-4">
-                            <CardHeader className="flex-1 text-left p-0">
-                              <CardTitle className="text-xl">Innovation & Growth</CardTitle>
-                            </CardHeader>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <CardContent className="pt-0">
-                              <p className="text-muted-foreground mb-4">
-                                [Placeholder - Add content about new programs launched, technological advancements, 
-                                or expanded services during the 2000s.]
-                              </p>
-                              <div className="aspect-video bg-muted/30 rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
-                                <p className="text-muted-foreground/70 text-xs">Historical Photo Placeholder</p>
-                              </div>
-                            </CardContent>
-                          </AccordionContent>
-                        </Card>
-                      </div>
+                      <Card className="w-full border-accent/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">Early growth on Summer Street</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              As community needs grow, services expand beyond the hospital setting and move into an office
+                              on Summer Street in Stamford.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
                     </div>
                   </AccordionItem>
 
-                  {/* Timeline Item 4 */}
-                  <AccordionItem value="2010s" className="border-none">
-                    <div className="relative flex gap-6">
-                      <div className="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center border-4 border-background shadow-md z-10">
-                        <span className="text-primary font-bold text-lg">2010s</span>
+                  {/* Late 1980s–1990s - Inclusive name */}
+                  <AccordionItem value="late-1980s-name" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-primary/20 shadow-md text-center">
+                        <span className="text-primary font-bold text-xs leading-tight">Late 1980s–1990s</span>
                       </div>
-                      <div className="flex-1">
-                        <Card className="border-primary/20">
-                          <AccordionTrigger className="hover:no-underline px-6 py-4">
-                            <CardHeader className="flex-1 text-left p-0">
-                              <CardTitle className="text-xl">Modern Era</CardTitle>
-                            </CardHeader>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <CardContent className="pt-0">
-                              <p className="text-muted-foreground mb-4">
-                                [Placeholder - Add content about recent developments, new initiatives, 
-                                or significant achievements in the 2010s.]
-                              </p>
-                              <div className="aspect-video bg-muted/30 rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
-                                <p className="text-muted-foreground/70 text-xs">Historical Photo Placeholder</p>
-                              </div>
-                            </CardContent>
-                          </AccordionContent>
-                        </Card>
-                      </div>
+                      <Card className="w-full border-primary/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">A more inclusive name</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              The organization adopts the name Sexual Assault Crisis Center to reflect that survivors can
+                              be of any gender.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
                     </div>
                   </AccordionItem>
 
-                  {/* Timeline Item 5 - Present */}
-                  <AccordionItem value="today" className="border-none">
-                    <div className="relative flex gap-6">
-                      <div className="flex-shrink-0 w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center border-4 border-background shadow-md z-10">
-                        <span className="text-secondary font-bold text-lg">Today</span>
+                  {/* 1990s - Glenbrook Road */}
+                  <AccordionItem value="1990s-glenbrook" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-secondary/20 shadow-md text-center">
+                        <span className="text-secondary font-bold text-xs leading-tight">1990s</span>
                       </div>
-                      <div className="flex-1">
-                        <Card className="border-secondary/20">
-                          <AccordionTrigger className="hover:no-underline px-6 py-4">
-                            <CardHeader className="flex-1 text-left p-0">
-                              <CardTitle className="text-xl">Continuing the Mission</CardTitle>
-                            </CardHeader>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <CardContent className="pt-0">
-                              <p className="text-muted-foreground mb-4">
-                                [Placeholder - Add content about current programs, the Trauma Recovery Practice, 
-                                KidSafeHQ, and how The Rowan Center continues to serve the community today.]
-                              </p>
-                              <div className="aspect-video bg-muted/30 rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
-                                <p className="text-muted-foreground/70 text-xs">Current Photo Placeholder</p>
-                              </div>
-                            </CardContent>
-                          </AccordionContent>
-                        </Card>
+                      <Card className="w-full border-secondary/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">Move to Glenbrook Road</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              To support expanding services, the Center relocates to Glenbrook Road in Stamford.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
+                    </div>
+                  </AccordionItem>
+
+                  {/* 1990s - Fire resilience */}
+                  <AccordionItem value="1990s-fire" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-accent/20 shadow-md text-center">
+                        <span className="text-accent font-bold text-xs leading-tight">1990s</span>
                       </div>
+                      <Card className="w-full border-accent/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">Resilience after a fire</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              After a devastating office fire, services relocate to Dock Street so support can continue
+                              without interruption.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
+                    </div>
+                  </AccordionItem>
+
+                  {/* 2000 - Education focus */}
+                  <AccordionItem value="2000-education" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-primary/20 shadow-md text-center">
+                        <span className="text-primary font-bold text-xs leading-tight">2000</span>
+                      </div>
+                      <Card className="w-full border-primary/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">Education becomes a core focus</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              The organization updates its name to include education, strengthening its commitment to
+                              prevention.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
+                    </div>
+                  </AccordionItem>
+
+                  {/* Oct 2013 - Return to Summer Street */}
+                  <AccordionItem value="2013-summer" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-secondary/20 shadow-md text-center">
+                        <span className="text-secondary font-bold text-xs leading-tight">Oct 2013</span>
+                      </div>
+                      <Card className="w-full border-secondary/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">Return to Summer Street with room to grow</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              The Rowan Center returns to Summer Street in a much larger space to support continued
+                              growth and expanded services.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
+                    </div>
+                  </AccordionItem>
+
+                  {/* 2018 - 1111 Summer Street */}
+                  <AccordionItem value="2018-1111" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-accent/20 shadow-md text-center">
+                        <span className="text-accent font-bold text-xs leading-tight">2018</span>
+                      </div>
+                      <Card className="w-full border-accent/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">New home at 1111 Summer Street</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              The Center moves to 1111 Summer Street, where it is based today.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
+                    </div>
+                  </AccordionItem>
+
+                  {/* Today - 24/7 support */}
+                  <AccordionItem value="today-support" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-primary/20 shadow-md text-center">
+                        <span className="text-primary font-bold text-xs leading-tight">Today</span>
+                      </div>
+                      <Card className="w-full border-primary/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">24/7 support, healing, and prevention</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              Survivors can access a 24-hour hotline, crisis counseling, support groups, advocacy and
+                              accompaniment (medical, police, and court), and prevention education for schools and the
+                              community.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
+                    </div>
+                  </AccordionItem>
+
+                  {/* Today - statewide network */}
+                  <AccordionItem value="today-network" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-secondary/20 shadow-md text-center">
+                        <span className="text-secondary font-bold text-xs leading-tight">Today</span>
+                      </div>
+                      <Card className="w-full border-secondary/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">Part of a statewide Connecticut network</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              The Rowan Center is one of nine regional sexual assault crisis programs working together
+                              across Connecticut to end sexual violence.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
                     </div>
                   </AccordionItem>
                 </Accordion>
@@ -424,7 +542,7 @@ const About = () => {
           {/* Leadership Team */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-foreground text-center mb-6">Leadership Team</h3>
-            <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {leadershipTeam.map((member, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
                   <CardHeader className={member.image ? "pb-2" : ""}>
@@ -502,7 +620,7 @@ const About = () => {
           {/* Staff Members */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-foreground text-center mb-6">Staff Members</h3>
-            <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto md:[&>*:last-child]:col-span-2 md:[&>*:last-child]:max-w-xl md:[&>*:last-child]:justify-self-center">
               {staffMembers.map((member, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
                   <CardHeader className={member.image ? "pb-2" : ""}>

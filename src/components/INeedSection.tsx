@@ -46,7 +46,7 @@ const INeedSection = () => {
                   </h3>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="outline" className="w-full bg-white/90 text-slate-900 hover:bg-white">
+                      <Button variant="outline" className="w-full bg-white/90 text-slate-900 hover:bg-white hover:text-slate-900">
                         <Phone className="mr-2 h-4 w-4" />
                         Get Help Now
                         <ChevronDown className="ml-2 h-4 w-4" />
@@ -102,7 +102,7 @@ const INeedSection = () => {
                   <h3 className="text-xl font-seasons font-normal text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
                     {t('iNeedSection.learnOptions.title')}
                   </h3>
-                  <Button asChild variant="outline" size="sm" className="w-full bg-white/90 text-slate-900 hover:bg-white">
+                  <Button asChild variant="outline" size="sm" className="w-full bg-white/90 text-slate-900 hover:bg-white hover:text-slate-900">
                     <Link to="/resources">{t('iNeedSection.learnOptions.exploreResources')}</Link>
                   </Button>
                 </div>
@@ -128,7 +128,7 @@ const INeedSection = () => {
                   <h3 className="text-xl font-seasons font-normal text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
                     {t('iNeedSection.longTermTherapy.title')}
                   </h3>
-                  <Button asChild variant="outline" size="sm" className="w-full bg-white/90 text-slate-900 hover:bg-white">
+                  <Button asChild variant="outline" size="sm" className="w-full bg-white/90 text-slate-900 hover:bg-white hover:text-slate-900">
                     <Link to="/trauma-recovery">{t('iNeedSection.longTermTherapy.learnMore')}</Link>
                   </Button>
                 </div>
@@ -154,7 +154,7 @@ const INeedSection = () => {
                   <h3 className="text-xl font-seasons font-normal text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
                     {t('iNeedSection.aboutUs.title')}
                   </h3>
-                  <Button asChild variant="outline" size="sm" className="w-full bg-white/90 text-slate-900 hover:bg-white">
+                  <Button asChild variant="outline" size="sm" className="w-full bg-white/90 text-slate-900 hover:bg-white hover:text-slate-900">
                     <Link to="/about">{t('iNeedSection.aboutUs.aboutUs')}</Link>
                   </Button>
                 </div>

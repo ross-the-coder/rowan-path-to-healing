@@ -158,7 +158,10 @@ export function useBoardMembers() {
           linkedIn
         }`,
       }),
-    staleTime: 10 * 60 * 1000, // 10 minutes - board members don't change often
+    staleTime: Infinity,
+    retry: 0,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
 }
 

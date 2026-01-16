@@ -20,9 +20,11 @@ const PhotoFeatureSection = () => {
 
           {/* Content */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-3 bg-white/15 px-5 py-3 rounded-full">
-              <Heart className="h-6 w-6 text-white" />
-              <span className="text-base font-roboto font-semibold text-white">Heal</span>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                <Heart className="h-8 w-8 text-white" />
+              </div>
+              <span className="text-4xl font-seasons font-normal text-white">Heal</span>
             </div>
             
             <h2 className="text-lg font-roboto font-light text-white leading-relaxed">
