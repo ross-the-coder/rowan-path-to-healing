@@ -112,7 +112,7 @@ const KidSafeHQ = () => {
             {ageGroups.map((group) => {
               const IconComponent = group.icon;
               return (
-                <Card key={group.titleKey} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${group.color}`}>
+                <Card key={group.titleKey} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${group.color} flex flex-col`}>
                   <div className="h-40 overflow-hidden">
                     <img 
                       src={group.image} 
@@ -127,7 +127,7 @@ const KidSafeHQ = () => {
                     </div>
                     <CardDescription className="text-sm">{t(group.descriptionKey)}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="mt-auto">
                     <Button asChild className="w-full">
                       <Link to={group.link}>{group.buttonLabel}</Link>
                     </Button>
@@ -142,7 +142,7 @@ const KidSafeHQ = () => {
             {supportCards.map((card) => {
               const IconComponent = card.icon;
               return (
-                <Card key={card.titleKey} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${card.color}`}>
+                <Card key={card.titleKey} className={`hover:shadow-lg transition-shadow overflow-hidden bg-gradient-to-br ${card.color} flex flex-col`}>
                   <div className="h-36 overflow-hidden">
                     <img 
                       src={card.image} 
@@ -157,7 +157,7 @@ const KidSafeHQ = () => {
                     </div>
                     <CardDescription className="text-sm">{t(card.descriptionKey)}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="mt-auto">
                     <Button asChild className="w-full">
                       <Link to={card.link}>{card.buttonLabel}</Link>
                     </Button>
