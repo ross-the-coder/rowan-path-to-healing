@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, Phone, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import outreachImage from "@/assets/community-outreach.jpg";
+import counselingHopeImage from "@/assets/group-therapy-diverse.jpg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useTranslation } from "react-i18next";
 const PillarsSection = () => {
@@ -111,6 +112,10 @@ const PillarsSection = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Crisis Counseling</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
                     <span>{t('pillarsSection.respond.legalAdvocacy')}</span>
                   </li>
                 </ul>
@@ -121,7 +126,11 @@ const PillarsSection = () => {
             </div>
             <div>
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img alt="One-on-one counseling session with caring professional" className="w-full h-[400px] object-cover" src="/lovable-uploads/ed07927a-cbba-47b3-9280-820eff27dc01.png" />
+                <img
+                  alt="Diverse group of women in supportive group therapy session empowering each other"
+                  className="w-full h-[400px] object-cover"
+                  src={counselingHopeImage}
+                />
               </div>
             </div>
           </div>
