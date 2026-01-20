@@ -63,7 +63,7 @@ const Staff = () => {
     },
     {
       name: "Raquel Lopez, LMSW",
-      title: "Part-time Counselor & Crisis Advocate Programs Administrator",
+      title: "Crisis Advocate Programs Administrator",
       email: "rlopez@therowancenter.org",
     },
     {
