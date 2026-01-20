@@ -12,21 +12,28 @@ export const Reveal = ({ children, className, delayMs = 0 }: RevealProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     const node = ref.current;
     if (!node) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
-    );
+    try {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
+      );
 
-    observer.observe(node);
-    return () => observer.disconnect();
+      observer.observe(node);
+      return () => observer.disconnect();
+    } catch (e) {
+      console.error("IntersectionObserver error:", e);
+      setIsVisible(true); // Fallback to visible
+    }
   }, []);
 
   return (

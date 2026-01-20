@@ -207,14 +207,24 @@ export const VolunteerApplicationForm = ({ language = "en" }: VolunteerApplicati
         form_language: currentLang,
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase error:", error);
+        console.error("Error details:", {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
+        throw error;
+      }
 
       toast.success(t.success);
       form.reset();
       setResumeFile(null);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting application:", error);
-      toast.error(t.error);
+      const errorMessage = error?.message || "Unknown error";
+      toast.error(t.error + `: ${errorMessage}`);
     } finally {
       setIsSubmitting(false);
     }

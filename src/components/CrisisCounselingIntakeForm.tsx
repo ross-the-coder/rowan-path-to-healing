@@ -152,7 +152,13 @@ export const CrisisCounselingIntakeForm = ({ language = "en" }: CrisisCounseling
 
       if (error) {
         console.error("Error submitting form:", error);
-        toast.error(t.error);
+        console.error("Error details:", {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
+        toast.error(t.error + (error.message ? `: ${error.message}` : ""));
         return;
       }
 
@@ -233,9 +239,12 @@ export const CrisisCounselingIntakeForm = ({ language = "en" }: CrisisCounseling
             </div>
             <div className="space-y-2">
               <Label htmlFor="preferredLanguage">{t.preferredLanguage} *</Label>
-              <Select onValueChange={(value) => form.setValue("preferredLanguage", value)}>
+              <Select
+                value={form.watch("preferredLanguage")}
+                onValueChange={(value) => form.setValue("preferredLanguage", value, { shouldValidate: true })}
+              >
                 <SelectTrigger>
-                  <SelectValue />
+                  <SelectValue placeholder="Select language" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="English">English</SelectItem>

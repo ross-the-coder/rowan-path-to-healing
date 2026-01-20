@@ -169,13 +169,23 @@ export const StudentAdvisoryApplicationForm = ({ language = "en" }: StudentAdvis
         form_language: currentLang,
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase error:", error);
+        console.error("Error details:", {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
+        throw error;
+      }
 
       toast.success(t.success);
       form.reset();
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting application:", error);
-      toast.error(t.error);
+      const errorMessage = error?.message || "Unknown error";
+      toast.error(t.error + `: ${errorMessage}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -251,9 +261,12 @@ export const StudentAdvisoryApplicationForm = ({ language = "en" }: StudentAdvis
               </div>
               <div className="space-y-2">
                 <Label htmlFor="gradeLevel">{t.gradeLevel} *</Label>
-                <Select onValueChange={(value) => form.setValue("gradeLevel", value)}>
+                <Select 
+                  value={form.watch("gradeLevel")}
+                  onValueChange={(value) => form.setValue("gradeLevel", value, { shouldValidate: true })}
+                >
                   <SelectTrigger className="bg-white">
-                    <SelectValue />
+                    <SelectValue placeholder="Select grade level" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="sophomore">{t.sophomore}</SelectItem>

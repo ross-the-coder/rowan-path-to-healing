@@ -75,16 +75,26 @@ export const PreventionEducationContactForm = () => {
         },
       ]);
 
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase error:", error);
+        console.error("Error details:", {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
+        throw error;
+      }
 
       toast({
         title: t.success,
       });
       reset();
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting form:", error);
+      const errorMessage = error?.message || "Unknown error";
       toast({
-        title: t.error,
+        title: t.error + `: ${errorMessage}`,
         variant: "destructive",
       });
     } finally {

@@ -172,7 +172,13 @@ export const TraumaRecoveryIntakeForm = ({ language = "en" }: TraumaRecoveryInta
 
       if (supabaseError) {
         console.error("Supabase error:", supabaseError);
-        toast.error(t.error);
+        console.error("Error details:", {
+          message: supabaseError.message,
+          details: supabaseError.details,
+          hint: supabaseError.hint,
+          code: supabaseError.code
+        });
+        toast.error(t.error + (supabaseError.message ? `: ${supabaseError.message}` : ""));
         setIsSubmitting(false);
         return;
       }
@@ -254,9 +260,12 @@ export const TraumaRecoveryIntakeForm = ({ language = "en" }: TraumaRecoveryInta
             </div>
             <div className="space-y-2">
               <Label htmlFor="preferredLanguage">{t.preferredLanguage} *</Label>
-              <Select onValueChange={(value) => form.setValue("preferredLanguage", value)}>
+              <Select
+                value={form.watch("preferredLanguage")}
+                onValueChange={(value) => form.setValue("preferredLanguage", value, { shouldValidate: true })}
+              >
                 <SelectTrigger>
-                  <SelectValue />
+                  <SelectValue placeholder="Select language" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="English">English</SelectItem>
