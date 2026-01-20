@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowRight, Search, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
+import { NewsletterSubscription } from "@/components/NewsletterSubscription";
 import { useBlogPosts } from "@/hooks/useSanityData";
 import { urlFor } from "@/lib/sanity";
 import { useState } from "react";
@@ -234,23 +235,7 @@ const Blog = () => {
 
         {/* Newsletter Signup */}
         <section>
-          <Card className="border-primary/20">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl mb-4">Stay Updated</CardTitle>
-              <CardDescription className="text-lg">
-                Subscribe to our newsletter for the latest blog posts, resources, and updates from The Rowan Center
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <Input placeholder="Enter your email address" className="flex-1" />
-                <Button>Subscribe</Button>
-              </div>
-              <p className="text-xs text-muted-foreground text-center mt-4">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </CardContent>
-          </Card>
+          <NewsletterSubscription />
         </section>
       </div>
     </Layout>

@@ -47,7 +47,7 @@ serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Rowan Center Alerts <alerts@therowancenter.org>", // Update this to your verified domain in Resend
+        from: "Rowan Center Alerts <onboarding@resend.dev>", // Temporarily using onboarding address for testing
         to: recipients,
         subject: `New Submission: ${formTitle}`,
         html: `
