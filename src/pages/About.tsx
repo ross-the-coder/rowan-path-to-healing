@@ -76,7 +76,7 @@ const About = () => {
     },
     {
       name: "Isabel Negron, LCSW",
-      title: "Assitant Clinical Director",
+      title: "Assistant Clinical Director",
       email: "inegron@traumarecoveryct.org",
     },
     {
@@ -86,7 +86,7 @@ const About = () => {
     },
     {
       name: "Raquel Lopez, LMSW",
-      title: "Part-time Counselor & Crisis Advocate Programs Administrator",
+      title: "Crisis Advocate Programs Administrator",
       email: "rlopez@therowancenter.org",
     },
     {

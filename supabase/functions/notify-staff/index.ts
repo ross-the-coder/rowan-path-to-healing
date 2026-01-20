@@ -32,10 +32,10 @@ serve(async (req) => {
       crisis_counseling_intake: ["mplacide@therowancenter.org", "sanzellotti@therowancenter.org"],
       trauma_recovery_intake: ["lrobbins@traumarecoveryct.org", "inegron@traumarecoveryct.org"],
       volunteer_applications: ["rlopez@therowancenter.org"],
-      student_advisory_applications: ["barnardjennifer@me.com"],
+      student_advisory_applications: ["jbarnard@therowancenter.org"],
       prevention_education_contact: ["education@therowancenter.org"],
     };
-    const defaultRecipients = ["staff@therowancenter-ct.org"];
+    const defaultRecipients = ["staff@therowancenter.org"];
     const recipients = Array.from(
       new Set([...(tableRecipients[table] ?? defaultRecipients), ...baseRecipients])
     );
@@ -47,7 +47,7 @@ serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Rowan Center Alerts <alerts@therowancenter-ct.org>", // Update this to your verified domain in Resend
+        from: "Rowan Center Alerts <alerts@therowancenter.org>", // Update this to your verified domain in Resend
         to: recipients,
         subject: `New Submission: ${formTitle}`,
         html: `
@@ -59,7 +59,7 @@ serve(async (req) => {
             <li><strong>Phone:</strong> ${record.phone || 'N/A'}</li>
             <li><strong>Date:</strong> ${new Date(record.created_at || Date.now()).toLocaleString()}</li>
           </ul>
-          <p>Please log in to the <a href="https://therowancenter-ct.org/admin">Admin Dashboard</a> to see the full details.</p>
+          <p>Please log in to the <a href="https://therowancenter.org/admin">Admin Dashboard</a> to see the full details.</p>
         `,
       }),
     });

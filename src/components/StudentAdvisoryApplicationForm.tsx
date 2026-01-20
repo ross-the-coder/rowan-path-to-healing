@@ -103,6 +103,7 @@ const createSchema = (lang: "en" | "es") => {
     monthlyMeetings: z.boolean().refine((val) => val === true, { message: t.mustConfirmAll }),
     confidentiality: z.boolean().refine((val) => val === true, { message: t.mustConfirmAll }),
     additionalComments: z.string().trim().max(2000).optional(),
+    hp_field: z.string().max(0).optional(),
   });
 };
 
@@ -134,10 +135,18 @@ export const StudentAdvisoryApplicationForm = ({ language = "en" }: StudentAdvis
       monthlyMeetings: false,
       confidentiality: false,
       additionalComments: "",
+      hp_field: "",
     },
   });
 
   const onSubmit = async (data: z.infer<ReturnType<typeof createSchema>>) => {
+    // Honeypot check
+    if (data.hp_field) {
+      console.warn("Honeypot field filled. Potential bot submission.");
+      toast.success(t.success); // Deceive bot
+      form.reset();
+      return;
+    }
     setIsSubmitting(true);
     try {
       const { error } = await supabase.from("student_advisory_applications").insert({
@@ -191,6 +200,10 @@ export const StudentAdvisoryApplicationForm = ({ language = "en" }: StudentAdvis
       </CardHeader>
       <CardContent>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <div className="hidden" aria-hidden="true">
+            <Label htmlFor="hp_field">{t.firstName}</Label>
+            <Input id="hp_field" {...form.register("hp_field")} tabIndex={-1} autoComplete="off" />
+          </div>
           {/* Student Information */}
           <div className="space-y-4">
             <h3 className="text-xl font-seasons font-medium">{t.studentInfo}</h3>

@@ -101,6 +101,7 @@ const createSchema = (lang: "en" | "es") => {
     bestSkills: z.string().trim().min(1, { message: t.required }).max(2000),
     difficulties: z.string().trim().min(1, { message: t.required }).max(2000),
     additionalComments: z.string().trim().max(2000).optional(),
+    hp_field: z.string().max(0).optional(),
   });
 };
 
@@ -133,8 +134,11 @@ export const VolunteerApplicationForm = ({ language = "en" }: VolunteerApplicati
       bestSkills: "",
       difficulties: "",
       additionalComments: "",
+      hp_field: "",
     },
   });
+
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -154,6 +158,13 @@ export const VolunteerApplicationForm = ({ language = "en" }: VolunteerApplicati
   };
 
   const onSubmit = async (data: z.infer<ReturnType<typeof createSchema>>) => {
+    // Honeypot check
+    if (data.hp_field) {
+      console.warn("Honeypot field filled. Potential bot submission.");
+      toast.success(t.success); // Deceive bot
+      form.reset();
+      return;
+    }
     setIsSubmitting(true);
     let resumeUrl = null;
 
@@ -230,6 +241,10 @@ export const VolunteerApplicationForm = ({ language = "en" }: VolunteerApplicati
       </CardHeader>
       <CardContent>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <div className="hidden" aria-hidden="true">
+            <Label htmlFor="hp_field">{t.firstName}</Label>
+            <Input id="hp_field" {...form.register("hp_field")} tabIndex={-1} autoComplete="off" />
+          </div>
           {/* Personal Information */}
           <div className="space-y-4">
             <h3 className="text-xl font-seasons font-medium">Personal Information</h3>

@@ -80,7 +80,7 @@ serve(async (req) => {
           Authorization: `Bearer ${RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: "Rowan Center Alerts <alerts@therowancenter-ct.org>",
+          from: "Rowan Center Alerts <alerts@therowancenter.org>",
           to: ["kidsafehq@therowancenter.org", "ross@imagemaretingconsultants.com"],
           subject: "New KidSafeHQ Question Submitted",
           html: `

@@ -17,6 +17,7 @@ const formSchema = z.object({
   phone: z.string().min(1, "Phone number is required").max(20),
   organization: z.string().max(200).optional(),
   message: z.string().min(1, "Message is required").max(2000),
+  hp_field: z.string().max(0).optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -51,6 +52,15 @@ export const PreventionEducationContactForm = () => {
   });
 
   const onSubmit = async (data: FormData) => {
+    // Honeypot check
+    if (data.hp_field) {
+      console.warn("Honeypot field filled. Potential bot submission.");
+      toast({
+        title: t.success,
+      });
+      reset();
+      return;
+    }
     setIsSubmitting(true);
     try {
       const { error } = await supabase.from("prevention_education_contact").insert([
@@ -90,6 +100,10 @@ export const PreventionEducationContactForm = () => {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <div className="hidden" aria-hidden="true">
+            <Label htmlFor="hp_field">{t.firstName}</Label>
+            <Input id="hp_field" {...register("hp_field")} tabIndex={-1} autoComplete="off" />
+          </div>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="first_name">{t.firstName}</Label>

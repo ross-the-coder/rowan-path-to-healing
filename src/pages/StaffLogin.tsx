@@ -60,7 +60,7 @@ const StaffLogin = () => {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="staff@therowancenter-ct.org"
+                    placeholder="staff@therowancenter.org"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required

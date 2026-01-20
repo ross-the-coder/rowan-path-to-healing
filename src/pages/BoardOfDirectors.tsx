@@ -167,6 +167,28 @@ const BoardOfDirectors = () => {
           </Card>
         </section>
 
+        {/* Contact section */}
+        <section className="mb-16">
+          <Card className="border-secondary/20">
+            <CardHeader className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-secondary/10 rounded-full flex items-center justify-center">
+                <Mail className="h-8 w-8 text-secondary" />
+              </div>
+              <CardTitle className="text-2xl mb-4">Contact the Board</CardTitle>
+              <CardDescription>
+                Questions, feedback, or suggestions for the Board of Directors? We want to hear from you.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="text-muted-foreground mb-4">
+                Board communications are handled through our Executive Director's office to ensure proper coordination and response.
+              </p>
+              <a href="mailto:info@therowancenter.org?subject=Board Inquiry" className="text-primary hover:underline font-medium">
+                info@therowancenter.org
+              </a>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </Layout>
   );

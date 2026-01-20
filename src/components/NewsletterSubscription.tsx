@@ -12,6 +12,7 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address").max(255),
   first_name: z.string().max(100).optional(),
   last_name: z.string().max(100).optional(),
+  hp_field: z.string().max(0).optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -30,6 +31,16 @@ export const NewsletterSubscription = () => {
   });
 
   const onSubmit = async (data: FormData) => {
+    // Honeypot check
+    if (data.hp_field) {
+      console.warn("Honeypot field filled. Potential bot submission.");
+      toast({
+        title: "Welcome to our newsletter!",
+        description: "You'll receive updates and news alerts at your email.",
+      });
+      reset();
+      return;
+    }
     setIsSubmitting(true);
     try {
       const { error } = await supabase.from("newsletter_subscriptions").insert([
@@ -90,6 +101,9 @@ export const NewsletterSubscription = () => {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex-shrink-0 w-full md:w-auto">
+          <div className="hidden" aria-hidden="true">
+            <Input id="hp_field" {...register("hp_field")} tabIndex={-1} autoComplete="off" />
+          </div>
           <div className="flex flex-col sm:flex-row gap-2">
             <Input 
               id="email" 
