@@ -306,7 +306,7 @@ const CTLawsReporting = () => {
                     Contact Our Advocates
                   </Button>
                   <Button size="lg" variant="outline" className="border-[hsl(var(--blue-accent))] text-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/10">
-                    24/7 Crisis Line: (203) 348-9346
+                    24/7 Helpline: (203) 348-9346
                   </Button>
                 </div>
               </CardContent>
