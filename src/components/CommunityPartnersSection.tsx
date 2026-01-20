@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
@@ -9,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { communityResources } from "@/data/communityResourcesData";
 
 const createAnchorId = (value: string) =>
   value
@@ -65,6 +67,9 @@ const partners = [
 const CommunityPartnersSection = () => {
   const [api, setApi] = useState<CarouselApi | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const resourceUrlByAnchorId = new Map(
+    communityResources.map(resource => [createAnchorId(resource.name), resource.url])
+  );
 
   useEffect(() => {
     if (!api) return;
@@ -97,8 +102,10 @@ const CommunityPartnersSection = () => {
           className="w-full max-w-6xl mx-auto py-6"
         >
           <CarouselContent className="-ml-2 md:-ml-4" viewportClassName="overflow-visible py-8">
-            {partners.map((partner, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+            {partners.map((partner, index) => {
+              const resourceUrl = resourceUrlByAnchorId.get(partner.anchorId);
+              return (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <Link
                   to={`/resources#${partner.anchorId}`}
                   aria-label={`View ${partner.name} in community resources`}
@@ -128,11 +135,27 @@ const CommunityPartnersSection = () => {
                           {partner.description}
                         </p>
                       )}
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        className="mt-4"
+                        onClick={event => {
+                          if (!resourceUrl) return;
+                          event.preventDefault();
+                          event.stopPropagation();
+                          window.open(resourceUrl, "_blank", "noopener,noreferrer");
+                        }}
+                        disabled={!resourceUrl}
+                      >
+                        Visit {partner.name}
+                      </Button>
                     </CardContent>
                   </Card>
                 </Link>
               </CarouselItem>
-            ))}
+              );
+            })}
           </CarouselContent>
           <div className="mt-8 flex items-center justify-center gap-4">
             <CarouselPrevious

@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ExternalLink, Search, Calendar, Newspaper, LayoutGrid, List, MapPin } from "lucide-react";
 import { newsArticles, NewsArticle, parseDate, getSortedArticles } from "@/data/newsData";
 import { format } from "date-fns";
+import { Reveal } from "@/components/Reveal";
 
 const News = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -81,14 +82,16 @@ const News = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary via-primary/90 to-secondary py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-              News & Updates
-            </h1>
-            <p className="text-xl text-primary-foreground/90">
-              Stay informed about child safety, prevention education, and community resources.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-3xl">
+              <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+                News & Updates
+              </h1>
+              <p className="text-xl text-primary-foreground/90">
+                Stay informed about child safety, prevention education, and community resources.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

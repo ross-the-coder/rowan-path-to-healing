@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import supportGroupImage from "@/assets/support-group.jpg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Reveal } from "@/components/Reveal";
 const HeroSection = () => {
   const {
     t
@@ -20,59 +21,61 @@ const HeroSection = () => {
 
         {/* Content */}
         <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-seasons font-normal leading-tight text-white mb-8">
-              {t('hero.tagline1')}{" "}
-              <span className="text-white">{t('hero.tagline2')}</span>{" "}
-              <span className="text-white">{t('hero.tagline3')}</span>
-            </h1>
-            
-            <p className="text-xl text-white/90 font-roboto font-light leading-relaxed mb-8 max-w-2xl">
-              {t('hero.description')}
-            </p>
+          <Reveal>
+            <div className="max-w-4xl">
+              <h1 className="text-4xl md:text-6xl font-seasons font-normal leading-tight text-white mb-8">
+                {t('hero.tagline1')}{" "}
+                <span className="text-white">{t('hero.tagline2')}</span>{" "}
+                <span className="text-white">{t('hero.tagline3')}</span>
+              </h1>
+              
+              <p className="text-xl text-white/90 font-roboto font-light leading-relaxed mb-8 max-w-2xl">
+                {t('hero.description')}
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button size="lg" className="bg-emergency hover:bg-emergency/90 shadow-button font-roboto font-medium">
-                    <Phone className="mr-2 h-5 w-5" />
-                    {t('crisis.hotline')}
-                    <ChevronDown className="ml-2 h-5 w-5" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-background z-50">
-                  <DropdownMenuItem asChild>
-                    <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
-                      <Phone className="h-4 w-4" />
-                      <div>
-                        <div className="font-medium">{t('common.english')}</div>
-                        <div className="text-sm text-muted-foreground">(203) 329-2929</div>
-                      </div>
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
-                      <Phone className="h-4 w-4" />
-                      <div>
-                        <div className="font-medium">{t('common.spanish')}</div>
-                        <div className="text-sm text-muted-foreground">(888) 568-8332</div>
-                      </div>
-                    </a>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              <Button variant="outline" size="lg" asChild className="font-roboto font-medium border-white/80 text-white bg-white/10 hover:bg-white hover:text-secondary backdrop-blur-sm">
-                <Link to="/crisis-support">
-                  <Heart className="mr-2 h-5 w-5" />
-                  {t('hero.ctaSupport')}
-                </Link>
-              </Button>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button size="lg" className="bg-emergency hover:bg-emergency/90 shadow-button font-roboto font-medium">
+                      <Phone className="mr-2 h-5 w-5" />
+                      {t('crisis.hotline')}
+                      <ChevronDown className="ml-2 h-5 w-5" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-background z-50">
+                    <DropdownMenuItem asChild>
+                      <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
+                        <Phone className="h-4 w-4" />
+                        <div>
+                          <div className="font-medium">{t('common.english')}</div>
+                          <div className="text-sm text-muted-foreground">(203) 329-2929</div>
+                        </div>
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
+                        <Phone className="h-4 w-4" />
+                        <div>
+                          <div className="font-medium">{t('common.spanish')}</div>
+                          <div className="text-sm text-muted-foreground">(888) 568-8332</div>
+                        </div>
+                      </a>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <Button variant="outline" size="lg" asChild className="font-roboto font-medium border-white/80 text-white bg-white/10 hover:bg-white hover:text-secondary backdrop-blur-sm">
+                  <Link to="/crisis-support">
+                    <Heart className="mr-2 h-5 w-5" />
+                    {t('hero.ctaSupport')}
+                  </Link>
+                </Button>
+              </div>
 
-            <div className="text-sm text-white/70 font-roboto">
-              <p>{t('hero.servingArea')}</p>
+              <div className="text-sm text-white/70 font-roboto">
+                <p>{t('hero.servingArea')}</p>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
 

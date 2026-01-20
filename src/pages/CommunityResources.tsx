@@ -19,6 +19,7 @@ import {
   LayoutGrid,
   List
 } from "lucide-react";
+import { Reveal } from "@/components/Reveal";
 import {
   Select,
   SelectContent,
@@ -147,15 +148,17 @@ const CommunityResources = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 to-background/80" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Community Resources
-            </h1>
-            <p className="text-xl text-muted-foreground">
-              A searchable database of local, state, and national resources to help you find the support you need. 
-              Filter by category, service type, or location to find organizations that can help.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-3xl">
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Community Resources
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                A searchable database of local, state, and national resources to help you find the support you need. 
+                Filter by category, service type, or location to find organizations that can help.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

@@ -81,7 +81,7 @@ serve(async (req) => {
         },
         body: JSON.stringify({
           from: "Rowan Center Alerts <alerts@therowancenter-ct.org>",
-          to: ["staff@therowancenter-ct.org"],
+          to: ["kidsafehq@therowancenter.org", "ross@imagemaretingconsultants.com"],
           subject: "New KidSafeHQ Question Submitted",
           html: `
             <h1>New KidSafeHQ Question</h1>

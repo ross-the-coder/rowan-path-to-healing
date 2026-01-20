@@ -11,6 +11,7 @@ import resourceLink from './resourceLink'
 import kidSafeGrade from './kidSafeGrade'
 import kidSafeTopic from './kidSafeTopic'
 import newsArticle from './newsArticle'
+import staffMember from './staffMember'
 
 export const schemaTypes = [
   // Blog & Content
@@ -22,6 +23,7 @@ export const schemaTypes = [
   // Organization
   jobPosting,
   boardMember,
+  staffMember,
   
   // Resources
   communityResource,

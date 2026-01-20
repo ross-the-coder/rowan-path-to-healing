@@ -13,6 +13,7 @@ import { format } from "date-fns";
 import { Link } from "react-router-dom";
 import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
 import newsHero from "@/assets/kidsafe-news-hero.jpg";
+import { Reveal } from "@/components/Reveal";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -120,16 +121,20 @@ const KidSafeNews = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
           </div>
           <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
-            <Link to="/kidsafehq" className="mb-4">
-              <img src={kidSafeHQLogo} alt="KidSafeHQ" className="h-16 w-auto brightness-0 invert" />
-            </Link>
-            <div className="flex items-center gap-3 mb-2">
-              <Newspaper className="h-8 w-8 text-white" />
-              <h1 className="text-3xl md:text-4xl font-bold text-white">In the News</h1>
-            </div>
-            <p className="text-white/80 text-lg max-w-2xl">
-              Stay informed about child safety issues, legislation, and awareness efforts
-            </p>
+            <Reveal>
+              <>
+                <Link to="/kidsafehq" className="mb-4">
+                  <img src={kidSafeHQLogo} alt="KidSafeHQ" className="h-16 w-auto brightness-0 invert" />
+                </Link>
+                <div className="flex items-center gap-3 mb-2">
+                  <Newspaper className="h-8 w-8 text-white" />
+                  <h1 className="text-3xl md:text-4xl font-bold text-white">In the News</h1>
+                </div>
+                <p className="text-white/80 text-lg max-w-2xl">
+                  Stay informed about child safety issues, legislation, and awareness efforts
+                </p>
+              </>
+            </Reveal>
           </div>
         </div>
 

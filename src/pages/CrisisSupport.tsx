@@ -5,6 +5,7 @@ import { Phone, Clock, Shield, Heart, ChevronDown } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
+import { Reveal } from "@/components/Reveal";
 
 const CrisisSupport = () => {
   return (
@@ -17,48 +18,52 @@ const CrisisSupport = () => {
         {/* Hero Section */}
         <section className="py-20 text-white">
           <div className="container mx-auto px-4 text-center">
-            <Phone className="h-16 w-16 mx-auto mb-6 text-white" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">
-              Crisis Support
-            </h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8 max-w-3xl mx-auto">
-              Free, confidential support available 24/7 for survivors of sexual violence and their loved ones.
-            </p>
-            
-            <Card className="bg-emergency backdrop-blur-sm border-emergency-foreground/20 max-w-md mx-auto mb-8">
-              <CardContent className="p-8 text-center">
-                <div className="text-3xl font-seasons font-bold mb-2 text-white">Crisis Helpline</div>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="h-auto p-0 text-white hover:bg-white/10 text-4xl font-roboto font-bold">
-                      Call Now
-                      <ChevronDown className="ml-2 h-8 w-8" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-background z-50">
-                    <DropdownMenuItem asChild>
-                      <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
-                        <Phone className="h-4 w-4" />
-                        <div>
-                          <div className="font-medium">English</div>
-                          <div className="text-sm text-muted-foreground">(203) 329-2929</div>
-                        </div>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
-                        <Phone className="h-4 w-4" />
-                        <div>
-                          <div className="font-medium">Español</div>
-                          <div className="text-sm text-muted-foreground">(888) 568-8332</div>
-                        </div>
-                      </a>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <div className="text-white/90 font-roboto">Available 24/7, completely confidential</div>
-              </CardContent>
-            </Card>
+            <Reveal>
+              <>
+                <Phone className="h-16 w-16 mx-auto mb-6 text-white" />
+                <h1 className="text-5xl font-seasons font-normal mb-6">
+                  Crisis Support
+                </h1>
+                <p className="text-xl font-roboto font-light text-white/90 mb-8 max-w-3xl mx-auto">
+                  Free, confidential support available 24/7 for survivors of sexual violence and their loved ones.
+                </p>
+                
+                <Card className="bg-emergency backdrop-blur-sm border-emergency-foreground/20 max-w-md mx-auto mb-8">
+                  <CardContent className="p-8 text-center">
+                    <div className="text-3xl font-seasons font-bold mb-2 text-white">Crisis Helpline</div>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" className="h-auto p-0 text-white hover:bg-white/10 text-4xl font-roboto font-bold">
+                          Call Now
+                          <ChevronDown className="ml-2 h-8 w-8" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="bg-background z-50">
+                        <DropdownMenuItem asChild>
+                          <a href="tel:2033292929" className="flex items-center gap-2 cursor-pointer">
+                            <Phone className="h-4 w-4" />
+                            <div>
+                              <div className="font-medium">English</div>
+                              <div className="text-sm text-muted-foreground">(203) 329-2929</div>
+                            </div>
+                          </a>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <a href="tel:8885688332" className="flex items-center gap-2 cursor-pointer">
+                            <Phone className="h-4 w-4" />
+                            <div>
+                              <div className="font-medium">Español</div>
+                              <div className="text-sm text-muted-foreground">(888) 568-8332</div>
+                            </div>
+                          </a>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                    <div className="text-white/90 font-roboto">Available 24/7, completely confidential</div>
+                  </CardContent>
+                </Card>
+              </>
+            </Reveal>
           </div>
         </section>
 

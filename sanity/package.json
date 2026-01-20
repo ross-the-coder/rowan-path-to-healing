@@ -12,6 +12,7 @@
     "deploy-graphql": "sanity graphql deploy",
     "import:all": "tsx migrations/import-all.ts",
     "import:board": "tsx migrations/import-board-members-updated.ts",
+    "import:staff": "tsx migrations/import-staff.ts",
     "import:glossary": "tsx migrations/import-glossary.ts",
     "import:faqs": "tsx migrations/import-faqs.ts",
     "import:authors": "tsx migrations/import-authors.ts",
@@ -28,14 +29,14 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^5.0.1",
+    "@sanity/vision": "^5.4.0",
     "react": "^19.1",
     "react-dom": "^19.1",
-    "sanity": "^5.0.1",
+    "sanity": "^5.4.0",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^5.0.2",
+    "@sanity/eslint-config-studio": "^6.0.0",
     "@types/react": "^19.1",
     "eslint": "^9.28",
     "prettier": "^3.5",

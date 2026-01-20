@@ -6,23 +6,33 @@ const AlertRibbon = () => {
           <div className="flex items-center gap-6 px-4 py-3 pr-12 shrink-0">
             <span className="font-roboto font-bold text-emergency">ALERT:</span>
             <span className="font-roboto text-sm sm:text-base text-foreground">
-              Deepfake photo and videos — if someone is threatening or blackmailing you, or you become aware they have an
-              AI-generated photo of you without consent. If you’re in the U.S., report to NCMEC CyberTipline (especially
-              if a minor is involved). If adult, report to the platform + local police if threats continue.
+              POLICE IMPERSONATION PHONE SCAM ALERT - We are seeing scams where callers claim to be police officers and
+              say you have an active arrest warrant, missed jury duty, or owe fines - then demand immediate payment. THIS
+              IS A SCAM.
             </span>
-            <a href="/resources" className="font-roboto font-semibold text-emergency underline underline-offset-2">
-              Learn more.
+            <a
+              href="https://www.instagram.com/p/DTOKqP5kept/?igsh=MW54MHB3OXgzOWdtMA=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-roboto font-semibold text-emergency underline underline-offset-2"
+            >
+              Click here to learn more.
             </a>
           </div>
           <div className="flex items-center gap-6 px-4 py-3 pr-12 shrink-0">
             <span className="font-roboto font-bold text-emergency">ALERT:</span>
             <span className="font-roboto text-sm sm:text-base text-foreground">
-              Deepfake photo and videos — if someone is threatening or blackmailing you, or you become aware they have an
-              AI-generated photo of you without consent. If you’re in the U.S., report to NCMEC CyberTipline (especially
-              if a minor is involved). If adult, report to the platform + local police if threats continue.
+              POLICE IMPERSONATION PHONE SCAM ALERT - We are seeing scams where callers claim to be police officers and
+              say you have an active arrest warrant, missed jury duty, or owe fines - then demand immediate payment. THIS
+              IS A SCAM.
             </span>
-            <a href="/resources" className="font-roboto font-semibold text-emergency underline underline-offset-2">
-              Learn more.
+            <a
+              href="https://www.instagram.com/p/DTOKqP5kept/?igsh=MW54MHB3OXgzOWdtMA=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-roboto font-semibold text-emergency underline underline-offset-2"
+            >
+              Click here to learn more.
             </a>
           </div>
         </div>

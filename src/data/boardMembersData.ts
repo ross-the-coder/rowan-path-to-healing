@@ -125,13 +125,6 @@ export const boardMembers: BoardMember[] = [
     order: 16
   },
   {
-    _id: "member-13",
-    name: "Callie Sullivan",
-    title: "Board Member",
-    bio: "Callie Sullivan was previously Vice President of Sales of HMSDesign and has been an active volunteer of A Better Chance Darien, Planned Parenthood of Southern Connecticut, and Darien League of Women Voters. She is currently President of Sullivan Property Holdings. She served on the Darien Board of Education and the Darien Board of Selectmen, and she has been honored as a YWCA Woman of Distinction by the YWCA of Darien/Norwalk. She is a graduate of Williams College and lives in Darien. Callie has been a board member since 2018.",
-    order: 17
-  },
-  {
     _id: "member-14",
     name: "Jen Weil",
     title: "Board Member",

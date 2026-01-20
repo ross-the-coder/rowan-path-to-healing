@@ -104,7 +104,7 @@ const Media = () => {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Media Contact</h3>
                   <p className="text-muted-foreground">Sarah Johnson, Executive Director</p>
-                  <p className="text-muted-foreground">media@rowancenternor.org</p>
+                  <p className="text-muted-foreground">media@therowancenter.org</p>
                   <p className="text-muted-foreground">(203) 329-2929 ext. 101</p>
                 </div>
                 <div>

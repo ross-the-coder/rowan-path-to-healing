@@ -82,7 +82,7 @@ export const NewsletterSubscription = () => {
         
         <div className="flex-1 text-center md:text-left">
           <h3 className="text-2xl font-seasons font-normal mb-1 text-foreground">
-            Sign up to learn more about keeping your kids safe
+            Subscribe for Updates & News Alerts
           </h3>
           <p className="text-sm font-roboto text-muted-foreground">
             Stay informed about our programs, events, and important community updates

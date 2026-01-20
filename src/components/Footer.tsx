@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { NewsletterSubscription } from "./NewsletterSubscription";
 import rowanLogo from "@/assets/rowan-center-logo.png";
 import charityNavigatorBadge from "@/assets/charity-navigator-4-star.webp";
-import candidSeal from "@/assets/candid-seal-platinum-2025.png";
+import candidSeal from "@/assets/candid-platinum-transparency.svg";
 import ctAllianceLogo from "@/assets/ct-alliance-logo.webp";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
@@ -176,8 +176,8 @@ const Footer = () => {
               <a href="https://www.charitynavigator.org/ein/061037583" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <img src={charityNavigatorBadge} alt="Charity Navigator 4-Star Rating" className="h-20 bg-white rounded p-1" />
               </a>
-              <a href="https://www.guidestar.org/profile/06-1037583" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src={candidSeal} alt="Candid Platinum Transparency 2025" className="h-20" />
+              <a href="https://app.candid.org/profile/6867664/the-rowan-center-06-1037583?_gl=1*u32f9i*_gcl_au*MTg1MzU0OTQzMS4xNzY4OTI1NDEx*_ga*MjExNzY5NjY3Ny4xNzY4OTI1NDEx*_ga_5W8PXYYGBX*czE3Njg5MjkxNTAkbzIkZzAkdDE3Njg5MjkxNTAkajYwJGwwJGgw" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={candidSeal} alt="Candid Platinum Transparency" className="h-20" />
               </a>
             </div>
           </div>

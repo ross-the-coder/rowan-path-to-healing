@@ -6,6 +6,7 @@ import { Shield, Download, Users, School, Laptop, ClipboardCheck, BookOpen, Spar
 import { PreventionEducationContactForm } from "@/components/PreventionEducationContactForm";
 import preventionEducationHero from "@/assets/preventioneducation.jpg";
 import { SEO } from "@/components/SEO";
+import { Reveal } from "@/components/Reveal";
 
 const PreventionEducation = () => {
   return (
@@ -22,15 +23,17 @@ const PreventionEducation = () => {
         </div>
         
         <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-3xl text-white">
-            <Shield className="h-16 w-16 mb-6 text-white" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">
-              Sexual Violence Prevention Education
-            </h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8">
-              The mission of the Education Department at The Rowan Center is to end sexual violence. We advance this mission through evidence-driven education, training, outreach, and primary prevention activities that foster empowerment, connection, and lasting change.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-3xl text-white">
+              <Shield className="h-16 w-16 mb-6 text-white" />
+              <h1 className="text-5xl font-seasons font-normal mb-6">
+                Sexual Violence Prevention Education
+              </h1>
+              <p className="text-xl font-roboto font-light text-white/90 mb-8">
+                The mission of the Education Department at The Rowan Center is to end sexual violence. We advance this mission through evidence-driven education, training, outreach, and primary prevention activities that foster empowerment, connection, and lasting change.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -133,17 +136,35 @@ const PreventionEducation = () => {
               The Rowan Center's K-2nd curriculum has the options of being presented by our trained educators or being led by classroom teachers. Please reach out if you would like to request a presentation for your K-2nd students from one of our trained educators, or download the curriculum below to implement in your school or classroom!
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="gap-2">
-                <Download className="h-5 w-5" />
-                K-2 Curriculum (2025-2026)
+              <Button size="lg" className="gap-2" asChild>
+                <a
+                  href="https://docs.google.com/document/d/1x_7H3pgvCNtxR3H77dfRUzXSEukWfs7Jp45_hmkz0Nc/edit?tab=t.0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="h-5 w-5" />
+                  K-2 Curriculum (2025-2026)
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="gap-2">
-                <Download className="h-5 w-5" />
-                Spanish K-2 Curriculum (2025-2026)
+              <Button size="lg" variant="outline" className="gap-2" asChild>
+                <a
+                  href="https://docs.google.com/document/d/1S3-OR7NkpyTYoG2ogtOXBigIrKZrTAbviy3mPnYyzFY/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="h-5 w-5" />
+                  Spanish K-2 Curriculum (2025-2026)
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="gap-2">
-                <Download className="h-5 w-5" />
-                Spanish Book PDFs
+              <Button size="lg" variant="outline" className="gap-2" asChild>
+                <a
+                  href="https://drive.google.com/drive/folders/1MtrxazEd3RQx5FHliI1PAP7I22V1Q6w2?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="h-5 w-5" />
+                  Spanish Book PDFs
+                </a>
               </Button>
             </div>
           </div>

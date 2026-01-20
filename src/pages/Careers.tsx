@@ -198,8 +198,8 @@ const Careers = () => {
               </div>
               <p className="text-sm text-muted-foreground">
                 Questions about employment? Contact our HR team at 
-                <a href="mailto:hr@rowancenternor.org" className="text-primary hover:underline ml-1">
-                  hr@rowancenternor.org
+                <a href="mailto:info@therowancenter.org" className="text-primary hover:underline ml-1">
+                info@therowancenter.org
                 </a>
               </p>
             </CardContent>

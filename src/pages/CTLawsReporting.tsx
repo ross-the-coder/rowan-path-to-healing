@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Scale, Phone, FileText, AlertCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Reveal } from "@/components/Reveal";
 
 const CTLawsReporting = () => {
   return (
@@ -10,15 +11,17 @@ const CTLawsReporting = () => {
       {/* Hero Section */}
       <section className="py-20 bg-[hsl(var(--blue-accent))] text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Scale className="h-16 w-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">
-              Connecticut Laws & Reporting
-            </h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8">
-              Understanding Connecticut laws, definitions, and reporting requirements for sexual violence
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center">
+              <Scale className="h-16 w-16 mx-auto mb-6" />
+              <h1 className="text-5xl font-seasons font-normal mb-6">
+                Connecticut Laws & Reporting
+              </h1>
+              <p className="text-xl font-roboto font-light text-white/90 mb-8">
+                Understanding Connecticut laws, definitions, and reporting requirements for sexual violence
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

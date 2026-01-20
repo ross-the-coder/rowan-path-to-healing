@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp } from "lucide-react";
 import ImpactStatistics from "@/components/ImpactStatistics";
+import { Reveal } from "@/components/Reveal";
 
 const Impact = () => {
   return (
@@ -9,14 +10,16 @@ const Impact = () => {
       {/* Hero Section */}
       <section className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <TrendingUp className="h-16 w-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">Making a Real Difference</h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8">
-              Every day, The Rowan Center works to prevent sexual violence, respond to crisis, and support survivors on
-              their healing journey.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center">
+              <TrendingUp className="h-16 w-16 mx-auto mb-6" />
+              <h1 className="text-5xl font-seasons font-normal mb-6">Making a Real Difference</h1>
+              <p className="text-xl font-roboto font-light text-white/90 mb-8">
+                Every day, The Rowan Center works to prevent sexual violence, respond to crisis, and support survivors on
+                their healing journey.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

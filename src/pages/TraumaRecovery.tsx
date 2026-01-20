@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Stethoscope, Users, Shield } from "lucide-react";
 import { TraumaRecoveryIntakeForm } from "@/components/TraumaRecoveryIntakeForm";
 import { SEO } from "@/components/SEO";
+import { Reveal } from "@/components/Reveal";
 
 import traumaRecoveryLogo from "@/assets/trauma-recovery-clinic-logo.png";
 import counselingHopeImage from "@/assets/group-therapy-diverse.jpg";
@@ -24,7 +25,7 @@ const teamMembers = [
   },
   {
     name: "Isabel Negron, LCSW",
-    title: "Assistant Practice Director",
+    title: "Assitant Clinical Director",
     credentials: "EMDR Provider",
     bio: "Isabel Negron (she/her) is a Licensed Clinical Social Worker (LCSW) and an EMDR provider since 2022. She is working towards her Certified EMDR Therapist status. Isabel received her MSW from Fairfield University in 2022 and is licensed in Connecticut.",
     details: "Isabel started at The Rowan Center in the Fall of 2021 as a master's-level intern before being asked to join our team after graduating with her MSW. She served as our Bilingual (EN/ES) Intake Coordinator before transitioning into her current role as our first Bilingual (EN/ES) Staff Therapist at the Trauma Recovery Practice at TRP.",
@@ -33,24 +34,24 @@ const teamMembers = [
     image: isabelHeadshot,
   },
   {
-    name: "Zachary Boccarossa, LMSW",
-    title: "Staff Therapist and Trauma Fellow (EN/ES)",
-    credentials: "",
-    bio: "Zachary Boccarossa (he/him) received his Masters in Social Work (MSW) from Fairfield University in 2025, and is a licensed LMSW in Connecticut. Zachary is a trained EMDR Provider, and he is pursuing additional specialization in EMDR.",
-    details: "Zachary also completed his first year MSW internship at The Rowan Center, providing short-term crisis counseling services to victims and survivors of sexual violence in our Counseling program. Zachary is a certified sexual assault advocate and counselor in the State of Connecticut.",
-    specialties: "He is able to offer direct client services in English and Spanish. He has experience working with clients exhibiting symptoms of depression, anxiety, and PTSD, and especially with victims and survivors of sexual violence.",
-    languages: ["English", "Spanish"],
-    image: zacharyHeadshot,
-  },
-  {
     name: "Taina Colon, LMSW",
     title: "Staff Therapist and Trauma Fellow (EN/ES)",
     credentials: "",
     bio: "Taina Colon (she/her) received her Masters in Social Work (MSW) from Fordham University in 2024, and is a licensed LMSW in Connecticut. Taina is a trained EMDR Provider, and she is pursuing additional specialization in EMDR.",
     details: "While completing her MSW, Taina completed a year-long internship at The Rowan Center, providing short-term crisis counseling services to victims and survivors of sexual violence in our Counseling program. Taina served as the Bilingual/Bicultural Counselor and Intake Coordinator of the Counseling program at the Rowan Center from June of 2024 until June of 2025, before transitioning into her role in the Trauma Recovery Practice. Taina is a certified sexual assault advocate and counselor in the State of Connecticut.",
-    specialties: "She is able to offer direct client services in English and Spanish.",
+    specialties: "Taina is able to offer direct client services in English and Spanish.",
     languages: ["English", "Spanish"],
     image: tainaHeadshot,
+  },
+  {
+    name: "Zachary Boccarossa, LMSW",
+    title: "Staff Therapist and Trauma Fellow (EN/ES)",
+    credentials: "",
+    bio: "Zachary Boccarossa (he/him) received his Masters in Social Work (MSW) from Fairfield University in 2025, and is a licensed LMSW in Connecticut. Zachary is a trained EMDR Provider, and he is pursuing additional specialization in EMDR.",
+    details: "Zachary also completed his first year MSW internship at The Rowan Center, providing short-term crisis counseling services to victims and survivors of sexual violence in our Counseling program. Zachary is a certified sexual assault advocate and counselor in the State of Connecticut.",
+    specialties: "Zachary is able to offer direct client services in English and Spanish. He has experience working with clients exhibiting symptoms of depression, anxiety, and PTSD, and especially with victims and survivors of sexual violence.",
+    languages: ["English", "Spanish"],
+    image: zacharyHeadshot,
   },
 ];
 
@@ -69,20 +70,22 @@ const TraumaRecovery = () => {
             alt="Diverse group of women in supportive group therapy session empowering each other"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 to-white/60 md:bg-gradient-to-r md:from-white md:via-white/80 md:to-transparent"></div>
         </div>
         
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <img 
-              src={traumaRecoveryLogo} 
-              alt="The Rowan Center - Trauma Recovery Practice" 
-              className="max-w-md mx-auto mb-6"
-            />
-            <p className="text-3xl font-roboto font-light text-foreground">
-              All survivors of trauma deserve hope and healing.
-            </p>
-          </div>
+        <div className="container mx-auto px-4 py-16 sm:py-20 relative z-10">
+          <Reveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <img 
+                src={traumaRecoveryLogo} 
+                alt="The Rowan Center - Trauma Recovery Practice" 
+                className="w-52 sm:w-64 md:w-80 mx-auto mb-6"
+              />
+              <p className="text-lg sm:text-xl md:text-2xl font-roboto font-light text-foreground">
+                All survivors of trauma deserve hope and healing.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

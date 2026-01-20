@@ -8,6 +8,8 @@ import donateHeroImage from "@/assets/donate-hero.jpg";
 import donateEventsImage from "@/assets/donate-events.jpg";
 import donateVolunteerImage from "@/assets/donate-volunteer.jpg";
 import donateCommunityImage from "@/assets/donate-community.jpg";
+import candidSeal from "@/assets/candid-platinum-transparency.svg";
+import { Reveal } from "@/components/Reveal";
 
 const DONATE_URL = import.meta.env.VITE_DONATE_URL ?? "https://therowancenter.org/donate/";
 const CHARIOT_BUTTON_CID =
@@ -57,15 +59,17 @@ const Donate = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/60"></div>
         </div>
         <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-3xl">
-            <Heart className="h-12 w-12 text-white mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6 text-white">
-              Support Our Mission
-            </h1>
-            <p className="text-xl font-roboto font-light text-white/90">
-              Your donation helps us prevent sexual violence, respond to crisis, and support survivors on their path to healing.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-3xl">
+              <Heart className="h-12 w-12 text-white mb-6" />
+              <h1 className="text-5xl font-seasons font-normal mb-6 text-white">
+                Support Our Mission
+              </h1>
+              <p className="text-xl font-roboto font-light text-white/90">
+                Your donation helps us prevent sexual violence, respond to crisis, and support survivors on their path to healing.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -277,7 +281,7 @@ const Donate = () => {
                     Become a certified crisis advocate volunteer
                   </p>
                   <Button variant="outline" asChild>
-                    <a href="/volunteer">Learn More</a>
+                    <a href="/volunteer">Volunteer opportunities</a>
                   </Button>
                 </CardContent>
               </Card>
@@ -296,6 +300,18 @@ const Donate = () => {
                 <p className="font-roboto text-muted-foreground mb-4">
                   <strong>EIN:</strong> 06-1037583
                 </p>
+                <a
+                  href="https://app.candid.org/profile/6867664/the-rowan-center-06-1037583?_gl=1*u32f9i*_gcl_au*MTg1MzU0OTQzMS4xNzY4OTI1NDEx*_ga*MjExNzY5NjY3Ny4xNzY4OTI1NDEx*_ga_5W8PXYYGBX*czE3Njg5MjkxNTAkbzIkZzAkdDE3Njg5MjkxNTAkajYwJGwwJGgw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex justify-center mb-6"
+                >
+                  <img
+                    src={candidSeal}
+                    alt="Candid Platinum Transparency"
+                    className="h-16"
+                  />
+                </a>
                 <p className="font-roboto text-muted-foreground mb-6">
                   The Rowan Center is a member of the Connecticut Alliance to End Sexual Violence.
                 </p>

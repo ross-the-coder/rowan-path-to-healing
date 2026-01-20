@@ -64,10 +64,10 @@ const stats: StatItem[] = [
   {
     id: 'counseling',
     value: 723,
-    label: 'Counseling Clients',
+    label: 'Counseling Sessions',
     icon: MessageCircle,
     category: 'services',
-    description: 'Individuals receiving ongoing counseling support'
+    description: 'Crisis counseling sessions delivered'
   },
   {
     id: 'referrals',

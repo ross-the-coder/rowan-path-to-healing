@@ -115,12 +115,6 @@ async function importBoardMembers() {
       order: 16
     },
     {
-      name: "Callie Sullivan",
-      title: "Board Member",
-      bio: "Callie Sullivan was previously Vice President of Sales of HMSDesign and has been an active volunteer of A Better Chance Darien, Planned Parenthood of Southern Connecticut, and Darien League of Women Voters. She is currently President of Sullivan Property Holdings. She served on the Darien Board of Education and the Darien Board of Selectmen, and she has been honored as a YWCA Woman of Distinction by the YWCA of Darien/Norwalk. She is a graduate of Williams College and lives in Darien. Callie has been a board member since 2018.",
-      order: 17
-    },
-    {
       name: "Jen Weil",
       title: "Board Member",
       bio: "Jen Weil spent her early career in San Francisco and Seattle, where she was the Director of Business Development at Oracle. She has been an active member of Impact Fairfield County for five years and has served on various committees, including Grant Review, Membership, Scholarship, and Mentorship. Her volunteer efforts have fueled her desire to help and serve the most underrepresented and impoverished communities in Fairfield County. Jen received her BS in International Relations & Public Affairs from Syracuse University's Maxwell School of Citizenship, and she currently lives in Westport. Jen became a board member in 2023.",

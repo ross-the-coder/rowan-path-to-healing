@@ -23,9 +23,22 @@ serve(async (req) => {
       volunteer_applications: "Volunteer Application",
       student_advisory_applications: "Student Advisory Application",
       newsletter_subscriptions: "Newsletter Subscription",
+      prevention_education_contact: "Prevention Education",
     };
 
     const formTitle = tableTitles[table] || "New Website Submission";
+    const baseRecipients = ["ross@imagemaretingconsultants.com"];
+    const tableRecipients: Record<string, string[]> = {
+      crisis_counseling_intake: ["mplacide@therowancenter.org", "sanzellotti@therowancenter.org"],
+      trauma_recovery_intake: ["lrobbins@traumarecoveryct.org", "inegron@traumarecoveryct.org"],
+      volunteer_applications: ["rlopez@therowancenter.org"],
+      student_advisory_applications: ["barnardjennifer@me.com"],
+      prevention_education_contact: ["education@therowancenter.org"],
+    };
+    const defaultRecipients = ["staff@therowancenter-ct.org"];
+    const recipients = Array.from(
+      new Set([...(tableRecipients[table] ?? defaultRecipients), ...baseRecipients])
+    );
 
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -35,7 +48,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: "Rowan Center Alerts <alerts@therowancenter-ct.org>", // Update this to your verified domain in Resend
-        to: ["staff@therowancenter-ct.org"], // The email where alerts should be sent
+        to: recipients,
         subject: `New Submission: ${formTitle}`,
         html: `
           <h1>New ${formTitle} Received</h1>

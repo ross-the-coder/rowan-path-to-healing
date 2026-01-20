@@ -5,6 +5,7 @@ import { Users, Clock, BookOpen, Heart } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { VolunteerApplicationForm } from "@/components/VolunteerApplicationForm";
 import { StudentAdvisoryApplicationForm } from "@/components/StudentAdvisoryApplicationForm";
+import { Reveal } from "@/components/Reveal";
 
 const Volunteer = () => {
   return (
@@ -12,15 +13,17 @@ const Volunteer = () => {
       {/* Hero Section */}
       <section className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Heart className="h-16 w-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">
-              Volunteer as a Crisis Advocate
-            </h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8">
-              Join our team of dedicated volunteers and make a real difference in the lives of survivors.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center">
+              <Heart className="h-16 w-16 mx-auto mb-6" />
+              <h1 className="text-5xl font-seasons font-normal mb-6">
+                Volunteer as a Crisis Advocate
+              </h1>
+              <p className="text-xl font-roboto font-light text-white/90 mb-8">
+                Join our team of dedicated volunteers and make a real difference in the lives of survivors.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -139,7 +142,7 @@ const Volunteer = () => {
                     If you are working on the hotline, we ask that you sign up for a minimum of four (4) shifts per month. To maintain certification, you must complete 6 additional hours of sexual violence training per year (July 1 – June 30).
                   </p>
                   <p>
-                    To find out about our next training and tentative schedule, please contact Raquel Lopez, Crisis Advocate Programs Administrator, at <a href="mailto:rlopez@therowancenter.org" className="text-secondary hover:underline">rlopez@therowancenter.org</a>.
+                    To find out about our next training and tentative schedule, please contact Raquel Lopez, LMSW, Crisis Advocate Programs Administrator, at <a href="mailto:rlopez@therowancenter.org" className="text-secondary hover:underline">rlopez@therowancenter.org</a>.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -170,7 +173,7 @@ const Volunteer = () => {
               For information regarding training sessions, please contact:
             </p>
             <p className="font-roboto text-lg">
-              <span className="font-medium">Raquel Lopez</span>, Crisis Advocate Programs Administrator
+              <span className="font-medium">Raquel Lopez, LMSW</span>, Crisis Advocate Programs Administrator
             </p>
             <p className="font-roboto">
               <a href="mailto:rlopez@therowancenter.org" className="text-secondary hover:underline">

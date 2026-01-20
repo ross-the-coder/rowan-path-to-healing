@@ -16,10 +16,10 @@ const Navigation = () => {
       {/* Crisis Banner */}
       <div className="bg-[#e7f1f4] py-5 px-4 border-b">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-end gap-3 text-sm font-roboto">
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-3 w-full">
+          <div className="w-full grid grid-cols-1 sm:flex sm:flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-3">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button size="sm" className="bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
+                <Button size="sm" className="w-full sm:w-auto justify-center bg-[hsl(var(--emergency))] hover:bg-[hsl(var(--emergency))]/90 text-white">
                   <Phone className="h-4 w-4 mr-2" />
                   {t('crisis.hotline')}
                   <ChevronDown className="h-4 w-4 ml-2" />
@@ -46,12 +46,12 @@ const Navigation = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button asChild size="sm" className="bg-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/90 text-white">
+            <Button asChild size="sm" className="w-full sm:w-auto justify-center bg-[hsl(var(--blue-accent))] hover:bg-[hsl(var(--blue-accent))]/90 text-white">
               <Link to="/kidsafehq">
                 {t('nav.kidsafe')}HQ
               </Link>
             </Button>
-            <Button asChild size="sm" className="bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-white">
+            <Button asChild size="sm" className="w-full sm:w-auto justify-center bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/90 text-white">
               <Link to="/trauma-recovery">
                 {t('nav.traumaRecovery')} Practice
               </Link>
@@ -64,8 +64,8 @@ const Navigation = () => {
       {/* Main Navigation */}
       <nav className="bg-secondary text-white shadow-lg">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            <Link to="/" className="flex items-center -mt-2 -mb-2 relative z-10">
+          <div className="flex items-center justify-between h-20 relative">
+            <Link to="/" className="flex items-center -mt-2 -mb-2 relative z-10 lg:mx-0 mx-auto">
               <div className="bg-white rounded-lg px-6 py-4" style={{
               boxShadow: '0 0 15px rgba(0, 0, 0, 0.15)'
             }}>
@@ -138,14 +138,6 @@ const Navigation = () => {
                             <div className="text-sm font-medium leading-none">{t('nav.financials')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               {t('footer.nonprofit')}
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link to="/staff" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">{t('nav.ourTeam')}</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              {t('nav.ourTeamDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -257,7 +249,7 @@ const Navigation = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <Button variant="ghost" size="sm" className="lg:hidden text-white hover:text-white/80" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Navigation menu" aria-expanded={isMobileMenuOpen} aria-controls="mobile-navigation">
+            <Button variant="ghost" size="sm" className="lg:hidden text-white hover:text-white/80 absolute right-4" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Navigation menu" aria-expanded={isMobileMenuOpen} aria-controls="mobile-navigation">
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
@@ -276,9 +268,6 @@ const Navigation = () => {
                 </Link>
                 <Link to="/crisis-support" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Crisis Services
-                </Link>
-                <Link to="/about#team" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
-                  Our Team
                 </Link>
                 <Link to="/board-of-directors" className="block w-full text-left px-4 py-2 text-white hover:bg-white/10">
                   Board of Directors

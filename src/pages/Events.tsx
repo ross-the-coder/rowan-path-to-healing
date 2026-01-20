@@ -5,6 +5,7 @@ import { Calendar, Users, MapPin, Clock, AlertCircle } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useEvents } from "@/hooks/useSanityData";
 import { format } from "date-fns";
+import { Reveal } from "@/components/Reveal";
 
 const Events = () => {
   const { data: sanityEvents, isLoading, error } = useEvents({ upcoming: true });
@@ -79,15 +80,17 @@ const Events = () => {
       {/* Hero Section */}
       <section className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Calendar className="h-16 w-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">
-              Events
-            </h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8">
-              Join us at our upcoming events to support survivors, raise awareness, and strengthen our community.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center">
+              <Calendar className="h-16 w-16 mx-auto mb-6" />
+              <h1 className="text-5xl font-seasons font-normal mb-6">
+                Events
+              </h1>
+              <p className="text-xl font-roboto font-light text-white/90 mb-8">
+                Join us at our upcoming events to support survivors, raise awareness, and strengthen our community.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Phone, Heart, Users, Shield, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroCrisisImage from "@/assets/hero-crisis-services.jpg";
+import traumaRecoveryLogo from "@/assets/trauma-recovery-clinic-logo.png";
 import { CrisisCounselingIntakeForm } from "@/components/CrisisCounselingIntakeForm";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Reveal } from "@/components/Reveal";
 
 const CrisisServices = () => {
   return (
@@ -22,15 +24,17 @@ const CrisisServices = () => {
         </div>
         
         <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Heart className="h-16 w-16 mx-auto mb-6 text-white" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">
-              Crisis Counseling
-            </h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8">
-              Your healing is your choice. The Rowan Center's crisis services provide free, confidential support for survivors of sexual violence—and for their loved ones.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <Heart className="h-16 w-16 mx-auto mb-6 text-white" />
+              <h1 className="text-5xl font-seasons font-normal mb-6">
+                Crisis Counseling
+              </h1>
+              <p className="text-xl font-roboto font-light text-white/90 mb-8">
+                Your healing is your choice. The Rowan Center's crisis services provide free, confidential support for survivors of sexual violence—and for their loved ones.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -198,7 +202,7 @@ const CrisisServices = () => {
                   </p>
                   <Button variant="outline" className="w-full" asChild>
                     <Link to="/crisis-support" className="flex items-center gap-2">
-                      Learn More
+                      Crisis support services
                     </Link>
                   </Button>
                 </CardContent>
@@ -212,11 +216,16 @@ const CrisisServices = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
+                  <img
+                    src={traumaRecoveryLogo}
+                    alt="Trauma Recovery Practice"
+                    className="h-16 mx-auto mb-4"
+                  />
                   <p className="font-roboto mb-4">
                     Specialized trauma-informed care for adults on HUSKY insurance
                   </p>
                   <Button variant="outline" className="w-full border-[hsl(var(--accent))] text-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/10" asChild>
-                    <Link to="/trauma-recovery">Learn More</Link>
+                    <Link to="/trauma-recovery">Trauma Recovery Practice services</Link>
                   </Button>
                 </CardContent>
               </Card>

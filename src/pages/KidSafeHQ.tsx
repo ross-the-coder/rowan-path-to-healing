@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, GraduationCap, School, Users, HelpCircle, ShieldCheck, MessageCircle, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import AlertRibbon from "@/components/AlertRibbon";
 import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
 import kidsafeHqHero from "@/assets/kidsafe-hq-hero.jpg";
 import kidsafeElementary from "@/assets/kidsafe-elementary.jpg";
@@ -16,6 +17,7 @@ import kidsafeResources from "@/assets/kidsafe-resources.jpg";
 import NewsTicker from "@/components/kidsafe/NewsTicker";
 import NewsSection from "@/components/kidsafe/NewsSection";
 import { getConnecticutArticles, getAllArticles } from "@/data/newsData";
+import { Reveal } from "@/components/Reveal";
 
 const KidSafeHQ = () => {
   const { t } = useTranslation();
@@ -127,15 +129,16 @@ const KidSafeHQ = () => {
           <div className="absolute -top-16 -right-16 h-72 w-72 rounded-full bg-secondary/20 blur-3xl" />
           <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
           <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center max-w-4xl mx-auto space-y-6">
-              <div className="flex items-center justify-center mb-6">
-                <img 
-                  src={kidSafeHQLogo} 
-                  alt="KidSafeHQ by The Rowan Center" 
-                  className="h-48 w-auto"
-                />
-              </div>
-              <p className="text-xl text-muted-foreground">
+            <Reveal>
+              <div className="text-center max-w-4xl mx-auto space-y-6">
+                <div className="flex items-center justify-center mb-6">
+                  <img 
+                    src={kidSafeHQLogo} 
+                    alt="KidSafeHQ by The Rowan Center" 
+                    className="h-48 w-auto"
+                  />
+                </div>
+                <p className="text-xl text-muted-foreground">
                 {t('kidsafeHQ.hero.subtitle')}
               </p>
             </div>
@@ -155,8 +158,11 @@ const KidSafeHQ = () => {
                 );
               })}
             </div>
+            </Reveal>
           </div>
         </div>
+
+        <AlertRibbon />
 
         {/* Age Group Selection - 3 in a row */}
         <div className="container mx-auto px-4 py-16 relative">

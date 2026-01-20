@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Shield, Heart, ChevronDown } from "lucide-react";
 import { VictimAdvocacyIntakeForm } from "@/components/VictimAdvocacyIntakeForm";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Reveal } from "@/components/Reveal";
 
 const VictimAdvocacy = () => {
   return (
@@ -11,15 +12,17 @@ const VictimAdvocacy = () => {
       {/* Hero Section */}
       <section className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Shield className="h-16 w-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-seasons font-normal mb-6">
-              Victim Advocacy & Accompaniment
-            </h1>
-            <p className="text-xl font-roboto font-light text-white/90 mb-8">
-              Our survivor-centered, trauma-informed advocates walk alongside you to navigate systems and make sure your needs are met—you decide what happens next.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center">
+              <Shield className="h-16 w-16 mx-auto mb-6" />
+              <h1 className="text-5xl font-seasons font-normal mb-6">
+                Victim Advocacy & Accompaniment
+              </h1>
+              <p className="text-xl font-roboto font-light text-white/90 mb-8">
+                Our survivor-centered, trauma-informed advocates walk alongside you to navigate systems and make sure your needs are met—you decide what happens next.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
