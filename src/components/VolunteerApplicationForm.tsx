@@ -138,8 +138,6 @@ export const VolunteerApplicationForm = ({ language = "en" }: VolunteerApplicati
     },
   });
 
-  const [resumeFile, setResumeFile] = useState<File | null>(null);
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
