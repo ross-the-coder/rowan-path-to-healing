@@ -1,8 +1,9 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Rocket, Mail, Bell } from "lucide-react";
+import { Mail, Bell } from "lucide-react";
 import { Link } from "react-router-dom";
+import kidsafeLogo from "@/assets/kidsafe-hq-logo.png";
 
 const KidSafeComingSoon = () => {
   return (
@@ -10,7 +11,9 @@ const KidSafeComingSoon = () => {
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-8">
-            <Rocket className="h-24 w-24 mx-auto text-primary mb-6" />
+            <div className="w-32 h-32 mx-auto mb-6 bg-white rounded-2xl flex items-center justify-center p-4 shadow-lg">
+              <img src={kidsafeLogo} alt="KidSafeHQ Logo" className="w-full h-full object-contain" />
+            </div>
             <h1 className="text-5xl font-seasons font-normal text-foreground mb-4">
               KidSafeHQ Coming Soon
             </h1>
