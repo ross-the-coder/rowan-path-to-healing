@@ -142,6 +142,22 @@ const BlogPost = () => {
                     </a>
                   ),
                 },
+                types: {
+                  image: ({value}) => (
+                    <div className="my-8">
+                      <img
+                        src={urlFor(value).width(1200).url()}
+                        alt={value.alt || 'Blog post image'}
+                        className="w-full h-auto rounded-lg"
+                      />
+                      {value.caption && (
+                        <p className="text-sm text-muted-foreground text-center mt-2 italic">
+                          {value.caption}
+                        </p>
+                      )}
+                    </div>
+                  ),
+                },
               }}
             />
           )}
