@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Bell } from "lucide-react";
 import { Link } from "react-router-dom";
-import kidsafeLogo from "@/assets/kidsafe-hq-logo.png";
+import kidsafeLogo from "@/assets/kidsafe-hq-logo-2color.png";
 
 const KidSafeComingSoon = () => {
   return (
