@@ -14,53 +14,17 @@ import { format } from "date-fns";
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
   const { data: allPosts, isLoading, error } = useBlogPosts();
+
+  // Debug logging
+  console.log('Blog Component - Loading:', isLoading, 'Error:', error, 'Posts:', allPosts);
   
   // Filter featured and regular posts
   const featuredPost = allPosts?.find((post: any) => post.featured);
   const regularPosts = allPosts?.filter((post: any) => !post.featured) || [];
 
-  // Fallback data for when Sanity has no content yet
-  const fallbackFeaturedPost = {
-    title: "Understanding Trauma-Informed Care: What It Means for Survivors",
-    excerpt: "Exploring the principles of trauma-informed care and how this approach creates safer, more supportive environments for healing and recovery.",
-    author: "Dr. Michael Chen",
-    date: "March 18, 2024",
-    readTime: "7 min read",
-    category: "Trauma Recovery",
-    image: "/placeholder.svg"
-  };
-
-  const fallbackPosts = [
-    {
-      title: "Building Resilience: Teaching Children About Body Safety",
-      excerpt: "Practical strategies for parents and educators to have age-appropriate conversations about personal safety and boundaries.",
-      author: { name: "Maria Rodriguez" },
-      publishedDate: "March 10, 2024",
-      readTime: "5 min read",
-      category: "Prevention",
-      tags: ["Children", "Education", "Prevention"]
-    },
-    {
-      title: "The Importance of Secondary Trauma Support for First Responders",
-      excerpt: "How emergency responders, healthcare workers, and advocates can recognize and address secondary trauma in their work.",
-      author: { name: "James Thompson" },
-      publishedDate: "February 28, 2024",
-      category: "Crisis Response",
-      tags: ["First Responders", "Secondary Trauma", "Support"]
-    },
-    {
-      title: "Creating Safe Spaces: LGBTQ+ Inclusive Trauma Services",
-      excerpt: "Best practices for providing culturally competent and inclusive trauma services to LGBTQ+ survivors.",
-      author: { name: "Dr. Sarah Williams" },
-      publishedDate: "February 15, 2024",
-      category: "Trauma Recovery",
-      tags: ["LGBTQ+", "Inclusion", "Cultural Competency"]
-    },
-  ];
-  
-  // Use Sanity data if available, otherwise fallback
-  const displayPosts = regularPosts.length > 0 ? regularPosts : fallbackPosts;
-  const displayFeaturedPost = featuredPost || fallbackFeaturedPost;
+  // Use real Sanity data only (no fallback)
+  const displayPosts = regularPosts;
+  const displayFeaturedPost = featuredPost;
 
   const categories = ["All", "Prevention", "Crisis Response", "Trauma Recovery", "Support"];
 

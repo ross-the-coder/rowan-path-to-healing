@@ -5,17 +5,18 @@ import { sanityFetch } from '@/lib/sanity';
 export function useBlogPosts(options?: { featured?: boolean; category?: string }) {
   return useQuery({
     queryKey: ['blogPosts', options],
-    queryFn: () => {
+    queryFn: async () => {
       let query = `*[_type == "blogPost"]`; // Removed status filter to show all posts
-      
+      console.log('🔍 useBlogPosts: Starting fetch...');
+
       if (options?.featured) {
         query += ` && featured == true`;
       }
-      
+
       if (options?.category) {
         query += ` && category == "${options.category}"`;
       }
-      
+
       query += `] | order(publishedDate desc) {
         _id,
         title,
@@ -31,10 +32,14 @@ export function useBlogPosts(options?: { featured?: boolean; category?: string }
         featuredImage,
         featured
       }`;
-      
-      return sanityFetch({ query });
+
+      const result = await sanityFetch({ query });
+      console.log('✅ useBlogPosts: Fetched', result?.length || 0, 'posts');
+      return result;
     },
-    staleTime: 5 * 60 * 1000, // 5 minutes
+    staleTime: 1 * 60 * 1000, // Reduced to 1 minute for testing
+    retry: 1, // Only retry once
+    gcTime: 5 * 60 * 1000, // 5 minutes cache
   });
 }
 
@@ -324,7 +329,7 @@ export function useCommunityResources(options?: {
       if (options?.featured) {
         query += ` && featured == true`;
       }
-      
+
       if (options?.category) {
         query += ` && category == "${options.category}"`;
       }

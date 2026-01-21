@@ -6,7 +6,8 @@ export const sanityClient = createClient({
   projectId: import.meta.env.VITE_SANITY_PROJECT_ID || 'rlwt7cpv',
   dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
   apiVersion: '2024-01-01',
-  useCdn: true, // Use CDN for better performance. Cached data fallback in UI handles potential staleness.
+  useCdn: false, // Disable CDN to get fresh data immediately (can re-enable after testing)
+  perspective: 'published', // Only fetch published documents
 });
 
 // Image URL builder
@@ -25,9 +26,13 @@ export async function sanityFetch<T = any>({
   params?: Record<string, any>;
 }): Promise<T> {
   try {
-    return await sanityClient.fetch<T>(query, params);
+    console.log('🔍 Sanity Query:', query);
+    console.log('📊 Params:', params);
+    const result = await sanityClient.fetch<T>(query, params);
+    console.log('✅ Sanity Result:', result);
+    return result;
   } catch (error) {
-    console.error('Sanity fetch error:', error);
+    console.error('❌ Sanity fetch error:', error);
     throw error;
   }
 }
