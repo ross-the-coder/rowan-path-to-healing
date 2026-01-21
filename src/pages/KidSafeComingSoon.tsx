@@ -16,9 +16,7 @@ const KidSafeComingSoon = () => {
               Coming Soon
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              We're working hard to bring you comprehensive child safety education resources.
-              KidSafeHQ will launch soon with age-appropriate content for elementary, middle,
-              and high school students.
+              KidSafeHQ will launch soon to offer parents and guardians the resources they need to keep our children safe in both the digital and physical world.
             </p>
           </div>
 
