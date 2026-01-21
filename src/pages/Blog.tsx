@@ -9,6 +9,7 @@ import { NewsletterSubscription } from "@/components/NewsletterSubscription";
 import { useBlogPosts } from "@/hooks/useSanityData";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
+import { urlFor } from "@/lib/sanity";
 
 const Blog = () => {
   const { data: allPosts, isLoading, error } = useBlogPosts();
@@ -101,14 +102,22 @@ const Blog = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
               <div className="md:flex">
                 <div className="md:w-1/3">
-                  <div className="h-48 md:h-full bg-muted flex items-center justify-center">
-                    <div className="text-center text-muted-foreground">
-                      <div className="w-16 h-16 mx-auto mb-2 bg-primary/20 rounded-full flex items-center justify-center">
-                        <User className="h-8 w-8" />
+                  {displayFeaturedPost.featuredImage ? (
+                    <img
+                      src={urlFor(displayFeaturedPost.featuredImage).width(600).height(400).url()}
+                      alt={displayFeaturedPost.title}
+                      className="w-full h-48 md:h-full object-cover"
+                    />
+                  ) : (
+                    <div className="h-48 md:h-full bg-muted flex items-center justify-center">
+                      <div className="text-center text-muted-foreground">
+                        <div className="w-16 h-16 mx-auto mb-2 bg-primary/20 rounded-full flex items-center justify-center">
+                          <User className="h-8 w-8" />
+                        </div>
+                        Featured Image
                       </div>
-                      Featured Image
                     </div>
-                  </div>
+                  )}
                 </div>
                 <div className="md:w-2/3">
                   <CardHeader>
@@ -155,7 +164,16 @@ const Blog = () => {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {displayPosts.map((post: any, index: number) => (
-                <Card key={post._id || index} className="hover:shadow-lg transition-shadow">
+                <Card key={post._id || index} className="hover:shadow-lg transition-shadow overflow-hidden">
+                  {post.featuredImage && (
+                    <div className="aspect-video w-full overflow-hidden">
+                      <img
+                        src={urlFor(post.featuredImage).width(600).height(400).url()}
+                        alt={post.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
                   <CardHeader>
                     <div className="flex items-center gap-2 mb-2">
                       <Badge variant="outline">{post.category}</Badge>

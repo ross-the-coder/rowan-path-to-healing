@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useBlogPost } from "@/hooks/useSanityData";
 import { format } from "date-fns";
 import { PortableText } from "@portabletext/react";
+import { urlFor } from "@/lib/sanity";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -99,7 +100,7 @@ const BlogPost = () => {
         {post.featuredImage && (
           <div className="mb-8 rounded-lg overflow-hidden">
             <img
-              src={post.featuredImage}
+              src={urlFor(post.featuredImage).width(1200).height(600).url()}
               alt={post.title}
               className="w-full h-auto"
             />
