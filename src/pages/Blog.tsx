@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowRight, Search, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
-import { NewsletterSubscription } from "@/components/NewsletterSubscription";
 import { useBlogPosts } from "@/hooks/useSanityData";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
@@ -107,6 +106,10 @@ const Blog = () => {
                       src={urlFor(displayFeaturedPost.featuredImage).width(600).height(400).url()}
                       alt={displayFeaturedPost.title}
                       className="w-full h-48 md:h-full object-cover"
+                      onError={(e) => {
+                        console.error('Failed to load featured image:', displayFeaturedPost.featuredImage);
+                        e.currentTarget.style.display = 'none';
+                      }}
                     />
                   ) : (
                     <div className="h-48 md:h-full bg-muted flex items-center justify-center">
@@ -171,6 +174,10 @@ const Blog = () => {
                         src={urlFor(post.featuredImage).width(600).height(400).url()}
                         alt={post.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          console.error('Failed to load post image:', post.featuredImage);
+                          e.currentTarget.parentElement!.style.display = 'none';
+                        }}
                       />
                     </div>
                   )}
@@ -216,11 +223,6 @@ const Blog = () => {
               ))}
             </div>
           )}
-        </section>
-
-        {/* Newsletter Signup */}
-        <section>
-          <NewsletterSubscription />
         </section>
       </div>
     </Layout>
