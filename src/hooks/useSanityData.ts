@@ -6,7 +6,7 @@ export function useBlogPosts(options?: { featured?: boolean; category?: string }
   return useQuery({
     queryKey: ['blogPosts', options],
     queryFn: () => {
-      let query = `*[_type == "blogPost" && status == "published"`;
+      let query = `*[_type == "blogPost"]`; // Removed status filter to show all posts
       
       if (options?.featured) {
         query += ` && featured == true`;
