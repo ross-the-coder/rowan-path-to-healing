@@ -8,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { NewsletterSubscription } from "@/components/NewsletterSubscription";
 import { useBlogPosts } from "@/hooks/useSanityData";
 import { format } from "date-fns";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const { data: allPosts, isLoading, error } = useBlogPosts();
@@ -131,9 +132,11 @@ const Blog = () => {
                         {displayFeaturedPost.publishedDate ? format(new Date(displayFeaturedPost.publishedDate), 'MMMM d, yyyy') : displayFeaturedPost.date}
                       </div>
                     </div>
-                    <Button>
-                      Read Full Article
-                      <ArrowRight className="h-4 w-4 ml-2" />
+                    <Button asChild>
+                      <Link to={`/blog/${displayFeaturedPost.slug?.current || displayFeaturedPost.slug}`}>
+                        Read Full Article
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Link>
                     </Button>
                   </CardContent>
                 </div>
@@ -174,9 +177,11 @@ const Blog = () => {
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <Button size="sm" variant="ghost">
-                        Read More
-                        <ArrowRight className="h-3 w-3 ml-1" />
+                      <Button size="sm" variant="ghost" asChild>
+                        <Link to={`/blog/${post.slug?.current || post.slug}`}>
+                          Read More
+                          <ArrowRight className="h-3 w-3 ml-1" />
+                        </Link>
                       </Button>
                     </div>
                     {post.tags && post.tags.length > 0 && (

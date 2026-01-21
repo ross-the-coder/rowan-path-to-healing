@@ -26,6 +26,7 @@ const Events = lazy(() => import("./pages/Events"));
 const Volunteer = lazy(() => import("./pages/Volunteer"));
 const StudentAdvisoryBoard = lazy(() => import("./pages/StudentAdvisoryBoard"));
 const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Media = lazy(() => import("./pages/Media"));
 const BoardOfDirectors = lazy(() => import("./pages/BoardOfDirectors"));
 const Financials = lazy(() => import("./pages/Financials"));
@@ -128,6 +129,7 @@ export const AppRoutes = () => (
         <Route path="/volunteer" element={<Volunteer />} />
         <Route path="/student-advisory-board" element={<StudentAdvisoryBoard />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/media" element={<Media />} />
         <Route path="/board-of-directors" element={<BoardOfDirectors />} />
         <Route path="/financials" element={<Financials />} />
