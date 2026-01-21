@@ -121,7 +121,7 @@ export const communityResources: CommunityResource[] = [
   {
     id: "10",
     name: "Person to Person",
-    url: "https://p2pct.org/",
+    url: "https://p2phelps.org/",
     description: "Offers a clothing center in Darien and an annual coat giveaway. Emergency financial assistance and the Financial Opportunity Center. Provides weekend meals for students.",
     category: "Community",
     resourceTypes: ["Food", "Clothing", "Finance", "Employment"],
@@ -156,7 +156,7 @@ export const communityResources: CommunityResource[] = [
   },
   {
     id: "13",
-    name: "Silversource",
+    name: "SilverSource",
     url: "https://silversource.org/",
     description: "Provides housing assistance to seniors. Helps with providing prescriptions to seniors. Offers Ride to Wellness, a program to transport seniors to medical appointments. Delivers groceries to homebound seniors.",
     category: "Community",
@@ -463,6 +463,56 @@ export const communityResources: CommunityResource[] = [
     resourceTypes: ["Education", "Prevention"],
     catchmentArea: "Local",
     tags: ["abuse prevention", "community education"]
+  },
+  {
+    id: "40",
+    name: "StamfordConnect",
+    url: "https://www.fergusonlibrary.org/city-resource-guide",
+    description: "City resource guide connecting residents with local services.",
+    category: "Community",
+    resourceTypes: ["Education", "Referrals"],
+    catchmentArea: "Local",
+    tags: ["resource guide", "community", "services"]
+  },
+  {
+    id: "41",
+    name: "Catalyst CT",
+    url: "https://catalystct.org/the-hub/",
+    description: "Community hub supporting residents with services and referrals.",
+    category: "Community",
+    resourceTypes: ["Community Support", "Referrals"],
+    catchmentArea: "State",
+    tags: ["community", "hub", "support"]
+  },
+  {
+    id: "42",
+    name: "Resources to Recover",
+    url: "https://www.rtor.org/",
+    description: "Recovery support and resource navigation for individuals and families.",
+    category: "Community",
+    resourceTypes: ["Addiction", "Recovery Support"],
+    catchmentArea: "State",
+    tags: ["recovery", "addiction", "support"]
+  },
+  {
+    id: "43",
+    name: "Stamford Health",
+    url: "https://www.stamfordhealth.org/",
+    description: "Healthcare services and wellness support for the community.",
+    category: "Community",
+    resourceTypes: ["Healthcare"],
+    catchmentArea: "Local",
+    tags: ["healthcare", "medical", "wellness"]
+  },
+  {
+    id: "44",
+    name: "Child Guidance Center of Southern Connecticut",
+    url: "https://www.childguidancect.org/",
+    description: "Behavioral health care and support for children and families.",
+    category: "Community",
+    resourceTypes: ["Mental Health", "For Children"],
+    catchmentArea: "State",
+    tags: ["children", "mental health", "family support"]
   }
 ];
 

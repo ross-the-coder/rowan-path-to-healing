@@ -6,7 +6,7 @@ export function useBlogPosts(options?: { featured?: boolean; category?: string }
   return useQuery({
     queryKey: ['blogPosts', options],
     queryFn: async () => {
-      let query = `*[_type == "blogPost"]`; // Removed status filter to show all posts
+      let query = `*[_type == "blogPost"`; // Removed status filter to show all posts
       console.log('🔍 useBlogPosts: Starting fetch...');
 
       if (options?.featured) {

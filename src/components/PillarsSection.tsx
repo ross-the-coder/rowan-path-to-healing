@@ -116,6 +116,10 @@ const PillarsSection = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Support groups</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></span>
                     <span>{t('pillarsSection.respond.legalAdvocacy')}</span>
                   </li>
                 </ul>

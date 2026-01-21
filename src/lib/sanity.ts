@@ -8,6 +8,7 @@ export const sanityClient = createClient({
   apiVersion: '2024-01-01',
   useCdn: false, // Disable CDN to get fresh data immediately (can re-enable after testing)
   perspective: 'published', // Only fetch published documents
+  token: import.meta.env.VITE_SANITY_TOKEN, // Add authentication token
 });
 
 // Image URL builder

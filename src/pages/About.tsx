@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import heroAboutImage from "@/assets/hero-about.jpg";
 import staffPhoto from "@/assets/rowan-center-staff.jpg";
 import rowanCenterLogo from "@/assets/rowan-center-logo.png";
+import oldLogo from "@/assets/old-logo.png";
+import logo2019 from "@/assets/logo-2019.png";
 import { SEO } from "@/components/SEO";
 import { Reveal } from "@/components/Reveal";
 
@@ -85,8 +87,8 @@ const About = () => {
       email: "kmiranda@therowancenter.org",
     },
     {
-      name: "Raquel Lopez, LMSW",
-      title: "Crisis Advocate Programs Administrator",
+      name: "Raquel Lopez, LCSW",
+      title: "Part-time Crisis Counselor & Crisis Advocate Programs Administrator",
       email: "rlopez@therowancenter.org",
     },
     {
@@ -152,23 +154,23 @@ const About = () => {
                 <div className="absolute left-0 right-0 top-6 h-px bg-gradient-to-r from-primary via-secondary to-accent hidden md:block"></div>
 
                 <Accordion type="multiple" className="flex gap-6 overflow-x-auto pb-4 md:pb-6 md:px-1 snap-x snap-mandatory">
-                  {/* 1979 - Founded */}
-                  <AccordionItem value="1979-founded" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                  {/* 1977 - Founded */}
+                  <AccordionItem value="1977-founded" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
                     <div className="relative z-10 flex flex-col items-center gap-4">
                       <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-primary/20 shadow-md text-center">
-                        <span className="text-primary font-bold text-xs leading-tight">1979</span>
+                        <span className="text-primary font-bold text-xs leading-tight">1977</span>
                       </div>
                       <Card className="w-full border-primary/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">Founded to serve Lower Fairfield County</CardTitle>
+                            <CardTitle className="text-lg">Started as Rape Crisis Group</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
                           <CardContent className="pt-0">
                             <p className="text-muted-foreground mb-4 text-sm">
-                              The Rowan Center begins providing counseling, advocacy, and community education for survivors
-                              in Lower Fairfield County.
+                              Started in a trailer at Stamford Hospital as the Rape Crisis Group, offering immediate crisis support
+                              for survivors.
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -176,8 +178,8 @@ const About = () => {
                     </div>
                   </AccordionItem>
 
-                  {/* 1979 - Stamford Hospital */}
-                  <AccordionItem value="1979-hospital" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                  {/* 1979 - Incorporated */}
+                  <AccordionItem value="1979-incorporated" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
                     <div className="relative z-10 flex flex-col items-center gap-4">
                       <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-secondary/20 shadow-md text-center">
                         <span className="text-secondary font-bold text-xs leading-tight">1979</span>
@@ -185,14 +187,13 @@ const About = () => {
                       <Card className="w-full border-secondary/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">Began at Stamford Hospital</CardTitle>
+                            <CardTitle className="text-lg">Became Rape Crisis Center</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
                           <CardContent className="pt-0">
                             <p className="text-muted-foreground mb-4 text-sm">
-                              The Center starts in a trailer behind Stamford Hospital, offering immediate crisis support
-                              for survivors arriving at the hospital.
+                              Incorporated as a non-profit and became the Rape Crisis Center.
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -200,23 +201,22 @@ const About = () => {
                     </div>
                   </AccordionItem>
 
-                  {/* 1980s - Summer Street */}
-                  <AccordionItem value="1980s-summer" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                  {/* 1986 - Name change */}
+                  <AccordionItem value="1986-name" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
                     <div className="relative z-10 flex flex-col items-center gap-4">
                       <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-accent/20 shadow-md text-center">
-                        <span className="text-accent font-bold text-xs leading-tight">1980s</span>
+                        <span className="text-accent font-bold text-xs leading-tight">1986</span>
                       </div>
                       <Card className="w-full border-accent/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">Early growth on Summer Street</CardTitle>
+                            <CardTitle className="text-lg">Rape and Sexual Abuse Crisis Center</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
                           <CardContent className="pt-0">
                             <p className="text-muted-foreground mb-4 text-sm">
-                              As community needs grow, services expand beyond the hospital setting and move into an office
-                              on Summer Street in Stamford.
+                              Expanded name to Rape and Sexual Abuse Crisis Center to reflect broader mission.
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -224,23 +224,22 @@ const About = () => {
                     </div>
                   </AccordionItem>
 
-                  {/* Late 1980s–1990s - Inclusive name */}
-                  <AccordionItem value="late-1980s-name" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                  {/* 1998 - SACC */}
+                  <AccordionItem value="1998-sacc" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
                     <div className="relative z-10 flex flex-col items-center gap-4">
                       <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-primary/20 shadow-md text-center">
-                        <span className="text-primary font-bold text-xs leading-tight">Late 1980s–1990s</span>
+                        <span className="text-primary font-bold text-xs leading-tight">1998</span>
                       </div>
                       <Card className="w-full border-primary/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">A more inclusive name</CardTitle>
+                            <CardTitle className="text-lg">Sexual Abuse Crisis Services</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
                           <CardContent className="pt-0">
                             <p className="text-muted-foreground mb-4 text-sm">
-                              The organization adopts the name Sexual Assault Crisis Center to reflect that survivors can
-                              be of any gender.
+                              Changed name to Sexual Abuse Crisis Services (SACC).
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -248,22 +247,23 @@ const About = () => {
                     </div>
                   </AccordionItem>
 
-                  {/* 1990s - Glenbrook Road */}
-                  <AccordionItem value="1990s-glenbrook" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                  {/* 2001 - Education added */}
+                  <AccordionItem value="2001-education" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
                     <div className="relative z-10 flex flex-col items-center gap-4">
                       <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-secondary/20 shadow-md text-center">
-                        <span className="text-secondary font-bold text-xs leading-tight">1990s</span>
+                        <span className="text-secondary font-bold text-xs leading-tight">2001</span>
                       </div>
                       <Card className="w-full border-secondary/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">Move to Glenbrook Road</CardTitle>
+                            <CardTitle className="text-lg">Education becomes core mission</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
                           <CardContent className="pt-0">
                             <p className="text-muted-foreground mb-4 text-sm">
-                              To support expanding services, the Center relocates to Glenbrook Road in Stamford.
+                              Implemented education as part of the program and became Sexual Assault Crisis and Education Center,
+                              adding education to the mission.
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -271,23 +271,27 @@ const About = () => {
                     </div>
                   </AccordionItem>
 
-                  {/* 1990s - Fire resilience */}
-                  <AccordionItem value="1990s-fire" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                  {/* 2009 - New logo */}
+                  <AccordionItem value="2009-logo" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
                     <div className="relative z-10 flex flex-col items-center gap-4">
                       <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-accent/20 shadow-md text-center">
-                        <span className="text-accent font-bold text-xs leading-tight">1990s</span>
+                        <span className="text-accent font-bold text-xs leading-tight">2009</span>
                       </div>
                       <Card className="w-full border-accent/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">Resilience after a fire</CardTitle>
+                            <CardTitle className="text-lg">New logo introduced</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
                           <CardContent className="pt-0">
+                            <img
+                              src={oldLogo}
+                              alt="The Rowan Center logo introduced in 2009"
+                              className="w-full max-w-[220px] mx-auto mb-4 object-contain"
+                            />
                             <p className="text-muted-foreground mb-4 text-sm">
-                              After a devastating office fire, services relocate to Dock Street so support can continue
-                              without interruption.
+                              A new logo was introduced to represent the organization.
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -295,23 +299,22 @@ const About = () => {
                     </div>
                   </AccordionItem>
 
-                  {/* 2000 - Education focus */}
-                  <AccordionItem value="2000-education" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                  {/* 2015 - Advisory Council */}
+                  <AccordionItem value="2015-council" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
                     <div className="relative z-10 flex flex-col items-center gap-4">
                       <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-primary/20 shadow-md text-center">
-                        <span className="text-primary font-bold text-xs leading-tight">2000</span>
+                        <span className="text-primary font-bold text-xs leading-tight">2015</span>
                       </div>
                       <Card className="w-full border-primary/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">Education becomes a core focus</CardTitle>
+                            <CardTitle className="text-lg">Advisory Council formed</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
                           <CardContent className="pt-0">
                             <p className="text-muted-foreground mb-4 text-sm">
-                              The organization updates its name to include education, strengthening its commitment to
-                              prevention.
+                              The Advisory Council was formed to provide guidance and support.
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -319,23 +322,27 @@ const About = () => {
                     </div>
                   </AccordionItem>
 
-                  {/* Oct 2013 - Return to Summer Street */}
-                  <AccordionItem value="2013-summer" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                  {/* 2019 - Rowan Center name */}
+                  <AccordionItem value="2019-rowan" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
                     <div className="relative z-10 flex flex-col items-center gap-4">
                       <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-secondary/20 shadow-md text-center">
-                        <span className="text-secondary font-bold text-xs leading-tight">2013</span>
+                        <span className="text-secondary font-bold text-xs leading-tight">2019</span>
                       </div>
                       <Card className="w-full border-secondary/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">Return to Summer Street with room to grow</CardTitle>
+                            <CardTitle className="text-lg">The Rowan Center name adopted</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
                           <CardContent className="pt-0">
+                            <img
+                              src={logo2019}
+                              alt="The Rowan Center logo introduced in 2019"
+                              className="w-full max-w-[220px] mx-auto mb-4 object-contain"
+                            />
                             <p className="text-muted-foreground mb-4 text-sm">
-                              The Rowan Center returns to Summer Street in a much larger space to support continued
-                              growth and expanded services.
+                              The Rowan Center name was adopted along with a new logo.
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -343,22 +350,45 @@ const About = () => {
                     </div>
                   </AccordionItem>
 
-                  {/* 2018 - 1111 Summer Street */}
-                  <AccordionItem value="2018-1111" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                  {/* 2024 - Trauma Recovery Clinic */}
+                  <AccordionItem value="2024-clinic" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
                     <div className="relative z-10 flex flex-col items-center gap-4">
                       <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-accent/20 shadow-md text-center">
-                        <span className="text-accent font-bold text-xs leading-tight">2018</span>
+                        <span className="text-accent font-bold text-xs leading-tight">2024</span>
                       </div>
                       <Card className="w-full border-accent/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">New home at 1111 Summer Street</CardTitle>
+                            <CardTitle className="text-lg">Trauma Recovery Clinic opened</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
                           <CardContent className="pt-0">
                             <p className="text-muted-foreground mb-4 text-sm">
-                              The Center moves to 1111 Summer Street, where it is based today.
+                              The Trauma Recovery Clinic opened to provide specialized clinical services for survivors.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
+                    </div>
+                  </AccordionItem>
+
+                  {/* 2025 - Impact grant */}
+                  <AccordionItem value="2025-grant" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-primary/20 shadow-md text-center">
+                        <span className="text-primary font-bold text-xs leading-tight">2025</span>
+                      </div>
+                      <Card className="w-full border-primary/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">KidSafeHQ grant awarded</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              Awarded grant from Impact to develop KidSafeHQ.
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -375,7 +405,7 @@ const About = () => {
                       <Card className="w-full border-secondary/20">
                         <AccordionTrigger className="hover:no-underline px-5 py-3">
                           <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">The Rowan Center rebrands</CardTitle>
+                            <CardTitle className="text-lg">Complete rebrand</CardTitle>
                           </CardHeader>
                         </AccordionTrigger>
                         <AccordionContent>
@@ -386,7 +416,30 @@ const About = () => {
                               className="h-14 mx-auto mb-4"
                             />
                             <p className="text-muted-foreground mb-4 text-sm">
-                              The organization refreshes its identity to better reflect its mission and community.
+                              The Rowan Center underwent a complete rebrand to better reflect its mission and community.
+                            </p>
+                          </CardContent>
+                        </AccordionContent>
+                      </Card>
+                    </div>
+                  </AccordionItem>
+
+                  {/* 2026 - KidSafeHQ Launch */}
+                  <AccordionItem value="2026-kidsafe" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
+                    <div className="relative z-10 flex flex-col items-center gap-4">
+                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-accent/20 shadow-md text-center">
+                        <span className="text-accent font-bold text-xs leading-tight">2026</span>
+                      </div>
+                      <Card className="w-full border-accent/20">
+                        <AccordionTrigger className="hover:no-underline px-5 py-3">
+                          <CardHeader className="flex-1 text-center p-0">
+                            <CardTitle className="text-lg">KidSafeHQ launched</CardTitle>
+                          </CardHeader>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <CardContent className="pt-0">
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              KidSafeHQ launched to provide child safety education and resources.
                             </p>
                           </CardContent>
                         </AccordionContent>
@@ -761,7 +814,7 @@ const About = () => {
               <Link to="/board-of-directors">Board of Directors</Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link to="/media">Media Center</Link>
+              <Link to="/media">In the Media</Link>
             </Button>
             <Button variant="outline" asChild>
               <Link to="/blog">Blog</Link>

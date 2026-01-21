@@ -1,4 +1,5 @@
 import therapistImage from "@/assets/therapist.jpeg";
+import traumaRecoveryLogo from "@/assets/rowan-center-logo-trp-dark-bg.png";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -39,24 +40,40 @@ const PhotoFeatureSection = () => {
               {t('photoFeature.description')}
             </p>
 
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
-                <span className="font-roboto text-white">Long-term therapy</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
-                <span className="font-roboto text-white">{t('photoFeature.individualCounseling')}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
-                <span className="font-roboto text-white">{t('photoFeature.evidenceBased')}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
-                <span className="font-roboto text-white">{t('photoFeature.comfortableEnvironment')}</span>
-              </li>
-            </ul>
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
+                  <span className="font-roboto text-white">Long-term therapy</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
+                  <span className="font-roboto text-white">{t('photoFeature.individualCounseling')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
+                  <span className="font-roboto text-white">
+                    Eye Movement Desensitization and Reprocessing (EMDR)
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
+                  <span className="font-roboto text-white">{t('photoFeature.evidenceBased')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
+                  <span className="font-roboto text-white">{t('photoFeature.comfortableEnvironment')}</span>
+                </li>
+              </ul>
+              <div className="flex justify-center lg:justify-end">
+                <img
+                  src={traumaRecoveryLogo}
+                  alt="Trauma Recovery Clinic logo"
+                  className="h-24 w-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </div>
 
             <Button asChild size="lg" className="bg-white text-[hsl(var(--accent))] hover:bg-white/90">
               <Link to="/trauma-recovery">

@@ -142,6 +142,14 @@ const Navigation = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
+                          <Link to="/media" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">{t('nav.inTheMedia')}</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              {t('nav.inTheMediaDesc')}
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
                           <Link to="/board-of-directors" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">{t('nav.boardOfDirectors')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -230,6 +238,14 @@ const Navigation = () => {
                             <div className="text-sm font-medium leading-none">{t('nav.volunteer')}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               {t('nav.volunteerDesc')}
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link to="/student-advisory-board" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">{t('nav.studentAdvisoryBoard')}</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              {t('nav.studentAdvisoryBoardDesc')}
                             </p>
                           </Link>
                         </NavigationMenuLink>

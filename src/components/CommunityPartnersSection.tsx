@@ -21,46 +21,52 @@ const createAnchorId = (value: string) =>
 
 const partners = [
   {
-    name: "Anchor Health",
-    description: "Community health and wellness services.",
-    anchorId: createAnchorId("Anchor Health"),
-    logo: "https://anchorhealthct.org/wp-content/uploads/2022/02/Stacked_Logomark_Gradient_Large-1024x476.png",
+    name: "StamfordConnect",
+    description: "City resource guide and community services.",
+    anchorId: createAnchorId("StamfordConnect"),
+    logo: "https://www.fergusonlibrary.org/sites/default/files/2026-01/StamfordConnect%20Banner%202026.png",
   },
   {
-    name: "Building One Community",
-    description: "Community services and immigrant support.",
-    anchorId: createAnchorId("Building One Community"),
-    logo: "https://b1c.org/wp-content/uploads/B1C-10-YR-Color.jpg",
+    name: "Catalyst CT",
+    description: "Community hub and support services.",
+    anchorId: createAnchorId("Catalyst CT"),
+    logo: "https://catalystct.org/wp-content/uploads/2024/04/CatalystCT_Logo.svg",
   },
   {
-    name: "CT Alliance to End Sexual Violence",
-    description: "Statewide advocacy and survivor support.",
-    anchorId: createAnchorId("CT Alliance to End Sexual Violence"),
-    logo: "https://projectworldimpact.com/images/organization/1621257799-alliancelogonew.png",
+    name: "Resources to Recover",
+    description: "Recovery support and community resources.",
+    anchorId: createAnchorId("Resources to Recover"),
+    logo: "https://www.rtor.org/wp-content/uploads/2025/11/rtor.org-registered_nb-1024x239.png",
   },
   {
-    name: "DVCC",
-    description: "Domestic violence crisis services.",
-    anchorId: createAnchorId("DVCC (Domestic Violence Crisis Center)"),
-    logo: "https://www.dvccct.org/wp-content/uploads/2021/08/DVCC-logo-2021-P2627-01-300x300.png",
+    name: "Stamford Health",
+    description: "Healthcare services for the community.",
+    anchorId: createAnchorId("Stamford Health"),
+    logo: "https://assets.stamfordhealth.org/image/upload/f_auto,q_auto:good,dpr_auto,c_auto,g_auto/shlogohp?iar=0",
   },
   {
-    name: "Kids in Crisis",
-    description: "Youth crisis services and support.",
-    anchorId: createAnchorId("Kids in Crisis"),
-    logo: "https://www.kidsincrisis.org/wp-content/themes/iop-kidsincrisis-1_0_2/dist/images/kids-in-crisis-logo%402x.png",
+    name: "Child Guidance Center of Southern Connecticut",
+    description: "Behavioral health care for children and families.",
+    anchorId: createAnchorId("Child Guidance Center of Southern Connecticut"),
+    logo: "https://www.childguidancect.org/wp-content/uploads/2025/11/cgc_logo.png",
   },
   {
-    name: "New Canaan Abuse Prevention Partnership",
-    description: "Prevention and community education.",
-    anchorId: createAnchorId("New Canaan Abuse Prevention Partnership"),
-    logo: "https://static.wixstatic.com/media/3a271d_ded460a8e5aa4896a6dbd6efa698ad4f~mv2.png/v1/fill/w_359%2Ch_47%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/NewCanaanAPPLogo%20new%20white.png",
+    name: "Liberation Programs",
+    description: "Addiction treatment and recovery services.",
+    anchorId: createAnchorId("Liberation Programs"),
+    logo: "https://liberationprograms.org/wp-content/uploads/2025/05/LP_logo2025_4C_vert.png",
   },
   {
-    name: "New Canaan Behavioral Health Alliance",
-    description: "Behavioral health resources and prevention.",
-    anchorId: createAnchorId("New Canaan Behavioral Health Alliance"),
-    logo: "https://newcanaanbha.org/wp-content/uploads/2024/03/NCBHA-Logo-FINAL.jpg",
+    name: "Person to Person",
+    description: "Food, clothing, and financial assistance.",
+    anchorId: createAnchorId("Person to Person"),
+    logo: "https://p2phelps.org/wp-content/uploads/2022/07/PersonToPersonHRGB-730x160.png",
+  },
+  {
+    name: "SilverSource",
+    description: "Support for seniors in the community.",
+    anchorId: createAnchorId("SilverSource"),
+    logo: "https://silversource.org/htdocs/wp-content/uploads/2022/10/silver-source-logo.webp",
   },
 ];
 
@@ -88,9 +94,14 @@ const CommunityPartnersSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-foreground">Our Community Partners</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-none mx-auto sm:whitespace-nowrap">
             Together, we create a stronger, safer community through collaborative partnerships
           </p>
+          <div className="mt-6 flex justify-center">
+            <Link to="/resources">
+              <Button>See More of Our Partnerships</Button>
+            </Link>
+          </div>
         </div>
 
         <Carousel

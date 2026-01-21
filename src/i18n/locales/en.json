@@ -13,6 +13,7 @@
     "blog": "Blog",
     "careers": "Careers",
     "volunteer": "Volunteer",
+    "studentAdvisoryBoard": "Student Advisory Board",
     "crisisServices": "Crisis Services",
     "victimAdvocacy": "Victim Advocacy",
     "traumaRecovery": "Trauma Recovery",
@@ -33,8 +34,8 @@
     "optionsResourcesDesc": "Browse our resource library and support options",
     "longTermTherapy": "Long-term Therapy",
     "longTermTherapyDesc": "Trauma Recovery Practice services",
-    "missionVision": "Mission & Vision",
-    "missionVisionDesc": "Our story, mission, and values",
+    "missionVision": "About Us",
+    "missionVisionDesc": "Our Story, Our Mission and Vision, Our Team",
     "ourImpact": "Our Impact",
     "ourImpactDesc": "See how we're making a difference",
     "ourTeam": "Our Team",
@@ -48,7 +49,10 @@
     "clinicDesc": "Long-term specialized therapy through our Trauma Recovery Practice",
     "donateDesc": "Support our mission",
     "eventsDesc": "Upcoming fundraisers and programs",
-    "volunteerDesc": "Crisis advocate opportunities"
+    "volunteerDesc": "Crisis advocate opportunities",
+    "studentAdvisoryBoardDesc": "Youth leadership and prevention advocacy",
+    "inTheMedia": "In the Media",
+    "inTheMediaDesc": "News coverage and media resources"
   },
   "hero": {
     "title": "The Rowan Center",

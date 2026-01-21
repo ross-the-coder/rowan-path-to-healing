@@ -7,23 +7,19 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { NewsletterSubscription } from "@/components/NewsletterSubscription";
 import { useBlogPosts } from "@/hooks/useSanityData";
-import { urlFor } from "@/lib/sanity";
-import { useState } from "react";
 import { format } from "date-fns";
 
 const Blog = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
   const { data: allPosts, isLoading, error } = useBlogPosts();
 
   // Debug logging
   console.log('Blog Component - Loading:', isLoading, 'Error:', error, 'Posts:', allPosts);
-  
+
   // Filter featured and regular posts
   const featuredPost = allPosts?.find((post: any) => post.featured);
-  const regularPosts = allPosts?.filter((post: any) => !post.featured) || [];
+  const displayPosts = allPosts?.filter((post: any) => !post.featured) || [];
 
   // Use real Sanity data only (no fallback)
-  const displayPosts = regularPosts;
   const displayFeaturedPost = featuredPost;
 
   const categories = ["All", "Prevention", "Crisis Response", "Trauma Recovery", "Support"];
@@ -98,51 +94,53 @@ const Blog = () => {
         </section>
 
         {/* Featured Post */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-foreground mb-6">Featured Post</h2>
-          <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
-            <div className="md:flex">
-              <div className="md:w-1/3">
-                <div className="h-48 md:h-full bg-muted flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <div className="w-16 h-16 mx-auto mb-2 bg-primary/20 rounded-full flex items-center justify-center">
-                      <User className="h-8 w-8" />
+        {displayFeaturedPost && (
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Featured Post</h2>
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
+              <div className="md:flex">
+                <div className="md:w-1/3">
+                  <div className="h-48 md:h-full bg-muted flex items-center justify-center">
+                    <div className="text-center text-muted-foreground">
+                      <div className="w-16 h-16 mx-auto mb-2 bg-primary/20 rounded-full flex items-center justify-center">
+                        <User className="h-8 w-8" />
+                      </div>
+                      Featured Image
                     </div>
-                    Featured Image
                   </div>
                 </div>
-              </div>
-              <div className="md:w-2/3">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Badge className="bg-primary/10 text-primary">Featured</Badge>
-                    <Badge variant="outline">{displayFeaturedPost.category}</Badge>
-                  </div>
-                  <CardTitle className="text-2xl md:text-3xl">{displayFeaturedPost.title}</CardTitle>
-                  <CardDescription className="text-base">{displayFeaturedPost.excerpt}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                    {displayFeaturedPost.author && (
-                      <div className="flex items-center gap-1">
-                        <User className="h-4 w-4" />
-                        {displayFeaturedPost.author.name || displayFeaturedPost.author}
-                      </div>
-                    )}
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      {displayFeaturedPost.publishedDate ? format(new Date(displayFeaturedPost.publishedDate), 'MMMM d, yyyy') : displayFeaturedPost.date}
+                <div className="md:w-2/3">
+                  <CardHeader>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Badge className="bg-primary/10 text-primary">Featured</Badge>
+                      <Badge variant="outline">{displayFeaturedPost.category}</Badge>
                     </div>
-                  </div>
-                  <Button>
-                    Read Full Article
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </Button>
-                </CardContent>
+                    <CardTitle className="text-2xl md:text-3xl">{displayFeaturedPost.title}</CardTitle>
+                    <CardDescription className="text-base">{displayFeaturedPost.excerpt}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                      {displayFeaturedPost.author && (
+                        <div className="flex items-center gap-1">
+                          <User className="h-4 w-4" />
+                          {displayFeaturedPost.author.name || displayFeaturedPost.author}
+                        </div>
+                      )}
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        {displayFeaturedPost.publishedDate ? format(new Date(displayFeaturedPost.publishedDate), 'MMMM d, yyyy') : displayFeaturedPost.date}
+                      </div>
+                    </div>
+                    <Button>
+                      Read Full Article
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </CardContent>
+                </div>
               </div>
-            </div>
-          </Card>
-        </section>
+            </Card>
+          </section>
+        )}
 
         {/* Blog Posts Grid */}
         <section className="mb-16">

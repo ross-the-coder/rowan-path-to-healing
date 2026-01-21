@@ -22,7 +22,9 @@
     "boardOfDirectors": "董事会",
     "staff": "员工",
     "media": "媒体",
-    "financials": "财务"
+    "financials": "财务",
+    "studentAdvisoryBoard": "Student Advisory Board",
+    "studentAdvisoryBoardDesc": "Youth leadership and prevention advocacy"
   },
   "hero": {
     "title": "罗文中心",

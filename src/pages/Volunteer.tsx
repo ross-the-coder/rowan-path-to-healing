@@ -1,10 +1,8 @@
 import Layout from "@/components/Layout";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Users, Clock, BookOpen, Heart } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { VolunteerApplicationForm } from "@/components/VolunteerApplicationForm";
-import { StudentAdvisoryApplicationForm } from "@/components/StudentAdvisoryApplicationForm";
 import { Reveal } from "@/components/Reveal";
 
 const Volunteer = () => {
@@ -150,21 +148,6 @@ const Volunteer = () => {
           </div>
         </section>
 
-        {/* Student Advisory Board */}
-        <section className="mb-16">
-          <div className="max-w-4xl mx-auto text-center mb-8">
-            <h2 className="text-3xl font-seasons font-normal mb-4">Join the Student Advisory Board</h2>
-            <p className="font-roboto text-lg text-muted-foreground mb-4">
-              Assist The Rowan Center in its mission to eliminate sexual violence
-            </p>
-            <p className="font-roboto">
-              The purpose of this advisory board is to provide insight, information, and perspective about sexual violence at high schools and on college campuses. You will meet once a month with students from high schools and, together, create ways to raise awareness about The Rowan Center and sexual assault prevention at your school.
-            </p>
-          </div>
-          
-          <StudentAdvisoryApplicationForm />
-        </section>
-
         {/* Apply Section */}
         <section className="mb-16">
           <div className="max-w-4xl mx-auto text-center mb-8">
@@ -173,7 +156,7 @@ const Volunteer = () => {
               For information regarding training sessions, please contact:
             </p>
             <p className="font-roboto text-lg">
-              <span className="font-medium">Raquel Lopez, LMSW</span>, Crisis Advocate Programs Administrator
+              <span className="font-medium">Raquel Lopez, LCSW</span>, Part-time Counselor and Crisis Advocate Programs Administrator
             </p>
             <p className="font-roboto">
               <a href="mailto:rlopez@therowancenter.org" className="text-secondary hover:underline">

@@ -35,13 +35,13 @@ const Footer = () => {
             
             {/* Social Media Links */}
             <div className="flex gap-3 mt-4">
-              <a href="https://www.facebook.com/therowancenter" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/therowancenter" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" aria-label="Visit The Rowan Center on Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/therowancenter" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/therowancenter" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" aria-label="Visit The Rowan Center on Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://www.linkedin.com/company/therowancenter" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/therowancenter" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors" aria-label="Visit The Rowan Center on LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -157,6 +157,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-3 mt-6 text-white text-lg">{t('footer.getInvolved')}</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/volunteer" className="text-white/80 hover:text-white transition-colors">{t('nav.volunteer')}</Link></li>
+              <li><Link to="/student-advisory-board" className="text-white/80 hover:text-white transition-colors">{t('nav.studentAdvisoryBoard')}</Link></li>
               <li><Link to="/donate" className="text-white/80 hover:text-white transition-colors">{t('nav.donate')}</Link></li>
               <li><Link to="/events" className="text-white/80 hover:text-white transition-colors">{t('nav.events')}</Link></li>
             </ul>

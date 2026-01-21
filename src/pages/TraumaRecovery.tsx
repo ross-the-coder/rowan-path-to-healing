@@ -1,9 +1,10 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Stethoscope, Users, Shield } from "lucide-react";
-import { TraumaRecoveryIntakeForm } from "@/components/TraumaRecoveryIntakeForm";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Stethoscope, Users, Shield, CheckCircle2 } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Reveal } from "@/components/Reveal";
+import { Link } from "react-router-dom";
 
 import traumaRecoveryLogo from "@/assets/trauma-recovery-clinic-logo.png";
 import counselingHopeImage from "@/assets/group-therapy-diverse.jpg";
@@ -55,6 +56,43 @@ const teamMembers = [
   },
 ];
 
+const traumaInformedPractices = [
+  "You are always in control of what you share and when.",
+  "Therapy is collaborative, not directive.",
+  "Your therapist will check in about comfort, consent, and pacing.",
+  "Your strengths and resilience are recognized, not just your pain.",
+];
+
+const clinicalApproach = [
+  {
+    title: "Talk therapy",
+    description: "Explore experiences, emotions, and patterns in a supportive space.",
+  },
+  {
+    title: "EMDR",
+    description: "Eye Movement Desensitization and Reprocessing for clients who choose this approach and feel ready.",
+  },
+  {
+    title: "Stabilization and grounding",
+    description: "Build nervous system regulation skills and increase day-to-day steadiness.",
+  },
+  {
+    title: "Strength-based and relational work",
+    description: "Honor lived experience while building safety, connection, and resilience.",
+  },
+];
+
+const whoWeServe = [
+  "Sexual violence or abuse",
+  "Childhood trauma",
+  "Intimate partner or dating violence",
+  "Trafficking or exploitation",
+  "Medical or institutional trauma",
+  "Gun violence",
+  "Loss, grief, or chronic stress",
+  "Combat trauma",
+];
+
 const TraumaRecovery = () => {
   return (
     <Layout>
@@ -89,22 +127,19 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <div className="py-12">
+      <section className="py-12 bg-gradient-to-br from-[#caebff]/55 via-background to-background relative overflow-hidden">
         <div className="container mx-auto px-4">
-
           {/* About TRP Section */}
-          <div className="max-w-4xl mx-auto mb-16">
+          <div className="max-w-4xl mx-auto">
             <div className="bg-muted/30 rounded-2xl p-8 md:p-12">
               <p className="text-lg text-foreground mb-6 leading-relaxed">
-                The Trauma Recovery Practice (TRP) at The Rowan Center offers long-term, trauma-informed 
-                clinical therapy to help survivors of trauma heal.
+                The Trauma Recovery Practice (TRP) at The Rowan Center is designed for adults who are seeking
+                longer-term therapeutic support after experiencing trauma.
               </p>
               <p className="text-lg text-foreground mb-6 leading-relaxed">
-                If you or someone you know has experienced trauma of any kind, our team of therapists 
-                is here to help. Connect with the Trauma Recovery Practice today to learn more about the 
-                services we offer, including talk therapy, EMDR, and other clinical therapy modalities.
+                We understand that healing is not linear, and that beginning therapy can feel vulnerable,
+                intimidating, or uncertain. Our role is to walk alongside you, at a pace that feels right for you.
               </p>
-              
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                 <div className="bg-background rounded-xl p-6 border border-accent/20">
                   <div className="flex items-center gap-3 mb-3">
@@ -136,39 +171,341 @@ const TraumaRecovery = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
+      <section className="py-12 bg-gradient-to-br from-[#a89dd6]/35 via-background to-background relative overflow-hidden">
+        <div className="absolute -top-16 -left-20 h-64 w-64 rounded-full bg-[#a89dd6]/30 blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4">
+          {/* Trauma-Informed Care */}
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-seasons font-normal text-foreground mb-4">What We Mean by Trauma-Informed Care</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Trauma-informed care means that your experiences, boundaries, and autonomy are respected at every
+                stage of therapy. Our clinicians work from the understanding that trauma can affect how people feel
+                in their bodies, how they relate to others, and how safe the world feels.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="bg-accent/5 rounded-2xl p-8 border border-accent/20">
+                <h3 className="text-xl font-semibold text-foreground mb-4">In practice, this means</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  {traumaInformedPractices.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-accent mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-muted/30 rounded-2xl p-8">
+                <h3 className="text-xl font-semibold text-foreground mb-4">A steady, respectful relationship</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  We focus on creating a therapeutic relationship that feels steady, respectful, and supportive.
+                  You guide the pace, and your therapist will work with you to keep care grounded in safety, trust,
+                  and collaboration.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-gradient-to-br from-[#c9f1ee]/40 via-background to-background relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          {/* Clinical Approach */}
+          <div>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-seasons font-normal text-foreground mb-4">Our Clinical Approach</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Our therapists are trained in evidence-based, trauma-responsive modalities that support healing while
+                minimizing the risk of re-traumatization.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {clinicalApproach.map((service) => (
+                <div key={service.title} className="bg-background rounded-2xl p-6 border border-accent/20">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground text-center max-w-3xl mx-auto mt-6">
+              Your therapist will work with you to identify goals that feel meaningful, whether that is reducing
+              distress, improving relationships, reconnecting with yourself, or feeling more grounded day to day.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-gradient-to-br from-[#caebff]/45 via-background to-background relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          {/* Who We Serve */}
+          <div>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-seasons font-normal text-foreground mb-4">Who We Serve</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                The Trauma Recovery Practice serves adults (18+) who have experienced trauma of any kind, including
+                but not limited to the following.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+              {whoWeServe.map((item) => (
+                <span
+                  key={item}
+                  className="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <p className="text-center text-muted-foreground mt-6">
+              You do not need to label your experience for it to be valid.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4">
+          {/* Access & Privacy */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-muted/30 rounded-2xl p-8 border border-accent/10">
+              <h3 className="text-xl font-semibold text-foreground mb-3">Accessibility and Insurance</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We are currently able to serve clients using HUSKY Health insurance. We recognize that access to
+                long-term therapy is a major barrier for many survivors, and expanding access remains a core
+                priority of this practice.
+              </p>
+            </div>
+            <div className="bg-muted/30 rounded-2xl p-8 border border-accent/10">
+              <h3 className="text-xl font-semibold text-foreground mb-3">Privacy and Confidentiality</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Your privacy matters. Services are confidential and provided in accordance with state and federal
+                laws. Therapists will review confidentiality and its limits with you so you can make informed
+                choices about your care.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-gradient-to-br from-[#a89dd6]/35 via-background to-background relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          {/* FAQs */}
+          <div>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-seasons font-normal text-foreground mb-4">FAQs</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Answers to common questions about trauma recovery therapy and the intake process.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="types-of-trauma" className="border rounded-2xl px-6 bg-background">
+                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                    What types of trauma can you help?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground space-y-4">
+                    <p>
+                      According to the American Psychological Association, trauma is “an emotional response to a
+                      terrible event like an accident, crime, natural disaster, physical or emotional abuse, neglect,
+                      experiencing or witnessing violence, death of a loved one, war, and more. Immediately after the
+                      event, shock and denial are typical. Longer term reactions include unpredictable emotions,
+                      flashbacks, strained relationships, and even physical symptoms like headaches or nausea.”
+                    </p>
+                    <p>
+                      Our team members are trained to support clients who have experienced any of those examples of
+                      trauma, as well as others not listed, including domestic violence. Specifically, every member of
+                      our team is a Certified Sexual Violence Crisis Counselor and Advocate in the State of
+                      Connecticut and is specially trained to support victims and survivors of sexual violence.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="emdr" className="border rounded-2xl px-6 bg-background">
+                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                    What is EMDR and what does it feel like?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground space-y-4">
+                    <p>
+                      EMDR, or Eye Movement Desensitization and Reprocessing, is a therapy approach that can help some
+                      people process distressing or overwhelming experiences in a way that feels more manageable over
+                      time.
+                    </p>
+                    <p>
+                      EMDR does not require you to describe your experiences in detail. Instead, it focuses on how
+                      memories, emotions, and sensations are held in the body and nervous system. During EMDR, your
+                      therapist will guide you through a structured process that includes brief periods of bilateral
+                      stimulation, such as eye movements, tapping, or tones, while checking in regularly about your
+                      comfort.
+                    </p>
+                    <p>
+                      People experience EMDR differently. Some describe it as focused and grounding, while others
+                      notice emotional or physical sensations as memories shift. You remain present and in control
+                      throughout the process. You can pause, slow down, or stop at any time, and your therapist will
+                      work with you to ensure the pace feels supportive.
+                    </p>
+                    <p>
+                      EMDR is always optional. Your therapist will explain the approach fully and explore whether it
+                      feels like a good fit for you.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="therapy-length" className="border rounded-2xl px-6 bg-background">
+                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                    How long does therapy last?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground space-y-4">
+                    <p>
+                      There is no single timeline for therapy. The length of treatment is shaped by your goals, needs,
+                      and what feels right for you.
+                    </p>
+                    <p>
+                      Some people come to therapy with a specific focus and choose to work for a defined period of
+                      time. Others find value in longer-term support as they build stability, explore patterns, or
+                      work toward deeper healing. Therapy can also change over time, shifting in focus as your needs
+                      evolve.
+                    </p>
+                    <p>
+                      You and your therapist will check in regularly about how therapy is feeling and whether
+                      adjustments are needed. You are not expected to commit to a set length of time in advance, and
+                      you can revisit your goals whenever you choose.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="not-sure" className="border rounded-2xl px-6 bg-background">
+                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                    What if I am not sure therapy is right for me?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground space-y-4">
+                    <p>
+                      It is very common to feel uncertain about starting therapy. You might have questions,
+                      hesitations, or mixed feelings, especially if you have had difficult experiences in the past or
+                      are unsure what to expect.
+                    </p>
+                    <p>
+                      An initial consultation is simply a chance to learn more, ask questions, and see how the
+                      interaction feels. It is not a commitment to ongoing therapy. You do not need to know exactly
+                      what you want to work on or how to explain your experiences.
+                    </p>
+                    <p>
+                      Taking time to decide is allowed. Whether you choose to continue, pause, or explore other
+                      options, your choice is respected. Seeking information is already a meaningful step toward care,
+                      even if you are not ready to begin therapy right now.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="session-length" className="border rounded-2xl px-6 bg-background">
+                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                    How long are the sessions?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Sessions are scheduled for 60 minutes and last between 53 and 59 minutes.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="first-session" className="border rounded-2xl px-6 bg-background">
+                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                    What should I expect at my first session?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    The first session is focused on making sure each client understands their rights and
+                    responsibilities and setting expectations for working together. The remaining time is spent
+                    starting on the initial diagnostic assessment and settling on the client’s desired treatment
+                    goals.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="documents" className="border rounded-2xl px-6 bg-background">
+                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                    What documents do I need to bring?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Our system will offer new clients the opportunity to complete their intake forms and upload photos
+                    of necessary documents prior to their first session. For clients who prefer to do that in person,
+                    a government-issued photo ID and HUSKY card are required at intake.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="husky-insurance" className="border rounded-2xl px-6 bg-background">
+                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                    How does HUSKY insurance work at the clinic?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground space-y-4">
+                    <p>
+                      Adult prospective clients who have HUSKY insurance will have their coverage verified by our team
+                      before the first session wherever possible, and otherwise before a second session. For clients
+                      whose coverage is confirmed, no further action is required on the part of the client. Our team
+                      will take care of all billing and reimbursement matters.
+                    </p>
+                    <p>
+                      It is important to note that HUSKY prohibits providers from charging any fee directly to the
+                      client, including for no-shows and late cancellations. As such, it is important for our clients
+                      to know that attendance to scheduled sessions is very important, and that a pattern of missed
+                      sessions can result in termination of services. Those policies are outlined in the documents
+                      provided to the client at intake.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-gradient-to-br from-[#c9f1ee]/40 via-background to-background relative overflow-hidden">
+        <div className="container mx-auto px-4">
           {/* Intake Process */}
-          <div className="mb-16">
+          <div>
             <h2 className="text-2xl font-bold text-center text-foreground mb-6">Getting Started</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="text-center">
                 <div className="bg-accent/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                   <span className="text-accent font-bold">1</span>
                 </div>
-                <h3 className="font-semibold mb-2">Complete Intake Form</h3>
-                <p className="text-sm text-muted-foreground">Fill out our secure intake form to help us understand your needs</p>
+                <h3 className="font-semibold mb-2">Request an Intake</h3>
+                <p className="text-sm text-muted-foreground">
+                  Fill out our secure intake form to help us understand your needs.
+                </p>
               </div>
               <div className="text-center">
                 <div className="bg-accent/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                   <span className="text-accent font-bold">2</span>
                 </div>
                 <h3 className="font-semibold mb-2">Initial Consultation</h3>
-                <p className="text-sm text-muted-foreground">Meet with our intake coordinator to discuss your goals and preferences</p>
+                <p className="text-sm text-muted-foreground">
+                  Meet with our intake coordinator to discuss your goals and preferences.
+                </p>
               </div>
               <div className="text-center">
                 <div className="bg-accent/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                   <span className="text-accent font-bold">3</span>
                 </div>
                 <h3 className="font-semibold mb-2">Begin Treatment</h3>
-                <p className="text-sm text-muted-foreground">Start your healing journey with a therapist matched to your needs</p>
+                <p className="text-sm text-muted-foreground">
+                  Start your healing journey with a therapist matched to your needs.
+                </p>
               </div>
             </div>
-            
-            <TraumaRecoveryIntakeForm />
+            <div className="flex justify-center">
+              <Button asChild size="lg" className="px-8">
+                <Link to="/trauma-recovery/intake">Complete the Intake Form</Link>
+              </Button>
+            </div>
           </div>
+        </div>
+      </section>
 
+      <section className="py-12 bg-gradient-to-br from-[#caebff]/45 via-background to-background relative overflow-hidden">
+        <div className="absolute -top-20 -left-24 h-72 w-72 rounded-full bg-[#a89dd6]/30 blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4">
           {/* Meet the Team Section */}
-          <div className="mb-16">
+          <div>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-seasons font-normal text-foreground mb-4">Meet Our Team</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -225,7 +562,12 @@ const TraumaRecovery = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
+      <section className="py-12 bg-gradient-to-br from-[#a89dd6]/35 via-background to-background relative overflow-hidden">
+        <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-[#caebff]/35 blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4">
           {/* Support Information */}
           <div className="text-center">
             <h2 className="text-2xl font-bold text-foreground mb-4">You Don't Have to Heal Alone</h2>
@@ -239,7 +581,7 @@ const TraumaRecovery = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

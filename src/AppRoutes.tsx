@@ -19,10 +19,12 @@ const CrisisServices = lazy(() => import("./pages/CrisisServices"));
 const PreventionEducation = lazy(() => import("./pages/PreventionEducation"));
 const VictimAdvocacy = lazy(() => import("./pages/VictimAdvocacy"));
 const TraumaRecovery = lazy(() => import("./pages/TraumaRecovery"));
+const TraumaRecoveryIntake = lazy(() => import("./pages/TraumaRecoveryIntake"));
 const Impact = lazy(() => import("./pages/Impact"));
 const Donate = lazy(() => import("./pages/Donate"));
 const Events = lazy(() => import("./pages/Events"));
 const Volunteer = lazy(() => import("./pages/Volunteer"));
+const StudentAdvisoryBoard = lazy(() => import("./pages/StudentAdvisoryBoard"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Media = lazy(() => import("./pages/Media"));
 const BoardOfDirectors = lazy(() => import("./pages/BoardOfDirectors"));
@@ -118,11 +120,13 @@ export const AppRoutes = () => (
         <Route path="/prevention-education" element={<PreventionEducation />} />
         <Route path="/victim-advocacy" element={<VictimAdvocacy />} />
         <Route path="/trauma-recovery" element={<TraumaRecovery />} />
+        <Route path="/trauma-recovery/intake" element={<TraumaRecoveryIntake />} />
         <Route path="/resources" element={<CommunityResources />} />
         <Route path="/impact" element={<Impact />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/events" element={<Events />} />
         <Route path="/volunteer" element={<Volunteer />} />
+        <Route path="/student-advisory-board" element={<StudentAdvisoryBoard />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/media" element={<Media />} />
         <Route path="/board-of-directors" element={<BoardOfDirectors />} />
