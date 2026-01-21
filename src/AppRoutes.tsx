@@ -3,13 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import Staff from "@/pages/Staff.tsx";
 import CommunityResources from "@/pages/CommunityResources";
-import KidSafeHQ from "@/pages/KidSafeHQ";
-import KidSafeElementary from "@/pages/KidSafeElementary";
-import KidSafeMiddle from "@/pages/KidSafeMiddle";
-import KidSafeHigh from "@/pages/KidSafeHigh";
-import KidSafeResources from "@/pages/KidSafeResources";
-import KidSafeNews from "@/pages/KidSafeNews";
-import KidSafeFAQ from "@/pages/KidSafeFAQ";
+import KidSafeComingSoon from "@/pages/KidSafeComingSoon";
 
 // Lazy load all page components
 const Index = lazy(() => import("./pages/Index"));
@@ -134,18 +128,9 @@ export const AppRoutes = () => (
         <Route path="/board-of-directors" element={<BoardOfDirectors />} />
         <Route path="/financials" element={<Financials />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/kidsafehq" element={<KidSafeHQ />} />
-        <Route path="/kidsafehq/elementary" element={<KidSafeElementary />} />
-        <Route path="/kidsafehq/middle" element={<KidSafeMiddle />} />
-        <Route path="/kidsafehq/high" element={<KidSafeHigh />} />
-        <Route path="/kidsafehq/resources" element={<KidSafeResources />} />
-        <Route path="/kidsafehq/news" element={<KidSafeNews />} />
-        <Route path="/kidsafehq/faqs" element={<KidSafeFAQ />} />
-        <Route path="/kidsafehq/faqs/" element={<KidSafeFAQ />} />
-        <Route path="/kidsafehq/faq" element={<KidSafeFAQ />} />
-        <Route path="/kidsafehq/faq/" element={<KidSafeFAQ />} />
-        <Route path="/KidSafeHQ/FAQs" element={<KidSafeFAQ />} />
-        <Route path="/KidSafeHQ/FAQ" element={<KidSafeFAQ />} />
+        <Route path="/kidsafehq" element={<KidSafeComingSoon />} />
+        <Route path="/kidsafehq/*" element={<KidSafeComingSoon />} />
+        <Route path="/KidSafeHQ/*" element={<KidSafeComingSoon />} />
         <Route path="/news" element={<News />} />
         <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
         <Route path="/reminders" element={<Reminders />} />
