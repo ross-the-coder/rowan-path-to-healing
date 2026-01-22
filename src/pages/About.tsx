@@ -447,54 +447,6 @@ const About = () => {
                     </div>
                   </AccordionItem>
 
-                  {/* Today - 24/7 support */}
-                  <AccordionItem value="today-support" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
-                    <div className="relative z-10 flex flex-col items-center gap-4">
-                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-primary/20 shadow-md text-center">
-                        <span className="text-primary font-bold text-xs leading-tight">Today</span>
-                      </div>
-                      <Card className="w-full border-primary/20">
-                        <AccordionTrigger className="hover:no-underline px-5 py-3">
-                          <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">24/7 support, healing, and prevention</CardTitle>
-                          </CardHeader>
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <CardContent className="pt-0">
-                            <p className="text-muted-foreground mb-4 text-sm">
-                              Survivors can access a 24-hour hotline, crisis counseling, support groups, advocacy and
-                              accompaniment (medical, police, and court), and prevention education for schools and the
-                              community.
-                            </p>
-                          </CardContent>
-                        </AccordionContent>
-                      </Card>
-                    </div>
-                  </AccordionItem>
-
-                  {/* Today - statewide network */}
-                  <AccordionItem value="today-network" className="border-none shrink-0 w-[260px] md:w-[320px] snap-center">
-                    <div className="relative z-10 flex flex-col items-center gap-4">
-                      <div className="min-w-[3.5rem] min-h-[3.5rem] px-3 bg-background rounded-full flex items-center justify-center border-2 border-secondary/20 shadow-md text-center">
-                        <span className="text-secondary font-bold text-xs leading-tight">Today</span>
-                      </div>
-                      <Card className="w-full border-secondary/20">
-                        <AccordionTrigger className="hover:no-underline px-5 py-3">
-                          <CardHeader className="flex-1 text-center p-0">
-                            <CardTitle className="text-lg">Part of a statewide Connecticut network</CardTitle>
-                          </CardHeader>
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <CardContent className="pt-0">
-                            <p className="text-muted-foreground mb-4 text-sm">
-                              The Rowan Center is one of nine regional sexual assault crisis programs working together
-                              across Connecticut to end sexual violence.
-                            </p>
-                          </CardContent>
-                        </AccordionContent>
-                      </Card>
-                    </div>
-                  </AccordionItem>
                 </Accordion>
               </div>
             </div>

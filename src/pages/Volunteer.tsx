@@ -14,9 +14,7 @@ const Volunteer = () => {
           <Reveal>
             <div className="max-w-4xl mx-auto text-center">
               <Heart className="h-16 w-16 mx-auto mb-6" />
-              <h1 className="text-5xl font-seasons font-normal mb-6">
-                Volunteer as a Crisis Advocate
-              </h1>
+              <h1 className="text-5xl font-seasons font-normal mb-6">Volunteer</h1>
               <p className="text-xl font-roboto font-light text-white/90 mb-8">
                 Join our team of dedicated volunteers and make a real difference in the lives of survivors.
               </p>
@@ -153,7 +151,7 @@ const Volunteer = () => {
           <div className="max-w-4xl mx-auto text-center mb-8">
             <h2 className="text-3xl font-seasons font-normal mb-4">Apply to Volunteer</h2>
             <p className="font-roboto text-muted-foreground mb-2">
-              For information regarding training sessions, please contact:
+              Please fill out form and submit below. All information in confidential.
             </p>
             <p className="font-roboto text-lg">
               <span className="font-medium">Raquel Lopez, LCSW</span>, Part-time Counselor and Crisis Advocate Programs Administrator
