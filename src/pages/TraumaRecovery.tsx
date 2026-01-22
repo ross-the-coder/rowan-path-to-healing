@@ -127,11 +127,11 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-[#caebff]/55">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           {/* About TRP Section */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-muted/30 rounded-2xl p-8 md:p-12">
+            <div className="bg-background rounded-2xl p-8 md:p-12 shadow-xl shadow-[rgba(116,100,162,0.2)] border border-[#7464a2]/15 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[rgba(116,100,162,0.3)]">
               <p className="text-lg text-foreground mb-6 leading-relaxed">
                 The Trauma Recovery Practice (TRP) at The Rowan Center is designed for adults who are seeking
                 longer-term therapeutic support after experiencing trauma.
@@ -141,27 +141,27 @@ const TraumaRecovery = () => {
                 intimidating, or uncertain. Our role is to walk alongside you, at a pace that feels right for you.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                <div className="bg-background rounded-xl p-6 border border-accent/20">
+                <div className="bg-white rounded-xl p-6 border border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <div className="flex items-center gap-3 mb-3">
-                    <Shield className="h-6 w-6 text-accent" />
+                    <Shield className="h-6 w-6 text-[#7464a2]" />
                     <h3 className="font-semibold text-foreground">Insurance</h3>
                   </div>
                   <p className="text-muted-foreground">
                     We are currently serving trauma victims and survivors on the HUSKY health insurance plan.
                   </p>
                 </div>
-                <div className="bg-background rounded-xl p-6 border border-accent/20">
+                <div className="bg-white rounded-xl p-6 border border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <div className="flex items-center gap-3 mb-3">
-                    <Users className="h-6 w-6 text-accent" />
+                    <Users className="h-6 w-6 text-[#7464a2]" />
                     <h3 className="font-semibold text-foreground">Eligibility</h3>
                   </div>
                   <p className="text-muted-foreground">
                     Clients must be at least 18 years old.
                   </p>
                 </div>
-                <div className="bg-background rounded-xl p-6 border border-accent/20">
+                <div className="bg-white rounded-xl p-6 border border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <div className="flex items-center gap-3 mb-3">
-                    <Stethoscope className="h-6 w-6 text-accent" />
+                    <Stethoscope className="h-6 w-6 text-[#7464a2]" />
                     <h3 className="font-semibold text-foreground">Fully Licensed</h3>
                   </div>
                   <p className="text-muted-foreground">
@@ -174,7 +174,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-[#a89dd6]/35">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           {/* Trauma-Informed Care */}
           <div className="max-w-5xl mx-auto">
@@ -187,18 +187,18 @@ const TraumaRecovery = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-accent/5 rounded-2xl p-8 border border-accent/20">
+              <div className="bg-white rounded-2xl p-8 border border-[#7464a2]/20 shadow-xl shadow-[rgba(116,100,162,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[rgba(116,100,162,0.3)]">
                 <h3 className="text-xl font-semibold text-foreground mb-4">In practice, this means</h3>
                 <ul className="space-y-3 text-muted-foreground">
                   {traumaInformedPractices.map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-[#7464a2] mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-muted/30 rounded-2xl p-8">
+              <div className="bg-white rounded-2xl p-8 border border-[#7464a2]/20 shadow-xl shadow-[rgba(116,100,162,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[rgba(116,100,162,0.3)]">
                 <h3 className="text-xl font-semibold text-foreground mb-4">A steady, respectful relationship</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   We focus on creating a therapeutic relationship that feels steady, respectful, and supportive.
@@ -211,7 +211,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-[#c9f1ee]/40">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           {/* Clinical Approach */}
           <div>
@@ -224,7 +224,7 @@ const TraumaRecovery = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {clinicalApproach.map((service) => (
-                <div key={service.title} className="bg-background rounded-2xl p-6 border border-accent/20">
+                <div key={service.title} className="bg-white rounded-2xl p-6 border border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
                   <p className="text-muted-foreground">{service.description}</p>
                 </div>
@@ -238,7 +238,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-[#caebff]/45">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           {/* Who We Serve */}
           <div>
@@ -253,7 +253,7 @@ const TraumaRecovery = () => {
               {whoWeServe.map((item) => (
                 <span
                   key={item}
-                  className="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium"
+                  className="px-4 py-2 rounded-full border border-[#7464a2]/30 text-[#7464a2] text-sm font-medium bg-white shadow-md shadow-[rgba(116,100,162,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[rgba(116,100,162,0.25)]"
                 >
                   {item}
                 </span>
@@ -270,7 +270,7 @@ const TraumaRecovery = () => {
         <div className="container mx-auto px-4">
           {/* Access & Privacy */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-muted/30 rounded-2xl p-8 border border-accent/10">
+            <div className="bg-white rounded-2xl p-8 border border-[#7464a2]/20 shadow-xl shadow-[rgba(116,100,162,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[rgba(116,100,162,0.3)]">
               <h3 className="text-xl font-semibold text-foreground mb-3">Accessibility and Insurance</h3>
               <p className="text-muted-foreground leading-relaxed">
                 We are currently able to serve clients using HUSKY Health insurance. We recognize that access to
@@ -278,7 +278,7 @@ const TraumaRecovery = () => {
                 priority of this practice.
               </p>
             </div>
-            <div className="bg-muted/30 rounded-2xl p-8 border border-accent/10">
+            <div className="bg-white rounded-2xl p-8 border border-[#7464a2]/20 shadow-xl shadow-[rgba(116,100,162,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[rgba(116,100,162,0.3)]">
               <h3 className="text-xl font-semibold text-foreground mb-3">Privacy and Confidentiality</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Your privacy matters. Services are confidential and provided in accordance with state and federal
@@ -290,7 +290,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-[#a89dd6]/35">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           {/* FAQs */}
           <div>
@@ -302,7 +302,7 @@ const TraumaRecovery = () => {
             </div>
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
-                <AccordionItem value="types-of-trauma" className="border rounded-2xl px-6 bg-background">
+                <AccordionItem value="types-of-trauma" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <AccordionTrigger className="text-left font-semibold text-foreground">
                     What types of trauma can you help?
                   </AccordionTrigger>
@@ -323,7 +323,7 @@ const TraumaRecovery = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="emdr" className="border rounded-2xl px-6 bg-background">
+                <AccordionItem value="emdr" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <AccordionTrigger className="text-left font-semibold text-foreground">
                     What is EMDR and what does it feel like?
                   </AccordionTrigger>
@@ -353,7 +353,7 @@ const TraumaRecovery = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="therapy-length" className="border rounded-2xl px-6 bg-background">
+                <AccordionItem value="therapy-length" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <AccordionTrigger className="text-left font-semibold text-foreground">
                     How long does therapy last?
                   </AccordionTrigger>
@@ -376,7 +376,7 @@ const TraumaRecovery = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="not-sure" className="border rounded-2xl px-6 bg-background">
+                <AccordionItem value="not-sure" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <AccordionTrigger className="text-left font-semibold text-foreground">
                     What if I am not sure therapy is right for me?
                   </AccordionTrigger>
@@ -399,7 +399,7 @@ const TraumaRecovery = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="session-length" className="border rounded-2xl px-6 bg-background">
+                <AccordionItem value="session-length" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <AccordionTrigger className="text-left font-semibold text-foreground">
                     How long are the sessions?
                   </AccordionTrigger>
@@ -408,7 +408,7 @@ const TraumaRecovery = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="first-session" className="border rounded-2xl px-6 bg-background">
+                <AccordionItem value="first-session" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <AccordionTrigger className="text-left font-semibold text-foreground">
                     What should I expect at my first session?
                   </AccordionTrigger>
@@ -420,7 +420,7 @@ const TraumaRecovery = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="documents" className="border rounded-2xl px-6 bg-background">
+                <AccordionItem value="documents" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <AccordionTrigger className="text-left font-semibold text-foreground">
                     What documents do I need to bring?
                   </AccordionTrigger>
@@ -431,7 +431,7 @@ const TraumaRecovery = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="husky-insurance" className="border rounded-2xl px-6 bg-background">
+                <AccordionItem value="husky-insurance" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
                   <AccordionTrigger className="text-left font-semibold text-foreground">
                     How does HUSKY insurance work at the clinic?
                   </AccordionTrigger>
@@ -457,15 +457,15 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-[#c9f1ee]/40">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           {/* Intake Process */}
           <div>
             <h2 className="text-2xl font-bold text-center text-foreground mb-6">Getting Started</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="text-center">
-                <div className="bg-accent/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-accent font-bold">1</span>
+                <div className="bg-[#7464a2]/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-[#7464a2] font-bold">1</span>
                 </div>
                 <h3 className="font-semibold mb-2">Request an Intake</h3>
                 <p className="text-sm text-muted-foreground">
@@ -473,8 +473,8 @@ const TraumaRecovery = () => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-accent/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-accent font-bold">2</span>
+                <div className="bg-[#7464a2]/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-[#7464a2] font-bold">2</span>
                 </div>
                 <h3 className="font-semibold mb-2">Initial Consultation</h3>
                 <p className="text-sm text-muted-foreground">
@@ -482,8 +482,8 @@ const TraumaRecovery = () => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-accent/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-accent font-bold">3</span>
+                <div className="bg-[#7464a2]/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-[#7464a2] font-bold">3</span>
                 </div>
                 <h3 className="font-semibold mb-2">Begin Treatment</h3>
                 <p className="text-sm text-muted-foreground">
@@ -492,7 +492,7 @@ const TraumaRecovery = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <Button asChild size="lg" className="px-8">
+              <Button asChild size="lg" className="px-8 bg-[#7464a2] hover:bg-[#7464a2]/90">
                 <Link to="/trauma-recovery/intake">Complete the Intake Form</Link>
               </Button>
             </div>
@@ -500,7 +500,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-[#caebff]/45">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           {/* Meet the Team Section */}
           <div>
@@ -516,15 +516,15 @@ const TraumaRecovery = () => {
                 <div 
                   key={member.name}
                   className={`flex flex-col lg:flex-row gap-8 p-8 rounded-2xl ${
-                    index % 2 === 0 ? 'bg-muted/30' : 'bg-accent/5'
-                  }`}
+                    index % 2 === 0 ? 'bg-white' : 'bg-white'
+                  } border border-[#7464a2]/10 shadow-xl shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[rgba(116,100,162,0.28)]`}
                 >
                   {/* Team member photo */}
                   <div className="flex-shrink-0 mx-auto lg:mx-0">
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-48 h-48 rounded-2xl object-cover object-top border-2 border-accent/20 shadow-lg"
+                      className="w-48 h-48 rounded-2xl object-cover object-top border-2 border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.2)]"
                     />
                   </div>
 
@@ -534,7 +534,7 @@ const TraumaRecovery = () => {
                       <h3 className="text-2xl font-semibold text-foreground">{member.name}</h3>
                       <p className="text-primary font-medium">{member.title}</p>
                       {member.credentials && (
-                        <p className="text-sm text-accent italic">{member.credentials}</p>
+                        <p className="text-sm text-[#7464a2] italic">{member.credentials}</p>
                       )}
                     </div>
 
@@ -543,7 +543,7 @@ const TraumaRecovery = () => {
                       {member.languages.map((lang) => (
                         <span 
                           key={lang}
-                          className="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full font-medium"
+                          className="px-3 py-1 bg-[#7464a2]/10 text-[#7464a2] text-sm rounded-full font-medium"
                         >
                           {lang}
                         </span>
@@ -563,7 +563,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-[#a89dd6]/35">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           {/* Support Information */}
           <div className="text-center">
@@ -573,8 +573,12 @@ const TraumaRecovery = () => {
               trauma-informed therapists are here to support you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" size="lg">Learn More About Our Therapists</Button>
-              <Button variant="outline" size="lg">Insurance & Payment Options</Button>
+              <Button variant="outline" size="lg" className="border-[#7464a2] text-[#7464a2] hover:bg-[#7464a2]/10">
+                Learn More About Our Therapists
+              </Button>
+              <Button variant="outline" size="lg" className="border-[#7464a2] text-[#7464a2] hover:bg-[#7464a2]/10">
+                Insurance & Payment Options
+              </Button>
             </div>
           </div>
         </div>
