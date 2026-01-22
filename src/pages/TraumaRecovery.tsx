@@ -127,7 +127,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-[#caebff]/55 via-background to-background relative overflow-hidden">
+      <section className="py-12 bg-[#caebff]/55">
         <div className="container mx-auto px-4">
           {/* About TRP Section */}
           <div className="max-w-4xl mx-auto">
@@ -174,8 +174,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-[#a89dd6]/35 via-background to-background relative overflow-hidden">
-        <div className="absolute -top-16 -left-20 h-64 w-64 rounded-full bg-[#a89dd6]/30 blur-3xl pointer-events-none" />
+      <section className="py-12 bg-[#a89dd6]/35">
         <div className="container mx-auto px-4">
           {/* Trauma-Informed Care */}
           <div className="max-w-5xl mx-auto">
@@ -212,7 +211,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-[#c9f1ee]/40 via-background to-background relative overflow-hidden">
+      <section className="py-12 bg-[#c9f1ee]/40">
         <div className="container mx-auto px-4">
           {/* Clinical Approach */}
           <div>
@@ -239,7 +238,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-[#caebff]/45 via-background to-background relative overflow-hidden">
+      <section className="py-12 bg-[#caebff]/45">
         <div className="container mx-auto px-4">
           {/* Who We Serve */}
           <div>
@@ -291,7 +290,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-[#a89dd6]/35 via-background to-background relative overflow-hidden">
+      <section className="py-12 bg-[#a89dd6]/35">
         <div className="container mx-auto px-4">
           {/* FAQs */}
           <div>
@@ -458,7 +457,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-[#c9f1ee]/40 via-background to-background relative overflow-hidden">
+      <section className="py-12 bg-[#c9f1ee]/40">
         <div className="container mx-auto px-4">
           {/* Intake Process */}
           <div>
@@ -501,8 +500,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-[#caebff]/45 via-background to-background relative overflow-hidden">
-        <div className="absolute -top-20 -left-24 h-72 w-72 rounded-full bg-[#a89dd6]/30 blur-3xl pointer-events-none" />
+      <section className="py-12 bg-[#caebff]/45">
         <div className="container mx-auto px-4">
           {/* Meet the Team Section */}
           <div>
@@ -565,8 +563,7 @@ const TraumaRecovery = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-[#a89dd6]/35 via-background to-background relative overflow-hidden">
-        <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-[#caebff]/35 blur-3xl pointer-events-none" />
+      <section className="py-12 bg-[#a89dd6]/35">
         <div className="container mx-auto px-4">
           {/* Support Information */}
           <div className="text-center">
