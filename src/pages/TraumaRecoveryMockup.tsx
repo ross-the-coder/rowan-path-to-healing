@@ -12,6 +12,10 @@ import lukeHeadshot from "@/assets/luke-robbins-headshot.webp";
 import isabelHeadshot from "@/assets/isabel-negron-headshot.webp";
 import zacharyHeadshot from "@/assets/zachary-boccarossa-headshot.webp";
 import tainaHeadshot from "@/assets/taina-colon-headshot.webp";
+import talkingIcon from "@/assets/TALKING.png";
+import eyeIcon from "@/assets/EDMR.png";
+import stabilizationIcon from "@/assets/STABLE.png";
+import strengthsIcon from "@/assets/strengths.png";
 
 const teamMembers = [
   {
@@ -66,19 +70,23 @@ const traumaInformedPractices = [
 const clinicalApproach = [
   {
     title: "Talk therapy",
-    description: "Explore experiences, emotions, and patterns in a supportive space.",
+    description: "Exploring thoughts and feelings in a supportive dialogue to process trauma and build resilience.",
+    icon: <img src={talkingIcon} alt="" className="h-12 w-12 drop-shadow-md" />,
   },
   {
     title: "EMDR",
-    description: "Eye Movement Desensitization and Reprocessing for clients who choose this approach and feel ready.",
+    description: "Eye Movement Desensitization and Reprocessing to help reduce the distress of traumatic memories.",
+    icon: <img src={eyeIcon} alt="" className="h-12 w-12 drop-shadow-md" />,
   },
   {
     title: "Stabilization and grounding",
-    description: "Build nervous system regulation skills and increase day-to-day steadiness.",
+    description: "Focusing on grounding techniques and emotional regulation to establish a foundation of safety and calm.",
+    icon: <img src={stabilizationIcon} alt="" className="h-12 w-12 drop-shadow-md" />,
   },
   {
     title: "Strength-based and relational work",
-    description: "Honor lived experience while building safety, connection, and resilience.",
+    description: "Identifying and building upon personal strengths and resources to foster growth and positive outcomes.",
+    icon: <img src={strengthsIcon} alt="" className="h-12 w-12 drop-shadow-md" />,
   },
 ];
 
@@ -93,88 +101,88 @@ const whoWeServe = [
   "Combat trauma",
 ];
 
-const TraumaRecoveryMockup = () => {
+const TraumaRecovery = () => {
   return (
     <Layout>
+      
       <SEO 
         title="Trauma Recovery Practice Mockup" 
         description="Mockup page for the Trauma Recovery Practice at The Rowan Center."
       />
       {/* Hero Section */}
-      <section className="relative min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative min-h-[620px] sm:min-h-[680px] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={counselingHopeImage} 
             alt="Diverse group of women in supportive group therapy session empowering each other"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 to-white/60 md:bg-gradient-to-r md:from-white md:via-white/80 md:to-transparent"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 py-16 sm:py-20 relative z-10">
-          <Reveal>
-            <div className="max-w-3xl mx-auto text-center">
-              <img 
-                src={traumaRecoveryLogo} 
-                alt="The Rowan Center - Trauma Recovery Practice" 
-                className="w-52 sm:w-64 md:w-80 mx-auto mb-6"
-              />
-              <p className="text-lg sm:text-xl md:text-2xl font-roboto font-light text-foreground">
-                All survivors of trauma deserve hope and healing.
-              </p>
-            </div>
-          </Reveal>
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#7464a2] to-transparent"></div>
         </div>
       </section>
 
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          {/* About TRP Section */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-background rounded-2xl p-8 md:p-12 shadow-xl shadow-[rgba(116,100,162,0.2)] border border-[#7464a2]/15 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[rgba(116,100,162,0.3)]">
-              <p className="text-lg text-foreground mb-6 leading-relaxed">
-                The Trauma Recovery Practice (TRP) at The Rowan Center is designed for adults who are seeking
-                longer-term therapeutic support after experiencing trauma.
-              </p>
-              <p className="text-lg text-foreground mb-6 leading-relaxed">
-                We understand that healing is not linear, and that beginning therapy can feel vulnerable,
-                intimidating, or uncertain. Our role is to walk alongside you, at a pace that feels right for you.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                <div className="bg-white rounded-xl p-6 border border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Shield className="h-6 w-6 text-[#7464a2]" />
-                    <h3 className="font-semibold text-foreground">Insurance</h3>
-                  </div>
-                  <p className="text-muted-foreground">
-                    We are currently serving trauma victims and survivors on the HUSKY health insurance plan.
-                  </p>
+      <section className="bg-[#7464a2] text-white">
+        <div className="container mx-auto px-4 pt-16 pb-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-seasons font-bold mb-16">
+              All Survivors of Trauma Deserve
+              <span className="block">Hope and Healing</span>
+            </h1>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white text-foreground rounded-2xl p-8 md:p-12 shadow-2xl shadow-[rgba(0,0,0,0.25)] border border-white/60 -mt-2 relative z-10">
+              <div className="flex flex-col items-center text-center">
+                <img 
+                  src={traumaRecoveryLogo} 
+                  alt="The Rowan Center - Trauma Recovery Practice" 
+                  className="w-48 sm:w-56 md:w-64 mb-6"
+                />
+                <p className="text-lg text-foreground mb-6 leading-relaxed">
+                  The Trauma Recovery Practice (TRP) at The Rowan Center is designed for adults who are seeking
+                  longer-term therapeutic support after experiencing trauma.
+                </p>
+                <p className="text-lg text-foreground leading-relaxed">
+                  We understand that healing is not linear, and that beginning therapy can feel vulnerable,
+                  intimidating, or uncertain. Our role is to walk alongside you, at a pace that feels right for you.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+              <div className="bg-white rounded-xl p-6 border border-[#7464a2]/20 shadow-xl shadow-[rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <Shield className="h-6 w-6 text-[#7464a2]" />
+                  <h3 className="font-semibold text-foreground">Insurance</h3>
                 </div>
-                <div className="bg-white rounded-xl p-6 border border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Users className="h-6 w-6 text-[#7464a2]" />
-                    <h3 className="font-semibold text-foreground">Eligibility</h3>
-                  </div>
-                  <p className="text-muted-foreground">
-                    Clients must be at least 18 years old.
-                  </p>
+                <p className="text-muted-foreground">
+                  We are currently serving trauma victims and survivors on the HUSKY health insurance plan.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-6 border border-[#7464a2]/20 shadow-xl shadow-[rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <Users className="h-6 w-6 text-[#7464a2]" />
+                  <h3 className="font-semibold text-foreground">Eligibility</h3>
                 </div>
-                <div className="bg-white rounded-xl p-6 border border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Stethoscope className="h-6 w-6 text-[#7464a2]" />
-                    <h3 className="font-semibold text-foreground">Fully Licensed</h3>
-                  </div>
-                  <p className="text-muted-foreground">
-                    The Practice is fully licensed by the CT Department of Public Health.
-                  </p>
+                <p className="text-muted-foreground">
+                  Clients must be at least 18 years old.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-6 border border-[#7464a2]/20 shadow-xl shadow-[rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <Stethoscope className="h-6 w-6 text-[#7464a2]" />
+                  <h3 className="font-semibold text-foreground">Fully Licensed</h3>
                 </div>
+                <p className="text-muted-foreground">
+                  The Practice is fully licensed by the CT Department of Public Health.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-background">
+      <section className="py-12 bg-[#7464a2]/10">
         <div className="container mx-auto px-4">
           {/* Trauma-Informed Care */}
           <div className="max-w-5xl mx-auto">
@@ -224,9 +232,17 @@ const TraumaRecoveryMockup = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {clinicalApproach.map((service) => (
-                <div key={service.title} className="bg-white rounded-2xl p-6 border border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                <div
+                  key={service.title}
+                  className="flex items-stretch overflow-hidden rounded-2xl border border-[#7464a2]/20 shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)] bg-white min-h-[170px]"
+                >
+                  <div className="flex w-20 sm:w-24 items-center justify-center bg-[#7464a2] text-white shrink-0">
+                    {service.icon}
+                  </div>
+                  <div className="px-8 py-6">
+                    <h3 className="text-lg font-semibold text-foreground mb-3">{service.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -253,7 +269,7 @@ const TraumaRecoveryMockup = () => {
               {whoWeServe.map((item) => (
                 <span
                   key={item}
-                  className="px-4 py-2 rounded-full border border-[#7464a2]/30 text-[#7464a2] text-sm font-medium bg-white shadow-md shadow-[rgba(116,100,162,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[rgba(116,100,162,0.25)]"
+                  className="px-4 py-2 rounded-full bg-[#7464a2] text-white text-sm font-medium shadow-md shadow-[rgba(116,100,162,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[rgba(116,100,162,0.3)]"
                 >
                   {item}
                 </span>
@@ -302,11 +318,11 @@ const TraumaRecoveryMockup = () => {
             </div>
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
-                <AccordionItem value="types-of-trauma" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                <AccordionItem value="types-of-trauma" className="border rounded-2xl overflow-hidden bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
+                  <AccordionTrigger className="text-left font-semibold text-white bg-[#7464a2] px-6 py-4 hover:no-underline">
                     What types of trauma can you help?
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground space-y-4">
+                  <AccordionContent className="text-muted-foreground space-y-4 px-6 pb-6 pt-4">
                     <p>
                       According to the American Psychological Association, trauma is “an emotional response to a
                       terrible event like an accident, crime, natural disaster, physical or emotional abuse, neglect,
@@ -323,11 +339,11 @@ const TraumaRecoveryMockup = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="emdr" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                <AccordionItem value="emdr" className="border rounded-2xl overflow-hidden bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
+                  <AccordionTrigger className="text-left font-semibold text-white bg-[#7464a2] px-6 py-4 hover:no-underline">
                     What is EMDR and what does it feel like?
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground space-y-4">
+                  <AccordionContent className="text-muted-foreground space-y-4 px-6 pb-6 pt-4">
                     <p>
                       EMDR, or Eye Movement Desensitization and Reprocessing, is a therapy approach that can help some
                       people process distressing or overwhelming experiences in a way that feels more manageable over
@@ -353,11 +369,11 @@ const TraumaRecoveryMockup = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="therapy-length" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                <AccordionItem value="therapy-length" className="border rounded-2xl overflow-hidden bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
+                  <AccordionTrigger className="text-left font-semibold text-white bg-[#7464a2] px-6 py-4 hover:no-underline">
                     How long does therapy last?
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground space-y-4">
+                  <AccordionContent className="text-muted-foreground space-y-4 px-6 pb-6 pt-4">
                     <p>
                       There is no single timeline for therapy. The length of treatment is shaped by your goals, needs,
                       and what feels right for you.
@@ -376,11 +392,11 @@ const TraumaRecoveryMockup = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="not-sure" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                <AccordionItem value="not-sure" className="border rounded-2xl overflow-hidden bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
+                  <AccordionTrigger className="text-left font-semibold text-white bg-[#7464a2] px-6 py-4 hover:no-underline">
                     What if I am not sure therapy is right for me?
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground space-y-4">
+                  <AccordionContent className="text-muted-foreground space-y-4 px-6 pb-6 pt-4">
                     <p>
                       It is very common to feel uncertain about starting therapy. You might have questions,
                       hesitations, or mixed feelings, especially if you have had difficult experiences in the past or
@@ -399,20 +415,20 @@ const TraumaRecoveryMockup = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="session-length" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                <AccordionItem value="session-length" className="border rounded-2xl overflow-hidden bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
+                  <AccordionTrigger className="text-left font-semibold text-white bg-[#7464a2] px-6 py-4 hover:no-underline">
                     How long are the sessions?
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="text-muted-foreground px-6 pb-6 pt-4">
                     Sessions are scheduled for 60 minutes and last between 53 and 59 minutes.
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="first-session" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                <AccordionItem value="first-session" className="border rounded-2xl overflow-hidden bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
+                  <AccordionTrigger className="text-left font-semibold text-white bg-[#7464a2] px-6 py-4 hover:no-underline">
                     What should I expect at my first session?
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="text-muted-foreground px-6 pb-6 pt-4">
                     The first session is focused on making sure each client understands their rights and
                     responsibilities and setting expectations for working together. The remaining time is spent
                     starting on the initial diagnostic assessment and settling on the client’s desired treatment
@@ -420,22 +436,22 @@ const TraumaRecoveryMockup = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="documents" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                <AccordionItem value="documents" className="border rounded-2xl overflow-hidden bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
+                  <AccordionTrigger className="text-left font-semibold text-white bg-[#7464a2] px-6 py-4 hover:no-underline">
                     What documents do I need to bring?
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="text-muted-foreground px-6 pb-6 pt-4">
                     Our system will offer new clients the opportunity to complete their intake forms and upload photos
                     of necessary documents prior to their first session. For clients who prefer to do that in person,
                     a government-issued photo ID and HUSKY card are required at intake.
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="husky-insurance" className="border rounded-2xl px-6 bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
-                  <AccordionTrigger className="text-left font-semibold text-foreground">
+                <AccordionItem value="husky-insurance" className="border rounded-2xl overflow-hidden bg-white shadow-lg shadow-[rgba(116,100,162,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[rgba(116,100,162,0.28)]">
+                  <AccordionTrigger className="text-left font-semibold text-white bg-[#7464a2] px-6 py-4 hover:no-underline">
                     How does HUSKY insurance work at the clinic?
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground space-y-4">
+                  <AccordionContent className="text-muted-foreground space-y-4 px-6 pb-6 pt-4">
                     <p>
                       Adult prospective clients who have HUSKY insurance will have their coverage verified by our team
                       before the first session wherever possible, and otherwise before a second session. For clients
@@ -587,4 +603,4 @@ const TraumaRecoveryMockup = () => {
   );
 };
 
-export default TraumaRecoveryMockup;
+export default TraumaRecovery;
