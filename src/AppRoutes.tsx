@@ -5,6 +5,7 @@ import Staff from "@/pages/Staff.tsx";
 import CommunityResources from "@/pages/CommunityResources";
 import KidSafeComingSoon from "@/pages/KidSafeComingSoon";
 import KidSafeHQ from "@/pages/KidSafeHQ";
+import KidSafeHQ from "@/pages/KidSafeHQ";
 
 // Lazy load all page components
 const Index = lazy(() => import("./pages/Index"));
@@ -146,6 +147,7 @@ export const AppRoutes = () => (
         <Route path="/kidsafehq" element={<KidSafeComingSoon />} />
         <Route path="/kidsafehq/*" element={<KidSafeComingSoon />} />
         <Route path="/KidSafeHQ/*" element={<KidSafeComingSoon />} />
+        <Route path="/kidsafehq2" element={<KidSafeHQ />} />
         <Route path="/kidsafehq-preview" element={<KidSafeHQ />} />
         <Route path="/kidsafehq2" element={<KidSafeHQ />} />
         <Route path="/news" element={<News />} />
