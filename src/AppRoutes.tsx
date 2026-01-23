@@ -66,7 +66,16 @@ const RouteFallback = () => {
     fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H6',location:'AppRoutes.tsx:RouteFallback',message:'Suspense fallback mounted',data:{},timestamp:Date.now()})}).catch(()=>{});
     // #endregion agent log
 
+    // Set a timeout to detect stuck loading states (possible chunk failure)
+    const timeoutId = setTimeout(() => {
+      console.warn('Route loading timeout - possible chunk load failure');
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H7',location:'AppRoutes.tsx:RouteFallback',message:'Route loading timeout detected',data:{path:window.location.pathname},timestamp:Date.now()})}).catch(()=>{});
+      // #endregion agent log
+    }, 10000);
+
     return () => {
+      clearTimeout(timeoutId);
       // #region agent log
       fetch('http://127.0.0.1:7242/ingest/8641a571-b5c8-43df-beb2-34bce3e2f3ef',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'debug-session',runId:'seo-scan',hypothesisId:'H6',location:'AppRoutes.tsx:RouteFallback',message:'Suspense fallback unmounted',data:{},timestamp:Date.now()})}).catch(()=>{});
       // #endregion agent log

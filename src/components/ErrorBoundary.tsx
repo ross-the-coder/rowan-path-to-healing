@@ -9,10 +9,11 @@ type ErrorBoundaryState = {
   hasError: boolean;
   error?: Error;
   errorInfo?: React.ErrorInfo;
+  retryCount: number;
 };
 
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  state: ErrorBoundaryState = { hasError: false };
+  state: ErrorBoundaryState = { hasError: false, retryCount: 0 };
 
   static getDerivedStateFromError() {
     return { hasError: true };
@@ -20,6 +21,26 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error("App error boundary caught an error:", error, errorInfo);
+
+    // Check if this is a chunk loading error
+    const isChunkError = error.message.includes('Failed to fetch dynamically imported module') ||
+                        error.message.includes('Importing a module script failed') ||
+                        error.message.includes('error loading dynamically imported module') ||
+                        error.name === 'ChunkLoadError';
+
+    if (isChunkError && this.state.retryCount < 2) {
+      console.log(`Chunk load error detected. Retry attempt ${this.state.retryCount + 1}/2`);
+
+      // Increment retry count and attempt reload after brief delay
+      this.setState({ retryCount: this.state.retryCount + 1 });
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+
+      return;
+    }
+
     this.setState({ error, errorInfo });
   }
 
