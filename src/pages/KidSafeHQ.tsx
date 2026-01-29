@@ -18,9 +18,11 @@ import NewsTicker from "@/components/kidsafe/NewsTicker";
 import NewsSection from "@/components/kidsafe/NewsSection";
 import { getConnecticutArticles, getAllArticles } from "@/data/newsData";
 import { Reveal } from "@/components/Reveal";
+import { useKidSafeBasePath } from "@/hooks/useKidSafeBasePath";
 
 const KidSafeHQ = () => {
   const { t } = useTranslation();
+  const basePath = useKidSafeBasePath();
   const ctArticles = getConnecticutArticles();
   const allArticles = getAllArticles();
   const tickerArticles = ctArticles.slice(0, 5);
@@ -53,7 +55,7 @@ const KidSafeHQ = () => {
       titleKey: "kidsafeHQ.ageGroups.elementary.title",
       descriptionKey: "kidsafeHQ.ageGroups.elementary.description",
       icon: School,
-      link: "/kidsafehq/elementary",
+      link: `${basePath}/elementary`,
       buttonLabel: "Explore Grades K-5",
       color: "from-blue-500/10 to-blue-600/5",
       badge: "Grades K-5",
@@ -64,7 +66,7 @@ const KidSafeHQ = () => {
       titleKey: "kidsafeHQ.ageGroups.middle.title",
       descriptionKey: "kidsafeHQ.ageGroups.middle.description",
       icon: Users,
-      link: "/kidsafehq/middle",
+      link: `${basePath}/middle`,
       buttonLabel: "Explore Grades 6, 7, and 8",
       color: "from-green-500/10 to-green-600/5",
       badge: "Grades 6-8",
@@ -75,7 +77,7 @@ const KidSafeHQ = () => {
       titleKey: "kidsafeHQ.ageGroups.high.title",
       descriptionKey: "kidsafeHQ.ageGroups.high.description",
       icon: GraduationCap,
-      link: "/kidsafehq/high",
+      link: `${basePath}/high`,
       buttonLabel: "Explore Grades 9, 10, 11, and 12",
       color: "from-purple-500/10 to-purple-600/5",
       badge: "Grades 9-12",
@@ -89,7 +91,7 @@ const KidSafeHQ = () => {
       titleKey: "kidsafeHQ.supportCards.faq.title",
       descriptionKey: "kidsafeHQ.supportCards.faq.description",
       icon: HelpCircle,
-      link: "/kidsafehq/faqs",
+      link: `${basePath}/faqs`,
       buttonLabel: "Do you have a question?",
       color: "from-teal-500/10 to-teal-600/5",
       badge: "FAQs",
@@ -100,7 +102,7 @@ const KidSafeHQ = () => {
       titleKey: "kidsafeHQ.supportCards.resources.title",
       descriptionKey: "kidsafeHQ.supportCards.resources.description",
       icon: BookOpen,
-      link: "/kidsafehq/resources",
+      link: `${basePath}/resources`,
       buttonLabel: "Dive Deeper",
       color: "from-orange-500/10 to-orange-600/5",
       badge: "Resources",

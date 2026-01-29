@@ -13,8 +13,10 @@ import { TopicCard } from "@/components/kidsafe/TopicCard";
 import { FAQSection } from "@/components/kidsafe/FAQSection";
 import { ResourceLinks } from "@/components/kidsafe/ResourceLinks";
 import kidsafeHigh from "@/assets/kidsafe-high.jpg";
+import { useKidSafeBasePath } from "@/hooks/useKidSafeBasePath";
 
 const KidSafeHigh = () => {
+  const basePath = useKidSafeBasePath();
   const [completedTopics, setCompletedTopics] = useState<Set<string>>(new Set());
 
   const handleTopicComplete = (topicId: string) => {
@@ -44,7 +46,7 @@ const KidSafeHigh = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <Button asChild variant="ghost" className="mb-4 text-white hover:bg-white/20">
-            <Link to="/kidsafehq">
+            <Link to={basePath}>
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Age Groups
             </Link>

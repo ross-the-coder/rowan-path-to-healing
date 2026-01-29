@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import kidSafeHQLogo from "@/assets/kidsafe-hq-logo.png";
 import newsHero from "@/assets/kidsafe-news-hero.jpg";
 import { Reveal } from "@/components/Reveal";
+import { useKidSafeBasePath } from "@/hooks/useKidSafeBasePath";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -26,6 +27,7 @@ import {
 const ITEMS_PER_PAGE_GRID = 9;
 
 const KidSafeNews = () => {
+  const basePath = useKidSafeBasePath();
   const allArticles = getAllArticles();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
@@ -123,7 +125,7 @@ const KidSafeNews = () => {
           <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
             <Reveal>
               <>
-                <Link to="/kidsafehq" className="mb-4">
+                <Link to={basePath} className="mb-4">
                   <img src={kidSafeHQLogo} alt="KidSafeHQ" className="h-16 w-auto brightness-0 invert" />
                 </Link>
                 <div className="flex items-center gap-3 mb-2">

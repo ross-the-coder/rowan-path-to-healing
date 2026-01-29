@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { glossaryTerms } from "@/data/glossaryData";
 import { kidSafeResourcesData } from "@/data/kidSafeResourcesData";
 import { searchKeywords } from "@/data/resourceKeywordsData";
+import { useKidSafeBasePath } from "@/hooks/useKidSafeBasePath";
 
 const iconMap = {
   elementary: School,
@@ -23,6 +24,7 @@ const iconMap = {
 
 const KidSafeResources = () => {
   const location = useLocation();
+  const basePath = useKidSafeBasePath();
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
   const [glossarySearch, setGlossarySearch] = useState("");
   const [resourceSearch, setResourceSearch] = useState("");
@@ -214,7 +216,7 @@ const KidSafeResources = () => {
       <div className="bg-gradient-to-br from-orange-500/10 via-orange-600/5 to-orange-500/5 pt-24 pb-12">
         <div className="container mx-auto px-4">
           <Button asChild variant="ghost" className="mb-4">
-            <Link to="/kidsafehq">
+            <Link to={basePath}>
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Age Groups
             </Link>

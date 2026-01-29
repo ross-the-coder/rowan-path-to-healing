@@ -17,8 +17,10 @@ import { useKidSafeFAQs } from "@/hooks/useSanityData";
 import { faqData as fallbackFaqData, getGradeLevel, getRelatedResources } from "@/data/faqData";
 import { getAgeGroupLabel, searchResources } from "@/utils/resourceMatcher";
 import { supabase } from "@/integrations/supabase/client";
+import { useKidSafeBasePath } from "@/hooks/useKidSafeBasePath";
 
 const KidSafeFAQ = () => {
+  const basePath = useKidSafeBasePath();
   const { data: sanityData, isLoading: isSanityLoading, error } = useKidSafeFAQs();
   
   // Use fallback data if sanityData is not available
@@ -369,7 +371,7 @@ const KidSafeFAQ = () => {
               </div>
             )}
             <Button asChild>
-              <Link to="/kidsafehq">Return to KidSafeHQ</Link>
+              <Link to={basePath}>Return to KidSafeHQ</Link>
             </Button>
           </div>
         </main>
@@ -407,7 +409,7 @@ const KidSafeFAQ = () => {
       <div className="bg-gradient-to-br from-teal-500/10 via-teal-600/5 to-teal-500/5 pt-24 pb-12">
         <div className="container mx-auto px-4">
           <Button asChild variant="ghost" className="mb-4">
-            <Link to="/kidsafehq">
+            <Link to={basePath}>
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to KidSafeHQ
             </Link>
@@ -625,7 +627,7 @@ const KidSafeFAQ = () => {
                               )}
                             </div>
                             <Button asChild size="sm" variant="outline" className="h-8 bg-white hover:bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-900/30 dark:text-teal-300 dark:border-teal-800 dark:hover:bg-teal-900">
-                              <Link to={`/kidsafehq/resources?topic=${encodeURIComponent((faq.topics || []).join(","))}`}>
+                              <Link to={`${basePath}/resources?topic=${encodeURIComponent((faq.topics || []).join(","))}`}>
                                 <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
                                 View Resources
                               </Link>
@@ -738,7 +740,7 @@ const KidSafeFAQ = () => {
                     </div>
                     <div className="mt-6 pt-4 border-t border-teal-100 dark:border-teal-900/50">
                       <Button asChild variant="outline" className="w-full h-11 border-teal-200 text-teal-700 hover:bg-teal-50">
-                        <Link to="/kidsafehq/resources">
+                        <Link to={`${basePath}/resources`}>
                           <BookOpen className="h-4 w-4 mr-2" />
                           Browse All Resources
                         </Link>
@@ -873,7 +875,7 @@ const KidSafeFAQ = () => {
             <CardContent className="relative">
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700 shadow-md">
-                  <Link to="/kidsafehq/resources">
+                  <Link to={`${basePath}/resources`}>
                     <BookOpen className="h-5 w-5 mr-2" />
                     Browse Resources
                   </Link>

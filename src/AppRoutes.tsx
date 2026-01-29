@@ -4,8 +4,6 @@ import { ProtectedRoute } from "@/components/ProtectedRoute";
 import Staff from "@/pages/Staff.tsx";
 import CommunityResources from "@/pages/CommunityResources";
 import KidSafeComingSoon from "@/pages/KidSafeComingSoon";
-import KidSafeHQ from "@/pages/KidSafeHQ";
-import KidSafeHQ from "@/pages/KidSafeHQ";
 
 // Lazy load all page components
 const Index = lazy(() => import("./pages/Index"));
@@ -33,6 +31,13 @@ const News = lazy(() => import("./pages/News"));
 const CTLawsReporting = lazy(() => import("./pages/CTLawsReporting"));
 const Reminders = lazy(() => import("./pages/Reminders"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const KidSafeHQ = lazy(() => import("./pages/KidSafeHQ"));
+const KidSafeElementary = lazy(() => import("./pages/KidSafeElementary"));
+const KidSafeMiddle = lazy(() => import("./pages/KidSafeMiddle"));
+const KidSafeHigh = lazy(() => import("./pages/KidSafeHigh"));
+const KidSafeResources = lazy(() => import("./pages/KidSafeResources"));
+const KidSafeFAQ = lazy(() => import("./pages/KidSafeFAQ"));
+const KidSafeNews = lazy(() => import("./pages/KidSafeNews"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const StaffLogin = lazy(() => import("./pages/StaffLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
@@ -148,8 +153,23 @@ export const AppRoutes = () => (
         <Route path="/kidsafehq/*" element={<KidSafeComingSoon />} />
         <Route path="/KidSafeHQ/*" element={<KidSafeComingSoon />} />
         <Route path="/kidsafehq2" element={<KidSafeHQ />} />
+        <Route path="/kidsafehq2/elementary" element={<KidSafeElementary />} />
+        <Route path="/kidsafehq2/middle" element={<KidSafeMiddle />} />
+        <Route path="/kidsafehq2/high" element={<KidSafeHigh />} />
+        <Route path="/kidsafehq2/highschool" element={<KidSafeHigh />} />
+        <Route path="/kidsafehq2/high-school" element={<KidSafeHigh />} />
+        <Route path="/kidsafehq2/resources" element={<KidSafeResources />} />
+        <Route path="/kidsafehq2/faqs" element={<KidSafeFAQ />} />
+        <Route path="/kidsafehq2/news" element={<KidSafeNews />} />
         <Route path="/kidsafehq-preview" element={<KidSafeHQ />} />
-        <Route path="/kidsafehq2" element={<KidSafeHQ />} />
+        <Route path="/kidsafehq-preview/elementary" element={<KidSafeElementary />} />
+        <Route path="/kidsafehq-preview/middle" element={<KidSafeMiddle />} />
+        <Route path="/kidsafehq-preview/high" element={<KidSafeHigh />} />
+        <Route path="/kidsafehq-preview/highschool" element={<KidSafeHigh />} />
+        <Route path="/kidsafehq-preview/high-school" element={<KidSafeHigh />} />
+        <Route path="/kidsafehq-preview/resources" element={<KidSafeResources />} />
+        <Route path="/kidsafehq-preview/faqs" element={<KidSafeFAQ />} />
+        <Route path="/kidsafehq-preview/news" element={<KidSafeNews />} />
         <Route path="/news" element={<News />} />
         <Route path="/ct-laws-reporting" element={<CTLawsReporting />} />
         <Route path="/reminders" element={<Reminders />} />
